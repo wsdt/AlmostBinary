@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Text;
 
 namespace UniversalBinary
 {
@@ -57,10 +58,18 @@ namespace UniversalBinary
                 c += "\n" + s.ReadToEnd();
             }
 
-            /*FileStream fs = new FileStream(Path.GetFileNameWithoutExtension(args[0]) + ".ssswsdt", FileMode.Create);
-            BinaryWriter bw = new BinaryWriter(fs, Encoding.UTF8);
-            bw.Write(c);*/
+            // TODO: Make this work again
+            //FileStream fs = new FileStream(
+            //    $"{Path.GetFileNameWithoutExtension(args[0])}.wsdt",
+            //    FileMode.Create,
+            //    FileAccess.ReadWrite,
+            //    FileShare.ReadWrite,
+            //    Encoding.Unicode.GetByteCount(c),
+            //    true);
+            //BinaryWriter bw = new BinaryWriter(fs, Encoding.UTF8);
+            //bw.Write(c);
 
+            // Current workaround
             Console.WriteLine($"Compiled code: \n{c}");
             File.WriteAllText(Path.GetFileNameWithoutExtension(args[0]) + ".wsdt", c);
         }
