@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
+      "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
       "projectName": "AlmostBinary_Runtime",
-      "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
+      "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
       "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Runtime\\obj\\",
+      "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

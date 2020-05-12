@@ -8,3 +8,13 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\Almo
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.deps.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.runtimeconfig.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.runtimeconfig.dev.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.csproj.CoreCompileInputs.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.genruntimeconfig.cache

@@ -141,7 +141,6 @@ namespace UniversalBinary
 
         public Token GetToken()
         {
-            Console.WriteLine("I: " + _index + " // " + _inputString);
             if (_index >= _inputString.Length)
                 return null;
 

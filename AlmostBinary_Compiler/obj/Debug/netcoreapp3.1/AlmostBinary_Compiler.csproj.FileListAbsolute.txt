@@ -8,3 +8,14 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\Almo
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\Compiler\AlmostBinary\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.deps.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.runtimeconfig.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.runtimeconfig.dev.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.csprojAssemblyReference.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.csproj.CoreCompileInputs.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.genruntimeconfig.cache

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace UniversalBinary
@@ -55,13 +53,16 @@ namespace UniversalBinary
 
             foreach (string p in imports)
             {
-                StreamReader s = new StreamReader(path + "\\" + p + ".abin");
+                StreamReader s = new StreamReader(path + "\\" + p + ".abinl");
                 c += "\n" + s.ReadToEnd();
             }
 
-            FileStream fs = new FileStream(Path.GetFileNameWithoutExtension(args[0]) + ".wsdt", FileMode.Create);
-            BinaryWriter bw = new BinaryWriter(fs);
-            bw.Write(c);
+            /*FileStream fs = new FileStream(Path.GetFileNameWithoutExtension(args[0]) + ".ssswsdt", FileMode.Create);
+            BinaryWriter bw = new BinaryWriter(fs, Encoding.UTF8);
+            bw.Write(c);*/
+
+            Console.WriteLine($"Compiled code: \n{c}");
+            File.WriteAllText(Path.GetFileNameWithoutExtension(args[0]) + ".wsdt", c);
         }
     }
 }

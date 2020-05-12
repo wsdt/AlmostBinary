@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {}
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
         "projectName": "AlmostBinary_Compiler",
-        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
         "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\Compiler\\AlmostBinary\\AlmostBinary\\AlmostBinary_Compiler\\obj\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
