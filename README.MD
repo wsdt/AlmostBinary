@@ -1,3 +1,6 @@
+First orientation and draft by [Klip](https://github.com/TimeLoad00/Klip)
+
+
 Klip is a simple, compiled programming language that I wrote to help others understand how to write their own programming languages. I have been writing my own programming and scripting languages for a number of years and I realise that there's a lack of example code and tutorials on how to do so and thus I wrote the Klip language as a simple example on how one might start writing their own programming language.
 
 Due to the reason why I created this programming language it is not full-featured but it has enough features to be used as a base for anyone who is looking to create their own programming language. The features are:
