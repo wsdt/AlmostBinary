@@ -1,9 +1,0 @@
-import system
-
-function Main()
-{
-    repeat
-    {
-        PrintLine("hello world")
-    }
-}

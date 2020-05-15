@@ -18,3 +18,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\D
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.csprojAssemblyReference.cache

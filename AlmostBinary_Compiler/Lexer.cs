@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace UniversalBinary
+namespace AlmostBinary_Compiler
 {
     public class Lexer
     {
@@ -139,7 +139,7 @@ namespace UniversalBinary
             _regExMatchCollection.Clear();
         }
 
-        public Token GetToken()
+        public Token? GetToken()
         {
             if (_index >= _inputString.Length)
                 return null;

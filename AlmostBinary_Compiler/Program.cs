@@ -1,77 +1,94 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AlmostBinary_Compiler.Global;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.SystemConsole.Themes;
+using System;
+using System.Diagnostics.Tracing;
 using System.IO;
-using System.Text;
 
-namespace UniversalBinary
+namespace AlmostBinary_Compiler
 {
-    class Program
+    public class Program
     {
-        public static List<string> imports;
+        /// <summary>
+        /// Used to bring at least some context to the Program class, otherwise most context fields in outputTemplate would be empty.
+        /// Line-No, method name .. still empty.
+        /// </summary>
+        private static ILogger StartupLogger => Serilog.Log.ForContext<Program>();
 
+        #region methods
         static void Main(string[] args)
         {
-            imports = new List<string>();
+            IServiceCollection services = ConfigureServices();
+            ServiceProvider serviceProvider = services.BuildServiceProvider();
+            serviceProvider.GetService<Startup>().Run(args);
 
-            StreamReader sr = new StreamReader(args[0]);
-            string code = sr.ReadToEnd();
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnShutdown!);
+        }
 
-            Lexer lexer = new Lexer();
-            lexer.InputString = code;
+        /// <summary>
+        /// Is executed on proccess exit.
+        /// </summary>
+        private static void OnShutdown(object sender, EventArgs e)
+        {
+            StartupLogger.Information("Program:OnShutdown: Closing compiler.");
+            Log.CloseAndFlush();
+        }
 
-            List<Token> tokens = new List<Token>();
+        private static IServiceCollection ConfigureServices()
+        {
+            IServiceCollection services = new ServiceCollection();
+            IConfiguration logConfiguration = BuildConfiguration();
+            services.AddSingleton(logConfiguration);
 
-            while (true)
-            {
-                try
-                {
-                    Token t = lexer.GetToken();
+            // Required to run application
+            services.AddTransient<Startup>();
 
-                    if (t.TokenName.ToString() != "Whitespace" && t.TokenName.ToString() != "NewLine" && t.TokenName.ToString() != "Undefined")
-                    {
-                        tokens.Add(t);
-                    }
-                }
-                catch
-                {
-                    break;
-                }
-            }
+            Log.Logger = CraftLogger(logConfiguration);
 
-            Token tok = new Token(Lexer.Tokens.EOF, "EOF");
-            tokens.Add(tok);
+            StartupLogger.Information("Attached and configured services.");
+            return services;
+        }
 
-            TokenList tokenlist = new TokenList(tokens);
+        private static IConfiguration BuildConfiguration() => new ConfigurationBuilder()
+                .SetBasePath(Path.Combine(IGlobalConstants.PROJECT_ROOT_PATH, "Properties"))
+                .AddJsonFile(IGlobalConstants.APP_SETTINGS_FILE, optional: false, reloadOnChange: true)
+                .Build();
 
-            Parser parser = new Parser(tokenlist);
-            List<Stmt> tree = parser.GetTree();
+        private static ILogger CraftLogger(IConfiguration configuration)
+        {
+            string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} in method {MemberName} at {SourceContext}:{LineNumber}{NewLine}{Exception}";
+            LogEventLevel logLevel = configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel");
 
-            Compiler compiler = new Compiler(tree);
-            string c = compiler.GetCode();
-
-            string path = Path.GetDirectoryName(args[0]);
-
-            foreach (string p in imports)
-            {
-                StreamReader s = new StreamReader(path + "\\" + p + ".abinl");
-                c += "\n" + s.ReadToEnd();
-            }
-
-            // TODO: Make this work again
-            //FileStream fs = new FileStream(
-            //    $"{Path.GetFileNameWithoutExtension(args[0])}.wsdt",
-            //    FileMode.Create,
-            //    FileAccess.ReadWrite,
-            //    FileShare.ReadWrite,
-            //    Encoding.Unicode.GetByteCount(c),
-            //    true);
-            //BinaryWriter bw = new BinaryWriter(fs, Encoding.UTF8);
-            //bw.Write(c);
-
-            // Current workaround
-            Console.WriteLine($"Compiled code: \n{c}");
-            File.WriteAllText(Path.GetFileNameWithoutExtension(args[0]) + ".wsdt", c);
+            return new LoggerConfiguration()
+            .Enrich.FromLogContext()
+            .WriteTo.File(
+                Path.Combine(
+                    IGlobalConstants.PROJECT_ROOT_PATH,
+                    configuration.GetValue<string>("Runtime:Logging:LogOutputPath")
+                ),
+                restrictedToMinimumLevel: logLevel,
+                rollingInterval: RollingInterval.Day,
+                buffered: true,
+                outputTemplate: outputTemplate)
+            .WriteTo.Async(f => f.File(
+                Path.Combine(
+                    IGlobalConstants.PROJECT_ROOT_PATH,
+                    configuration.GetValue<string>("Runtime:Logging:LogOutputPath")
+                ),
+                restrictedToMinimumLevel: logLevel,
+                rollingInterval: RollingInterval.Day,
+                buffered: true,
+                outputTemplate: outputTemplate))
+            .WriteTo.Console(
+                outputTemplate: outputTemplate,
+                restrictedToMinimumLevel: logLevel,
+                theme: AnsiConsoleTheme.Code
+                )
+            .CreateLogger();
         }
     }
+    #endregion
 }

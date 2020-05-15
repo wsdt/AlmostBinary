@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UniversalBinary
+namespace AlmostBinary_Compiler
 {
     class Parser
     {
@@ -36,7 +36,7 @@ namespace UniversalBinary
 
                 if (tok.TokenName == Lexer.Tokens.Import)
                 {
-                    Program.imports.Add(ParseImport());
+                    Startup.Imports.Add(ParseImport());
                 }
                 else if (tok.TokenName == Lexer.Tokens.Function)
                 {
@@ -101,7 +101,6 @@ namespace UniversalBinary
                     {
                         tokens.pos--;
                         Call c = ParseCall();
-                        Console.WriteLine("# " + tokens.Peek().TokenValue + " // " + c.ident);
                         currentBlock.AddStmt(c);
                     }
                 }

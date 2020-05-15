@@ -1,9 +1,0 @@
-import system
-
-function Main()
-{
-    Print("What's your name: ")
-    name = InputString()
-    PrintLine("Welcome " + name)
-    ReadLine()
-}
