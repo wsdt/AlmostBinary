@@ -21,6 +21,7 @@ namespace AlmostBinary_Compiler
         #region methods
         static void Main(string[] args)
         {
+            Console.WriteLine($"Starting compiler. Received {args.Length} argument(s)."); // Logger not initialized yet
             IServiceCollection services = ConfigureServices();
             ServiceProvider serviceProvider = services.BuildServiceProvider();
             serviceProvider.GetService<Startup>().Run(args);
@@ -33,7 +34,7 @@ namespace AlmostBinary_Compiler
         /// </summary>
         private static void OnShutdown(object sender, EventArgs e)
         {
-            StartupLogger.Information("Program:OnShutdown: Closing compiler.");
+            StartupLogger.Information("Program:OnShutdown: Quitting compiler.");
             Log.CloseAndFlush();
         }
 
@@ -59,7 +60,7 @@ namespace AlmostBinary_Compiler
 
         private static ILogger CraftLogger(IConfiguration configuration)
         {
-            string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} in method {MemberName} at {SourceContext}:{LineNumber}{NewLine}{Exception}";
+            string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} - {SourceContext}:{MemberName}:{LineNumber}{NewLine}{Exception}";
             LogEventLevel logLevel = configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel");
 
             return new LoggerConfiguration()

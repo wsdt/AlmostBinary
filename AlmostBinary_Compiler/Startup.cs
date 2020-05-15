@@ -42,7 +42,7 @@ namespace AlmostBinary_Compiler
                 || ex is FileNotFoundException
             )
             {
-                Log.Here().Error($"Run: Could not find input file -> {args[0]}");
+                Log.Here().Error(ex, $"Run: Could not find input file -> {args[0]}");
                 throw new Exception("Could not compile file. Error code: 404.");
             }
             string code = sr.ReadToEnd();
@@ -136,13 +136,20 @@ namespace AlmostBinary_Compiler
                 Log.Here().Information($"Compilation successful. Output file: {fileName}");
                 Log.Here().Verbose($"Compiled code: \n\"{compiledCode}\""); // only print code on verbose for brevity
             }
-            catch (DirectoryNotFoundException e)
+            catch (DirectoryNotFoundException ex1)
             {
-                Log.Here().Error($"Could not find Output-Directory: '{IGlobalConstants.OUTPUT_PATH}'\n{e}");
+                try
+                {
+                    Directory.CreateDirectory(IGlobalConstants.OUTPUT_PATH);
+                    Log.Here().Warning(ex1, $"Could not find Output-Directory: '{IGlobalConstants.OUTPUT_PATH}'. Created it automatically.");
+                } catch (Exception ex2)
+                {
+                    Log.Here().Error(ex2, $"Could neither find nor create Output-Directory: '{IGlobalConstants.OUTPUT_PATH}'");
+                }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Log.Here().Error($"Unknown file-writer error: {e}");
+                Log.Here().Error(ex, $"Unknown file-writer error.");
             }
             finally
             {
