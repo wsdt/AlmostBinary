@@ -1,13 +1,19 @@
-﻿using System;
+﻿using AlmostBinary_Runtime.utils;
+using Microsoft.Extensions.Configuration;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace AlmostBinary_Runtime
 {
     class Runtime
     {
+        #region fields
+        private static ILogger Log => Serilog.Log.ForContext<Runtime>();
         static List<Func> funcs = new List<Func>();
         static List<Block> blocks = new List<Block>();
         static List<Var> vars = new List<Var>();
@@ -17,17 +23,23 @@ namespace AlmostBinary_Runtime
         static Func currentFunc = null;
         static Stack<Call> callstack = new Stack<Call>();
         static bool ifWorked = false;
+        #endregion
 
+        #region ctor
         public Runtime(string c)
         {
             Lexer lexer = new Lexer(c);
             funcs = lexer.funcs;
             blocks = lexer.blocks;
             code = lexer.code;
+            Log.Here().Information($"Lexer-Results: Funcs->{funcs.Count}, Blocks->{blocks.Count}, Code->{JsonSerializer.Serialize(code)}");
+            Log.Here().Verbose($"Lexer-Results: {JsonSerializer.Serialize(lexer)}");
 
             Run(GetFunc("Main"));
         }
+        #endregion
 
+        #region methods
         static void Run(Func func)
         {
             int opcode = 0;
@@ -496,5 +508,6 @@ namespace AlmostBinary_Runtime
                 }
             }
         }
+        #endregion
     }
 }

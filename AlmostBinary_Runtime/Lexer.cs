@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AlmostBinary_Runtime.utils;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +10,17 @@ namespace AlmostBinary_Runtime
 {
     class Lexer
     {
+        #region fields
+        private static ILogger Log => Serilog.Log.ForContext<Lexer>();
         public List<Func> funcs = new List<Func>();
         public List<Block> blocks = new List<Block>();
         public Buffer code = new Buffer();
+        #endregion
 
+        #region ctor
         public Lexer(string c)
         {
+            Log.Here().Information("Starting Lexer.");
             c = c.Replace(((char)13).ToString(), "");
 
             Func currentFunc = null;
@@ -227,5 +234,6 @@ namespace AlmostBinary_Runtime
             code.Write(Opcodes.ret);
             funcs.Add(currentFunc);
         }
+        #endregion
     }
 }

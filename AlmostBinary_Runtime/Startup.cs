@@ -34,12 +34,19 @@ namespace AlmostBinary_Runtime
         #region methods
         public void Run(string[] args)
         {
-            //StreamReader sr = new StreamReader(args[0]);
-            FileStream fs = new FileStream(args[0], FileMode.Open);
-            BinaryReader br = new BinaryReader(fs);
-            string code = br.ReadString();
-            //string code = sr.ReadToEnd();
-            Runtime runtime = new Runtime(code);
+            try
+            {
+                FileStream fs = new FileStream(args[0], FileMode.Open);
+                BinaryReader br = new BinaryReader(fs);
+                string code = br.ReadString();
+                Log.Here().Verbose($"Input-File: '{code}'");
+                Log.Here().Information("Starting Runtime.");
+                Runtime runtime = new Runtime(code);
+            } catch(Exception ex)
+            {
+                // Top-level logging for uncaught/propagated exceptions
+                Log.Here().Fatal(ex, "Code Interpretation failed.");
+            }
         }
         #endregion
     }
