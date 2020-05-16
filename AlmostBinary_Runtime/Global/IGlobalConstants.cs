@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace AlmostBinary_Compiler.Global
+namespace AlmostBinary_Runtime.Global
 {
     /// <summary>
     /// Global constants calculated at runtime. Prefer using appsettings.json

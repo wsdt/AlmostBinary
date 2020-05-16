@@ -1,0 +1,15 @@
+è:Main
+pushString "What's your name: "
+call Print
+pushString "Welcome "
+pushVar name
+add
+call PrintLine
+call ReadLine:Main
+pushString "What's your name: "
+call Print
+pushString "Welcome "
+pushVar name
+add
+call PrintLine
+call ReadLine

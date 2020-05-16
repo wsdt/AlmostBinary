@@ -1,0 +1,25 @@
+®:Main
+pushString " World"
+pushString "Hello"
+call HelloWorld
+call ReadLine
+ret
+:HelloWorld
+setVar v1
+setVar v2
+pushVar v1
+pushVar v2
+add
+call PrintLine:Main
+pushString " World"
+pushString "Hello"
+call HelloWorld
+call ReadLine
+ret
+:HelloWorld
+setVar v1
+setVar v2
+pushVar v1
+pushVar v2
+add
+call PrintLine

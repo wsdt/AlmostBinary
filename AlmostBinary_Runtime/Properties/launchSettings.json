@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "AlmostBinary_Compiler": {
+    "AlmostBinary_Runtime": {
       "commandName": "Project",
-      "commandLineArgs": "../../../../examples/repeat.abin",
+      "commandLineArgs": "../../../../compiled/repeat.wsdt",
       "nativeDebugging": false
     }
   }

@@ -1,0 +1,7 @@
+|.repeat0
+pushString "hello world"
+call PrintLine
+goto .repeat0.repeat0
+pushString "hello world"
+call PrintLine
+goto .repeat0

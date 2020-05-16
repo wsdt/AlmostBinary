@@ -34,7 +34,7 @@ namespace AlmostBinary_Compiler
         /// </summary>
         private static void OnShutdown(object sender, EventArgs e)
         {
-            StartupLogger.Information("Program:OnShutdown: Quitting compiler.");
+            StartupLogger.Information("Quitting compiler.");
             Log.CloseAndFlush();
         }
 
