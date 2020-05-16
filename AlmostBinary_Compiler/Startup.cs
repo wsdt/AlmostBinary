@@ -33,33 +33,39 @@ namespace AlmostBinary_Compiler
         #region methods
         public void Run(string[] args)
         {
-            StreamReader? sr;
             try
             {
-                sr = new StreamReader(args[0]);
-            } catch (Exception ex) when (
-                ex is DirectoryNotFoundException
-                || ex is FileNotFoundException
-            )
+                StreamReader? sr;
+                try
+                {
+                    sr = new StreamReader(args[0]);
+                }
+                catch (Exception ex) when (
+                  ex is DirectoryNotFoundException
+                  || ex is FileNotFoundException
+              )
+                {
+                    Log.Here().Error(ex, $"Run: Could not find input file -> {args[0]}");
+                    throw new Exception("Could not compile file. Error code: 404.");
+                }
+                string code = sr.ReadToEnd();
+
+                TokenList tokens = Tokenize(code);
+
+                Parser parser = new Parser(tokens);
+                List<Stmt> tree = parser.GetTree();
+
+                Compiler compiler = new Compiler(tree);
+                string compiledCode = compiler.GetCode();
+                compiledCode += LoadImports(args[0], compiledCode);
+
+                WriteToFile(
+                    compiledCode,
+                    $"{Path.GetFileNameWithoutExtension(args[0])}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}");
+            } catch (Exception ex)
             {
-                Log.Here().Error(ex, $"Run: Could not find input file -> {args[0]}");
-                throw new Exception("Could not compile file. Error code: 404.");
+                Log.Here().Fatal(ex, "Unknown compiler error.");
             }
-            string code = sr.ReadToEnd();
-
-            TokenList tokens = Tokenize(code);
-
-            Parser parser = new Parser(tokens);
-            List<Stmt> tree = parser.GetTree();
-
-            Compiler compiler = new Compiler(tree);
-            string compiledCode = compiler.GetCode();
-            compiledCode += LoadImports(args[0], compiledCode);
-
-            WriteToFile(
-                compiledCode,
-                Path.GetFileNameWithoutExtension($"{args[0]}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}")
-            );
         }
 
         /// <summary>
@@ -78,6 +84,8 @@ namespace AlmostBinary_Compiler
                 StreamReader s = new StreamReader($"{path}\\{library}.{_configuration.GetValue<string>("Runtime:FileExtensions:LibraryFileExtension")}");
                 code += "\n" + s.ReadToEnd();
             }
+
+            Log.Here().Information("Loaded imports.");
             return code;
         }
 
@@ -110,6 +118,7 @@ namespace AlmostBinary_Compiler
             Token tok = new Token(Lexer.Tokens.EOF, "EOF");
             tokens.Add(tok);
 
+            Log.Here().Information("Tokenized code.");
             return new TokenList(tokens);
         }
 

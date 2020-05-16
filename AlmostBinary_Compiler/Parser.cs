@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace AlmostBinary_Compiler
             tokens = t;
             currentBlock = null;
             blockstack = new Stack<Block>();
-            Token tok = null;
+            Token? tok = null;
             tree = new List<Stmt>();
             running = true;
 
@@ -32,7 +33,10 @@ namespace AlmostBinary_Compiler
                 {
                     tok = tokens.GetToken();
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    Log.Error(ex, "Unknown parser error.");
+                }
 
                 if (tok.TokenName == Lexer.Tokens.Import)
                 {
@@ -171,7 +175,7 @@ namespace AlmostBinary_Compiler
             {
                 ident = tokens.GetToken().TokenValue.ToString();
             }
-            
+
             if (tokens.Peek().TokenName == Lexer.Tokens.LeftParan)
             {
                 tokens.pos++;

@@ -38,6 +38,9 @@ namespace AlmostBinary_Compiler
             Log.CloseAndFlush();
         }
 
+        /// <summary>
+        /// Configures global services.
+        /// </summary>
         private static IServiceCollection ConfigureServices()
         {
             IServiceCollection services = new ServiceCollection();
@@ -53,11 +56,20 @@ namespace AlmostBinary_Compiler
             return services;
         }
 
+        /// <summary>
+        /// Makes configuration accessible related to current build (debug/release).
+        /// </summary>
+        /// <returns>Global Configuration</returns>
         private static IConfiguration BuildConfiguration() => new ConfigurationBuilder()
                 .SetBasePath(Path.Combine(IGlobalConstants.PROJECT_ROOT_PATH, "Properties"))
                 .AddJsonFile(IGlobalConstants.APP_SETTINGS_FILE, optional: false, reloadOnChange: true)
                 .Build();
 
+        /// <summary>
+        /// Builds File- and Console logger
+        /// </summary>
+        /// <param name="configuration">Global configuration</param>
+        /// <returns>Logger</returns>
         private static ILogger CraftLogger(IConfiguration configuration)
         {
             string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} - {SourceContext}:{MemberName}:{LineNumber}{NewLine}{Exception}";
@@ -65,15 +77,6 @@ namespace AlmostBinary_Compiler
 
             return new LoggerConfiguration()
             .Enrich.FromLogContext()
-            .WriteTo.File(
-                Path.Combine(
-                    IGlobalConstants.PROJECT_ROOT_PATH,
-                    configuration.GetValue<string>("Runtime:Logging:LogOutputPath")
-                ),
-                restrictedToMinimumLevel: logLevel,
-                rollingInterval: RollingInterval.Day,
-                buffered: true,
-                outputTemplate: outputTemplate)
             .WriteTo.Async(f => f.File(
                 Path.Combine(
                     IGlobalConstants.PROJECT_ROOT_PATH,

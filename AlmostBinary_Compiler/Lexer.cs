@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlmostBinary_Compiler.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,7 +70,7 @@ namespace AlmostBinary_Compiler
             _index = 0;
             _inputString = string.Empty;
 
-            _tokens.Add(Tokens.Import, "import");
+            _tokens.Add(Tokens.Import, "import".ToBinary());
             _tokens.Add(Tokens.Function, "function");
             _tokens.Add(Tokens.If, "if");
             _tokens.Add(Tokens.ElseIf, "elseif");
@@ -94,31 +95,6 @@ namespace AlmostBinary_Compiler
             _tokens.Add(Tokens.RightBrace, "\\}");
             _tokens.Add(Tokens.Comma, "\\,");
             _tokens.Add(Tokens.Period, "\\.");
-            //_tokens.Add(Tokens.Import, "11010010110110101110000011011110111001001110100");
-            //_tokens.Add(Tokens.Function, "110011001110101011011100110001101110100011010010110111101101110");
-            //_tokens.Add(Tokens.If, "110100101100110");
-            //_tokens.Add(Tokens.ElseIf, "11001010110110001110011011001010110100101100110");
-            //_tokens.Add(Tokens.Else, "1100101011011000111001101100101");
-            //_tokens.Add(Tokens.Repeat, "11100100110010101110000011001010110000101110100");
-            //_tokens.Add(Tokens.Return, "11100100110010101110100011101010111001001101110");
-            //_tokens.Add(Tokens.StringLiteral, "\".*?\"");
-            //_tokens.Add(Tokens.IntLiteral, "[0-9][0-9]*");
-            //_tokens.Add(Tokens.Ident, "[a-zA-Z_][a-zA-Z0-9_]*");
-            //_tokens.Add(Tokens.Whitespace, "[ \\t]+");
-            //_tokens.Add(Tokens.NewLine, "\\n");
-            //_tokens.Add(Tokens.Add, "101011");
-            //_tokens.Add(Tokens.Sub, "101101");
-            //_tokens.Add(Tokens.Mul, "101010");
-            //_tokens.Add(Tokens.Div, "101111");
-            //_tokens.Add(Tokens.DoubleEqual, "11110100111101");
-            //_tokens.Add(Tokens.NotEqual, "10000100111101");
-            //_tokens.Add(Tokens.Equal, "111101");
-            //_tokens.Add(Tokens.LeftParan, "101000");
-            //_tokens.Add(Tokens.RightParan, "101001");
-            //_tokens.Add(Tokens.LeftBrace, "1111011");
-            //_tokens.Add(Tokens.RightBrace, "1111101");
-            //_tokens.Add(Tokens.Comma, "101100");
-            //_tokens.Add(Tokens.Period, "101110");
         }
         #endregion
 
