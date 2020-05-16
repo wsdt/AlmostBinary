@@ -105,6 +105,22 @@ namespace AlmostBinary_Compiler
         #endregion
     }
 
+    class AssignCall : Stmt
+    {
+        #region fields
+        public string ident;
+        public Call call;
+        #endregion
+
+        #region ctor
+        public AssignCall(string i, Call c)
+        {
+            ident = i;
+            call = c;
+        }
+        #endregion
+    }
+
     class Call : Stmt
     {
         #region fields

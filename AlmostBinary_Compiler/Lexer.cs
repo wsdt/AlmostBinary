@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -118,6 +119,7 @@ namespace AlmostBinary_Compiler
             _index = 0;
             _inputString = string.Empty;
             _regExMatchCollection.Clear();
+            Log.Here().Verbose("Resetted parser.");
         }
 
         public Token? GetToken()
@@ -132,6 +134,7 @@ namespace AlmostBinary_Compiler
                     if (match.Index == _index)
                     {
                         _index += match.Length;
+                        Log.Here().Verbose($"Extracting new token: {pair.Key} -> Number of matches: '{pair.Value.Count}'");
                         return new Token(pair.Key, match.Value);
                     }
 
@@ -145,19 +148,18 @@ namespace AlmostBinary_Compiler
             return new Token(Tokens.Undefined, string.Empty);
         }
 
-        public PeekToken Peek()
-        {
-            return Peek(new PeekToken(_index, new Token(Tokens.Undefined, string.Empty)));
-        }
+        public PeekToken? Peek() => Peek(new PeekToken(_index, new Token(Tokens.Undefined, string.Empty)));
 
-        public PeekToken Peek(PeekToken peekToken)
+        public PeekToken? Peek(PeekToken peekToken)
         {
+            Log.Here().Verbose($"Received peekToken -> {JsonSerializer.Serialize(peekToken)}");
             int oldIndex = _index;
 
             _index = peekToken.TokenIndex;
 
             if (_index >= _inputString.Length)
             {
+                Log.Here().Verbose($"Index greater than inputString length. Returning null and setting oldIndex '{oldIndex}' to _index -> Index: '{_index}', Length-Inputstring: {_inputString.Length}");
                 _index = oldIndex;
                 return null;
             }
@@ -171,11 +173,13 @@ namespace AlmostBinary_Compiler
                 {
                     _index += m.Length;
                     PeekToken pt = new PeekToken(_index, new Token(pair.Key, m.Value));
+                    Log.Here().Verbose($"Created new peek token as inputString matched -> OldIndex: '{oldIndex}', Index: '{_index}', PeekToken: '{JsonSerializer.Serialize(pt)}'");
                     _index = oldIndex;
                     return pt;
                 }
             }
             PeekToken pt2 = new PeekToken(_index + 1, new Token(Tokens.Undefined, string.Empty));
+            Log.Here().Verbose($"Created new empty peek token -> OldIndex: '{oldIndex}', Index: '{_index}', PeekToken: '{JsonSerializer.Serialize(pt2)}'");
             _index = oldIndex;
             return pt2;
         }
@@ -186,51 +190,81 @@ namespace AlmostBinary_Compiler
     #region inner_classes
     public class PeekToken
     {
+        #region fields
+        private static ILogger Log => Serilog.Log.ForContext<PeekToken>();
+        #endregion
+
+        #region properties
         public int TokenIndex { get; set; }
-
         public Token TokenPeek { get; set; }
+        #endregion
 
+        #region ctor
         public PeekToken(int index, Token value)
         {
             TokenIndex = index;
             TokenPeek = value;
+            Log.Here().Verbose($"Created new peekToken -> Name: '{TokenIndex}', Value: '{TokenPeek}'");
         }
+        #endregion
     }
 
     public class Token
     {
+        #region fields
+        private static ILogger Log => Serilog.Log.ForContext<Token>();
+        #endregion
+
+        #region properties
         public Lexer.Tokens TokenName { get; set; }
-
         public string TokenValue { get; set; }
+        #endregion
 
+        #region ctor
         public Token(Lexer.Tokens name, string value)
         {
             TokenName = name;
             TokenValue = value;
+            Log.Here().Verbose($"Created new token -> Name: '{TokenName}', Value: '{TokenValue}'");
         }
+        #endregion
     }
 
     public class TokenList
     {
-        public List<Token> Tokens;
+        #region fields
+        private static ILogger Log => Serilog.Log.ForContext<TokenList>();
+        private List<Token> _tokens;
         public int pos = 0;
+        #endregion
 
+        #region properties
+        public List<Token> Tokens { get => _tokens; set => _tokens = value; }
+        #endregion
+
+        #region ctor
         public TokenList(List<Token> tokens)
         {
             Tokens = tokens;
+            Log.Here().Verbose($"Created new tokenList -> {JsonSerializer.Serialize(tokens)}");
         }
+        #endregion
 
+        #region methods
         public Token GetToken()
         {
-            Token ret = Tokens[pos];
-            pos++;
-            return ret;
+            Token t = Tokens[pos++];
+            Log.Here().Verbose($"Getting token '{t.TokenName}:{t.TokenValue}' on position '{pos}' from {JsonSerializer.Serialize(Tokens)}.");
+            return t;
         }
 
         public Token Peek()
         {
-            return Tokens[pos];
+            Token t = Tokens[pos];
+            Log.Here().Verbose($"Peeking token '{t.TokenName}:{t.TokenValue}' on position '{pos}' from {JsonSerializer.Serialize(Tokens)}.");
+            return t;
         }
+        #endregion
     }
     #endregion
 }

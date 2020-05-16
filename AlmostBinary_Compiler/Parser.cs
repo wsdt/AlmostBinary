@@ -116,9 +116,21 @@ namespace AlmostBinary_Compiler
                 {
                     if (tokens.Peek().TokenName == Lexer.Tokens.Equal)
                     {
-                        tokens.pos--;
-                        Assign a = ParseAssign();
-                        currentBlock.AddStmt(a);
+                        tokens.pos = tokens.pos+2;
+                        bool isCallAssignment = tokens.Peek().TokenName == Lexer.Tokens.LeftParan;
+                        tokens.pos = tokens.pos - 3;
+                        
+                        if (isCallAssignment)
+                        {
+                            // variable = call()
+                            AssignCall ac = ParseAssignCall();
+                            currentBlock.AddStmt(ac);
+                        } else
+                        {
+                            // regular variable assignment
+                            Assign a = ParseAssign();
+                            currentBlock.AddStmt(a);
+                        }
                     }
                     else if (tokens.Peek().TokenName == Lexer.Tokens.LeftParan)
                     {
@@ -300,6 +312,18 @@ namespace AlmostBinary_Compiler
             ret = new Assign(ident, value);
 
             return ret;
+        }
+
+        /// <summary>
+        /// Parses call assignment, e.g.: name = InputString()
+        /// </summary>
+        /// <returns></returns>
+        static AssignCall ParseAssignCall()
+        {
+            Token t = tokens.GetToken();
+            tokens.pos++;
+
+            return new AssignCall(t.TokenValue.ToString(), ParseCall());
         }
 
         static Call ParseCall()
