@@ -26,6 +26,7 @@
 
 	<ItemGroup>
 	  <Folder Include="compiled\" />
+	  <Folder Include="logs\" />
 	</ItemGroup>
 
 </Project>

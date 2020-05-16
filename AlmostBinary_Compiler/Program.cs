@@ -77,12 +77,12 @@ namespace AlmostBinary_Compiler
 
             return new LoggerConfiguration()
             .Enrich.FromLogContext()
+            .MinimumLevel.Verbose()
             .WriteTo.Async(f => f.File(
                 Path.Combine(
                     IGlobalConstants.PROJECT_ROOT_PATH,
                     configuration.GetValue<string>("Runtime:Logging:LogOutputPath")
                 ),
-                restrictedToMinimumLevel: logLevel,
                 rollingInterval: RollingInterval.Day,
                 buffered: true,
                 outputTemplate: outputTemplate))

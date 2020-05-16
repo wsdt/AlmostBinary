@@ -1,8 +1,11 @@
-﻿using Serilog;
+﻿using AlmostBinary_Compiler.utils;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace AlmostBinary_Compiler
@@ -10,32 +13,48 @@ namespace AlmostBinary_Compiler
     class Parser
     {
         #region fields
-        static TokenList tokens;
-        static Block currentBlock;
-        static Stack<Block> blockstack;
-        static List<Stmt> tree;
+        private static ILogger Log => Serilog.Log.ForContext<Parser>();
+        static TokenList? tokens;
+        static Block? currentBlock;
+        static Stack<Block>? blockstack;
+        static List<Stmt>? tree;
         static bool running;
         #endregion
 
         #region ctor
         public Parser(TokenList t)
         {
+            Log.Here().Information("Starting parser.");
             tokens = t;
+            if (tokens == null) Log.Here().Warning("Tokenlist is null.");
+
             currentBlock = null;
             blockstack = new Stack<Block>();
-            Token? tok = null;
             tree = new List<Stmt>();
             running = true;
 
+            Parse();
+        }
+        #endregion
+
+        #region methods
+        /// <summary>
+        /// Parses tokenized list
+        /// </summary>
+        static void Parse()
+        {
+            Log.Here().Verbose($"Starting to parse tokenList -> {JsonSerializer.Serialize(tokens.Tokens)}");
+
             while (running)
             {
+                Token? tok;
                 try
                 {
                     tok = tokens.GetToken();
                 }
                 catch (Exception ex)
                 {
-                    Log.Error(ex, "Unknown parser error.");
+                    throw new Exception($"Could not get token from token list -> {JsonSerializer.Serialize(tokens)}", ex);
                 }
 
                 if (tok.TokenName == Lexer.Tokens.Import)
@@ -150,9 +169,7 @@ namespace AlmostBinary_Compiler
                 }
             }
         }
-        #endregion
 
-        #region methods
         static string ParseImport()
         {
             string ret = "";

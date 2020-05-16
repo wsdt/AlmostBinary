@@ -1,4 +1,6 @@
-﻿using AlmostBinary_Compiler.Utils;
+﻿using AlmostBinary_Compiler.utils;
+using AlmostBinary_Compiler.Utils;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace AlmostBinary_Compiler
     public class Lexer
     {
         #region fields
+        private static ILogger Log => Serilog.Log.ForContext<Lexer>();
         private readonly Dictionary<Tokens, string> _tokens;
         private readonly Dictionary<Tokens, MatchCollection> _regExMatchCollection;
         private string _inputString;
@@ -65,6 +68,8 @@ namespace AlmostBinary_Compiler
         #region ctor
         public Lexer()
         {
+            Log.Here().Information("Starting Lexer.");
+
             _tokens = new Dictionary<Tokens, string>();
             _regExMatchCollection = new Dictionary<Tokens, MatchCollection>();
             _index = 0;

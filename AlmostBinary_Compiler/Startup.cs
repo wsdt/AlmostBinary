@@ -7,6 +7,8 @@ using AlmostBinary_Compiler.Global;
 using Serilog;
 using Microsoft.Extensions.Configuration;
 using AlmostBinary_Compiler.utils;
+using System.Security.Cryptography;
+using System.Text.Json;
 
 namespace AlmostBinary_Compiler
 {
@@ -16,7 +18,6 @@ namespace AlmostBinary_Compiler
         private static ILogger Log => Serilog.Log.ForContext<Startup>();
         private readonly IConfiguration _configuration;
         private static List<string> _imports = new List<string>();
-        private static UnicodeEncoding _unicodeEncoding = new UnicodeEncoding();
         #endregion
 
         #region properties
@@ -45,15 +46,22 @@ namespace AlmostBinary_Compiler
                   || ex is FileNotFoundException
               )
                 {
-                    Log.Here().Error(ex, $"Run: Could not find input file -> {args[0]}");
-                    throw new Exception("Could not compile file. Error code: 404.");
+                    throw new Exception($"Run: Could not find input file -> {args[0]}", ex);
                 }
                 string code = sr.ReadToEnd();
 
                 TokenList tokens = Tokenize(code);
 
-                Parser parser = new Parser(tokens);
-                List<Stmt> tree = parser.GetTree();
+                Parser? parser = null;
+                List<Stmt>? tree;
+                try
+                {
+                    parser = new Parser(tokens);
+                    tree = parser.GetTree();
+                } catch(Exception ex)
+                {
+                    throw new Exception($"Could not parse code -> Parser: {JsonSerializer.Serialize(parser)}", ex);
+                }
 
                 Compiler compiler = new Compiler(tree);
                 string compiledCode = compiler.GetCode();
@@ -64,7 +72,8 @@ namespace AlmostBinary_Compiler
                     $"{Path.GetFileNameWithoutExtension(args[0])}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}");
             } catch (Exception ex)
             {
-                Log.Here().Fatal(ex, "Unknown compiler error.");
+                // Top-level logging for fatal, non caught exceptions
+                Log.Here().Fatal(ex, "Compiler error."); 
             }
         }
 
@@ -97,29 +106,36 @@ namespace AlmostBinary_Compiler
         /// <returns>Tokens as list</returns>
         private TokenList Tokenize(string code)
         {
-            Lexer lexer = new Lexer
+            Lexer? lexer = null;
+            try
             {
-                InputString = code
-            };
-
-            List<Token> tokens = new List<Token>();
-
-            while (true)
-            {
-                Token? t = lexer.GetToken();
-                if (t == null) break;
-
-                if (t.TokenName.ToString() != "Whitespace" && t.TokenName.ToString() != "NewLine" && t.TokenName.ToString() != "Undefined")
+                lexer = new Lexer
                 {
-                    tokens.Add(t);
+                    InputString = code
+                };
+
+                List<Token> tokens = new List<Token>();
+
+                while (true)
+                {
+                    Token? t = lexer.GetToken();
+                    if (t == null) break;
+
+                    if (t.TokenName.ToString() != "Whitespace" && t.TokenName.ToString() != "NewLine" && t.TokenName.ToString() != "Undefined")
+                    {
+                        tokens.Add(t);
+                    }
                 }
+
+                Token tok = new Token(Lexer.Tokens.EOF, "EOF");
+                tokens.Add(tok);
+
+                Log.Here().Information("Tokenized code.");
+                return new TokenList(tokens);
+            } catch (Exception ex)
+            {
+                throw new Exception($"Cannot tokenize code -> Lexer: {JsonSerializer.Serialize(lexer)}", ex);
             }
-
-            Token tok = new Token(Lexer.Tokens.EOF, "EOF");
-            tokens.Add(tok);
-
-            Log.Here().Information("Tokenized code.");
-            return new TokenList(tokens);
         }
 
         /// <summary>
