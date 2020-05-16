@@ -49,6 +49,7 @@ namespace AlmostBinary_Compiler
                     throw new Exception($"Run: Could not find input file -> {args[0]}", ex);
                 }
                 string code = sr.ReadToEnd();
+                Log.Here().Verbose($"Uncompiled code -> \n{code}");
 
                 TokenList tokens = Tokenize(code);
 
@@ -57,11 +58,12 @@ namespace AlmostBinary_Compiler
                 try
                 {
                     parser = new Parser(tokens);
-                    tree = parser.GetTree();
+                    tree = parser.Tree;
                 } catch(Exception ex)
                 {
                     throw new Exception($"Could not parse code -> Parser: {JsonSerializer.Serialize(parser)}", ex);
                 }
+                Log.Here().Verbose($"Statement Tree -> {JsonSerializer.Serialize(tree)}");
 
                 Compiler compiler = new Compiler(tree);
                 string compiledCode = compiler.GetCode();

@@ -30,6 +30,8 @@ namespace AlmostBinary_Runtime
 
             foreach (string a in c.Split('\n'))
             {
+                Log.Here().Verbose($"Current row: '{a}'");
+
                 if (a.StartsWith(":"))
                 {
                     string op = a.Substring(1);

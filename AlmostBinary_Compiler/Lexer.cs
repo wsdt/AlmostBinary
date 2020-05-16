@@ -76,7 +76,7 @@ namespace AlmostBinary_Compiler
             _index = 0;
             _inputString = string.Empty;
 
-            _tokens.Add(Tokens.Import, "import".ToBinary());
+            _tokens.Add(Tokens.Import, "import"); //.ToBinary() something not working yet (take a look at IntLiteral)
             _tokens.Add(Tokens.Function, "function");
             _tokens.Add(Tokens.If, "if");
             _tokens.Add(Tokens.ElseIf, "elseif");
@@ -84,7 +84,7 @@ namespace AlmostBinary_Compiler
             _tokens.Add(Tokens.Repeat, "repeat");
             _tokens.Add(Tokens.Return, "return");
             _tokens.Add(Tokens.StringLiteral, "\".*?\"");
-            _tokens.Add(Tokens.IntLiteral, "[0-9][0-9]*");
+            _tokens.Add(Tokens.IntLiteral, "[0-9][0-9]*"); // TODO: might be the problem that 01010101s not working properly as keywords.
             _tokens.Add(Tokens.Ident, "[a-zA-Z_][a-zA-Z0-9_]*");
             _tokens.Add(Tokens.Whitespace, "[ \\t]+");
             _tokens.Add(Tokens.NewLine, "\\n");
@@ -235,11 +235,20 @@ namespace AlmostBinary_Compiler
         #region fields
         private static ILogger Log => Serilog.Log.ForContext<TokenList>();
         private List<Token> _tokens;
-        public int pos = 0;
+        private int _pos = 0;
         #endregion
 
         #region properties
         public List<Token> Tokens { get => _tokens; set => _tokens = value; }
+        public int pos
+        {
+            get => _pos;
+            set
+            {
+                Log.Here().Verbose($"Token position updated: {_pos}->{value}");
+                _pos = value;
+            }
+        }
         #endregion
 
         #region ctor
