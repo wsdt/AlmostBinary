@@ -118,11 +118,11 @@ namespace AlmostBinary_Compiler
                 }
                 else if (tok.TokenName == Lexer.Tokens.Ident)
                 {
-                    if (tokens.Peek().TokenName == Lexer.Tokens.Equal)
+                    if (tokens.PeekToken().TokenName == Lexer.Tokens.Equal)
                     {
-                        tokens.pos = tokens.pos + 2;
-                        bool isCallAssignment = tokens.Peek().TokenName == Lexer.Tokens.LeftParan;
-                        tokens.pos = tokens.pos - 3;
+                        tokens.Pos = tokens.Pos + 2;
+                        bool isCallAssignment = tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan;
+                        tokens.Pos = tokens.Pos - 3;
 
                         if (isCallAssignment)
                         {
@@ -137,9 +137,9 @@ namespace AlmostBinary_Compiler
                             currentBlock.AddStmt(a);
                         }
                     }
-                    else if (tokens.Peek().TokenName == Lexer.Tokens.LeftParan)
+                    else if (tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
                     {
-                        tokens.pos--;
+                        //tokens.Pos--;
                         Call c = Call.Parse(tokens);
                         currentBlock.AddStmt(c);
                     }

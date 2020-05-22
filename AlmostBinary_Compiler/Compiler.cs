@@ -58,6 +58,10 @@ namespace AlmostBinary_Compiler
                 {
                     CompileCall((Call)s);
                 }
+                else if (s is AssignCall)
+                {
+                    CompileAssignCall((AssignCall)s);
+                }
                 else if (s is Return)
                 {
                     if (((Return)s).expr == null)
@@ -137,6 +141,12 @@ namespace AlmostBinary_Compiler
         static void CompileAssign(Assign data)
         {
             CompileExpr(data.value);
+            Write("setVar " + data.ident);
+        }
+
+        static void CompileAssignCall(AssignCall data)
+        {
+            CompileCall(data.call);
             Write("setVar " + data.ident);
         }
 

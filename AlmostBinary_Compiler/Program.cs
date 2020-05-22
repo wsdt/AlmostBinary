@@ -85,6 +85,7 @@ namespace AlmostBinary_Compiler
                 ),
                 rollingInterval: RollingInterval.Day,
                 buffered: true,
+                restrictedToMinimumLevel: logLevel,
                 outputTemplate: outputTemplate))
             .WriteTo.Console(
                 outputTemplate: outputTemplate,

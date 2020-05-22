@@ -240,7 +240,7 @@ namespace AlmostBinary_Compiler
 
         #region properties
         public List<Token> Tokens { get => _tokens; set => _tokens = value; }
-        public int pos
+        public int Pos
         {
             get => _pos;
             set
@@ -262,15 +262,17 @@ namespace AlmostBinary_Compiler
         #region methods
         public Token GetToken()
         {
-            Token t = Tokens[pos++];
-            Log.Here().Verbose($"Getting token '{t.TokenName}:{t.TokenValue}' on position '{pos}' from {JsonSerializer.Serialize(Tokens)}.");
+            if ((Pos + 1) >= Tokens.Count) throw new Exception($"Tokenlist exhausted. Tokenposition faulty | Current-Token: {Tokens[Pos].TokenValue}, Current-Position: {Pos}");
+            Log.Here().Warning($"Token: {Tokens[Pos].TokenValue}, {Pos}->{Pos+1}, Next token (curr pos): {Tokens[Pos+1].TokenValue} / {JsonSerializer.Serialize(Tokens)}");
+            Token t = Tokens[_pos++];
+            Log.Here().Verbose($"Getting token '{t.TokenName}:{t.TokenValue}' on position '{Pos}' from {JsonSerializer.Serialize(Tokens)}.");
             return t;
         }
 
-        public Token Peek()
+        public Token PeekToken()
         {
-            Token t = Tokens[pos];
-            Log.Here().Verbose($"Peeking token '{t.TokenName}:{t.TokenValue}' on position '{pos}' from {JsonSerializer.Serialize(Tokens)}.");
+            Token t = Tokens[Pos];
+            Log.Here().Verbose($"Peeking token '{t.TokenName}:{t.TokenValue}' on position '{Pos}' from {JsonSerializer.Serialize(Tokens)}.");
             return t;
         }
         #endregion
