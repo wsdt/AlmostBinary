@@ -61,131 +61,157 @@ namespace AlmostBinary_Compiler
                     throw new Exception($"Could not get token from token list -> {JsonSerializer.Serialize(tokens)}", ex);
                 }
 
-                if (tok.TokenName == Lexer.Tokens.Import)
-                {
-                    Startup.Imports.Add(ParseImport());
-                }
-                else if (tok.TokenName == Lexer.Tokens.Function)
-                {
-                    Func func = Func.Parse(tokens);
 
-                    if (currentBlock == null)
-                    {
-                        currentBlock = func;
-                    }
-                    else
-                    {
-                        currentBlock.AddStmt(new Return(null));
-                        _tree.Add(currentBlock);
-                        currentBlock = func;
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.If)
+                switch(tok.TokenName)
                 {
-                    IfBlock ifblock = IfBlock.Parse(tokens);
-
-                    if (currentBlock != null)
-                    {
-                        blockstack.Push(currentBlock);
-                        currentBlock = ifblock;
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.ElseIf)
-                {
-                    ElseIfBlock elseifblock = ElseIfBlock.Parse(tokens);
-
-                    if (currentBlock != null)
-                    {
-                        blockstack.Push(currentBlock);
-                        currentBlock = elseifblock;
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Else)
-                {
-                    if (currentBlock != null)
-                    {
-                        blockstack.Push(currentBlock);
-                        currentBlock = new ElseBlock();
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Repeat)
-                {
-                    if (currentBlock != null)
-                    {
-                        blockstack.Push(currentBlock);
-                        currentBlock = new RepeatBlock();
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Ident)
-                {
-                    if (tokens.PeekToken().TokenName == Lexer.Tokens.Equal)
-                    {
-                        tokens.Pos = tokens.Pos + 2;
-                        bool isCallAssignment = tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan;
-                        tokens.Pos = tokens.Pos - 3;
-
-                        if (isCallAssignment)
-                        {
-                            // variable = call()
-                            AssignCall ac = AssignCall.Parse(tokens);
-                            currentBlock.AddStmt(ac);
-                        }
-                        else
-                        {
-                            // regular variable assignment
-                            Assign a = Assign.Parse(tokens);
-                            currentBlock.AddStmt(a);
-                        }
-                    }
-                    else if (tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
-                    {
-                        //tokens.Pos--;
-                        Call c = Call.Parse(tokens);
-                        currentBlock.AddStmt(c);
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Return)
-                {
-                    Return r = Return.Parse(tokens);
-                    currentBlock.AddStmt(r);
-                }
-                else if (tok.TokenName == Lexer.Tokens.RightParan)
-                {
-                    if (currentBlock is Func)
-                    {
-                        currentBlock.AddStmt(new Return(null));
-                        _tree.Add(currentBlock);
-                        currentBlock = null;
-                    }
-                    else if (currentBlock is IfBlock || currentBlock is ElseIfBlock || currentBlock is ElseBlock)
-                    {
-                        currentBlock.AddStmt(new EndIf());
-                        Block block = currentBlock;
-
-                        if (blockstack.Count > 0)
-                        {
-                            currentBlock = blockstack.Pop();
-                            currentBlock.AddStmt(block);
-                        }
-                    }
-                    else if (currentBlock is RepeatBlock)
-                    {
-                        Block block = currentBlock;
-
-                        if (blockstack.Count > 0)
-                        {
-                            currentBlock = blockstack.Pop();
-                            currentBlock.AddStmt(block);
-                        }
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.EOF)
-                {
-                    _tree.Add(currentBlock);
-                    running = false;
+                    case Lexer.Tokens.Import: TokenizeImport(); break;
+                    case Lexer.Tokens.Function: TokenizeFunction(); break;
+                    case Lexer.Tokens.If: TokenizeIf(); break;
+                    case Lexer.Tokens.ElseIf: TokenizeElseIf(); break;
+                    case Lexer.Tokens.Else: TokenizeElse(); break;
+                    case Lexer.Tokens.Repeat: TokenizeRepeat(); break;
+                    case Lexer.Tokens.Ident: TokenizeIdent(in tok); break;
+                    case Lexer.Tokens.Return: TokenizeReturn(); break;
+                    case Lexer.Tokens.RightParan: TokenizeRightParan(); break;
+                    case Lexer.Tokens.EOF: TokenizeEOF(); break;
+                    default: Log.Here().Error($"Caught unknown token: {tok.TokenName}:{tok.TokenValue}"); running = false; break;
                 }
             }
         }
+
+        #region tokenizers
+        private static void TokenizeImport() => Startup.Imports.Add(ParseImport());
+
+        private static void TokenizeFunction()
+        {
+            Func func = Func.Parse(tokens);
+
+            if (currentBlock == null)
+            {
+                currentBlock = func;
+            }
+            else
+            {
+                currentBlock.AddStmt(new Return(null));
+                _tree.Add(currentBlock);
+                currentBlock = func;
+            }
+        }
+
+        private static void TokenizeIf()
+        {
+            IfBlock ifblock = IfBlock.Parse(tokens);
+
+            if (currentBlock != null)
+            {
+                blockstack.Push(currentBlock);
+                currentBlock = ifblock;
+            }
+        }
+
+        private static void TokenizeElseIf()
+        {
+            ElseIfBlock elseifblock = ElseIfBlock.Parse(tokens);
+
+            if (currentBlock != null)
+            {
+                blockstack.Push(currentBlock);
+                currentBlock = elseifblock;
+            }
+        }
+
+        private static void TokenizeElse()
+        {
+            if (currentBlock != null)
+            {
+                blockstack.Push(currentBlock);
+                currentBlock = new ElseBlock();
+            }
+        }
+
+        private static void TokenizeRepeat()
+        {
+            if (currentBlock != null)
+            {
+                blockstack.Push(currentBlock);
+                currentBlock = new RepeatBlock();
+            }
+        }
+
+        private static void TokenizeIdent(in Token tok)
+        {
+            switch(tok.TokenName)
+            {
+                case Lexer.Tokens.Equal: TokenizeAssign();  break;
+                case Lexer.Tokens.LeftParan: TokenizeCall(); break;
+            }
+        }
+
+        private static void TokenizeAssign()
+        {
+            tokens.Pos = tokens.Pos + 2;
+            bool isCallAssignment = tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan;
+            tokens.Pos = tokens.Pos - 3;
+
+            if (isCallAssignment)
+            {
+                // variable = call()
+                AssignCall ac = AssignCall.Parse(tokens);
+                currentBlock.AddStmt(ac);
+            }
+            else
+            {
+                // regular variable assignment
+                Assign a = Assign.Parse(tokens);
+                currentBlock.AddStmt(a);
+            }
+        }
+
+        private static void TokenizeCall() => currentBlock.AddStmt(Call.Parse(tokens));
+
+        private static void TokenizeReturn()
+        {
+            Return r = Return.Parse(tokens);
+            currentBlock.AddStmt(r);
+        }
+
+        private static void TokenizeRightParan()
+        {
+            if (currentBlock is Func)
+            {
+                currentBlock.AddStmt(new Return(null));
+                _tree.Add(currentBlock);
+                currentBlock = null;
+            }
+            else if (currentBlock is IfBlock || currentBlock is ElseIfBlock || currentBlock is ElseBlock)
+            {
+                currentBlock.AddStmt(new EndIf());
+                Block block = currentBlock;
+
+                if (blockstack.Count > 0)
+                {
+                    currentBlock = blockstack.Pop();
+                    currentBlock.AddStmt(block);
+                }
+            }
+            else if (currentBlock is RepeatBlock)
+            {
+                Block block = currentBlock;
+
+                if (blockstack.Count > 0)
+                {
+                    currentBlock = blockstack.Pop();
+                    currentBlock.AddStmt(block);
+                }
+            }
+        }
+
+        private static void TokenizeEOF()
+        {
+            _tree.Add(currentBlock);
+            running = false;
+        }
+        #endregion
 
         static string ParseImport()
         {
