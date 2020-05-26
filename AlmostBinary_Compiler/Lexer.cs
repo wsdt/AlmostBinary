@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AlmostBinary_Compiler
 {
-    public class Lexer
+    public sealed class Lexer
     {
         #region fields
         private static ILogger Log => Serilog.Log.ForContext<Lexer>();
@@ -265,7 +265,7 @@ namespace AlmostBinary_Compiler
         public Token GetToken()
         {
             if (HasNextToken()) throw new Exception($"Tokenlist exhausted. Tokenposition faulty | Current-Token: {Tokens[Pos].TokenValue}, Current-Position: {Pos}");
-            Log.Here().Warning($"Token: {Tokens[Pos].TokenValue}, {Pos}->{Pos+1}, Next token (curr pos): {Tokens[Pos+1].TokenValue} / {JsonSerializer.Serialize(Tokens)}");
+            Log.Here().Warning($"Token: {Tokens[Pos].TokenValue}, {Pos}->{Pos+1}, Next token (curr pos): {Tokens[Pos+1].TokenValue}");
             Token t = Tokens[_pos++];
             Log.Here().Verbose($"Getting token '{t.TokenName}:{t.TokenValue}' on position '{Pos}' from {JsonSerializer.Serialize(Tokens)}.");
             return t;

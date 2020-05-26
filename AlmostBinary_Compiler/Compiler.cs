@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlmostBinary_Compiler
 {
-    class Compiler
+    internal sealed class Compiler
     {
         #region fields
         static string code;

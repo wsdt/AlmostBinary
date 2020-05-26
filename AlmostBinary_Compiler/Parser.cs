@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AlmostBinary_Compiler
 {
-    class Parser
+    internal sealed class Parser
     {
         #region fields
         private static ILogger Log => Serilog.Log.ForContext<Parser>();
@@ -62,7 +62,7 @@ namespace AlmostBinary_Compiler
                 }
 
 
-                switch(tok.TokenName)
+                switch (tok.TokenName)
                 {
                     case Lexer.Tokens.Import: TokenizeImport(); break;
                     case Lexer.Tokens.Function: TokenizeFunction(); break;
@@ -70,12 +70,15 @@ namespace AlmostBinary_Compiler
                     case Lexer.Tokens.ElseIf: TokenizeElseIf(); break;
                     case Lexer.Tokens.Else: TokenizeElse(); break;
                     case Lexer.Tokens.Repeat: TokenizeRepeat(); break;
-                    case Lexer.Tokens.Ident: TokenizeIdent(in tok); break;
+                    case Lexer.Tokens.Ident: TokenizeIdent(); break;
                     case Lexer.Tokens.Return: TokenizeReturn(); break;
                     case Lexer.Tokens.RightParan: TokenizeRightParan(); break;
-                    case Lexer.Tokens.EOF: TokenizeEOF(); break;
+                    case Lexer.Tokens.RightBrace: TokenizeRightBrace(); break;
+                    //case Lexer.Tokens.EOF: TokenizeEOF(); break;
                     default: Log.Here().Error($"Caught unknown token: {tok.TokenName}:{tok.TokenValue}"); running = false; break;
                 }
+
+                Log.Here().Information($"Current token: {tok.TokenValue}");
             }
         }
 
@@ -84,18 +87,25 @@ namespace AlmostBinary_Compiler
 
         private static void TokenizeFunction()
         {
-            Func func = Func.Parse(tokens);
-
-            if (currentBlock == null)
-            {
-                currentBlock = func;
-            }
-            else
+            if (currentBlock != null)
             {
                 currentBlock.AddStmt(new Return(null));
-                _tree.Add(currentBlock);
-                currentBlock = func;
             }
+
+            Func func = Func.Parse(tokens);
+            currentBlock = func;
+            _tree.Add(currentBlock);
+
+            //if (currentBlock == null)
+            //{
+            //    currentBlock = func;
+            //}
+            //else
+            //{
+            //    currentBlock.AddStmt(new Return(null));
+            //    _tree.Add(currentBlock);
+            //    currentBlock = func;
+            //}
         }
 
         private static void TokenizeIf()
@@ -135,15 +145,19 @@ namespace AlmostBinary_Compiler
             {
                 blockstack.Push(currentBlock);
                 currentBlock = new RepeatBlock();
+                //_tree.Add(currentBlock);
+                tokens.Pos++;
             }
         }
 
-        private static void TokenizeIdent(in Token tok)
+        private static void TokenizeIdent()
         {
-            switch(tok.TokenName)
+            Token tok = tokens.PeekToken();
+            switch (tok.TokenName)
             {
-                case Lexer.Tokens.Equal: TokenizeAssign();  break;
+                case Lexer.Tokens.Equal: TokenizeAssign(); break;
                 case Lexer.Tokens.LeftParan: TokenizeCall(); break;
+                default: throw new Exception($"Unexpected token after identifier: {tok.TokenName}'{tok.TokenValue}'");
             }
         }
 
@@ -206,11 +220,33 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void TokenizeEOF()
+        private static void TokenizeRightBrace()
         {
-            _tree.Add(currentBlock);
-            running = false;
+            if (currentBlock != null)
+            {
+                if (currentBlock is Func)
+                {
+                    currentBlock.AddStmt(new Return(null));
+                    currentBlock = null;
+                }
+
+                if (blockstack.Count <= 0)
+                {
+                    running = false;
+                }
+                else
+                {
+                    blockstack.Peek().AddStmt(currentBlock);
+                    currentBlock = blockstack.Pop();
+                }
+            }
         }
+
+        //private static void TokenizeEOF()
+        //{
+        //    _tree.Add(currentBlock);
+        //    running = false;
+        //}
         #endregion
 
         static string ParseImport()

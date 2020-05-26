@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AlmostBinary_Compiler": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../examples/repeat.abin",
+      "nativeDebugging": false
+    }
+  }
+}
