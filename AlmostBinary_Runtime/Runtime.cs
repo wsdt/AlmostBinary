@@ -33,6 +33,9 @@ namespace AlmostBinary_Runtime
             blocks = lexer.blocks;
             code = lexer.code;
             Log.Here().Information($"Lexer-Results: Funcs->{funcs.Count}, Blocks->{blocks.Count}, Code->{JsonSerializer.Serialize(code)}");
+            foreach (Func f in funcs) {
+                Log.Here().Information($"Funcs: {f.name}");
+            };
             Log.Here().Verbose($"Lexer-Results: {JsonSerializer.Serialize(lexer)}");
 
             Run(GetFunc("Main"));

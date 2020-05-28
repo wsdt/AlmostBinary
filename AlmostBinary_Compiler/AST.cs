@@ -265,10 +265,11 @@ namespace AlmostBinary_Compiler
 
             Expr rexpr = Expr.Parse(tokens);
 
-            if (tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-            {
-                tokens.Pos++;
-            }
+            //if (tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+            //{
+            //    tokens.Pos++; ;
+            //}
+            //tokens.Pos--;
 
             ret = new IfBlock(lexpr, op, rexpr);
 
@@ -320,11 +321,12 @@ namespace AlmostBinary_Compiler
 
             Expr rexpr = Expr.Parse(tokens);
 
-            if (tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-            {
-                tokens.Pos++;
-            }
+            //if (tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+            //{
+            //    tokens.Pos+=2;
+            //}
 
+            //tokens.Pos--;
             ret = new ElseIfBlock(lexpr, op, rexpr);
 
             return ret;

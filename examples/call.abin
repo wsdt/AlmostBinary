@@ -1,8 +1,8 @@
-011010010110110101110000011011110111001001110100 system
+import system
 
 function Main()
 {
-    call HelloWorld("Hello", " World")
+    HelloWorld("Hello", " World")
     ReadLine()
 }
 

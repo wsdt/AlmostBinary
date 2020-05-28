@@ -27,5 +27,8 @@ namespace AlmostBinary_Compiler.Tests
 
         [TestMethod]
         public void CompileVariable() => Program.Main(new string[] { Path.Combine(EXAMPLES_PATH, $"variable.{INPUT_FILE_TYPE}") });
+
+        // TODO: Add tests which compare compiled files afterswards with expected results!
+        // TODO: Also add tests which try to execute compiled files on runtime.
     }
 }

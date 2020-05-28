@@ -46,6 +46,7 @@ namespace AlmostBinary_Runtime
             {
                 // Top-level logging for uncaught/propagated exceptions
                 Log.Here().Fatal(ex, "Code Interpretation failed.");
+                throw;
             }
         }
         #endregion

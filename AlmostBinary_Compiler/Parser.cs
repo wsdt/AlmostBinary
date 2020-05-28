@@ -18,7 +18,7 @@ namespace AlmostBinary_Compiler
         static TokenList? tokens;
         static Block? currentBlock;
         static Stack<Block>? blockstack;
-        static bool running;
+        static bool? running;
         #endregion
 
         #region properties
@@ -47,14 +47,14 @@ namespace AlmostBinary_Compiler
         /// </summary>
         static void Parse()
         {
-            Log.Here().Verbose($"Starting to parse tokenList -> {JsonSerializer.Serialize(tokens.Tokens)}");
+            Log.Here().Information($"Starting to parse tokenList -> {JsonSerializer.Serialize(tokens.Tokens)}");
 
-            while (running)
+            while (running ?? false)
             {
                 Token? tok;
                 try
                 {
-                    tok = tokens.GetToken();
+                    tok = tokens.GetSafeToken(ref running);
                 }
                 catch (Exception ex)
                 {
@@ -74,7 +74,7 @@ namespace AlmostBinary_Compiler
                     case Lexer.Tokens.Return: TokenizeReturn(); break;
                     case Lexer.Tokens.RightParan: TokenizeRightParan(); break;
                     case Lexer.Tokens.RightBrace: TokenizeRightBrace(); break;
-                    //case Lexer.Tokens.EOF: TokenizeEOF(); break;
+                    case Lexer.Tokens.EOF: TokenizeEOF(); break;
                     default: Log.Here().Error($"Caught unknown token: {tok.TokenName}:{tok.TokenValue}"); running = false; break;
                 }
 
@@ -196,6 +196,7 @@ namespace AlmostBinary_Compiler
                 currentBlock.AddStmt(new Return(null));
                 _tree.Add(currentBlock);
                 currentBlock = null;
+                tokens.Pos--;
             }
             else if (currentBlock is IfBlock || currentBlock is ElseIfBlock || currentBlock is ElseBlock)
             {
@@ -207,6 +208,7 @@ namespace AlmostBinary_Compiler
                     currentBlock = blockstack.Pop();
                     currentBlock.AddStmt(block);
                 }
+                tokens.Pos++;
             }
             else if (currentBlock is RepeatBlock)
             {
@@ -230,11 +232,7 @@ namespace AlmostBinary_Compiler
                     currentBlock = null;
                 }
 
-                if (blockstack.Count <= 0)
-                {
-                    running = false;
-                }
-                else
+                if (blockstack.Count > 0)
                 {
                     blockstack.Peek().AddStmt(currentBlock);
                     currentBlock = blockstack.Pop();
@@ -242,11 +240,11 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        //private static void TokenizeEOF()
-        //{
-        //    _tree.Add(currentBlock);
-        //    running = false;
-        //}
+        private static void TokenizeEOF()
+        {
+            _tree.Add(currentBlock);
+            running = false;
+        }
         #endregion
 
         static string ParseImport()

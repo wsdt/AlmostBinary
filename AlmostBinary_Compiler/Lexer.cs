@@ -262,10 +262,19 @@ namespace AlmostBinary_Compiler
         #region methods
         public bool HasNextToken() => (Pos + 1) >= Tokens.Count;
 
+        public Token GetSafeToken(ref bool? running)
+        {
+            if (HasNextToken())
+            {
+                running = false;
+                Pos--;
+            }
+            return GetToken();
+        }
+
         public Token GetToken()
         {
-            if (HasNextToken()) throw new Exception($"Tokenlist exhausted. Tokenposition faulty | Current-Token: {Tokens[Pos].TokenValue}, Current-Position: {Pos}");
-            Log.Here().Warning($"Token: {Tokens[Pos].TokenValue}, {Pos}->{Pos+1}, Next token (curr pos): {Tokens[Pos+1].TokenValue}");
+            Log.Here().Warning($"Token: {Tokens[Pos].TokenValue}, {Pos}->{Pos + 1}, Next token (curr pos): {Tokens[Pos + 1].TokenValue}");
             Token t = Tokens[_pos++];
             Log.Here().Verbose($"Getting token '{t.TokenName}:{t.TokenValue}' on position '{Pos}' from {JsonSerializer.Serialize(Tokens)}.");
             return t;
