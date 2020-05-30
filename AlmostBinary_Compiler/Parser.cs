@@ -44,114 +44,19 @@ namespace AlmostBinary_Compiler
                     break;
                 }
 
-                if (tok.TokenName == Lexer.Tokens.Import)
+                switch(tok.TokenName)
                 {
-                    Startup.Imports.Add(ParseImport());
-                }
-                else if (tok.TokenName == Lexer.Tokens.Function)
-                {
-                    Func func = Func.Parse(_tokens);
-
-                    if (_currentBlock == null)
-                    {
-                        _currentBlock = func;
-                    }
-                    else
-                    {
-                        _currentBlock.AddStmt(new Return(null));
-                        _tree.Add(_currentBlock);
-                        _currentBlock = func;
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.If)
-                {
-                    IfBlock ifblock = IfBlock.Parse(_tokens);
-
-                    if (_currentBlock != null)
-                    {
-                        _blockstack.Push(_currentBlock);
-                        _currentBlock = ifblock;
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.ElseIf)
-                {
-                    ElseIfBlock elseifblock = ElseIfBlock.Parse(_tokens);
-
-                    if (_currentBlock != null)
-                    {
-                        _blockstack.Push(_currentBlock);
-                        _currentBlock = elseifblock;
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Else)
-                {
-                    if (_currentBlock != null)
-                    {
-                        _blockstack.Push(_currentBlock);
-                        _currentBlock = new ElseBlock();
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Repeat)
-                {
-                    if (_currentBlock != null)
-                    {
-                        _blockstack.Push(_currentBlock);
-                        _currentBlock = new RepeatBlock();
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Ident)
-                {
-                    if (_tokens.PeekToken().TokenName == Lexer.Tokens.Equal)
-                    {
-                        _tokens.Pos--;
-                        Assign a = Assign.Parse(_tokens);
-                        _currentBlock.AddStmt(a);
-                    }
-                    else if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
-                    {
-                        _tokens.Pos--;
-                        Call c = Call.Parse(_tokens);
-                        _currentBlock.AddStmt(c);
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.Return)
-                {
-                    Return r = Return.Parse(_tokens);
-                    _currentBlock.AddStmt(r);
-                }
-                else if (tok.TokenName == Lexer.Tokens.RightBrace)
-                {
-                    if (_currentBlock is Func)
-                    {
-                        _currentBlock.AddStmt(new Return(null));
-                        _tree.Add(_currentBlock);
-                        _currentBlock = null;
-                    }
-                    else if (_currentBlock is IfBlock || _currentBlock is ElseIfBlock || _currentBlock is ElseBlock)
-                    {
-                        _currentBlock.AddStmt(new EndIf());
-                        Block block = _currentBlock;
-
-                        if (_blockstack.Count > 0)
-                        {
-                            _currentBlock = _blockstack.Pop();
-                            _currentBlock.AddStmt(block);
-                        }
-                    }
-                    else if (_currentBlock is RepeatBlock)
-                    {
-                        Block block = _currentBlock;
-
-                        if (_blockstack.Count > 0)
-                        {
-                            _currentBlock = _blockstack.Pop();
-                            _currentBlock.AddStmt(block);
-                        }
-                    }
-                }
-                else if (tok.TokenName == Lexer.Tokens.EOF)
-                {
-                    _tree.Add(_currentBlock);
+                    case Lexer.Tokens.Import: Startup.Imports.Add(ParseImport());  break;
+                    case Lexer.Tokens.Function: ParseFunction(); break;
+                    case Lexer.Tokens.If: ParseIf(); break;
+                    case Lexer.Tokens.ElseIf: ParseElseIf(); break;
+                    case Lexer.Tokens.Else: ParseElse(); break;
+                    case Lexer.Tokens.Repeat: ParseRepeat(); break;
+                    case Lexer.Tokens.Ident: ParseIdent(); break;
+                    case Lexer.Tokens.Return: ParseReturn(); break;
+                    case Lexer.Tokens.RightBrace: ParseRightBrace(); break;
+                    case Lexer.Tokens.EOF: ParseEOF(); break;
+                    default: throw new Exception($"Unexpected token: '{tok.TokenValue}' (Type: {tok.TokenName})");
                 }
             }
         }
@@ -169,6 +74,120 @@ namespace AlmostBinary_Compiler
             }
 
             return ret;
+        }
+
+        static void ParseFunction()
+        {
+            Func func = Func.Parse(_tokens);
+
+            if (_currentBlock == null)
+            {
+                _currentBlock = func;
+            }
+            else
+            {
+                _currentBlock.AddStmt(new Return(null));
+                _tree.Add(_currentBlock);
+                _currentBlock = func;
+            }
+        }
+
+        static void ParseIf()
+        {
+            IfBlock ifblock = IfBlock.Parse(_tokens);
+
+            if (_currentBlock != null)
+            {
+                _blockstack.Push(_currentBlock);
+                _currentBlock = ifblock;
+            }
+        }
+
+        static void ParseElseIf()
+        {
+            ElseIfBlock elseifblock = ElseIfBlock.Parse(_tokens);
+
+            if (_currentBlock != null)
+            {
+                _blockstack.Push(_currentBlock);
+                _currentBlock = elseifblock;
+            }
+        }
+
+        static void ParseElse()
+        {
+            if (_currentBlock != null)
+            {
+                _blockstack.Push(_currentBlock);
+                _currentBlock = new ElseBlock();
+            }
+        }
+
+        static void ParseRepeat()
+        {
+            if (_currentBlock != null)
+            {
+                _blockstack.Push(_currentBlock);
+                _currentBlock = new RepeatBlock();
+            }
+        }
+
+        static void ParseIdent()
+        {
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.Equal)
+            {
+                _tokens.Pos--;
+                Assign a = Assign.Parse(_tokens);
+                _currentBlock.AddStmt(a);
+            }
+            else if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
+            {
+                _tokens.Pos--;
+                Call c = Call.Parse(_tokens);
+                _currentBlock.AddStmt(c);
+            }
+        }
+
+        static void ParseReturn()
+        {
+            Return r = Return.Parse(_tokens);
+            _currentBlock.AddStmt(r);
+        }
+
+        static void ParseRightBrace()
+        {
+            if (_currentBlock is Func)
+            {
+                _currentBlock.AddStmt(new Return(null));
+                _tree.Add(_currentBlock);
+                _currentBlock = null;
+            }
+            else if (_currentBlock is IfBlock || _currentBlock is ElseIfBlock || _currentBlock is ElseBlock)
+            {
+                _currentBlock.AddStmt(new EndIf());
+                Block block = _currentBlock;
+
+                if (_blockstack.Count > 0)
+                {
+                    _currentBlock = _blockstack.Pop();
+                    _currentBlock.AddStmt(block);
+                }
+            }
+            else if (_currentBlock is RepeatBlock)
+            {
+                Block block = _currentBlock;
+
+                if (_blockstack.Count > 0)
+                {
+                    _currentBlock = _blockstack.Pop();
+                    _currentBlock.AddStmt(block);
+                }
+            }
+        }
+
+        static void ParseEOF()
+        {
+            _tree.Add(_currentBlock);
         }
         #endregion
     }
