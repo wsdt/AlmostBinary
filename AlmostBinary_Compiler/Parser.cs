@@ -50,7 +50,7 @@ namespace AlmostBinary_Compiler
                 }
                 else if (tok.TokenName == Lexer.Tokens.Function)
                 {
-                    Func func = ParseFunc();
+                    Func func = Func.Parse(_tokens);
 
                     if (_currentBlock == null)
                     {
@@ -65,7 +65,7 @@ namespace AlmostBinary_Compiler
                 }
                 else if (tok.TokenName == Lexer.Tokens.If)
                 {
-                    IfBlock ifblock = ParseIf();
+                    IfBlock ifblock = IfBlock.Parse(_tokens);
 
                     if (_currentBlock != null)
                     {
@@ -75,7 +75,7 @@ namespace AlmostBinary_Compiler
                 }
                 else if (tok.TokenName == Lexer.Tokens.ElseIf)
                 {
-                    ElseIfBlock elseifblock = ParseElseIf();
+                    ElseIfBlock elseifblock = ElseIfBlock.Parse(_tokens);
 
                     if (_currentBlock != null)
                     {
@@ -104,19 +104,19 @@ namespace AlmostBinary_Compiler
                     if (_tokens.PeekToken().TokenName == Lexer.Tokens.Equal)
                     {
                         _tokens.Pos--;
-                        Assign a = ParseAssign();
+                        Assign a = Assign.Parse(_tokens);
                         _currentBlock.AddStmt(a);
                     }
                     else if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
                     {
                         _tokens.Pos--;
-                        Call c = ParseCall();
+                        Call c = Call.Parse(_tokens);
                         _currentBlock.AddStmt(c);
                     }
                 }
                 else if (tok.TokenName == Lexer.Tokens.Return)
                 {
-                    Return r = ParseReturn();
+                    Return r = Return.Parse(_tokens);
                     _currentBlock.AddStmt(r);
                 }
                 else if (tok.TokenName == Lexer.Tokens.RightBrace)
@@ -166,325 +166,6 @@ namespace AlmostBinary_Compiler
             if (t.TokenName == Lexer.Tokens.Ident)
             {
                 ret = t.TokenValue;
-            }
-
-            return ret;
-        }
-
-        static Func ParseFunc()
-        {
-            string ident = "";
-            List<string> vars = new List<string>();
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.Ident)
-            {
-                ident = _tokens.GetToken().TokenValue.ToString();
-            }
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
-            {
-                _tokens.Pos++;
-            }
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-            {
-                _tokens.Pos++;
-            }
-            else
-            {
-                vars = ParseFuncArgs();
-            }
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftBrace)
-            {
-                _tokens.Pos++;
-            }
-
-            return new Func(ident, vars);
-        }
-
-        static IfBlock ParseIf()
-        {
-            IfBlock ret = null;
-            Symbol op = 0;
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
-            {
-                _tokens.Pos++;
-            }
-
-            Expr lexpr = ParseExpr();
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.DoubleEqual)
-            {
-                op = Symbol.doubleEqual;
-                _tokens.Pos++;
-            }
-            else if (_tokens.PeekToken().TokenName == Lexer.Tokens.NotEqual)
-            {
-                op = Symbol.notEqual;
-                _tokens.Pos++;
-            }
-
-            Expr rexpr = ParseExpr();
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-            {
-                _tokens.Pos++;
-            }
-
-            ret = new IfBlock(lexpr, op, rexpr);
-
-            return ret;
-        }
-
-        static ElseIfBlock ParseElseIf()
-        {
-            ElseIfBlock ret = null;
-            Symbol op = 0;
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
-            {
-                _tokens.Pos++;
-            }
-
-            Expr lexpr = ParseExpr();
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.DoubleEqual)
-            {
-                op = Symbol.doubleEqual;
-                _tokens.Pos++;
-            }
-            else if (_tokens.PeekToken().TokenName == Lexer.Tokens.NotEqual)
-            {
-                op = Symbol.notEqual;
-                _tokens.Pos++;
-            }
-
-            Expr rexpr = ParseExpr();
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-            {
-                _tokens.Pos++;
-            }
-
-            ret = new ElseIfBlock(lexpr, op, rexpr);
-
-            return ret;
-        }
-
-        static Assign ParseAssign()
-        {
-            Assign ret = null;
-            string ident = "";
-
-            Token t = _tokens.GetToken();
-            ident = t.TokenValue.ToString();
-
-            _tokens.Pos++;
-
-            Expr value = ParseExpr();
-
-            ret = new Assign(ident, value);
-
-            return ret;
-        }
-
-        static Call ParseCall()
-        {
-            string ident = "";
-            Token tok = _tokens.GetToken();
-            List<Expr> args = new List<Expr>();
-
-            if (tok.TokenName == Lexer.Tokens.Ident)
-            {
-                ident = tok.TokenValue.ToString();
-            }
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
-            {
-                _tokens.Pos++;
-            }
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-            {
-                _tokens.Pos++;
-            }
-            else
-            {
-                args = ParseCallArgs();
-            }
-
-            return new Call(ident, args);
-        }
-
-        static Return ParseReturn()
-        {
-            return new Return(ParseExpr());
-        }
-
-        static Expr ParseExpr()
-        {
-            Expr ret = null;
-            Token t = _tokens.GetToken();
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
-            {
-                string ident = "";
-
-                if (t.TokenName == Lexer.Tokens.Ident)
-                {
-                    ident = t.TokenValue.ToString();
-                }
-
-                _tokens.Pos++;
-
-                if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-                {
-                    ret = new CallExpr(ident, new List<Expr>());
-                }
-                else
-                {
-                    ret = new CallExpr(ident, ParseCallArgs());
-                }
-            }
-            else if (t.TokenName == Lexer.Tokens.IntLiteral)
-            {
-                IntLiteral i = new IntLiteral(Convert.ToInt32(t.TokenValue.ToString()));
-                ret = i;
-            }
-            else if (t.TokenName == Lexer.Tokens.StringLiteral)
-            {
-                StringLiteral s = new StringLiteral(t.TokenValue.ToString());
-                ret = s;
-            }
-            else if (t.TokenName == Lexer.Tokens.Ident)
-            {
-                string ident = t.TokenValue.ToString();
-
-                Ident i = new Ident(ident);
-                ret = i;
-            }
-            else if (t.TokenName == Lexer.Tokens.LeftParan)
-            {
-                Expr e = ParseExpr();
-
-                if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-                {
-                    _tokens.Pos++;
-                }
-
-                ParanExpr p = new ParanExpr(e);
-
-                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Add)
-                {
-                    _tokens.Pos++;
-                    Expr expr = ParseExpr();
-                    ret = new MathExpr(p, Symbol.add, expr);
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Sub)
-                {
-                    _tokens.Pos++;
-                    Expr expr = ParseExpr();
-                    ret = new MathExpr(p, Symbol.sub, expr);
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Mul)
-                {
-                    _tokens.Pos++;
-                    Expr expr = ParseExpr();
-                    ret = new MathExpr(p, Symbol.mul, expr);
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Div)
-                {
-                    _tokens.Pos++;
-                    Expr expr = ParseExpr();
-                    ret = new MathExpr(p, Symbol.div, expr);
-                }
-                else
-                {
-                    ret = p;
-                }
-            }
-
-            if (_tokens.PeekToken().TokenName == Lexer.Tokens.Add 
-                || _tokens.PeekToken().TokenName == Lexer.Tokens.Sub 
-                || _tokens.PeekToken().TokenName == Lexer.Tokens.Mul 
-                || _tokens.PeekToken().TokenName == Lexer.Tokens.Div)
-            {
-                Expr lexpr = ret;
-                Symbol op = 0;
-
-                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Add)
-                {
-                    op = Symbol.add;
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Sub)
-                {
-                    op = Symbol.sub;
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Mul)
-                {
-                    op = Symbol.mul;
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Div)
-                {
-                    op = Symbol.div;
-                }
-
-                _tokens.Pos++;
-
-                Expr rexpr = ParseExpr();
-
-                ret = new MathExpr(lexpr, op, rexpr);
-            }
-
-            return ret;
-        }
-
-        static List<string> ParseFuncArgs()
-        {
-            List<string> ret = new List<string>();
-
-            while (true)
-            {
-                Token tok = _tokens.GetToken();
-
-                if (tok.TokenName == Lexer.Tokens.Ident)
-                {
-                    ret.Add(tok.TokenValue.ToString());
-                }
-
-                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Comma)
-                {
-                    _tokens.Pos++;
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-                {
-                    _tokens.Pos++;
-                    break;
-                }
-            }
-
-            return ret;
-        }
-
-        static List<Expr> ParseCallArgs()
-        {
-            List<Expr> ret = new List<Expr>();
-
-            while (true)
-            {
-                ret.Add(ParseExpr());
-
-                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Comma)
-                {
-                    _tokens.Pos++;
-                }
-                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
-                {
-                    _tokens.Pos++;
-                    break;
-                }
             }
 
             return ret;

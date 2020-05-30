@@ -9,7 +9,127 @@ namespace AlmostBinary_Compiler
  
     class Stmt { }
 
-    class Expr { }
+    class Expr {
+        #region methods
+        public static Expr Parse(TokenList _tokens)
+        {
+            Expr ret = null;
+            Token t = _tokens.GetToken();
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
+            {
+                string ident = "";
+
+                if (t.TokenName == Lexer.Tokens.Ident)
+                {
+                    ident = t.TokenValue.ToString();
+                }
+
+                _tokens.Pos++;
+
+                if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+                {
+                    ret = new CallExpr(ident, new List<Expr>());
+                }
+                else
+                {
+                    ret = new CallExpr(ident, Call.ParseArgs(_tokens));
+                }
+            }
+            else if (t.TokenName == Lexer.Tokens.IntLiteral)
+            {
+                IntLiteral i = new IntLiteral(Convert.ToInt32(t.TokenValue.ToString()));
+                ret = i;
+            }
+            else if (t.TokenName == Lexer.Tokens.StringLiteral)
+            {
+                StringLiteral s = new StringLiteral(t.TokenValue.ToString());
+                ret = s;
+            }
+            else if (t.TokenName == Lexer.Tokens.Ident)
+            {
+                string ident = t.TokenValue.ToString();
+
+                Ident i = new Ident(ident);
+                ret = i;
+            }
+            else if (t.TokenName == Lexer.Tokens.LeftParan)
+            {
+                Expr e = Expr.Parse(_tokens);
+
+                if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+                {
+                    _tokens.Pos++;
+                }
+
+                ParanExpr p = new ParanExpr(e);
+
+                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Add)
+                {
+                    _tokens.Pos++;
+                    Expr expr = Expr.Parse(_tokens);
+                    ret = new MathExpr(p, Symbol.add, expr);
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Sub)
+                {
+                    _tokens.Pos++;
+                    Expr expr = Expr.Parse(_tokens);
+                    ret = new MathExpr(p, Symbol.sub, expr);
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Mul)
+                {
+                    _tokens.Pos++;
+                    Expr expr = Expr.Parse(_tokens);
+                    ret = new MathExpr(p, Symbol.mul, expr);
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Div)
+                {
+                    _tokens.Pos++;
+                    Expr expr = Expr.Parse(_tokens);
+                    ret = new MathExpr(p, Symbol.div, expr);
+                }
+                else
+                {
+                    ret = p;
+                }
+            }
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.Add
+                || _tokens.PeekToken().TokenName == Lexer.Tokens.Sub
+                || _tokens.PeekToken().TokenName == Lexer.Tokens.Mul
+                || _tokens.PeekToken().TokenName == Lexer.Tokens.Div)
+            {
+                Expr lexpr = ret;
+                Symbol op = 0;
+
+                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Add)
+                {
+                    op = Symbol.add;
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Sub)
+                {
+                    op = Symbol.sub;
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Mul)
+                {
+                    op = Symbol.mul;
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.Div)
+                {
+                    op = Symbol.div;
+                }
+
+                _tokens.Pos++;
+
+                Expr rexpr = Expr.Parse(_tokens);
+
+                ret = new MathExpr(lexpr, op, rexpr);
+            }
+
+            return ret;
+        }
+        #endregion
+    }
 
     #region statements
     class Block : Stmt
@@ -47,6 +167,25 @@ namespace AlmostBinary_Compiler
             Value = v;
         }
         #endregion
+
+        #region methods
+        public static Assign Parse(TokenList _tokens)
+        {
+            Assign ret = null;
+            string ident = "";
+
+            Token t = _tokens.GetToken();
+            ident = t.TokenValue.ToString();
+
+            _tokens.Pos++;
+
+            Expr value = Expr.Parse(_tokens);
+
+            ret = new Assign(ident, value);
+
+            return ret;
+        }
+        #endregion
     }
 
     class Call : Stmt
@@ -63,6 +202,58 @@ namespace AlmostBinary_Compiler
             Args = a;
         }
         #endregion
+
+        #region methods
+        public static Call Parse(TokenList _tokens)
+        {
+            string ident = "";
+            Token tok = _tokens.GetToken();
+            List<Expr> args = new List<Expr>();
+
+            if (tok.TokenName == Lexer.Tokens.Ident)
+            {
+                ident = tok.TokenValue.ToString();
+            }
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
+            {
+                _tokens.Pos++;
+            }
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+            {
+                _tokens.Pos++;
+            }
+            else
+            {
+                args = Call.ParseArgs(_tokens);
+            }
+
+            return new Call(ident, args);
+        }
+
+        public static List<Expr> ParseArgs(TokenList _tokens)
+        {
+            List<Expr> ret = new List<Expr>();
+
+            while (true)
+            {
+                ret.Add(Expr.Parse(_tokens));
+
+                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Comma)
+                {
+                    _tokens.Pos++;
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+                {
+                    _tokens.Pos++;
+                    break;
+                }
+            }
+
+            return ret;
+        }
+        #endregion
     }
 
     class Return : Stmt
@@ -75,6 +266,13 @@ namespace AlmostBinary_Compiler
         public Return(Expr e)
         {
             Expr = e;
+        }
+        #endregion
+
+        #region methods
+        public static Return Parse(TokenList _tokens)
+        {
+            return new Return(Expr.Parse(_tokens));
         }
         #endregion
     }
@@ -95,6 +293,67 @@ namespace AlmostBinary_Compiler
             Vars = v;
         }
         #endregion
+
+        #region methods
+        public static Func Parse(TokenList _tokens)
+        {
+            string ident = "";
+            List<string> vars = new List<string>();
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.Ident)
+            {
+                ident = _tokens.GetToken().TokenValue.ToString();
+            }
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
+            {
+                _tokens.Pos++;
+            }
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+            {
+                _tokens.Pos++;
+            }
+            else
+            {
+                vars = ParseArgs(_tokens);
+            }
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftBrace)
+            {
+                _tokens.Pos++;
+            }
+
+            return new Func(ident, vars);
+        }
+
+        public static List<string> ParseArgs(TokenList _tokens)
+        {
+            List<string> ret = new List<string>();
+
+            while (true)
+            {
+                Token tok = _tokens.GetToken();
+
+                if (tok.TokenName == Lexer.Tokens.Ident)
+                {
+                    ret.Add(tok.TokenValue.ToString());
+                }
+
+                if (_tokens.PeekToken().TokenName == Lexer.Tokens.Comma)
+                {
+                    _tokens.Pos++;
+                }
+                else if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+                {
+                    _tokens.Pos++;
+                    break;
+                }
+            }
+
+            return ret;
+        }
+        #endregion
     }
 
     class IfBlock : Block
@@ -113,6 +372,43 @@ namespace AlmostBinary_Compiler
             RightExpr = rexpr;
         }
         #endregion
+
+        #region methods
+        public static IfBlock Parse(TokenList _tokens)
+        {
+            IfBlock ret = null;
+            Symbol op = 0;
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
+            {
+                _tokens.Pos++;
+            }
+
+            Expr lexpr = Expr.Parse(_tokens);
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.DoubleEqual)
+            {
+                op = Symbol.doubleEqual;
+                _tokens.Pos++;
+            }
+            else if (_tokens.PeekToken().TokenName == Lexer.Tokens.NotEqual)
+            {
+                op = Symbol.notEqual;
+                _tokens.Pos++;
+            }
+
+            Expr rexpr = Expr.Parse(_tokens);
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+            {
+                _tokens.Pos++;
+            }
+
+            ret = new IfBlock(lexpr, op, rexpr);
+
+            return ret;
+        }
+        #endregion
     }
 
     class ElseIfBlock : Block
@@ -129,6 +425,43 @@ namespace AlmostBinary_Compiler
             LeftExpr = lexpr;
             Op = o;
             RightExpr = rexpr;
+        }
+        #endregion
+
+        #region methods
+        public static ElseIfBlock Parse(TokenList _tokens)
+        {
+            ElseIfBlock ret = null;
+            Symbol op = 0;
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
+            {
+                _tokens.Pos++;
+            }
+
+            Expr lexpr = Expr.Parse(_tokens);
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.DoubleEqual)
+            {
+                op = Symbol.doubleEqual;
+                _tokens.Pos++;
+            }
+            else if (_tokens.PeekToken().TokenName == Lexer.Tokens.NotEqual)
+            {
+                op = Symbol.notEqual;
+                _tokens.Pos++;
+            }
+
+            Expr rexpr = Expr.Parse(_tokens);
+
+            if (_tokens.PeekToken().TokenName == Lexer.Tokens.RightParan)
+            {
+                _tokens.Pos++;
+            }
+
+            ret = new ElseIfBlock(lexpr, op, rexpr);
+
+            return ret;
         }
         #endregion
     }
