@@ -135,7 +135,7 @@ namespace AlmostBinary_Runtime
                 {
                     int value1 = (int)stack.Pop();
                     int value2 = (int)stack.Pop();
-                    stack.Push(value1 + value2);
+                    stack.Push(value1 - value2);
                 }
                 else if (opcode == Opcodes.mul)
                 {
@@ -318,7 +318,7 @@ namespace AlmostBinary_Runtime
                 {
                     string name = code.ReadString();
                     Func f = GetFunc(name);
-                    Call c = new Call(currentFunc, code.pos, vars);
+                    Call c = new Call(currentFunc, code.pos, new List<Var>(vars));
                     callstack.Push(c);
                     currentFunc = f;
                     code.pos = f.location;
