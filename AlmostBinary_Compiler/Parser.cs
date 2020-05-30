@@ -63,7 +63,7 @@ namespace AlmostBinary_Compiler
         #endregion
 
         #region methods
-        static string ParseImport()
+        private static string ParseImport()
         {
             string ret = "";
             Token t = _tokens.GetToken();
@@ -76,7 +76,7 @@ namespace AlmostBinary_Compiler
             return ret;
         }
 
-        static void ParseFunction()
+        private static void ParseFunction()
         {
             Func func = Func.Parse(_tokens);
 
@@ -92,7 +92,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void ParseIf()
+        private static void ParseIf()
         {
             IfBlock ifblock = IfBlock.Parse(_tokens);
 
@@ -103,7 +103,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void ParseElseIf()
+        private static void ParseElseIf()
         {
             ElseIfBlock elseifblock = ElseIfBlock.Parse(_tokens);
 
@@ -114,7 +114,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void ParseElse()
+        private static void ParseElse()
         {
             if (_currentBlock != null)
             {
@@ -123,7 +123,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void ParseRepeat()
+        private static void ParseRepeat()
         {
             if (_currentBlock != null)
             {
@@ -132,7 +132,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void ParseIdent()
+        private static void ParseIdent()
         {
             if (_tokens.PeekToken().TokenName == Lexer.Tokens.Equal)
             {
@@ -148,13 +148,13 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void ParseReturn()
+        private static void ParseReturn()
         {
             Return r = Return.Parse(_tokens);
             _currentBlock.AddStmt(r);
         }
 
-        static void ParseRightBrace()
+        private static void ParseRightBrace()
         {
             if (_currentBlock is Func)
             {
@@ -185,7 +185,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void ParseEOF()
+        private static void ParseEOF()
         {
             _tree.Add(_currentBlock);
         }
