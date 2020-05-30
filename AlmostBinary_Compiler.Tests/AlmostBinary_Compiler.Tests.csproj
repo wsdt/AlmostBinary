@@ -17,4 +17,8 @@
     <ProjectReference Include="..\AlmostBinary_Compiler\AlmostBinary_Compiler.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+
 </Project>

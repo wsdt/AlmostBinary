@@ -20,7 +20,7 @@ namespace AlmostBinary_Compiler
         private static ILogger StartupLogger => Serilog.Log.ForContext<Program>();
 
         #region methods
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine($"Starting runtime. Received {args.Length} argument(s)."); // Logger not initialized yet
             IServiceCollection services = ConfigureServices();

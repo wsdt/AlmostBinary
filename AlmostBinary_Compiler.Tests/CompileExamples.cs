@@ -1,34 +1,29 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Reflection.Metadata;
+using AlmostBinary_Compiler.Tests.utils;
 
 namespace AlmostBinary_Compiler.Tests
 {
     [TestClass]
     public class CompileExamples
     {
-        private readonly string EXAMPLES_PATH = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "examples");
-        private const string INPUT_FILE_TYPE = "abin";
+        [TestMethod]
+        public void CompileRepeat() => HelperMethods.Compile(IGlobalConstants.REPEAT);
 
         [TestMethod]
-        public void CompileRepeat() => Program.Main(new string[] { Path.Combine(EXAMPLES_PATH, $"repeat.{INPUT_FILE_TYPE}")});
+        public void CompileCall() => HelperMethods.Compile(IGlobalConstants.CALL);
 
         [TestMethod]
-        public void CompileCall() => Program.Main(new string[] { Path.Combine(EXAMPLES_PATH, $"call.{INPUT_FILE_TYPE}") });
+        public void CompileHelloWorld() => HelperMethods.Compile(IGlobalConstants.HELLO_WORLD);
 
         [TestMethod]
-        public void CompileHelloWorld() => Program.Main(new string[] { Path.Combine(EXAMPLES_PATH, $"hello world.{INPUT_FILE_TYPE}") });
+        public void CompileIf() => HelperMethods.Compile(IGlobalConstants.IF);
 
         [TestMethod]
-        public void CompileIf() => Program.Main(new string[] { Path.Combine(EXAMPLES_PATH, $"if.{INPUT_FILE_TYPE}") });
+        public void CompileInput() => HelperMethods.Compile(IGlobalConstants.INPUT);
 
         [TestMethod]
-        public void CompileInput() => Program.Main(new string[] { Path.Combine(EXAMPLES_PATH, $"input.{INPUT_FILE_TYPE}") });
-
-        [TestMethod]
-        public void CompileVariable() => Program.Main(new string[] { Path.Combine(EXAMPLES_PATH, $"variable.{INPUT_FILE_TYPE}") });
-
-        // TODO: Add tests which compare compiled files afterswards with expected results!
-        // TODO: Also add tests which try to execute compiled files on runtime.
+        public void CompileVariable() => HelperMethods.Compile(IGlobalConstants.VARIABLE);
     }
 }

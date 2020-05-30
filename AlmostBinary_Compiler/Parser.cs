@@ -5,260 +5,487 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace AlmostBinary_Compiler
 {
-    internal sealed class Parser
+    class Parser
     {
         #region fields
         private static ILogger Log => Serilog.Log.ForContext<Parser>();
-        private static List<Stmt>? _tree;
-        static TokenList? tokens;
-        static Block? currentBlock;
-        static Stack<Block>? blockstack;
-        static bool? running;
+        static TokenList? _tokens;
+        static Block? _currentBlock = null;
+        static Stack<Block> _blockstack = new Stack<Block>();
+        static List<Stmt> _tree = new List<Stmt>();
         #endregion
 
-        #region properties
-        public List<Stmt>? Tree { get => _tree; }
+        #region properties 
+        public List<Stmt> Tree { get => _tree; }
         #endregion
 
         #region ctor
         public Parser(TokenList t)
         {
             Log.Here().Information("Starting parser.");
-            tokens = t;
-            if (tokens == null) Log.Here().Warning("Tokenlist is null.");
+            _tokens = t;
+            if (_tokens == null) Log.Here().Warning("Tokenlist is null.");
+            Log.Here().Debug($"Starting to parse tokenList -> {JsonSerializer.Serialize(_tokens.Tokens)}");
 
-            currentBlock = null;
-            blockstack = new Stack<Block>();
-            _tree = new List<Stmt>();
-            running = true;
-
-            Parse();
-        }
-        #endregion
-
-        #region methods
-        /// <summary>
-        /// Parses tokenized list
-        /// </summary>
-        static void Parse()
-        {
-            Log.Here().Information($"Starting to parse tokenList -> {JsonSerializer.Serialize(tokens.Tokens)}");
-
-            while (running ?? false)
+            while (true)
             {
                 Token? tok;
                 try
                 {
-                    tok = tokens.GetSafeToken(ref running);
+                    tok = _tokens.GetToken();
                 }
-                catch (Exception ex)
+                catch
                 {
-                    throw new Exception($"Could not get token from token list -> {JsonSerializer.Serialize(tokens)}", ex);
+                    Log.Here().Verbose("Reached end of file. Shutting down parser..");
+                    break;
                 }
 
-
-                switch (tok.TokenName)
+                if (tok!.TokenName.ToString() == "Import")
                 {
-                    case Lexer.Tokens.Import: TokenizeImport(); break;
-                    case Lexer.Tokens.Function: TokenizeFunction(); break;
-                    case Lexer.Tokens.If: TokenizeIf(); break;
-                    case Lexer.Tokens.ElseIf: TokenizeElseIf(); break;
-                    case Lexer.Tokens.Else: TokenizeElse(); break;
-                    case Lexer.Tokens.Repeat: TokenizeRepeat(); break;
-                    case Lexer.Tokens.Ident: TokenizeIdent(); break;
-                    case Lexer.Tokens.Return: TokenizeReturn(); break;
-                    case Lexer.Tokens.RightParan: TokenizeRightParan(); break;
-                    case Lexer.Tokens.RightBrace: TokenizeRightBrace(); break;
-                    case Lexer.Tokens.EOF: TokenizeEOF(); break;
-                    default: Log.Here().Error($"Caught unknown token: {tok.TokenName}:{tok.TokenValue}"); running = false; break;
+                    Startup.Imports.Add(ParseImport());
                 }
-
-                Log.Here().Information($"Current token: {tok.TokenValue}");
-            }
-        }
-
-        #region tokenizers
-        private static void TokenizeImport() => Startup.Imports.Add(ParseImport());
-
-        private static void TokenizeFunction()
-        {
-            if (currentBlock != null)
-            {
-                currentBlock.AddStmt(new Return(null));
-            }
-
-            Func func = Func.Parse(tokens);
-            currentBlock = func;
-            _tree.Add(currentBlock);
-
-            //if (currentBlock == null)
-            //{
-            //    currentBlock = func;
-            //}
-            //else
-            //{
-            //    currentBlock.AddStmt(new Return(null));
-            //    _tree.Add(currentBlock);
-            //    currentBlock = func;
-            //}
-        }
-
-        private static void TokenizeIf()
-        {
-            IfBlock ifblock = IfBlock.Parse(tokens);
-
-            if (currentBlock != null)
-            {
-                blockstack.Push(currentBlock);
-                currentBlock = ifblock;
-            }
-        }
-
-        private static void TokenizeElseIf()
-        {
-            ElseIfBlock elseifblock = ElseIfBlock.Parse(tokens);
-
-            if (currentBlock != null)
-            {
-                blockstack.Push(currentBlock);
-                currentBlock = elseifblock;
-            }
-        }
-
-        private static void TokenizeElse()
-        {
-            if (currentBlock != null)
-            {
-                blockstack.Push(currentBlock);
-                currentBlock = new ElseBlock();
-            }
-        }
-
-        private static void TokenizeRepeat()
-        {
-            if (currentBlock != null)
-            {
-                blockstack.Push(currentBlock);
-                currentBlock = new RepeatBlock();
-                //_tree.Add(currentBlock);
-                tokens.Pos++;
-            }
-        }
-
-        private static void TokenizeIdent()
-        {
-            Token tok = tokens.PeekToken();
-            switch (tok.TokenName)
-            {
-                case Lexer.Tokens.Equal: TokenizeAssign(); break;
-                case Lexer.Tokens.LeftParan: TokenizeCall(); break;
-                default: throw new Exception($"Unexpected token after identifier: {tok.TokenName}'{tok.TokenValue}'");
-            }
-        }
-
-        private static void TokenizeAssign()
-        {
-            tokens.Pos = tokens.Pos + 2;
-            bool isCallAssignment = tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan;
-            tokens.Pos = tokens.Pos - 3;
-
-            if (isCallAssignment)
-            {
-                // variable = call()
-                AssignCall ac = AssignCall.Parse(tokens);
-                currentBlock.AddStmt(ac);
-            }
-            else
-            {
-                // regular variable assignment
-                Assign a = Assign.Parse(tokens);
-                currentBlock.AddStmt(a);
-            }
-        }
-
-        private static void TokenizeCall() => currentBlock.AddStmt(Call.Parse(tokens));
-
-        private static void TokenizeReturn()
-        {
-            Return r = Return.Parse(tokens);
-            currentBlock.AddStmt(r);
-        }
-
-        private static void TokenizeRightParan()
-        {
-            if (currentBlock is Func)
-            {
-                currentBlock.AddStmt(new Return(null));
-                _tree.Add(currentBlock);
-                currentBlock = null;
-                tokens.Pos--;
-            }
-            else if (currentBlock is IfBlock || currentBlock is ElseIfBlock || currentBlock is ElseBlock)
-            {
-                currentBlock.AddStmt(new EndIf());
-                Block block = currentBlock;
-
-                if (blockstack.Count > 0)
+                else if (tok!.TokenName.ToString() == "Function")
                 {
-                    currentBlock = blockstack.Pop();
-                    currentBlock.AddStmt(block);
-                }
-                tokens.Pos++;
-            }
-            else if (currentBlock is RepeatBlock)
-            {
-                Block block = currentBlock;
+                    Func func = ParseFunc();
 
-                if (blockstack.Count > 0)
+                    if (_currentBlock == null)
+                    {
+                        _currentBlock = func;
+                    }
+                    else
+                    {
+                        _currentBlock.AddStmt(new Return(null));
+                        _tree.Add(_currentBlock);
+                        _currentBlock = func;
+                    }
+                }
+                else if (tok.TokenName.ToString() == "If")
                 {
-                    currentBlock = blockstack.Pop();
-                    currentBlock.AddStmt(block);
+                    IfBlock ifblock = ParseIf();
+
+                    if (_currentBlock != null)
+                    {
+                        _blockstack.Push(_currentBlock);
+                        _currentBlock = ifblock;
+                    }
+                }
+                else if (tok.TokenName.ToString() == "ElseIf")
+                {
+                    ElseIfBlock elseifblock = ParseElseIf();
+
+                    if (_currentBlock != null)
+                    {
+                        _blockstack.Push(_currentBlock);
+                        _currentBlock = elseifblock;
+                    }
+                }
+                else if (tok.TokenName.ToString() == "Else")
+                {
+                    if (_currentBlock != null)
+                    {
+                        _blockstack.Push(_currentBlock);
+                        _currentBlock = new ElseBlock();
+                    }
+                }
+                else if (tok.TokenName.ToString() == "Repeat")
+                {
+                    if (_currentBlock != null)
+                    {
+                        _blockstack.Push(_currentBlock);
+                        _currentBlock = new RepeatBlock();
+                    }
+                }
+                else if (tok.TokenName.ToString() == "Ident")
+                {
+                    if (_tokens.PeekToken().TokenName.ToString() == "Equal")
+                    {
+                        _tokens.Pos--;
+                        Assign a = ParseAssign();
+                        _currentBlock.AddStmt(a);
+                    }
+                    else if (_tokens.PeekToken().TokenName.ToString() == "LeftParan")
+                    {
+                        _tokens.Pos--;
+                        Call c = ParseCall();
+                        _currentBlock.AddStmt(c);
+                    }
+                }
+                else if (tok.TokenName.ToString() == "Return")
+                {
+                    Return r = ParseReturn();
+                    _currentBlock.AddStmt(r);
+                }
+                else if (tok.TokenName.ToString() == "RightBrace")
+                {
+                    if (_currentBlock is Func)
+                    {
+                        _currentBlock.AddStmt(new Return(null));
+                        _tree.Add(_currentBlock);
+                        _currentBlock = null;
+                    }
+                    else if (_currentBlock is IfBlock || _currentBlock is ElseIfBlock || _currentBlock is ElseBlock)
+                    {
+                        _currentBlock.AddStmt(new EndIf());
+                        Block block = _currentBlock;
+
+                        if (_blockstack.Count > 0)
+                        {
+                            _currentBlock = _blockstack.Pop();
+                            _currentBlock.AddStmt(block);
+                        }
+                    }
+                    else if (_currentBlock is RepeatBlock)
+                    {
+                        Block block = _currentBlock;
+
+                        if (_blockstack.Count > 0)
+                        {
+                            _currentBlock = _blockstack.Pop();
+                            _currentBlock.AddStmt(block);
+                        }
+                    }
+                }
+                else if (tok.TokenName.ToString() == "EOF")
+                {
+                    _tree.Add(_currentBlock);
                 }
             }
-        }
-
-        private static void TokenizeRightBrace()
-        {
-            if (currentBlock != null)
-            {
-                if (currentBlock is Func)
-                {
-                    currentBlock.AddStmt(new Return(null));
-                    currentBlock = null;
-                }
-
-                if (blockstack.Count > 0)
-                {
-                    blockstack.Peek().AddStmt(currentBlock);
-                    currentBlock = blockstack.Pop();
-                }
-            }
-        }
-
-        private static void TokenizeEOF()
-        {
-            _tree.Add(currentBlock);
-            running = false;
         }
         #endregion
 
+        #region methods
         static string ParseImport()
         {
             string ret = "";
-            Token t = tokens.GetToken();
+            Token t = _tokens.GetToken();
 
-            if (t.TokenName == Lexer.Tokens.Ident)
+            if (t.TokenName.ToString() == "Ident")
             {
                 ret = t.TokenValue;
             }
 
             return ret;
         }
+
+        static Func ParseFunc()
+        {
+            string ident = "";
+            List<string> vars = new List<string>();
+
+            if (_tokens.PeekToken().TokenName.ToString() == "Ident")
+            {
+                ident = _tokens.GetToken().TokenValue.ToString();
+            }
+
+            if (_tokens.PeekToken().TokenName.ToString() == "LeftParan")
+            {
+                _tokens.Pos++;
+            }
+
+            if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+            {
+                _tokens.Pos++;
+            }
+            else
+            {
+                vars = ParseFuncArgs();
+            }
+
+            if (_tokens.PeekToken().TokenName.ToString() == "LeftBrace")
+            {
+                _tokens.Pos++;
+            }
+
+            return new Func(ident, vars);
+        }
+
+        static IfBlock ParseIf()
+        {
+            IfBlock ret = null;
+            Symbol op = 0;
+
+            if (_tokens.PeekToken().TokenName.ToString() == "LeftParan")
+            {
+                _tokens.Pos++;
+            }
+
+            Expr lexpr = ParseExpr();
+
+            if (_tokens.PeekToken().TokenName.ToString() == "DoubleEqual")
+            {
+                op = Symbol.doubleEqual;
+                _tokens.Pos++;
+            }
+            else if (_tokens.PeekToken().TokenName.ToString() == "NotEqual")
+            {
+                op = Symbol.notEqual;
+                _tokens.Pos++;
+            }
+
+            Expr rexpr = ParseExpr();
+
+            if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+            {
+                _tokens.Pos++;
+            }
+
+            ret = new IfBlock(lexpr, op, rexpr);
+
+            return ret;
+        }
+
+        static ElseIfBlock ParseElseIf()
+        {
+            ElseIfBlock ret = null;
+            Symbol op = 0;
+
+            if (_tokens.PeekToken().TokenName.ToString() == "LeftParan")
+            {
+                _tokens.Pos++;
+            }
+
+            Expr lexpr = ParseExpr();
+
+            if (_tokens.PeekToken().TokenName.ToString() == "DoubleEqual")
+            {
+                op = Symbol.doubleEqual;
+                _tokens.Pos++;
+            }
+            else if (_tokens.PeekToken().TokenName.ToString() == "NotEqual")
+            {
+                op = Symbol.notEqual;
+                _tokens.Pos++;
+            }
+
+            Expr rexpr = ParseExpr();
+
+            if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+            {
+                _tokens.Pos++;
+            }
+
+            ret = new ElseIfBlock(lexpr, op, rexpr);
+
+            return ret;
+        }
+
+        static Assign ParseAssign()
+        {
+            Assign ret = null;
+            string ident = "";
+
+            Token t = _tokens.GetToken();
+            ident = t.TokenValue.ToString();
+
+            _tokens.Pos++;
+
+            Expr value = ParseExpr();
+
+            ret = new Assign(ident, value);
+
+            return ret;
+        }
+
+        static Call ParseCall()
+        {
+            string ident = "";
+            Token tok = _tokens.GetToken();
+            List<Expr> args = new List<Expr>();
+
+            if (tok.TokenName.ToString() == "Ident")
+            {
+                ident = tok.TokenValue.ToString();
+            }
+
+            if (_tokens.PeekToken().TokenName.ToString() == "LeftParan")
+            {
+                _tokens.Pos++;
+            }
+
+            if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+            {
+                _tokens.Pos++;
+            }
+            else
+            {
+                args = ParseCallArgs();
+            }
+
+            return new Call(ident, args);
+        }
+
+        static Return ParseReturn()
+        {
+            return new Return(ParseExpr());
+        }
+
+        static Expr ParseExpr()
+        {
+            Expr ret = null;
+            Token t = _tokens.GetToken();
+
+            if (_tokens.PeekToken().TokenName.ToString() == "LeftParan")
+            {
+                string ident = "";
+
+                if (t.TokenName.ToString() == "Ident")
+                {
+                    ident = t.TokenValue.ToString();
+                }
+
+                _tokens.Pos++;
+
+                if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+                {
+                    ret = new CallExpr(ident, new List<Expr>());
+                }
+                else
+                {
+                    ret = new CallExpr(ident, ParseCallArgs());
+                }
+            }
+            else if (t.TokenName.ToString() == "IntLiteral")
+            {
+                IntLiteral i = new IntLiteral(Convert.ToInt32(t.TokenValue.ToString()));
+                ret = i;
+            }
+            else if (t.TokenName.ToString() == "StringLiteral")
+            {
+                StringLiteral s = new StringLiteral(t.TokenValue.ToString());
+                ret = s;
+            }
+            else if (t.TokenName.ToString() == "Ident")
+            {
+                string ident = t.TokenValue.ToString();
+
+                Ident i = new Ident(ident);
+                ret = i;
+            }
+            else if (t.TokenName.ToString() == "LeftParan")
+            {
+                Expr e = ParseExpr();
+
+                if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+                {
+                    _tokens.Pos++;
+                }
+
+                ParanExpr p = new ParanExpr(e);
+
+                if (_tokens.PeekToken().TokenName.ToString() == "Add")
+                {
+                    _tokens.Pos++;
+                    Expr expr = ParseExpr();
+                    ret = new MathExpr(p, Symbol.add, expr);
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "Sub")
+                {
+                    _tokens.Pos++;
+                    Expr expr = ParseExpr();
+                    ret = new MathExpr(p, Symbol.sub, expr);
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "Mul")
+                {
+                    _tokens.Pos++;
+                    Expr expr = ParseExpr();
+                    ret = new MathExpr(p, Symbol.mul, expr);
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "Div")
+                {
+                    _tokens.Pos++;
+                    Expr expr = ParseExpr();
+                    ret = new MathExpr(p, Symbol.div, expr);
+                }
+                else
+                {
+                    ret = p;
+                }
+            }
+
+            if (_tokens.PeekToken().TokenName.ToString() == "Add" || _tokens.PeekToken().TokenName.ToString() == "Sub" || _tokens.PeekToken().TokenName.ToString() == "Mul" || _tokens.PeekToken().TokenName.ToString() == "Div")
+            {
+                Expr lexpr = ret;
+                Symbol op = 0;
+
+                if (_tokens.PeekToken().TokenName.ToString() == "Add")
+                {
+                    op = Symbol.add;
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "Sub")
+                {
+                    op = Symbol.sub;
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "Mul")
+                {
+                    op = Symbol.mul;
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "Div")
+                {
+                    op = Symbol.div;
+                }
+
+                _tokens.Pos++;
+
+                Expr rexpr = ParseExpr();
+
+                ret = new MathExpr(lexpr, op, rexpr);
+            }
+
+            return ret;
+        }
+
+        static List<string> ParseFuncArgs()
+        {
+            List<string> ret = new List<string>();
+
+            while (true)
+            {
+                Token tok = _tokens.GetToken();
+
+                if (tok.TokenName.ToString() == "Ident")
+                {
+                    ret.Add(tok.TokenValue.ToString());
+                }
+
+                if (_tokens.PeekToken().TokenName.ToString() == "Comma")
+                {
+                    _tokens.Pos++;
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+                {
+                    _tokens.Pos++;
+                    break;
+                }
+            }
+
+            return ret;
+        }
+
+        static List<Expr> ParseCallArgs()
+        {
+            List<Expr> ret = new List<Expr>();
+
+            while (true)
+            {
+                ret.Add(ParseExpr());
+
+                if (_tokens.PeekToken().TokenName.ToString() == "Comma")
+                {
+                    _tokens.Pos++;
+                }
+                else if (_tokens.PeekToken().TokenName.ToString() == "RightParan")
+                {
+                    _tokens.Pos++;
+                    break;
+                }
+            }
+
+            return ret;
+        }
+        #endregion
     }
-    #endregion
 }
