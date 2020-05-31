@@ -72,8 +72,6 @@ namespace AlmostBinary_Compiler
             _regExMatchCollection = new Dictionary<Tokens, MatchCollection>();
             _index = 0;
             _inputString = string.Empty;
-
-            
             
             _tokens.Add(Tokens.Import, "import".ToBinary().BinaryString); 
             _tokens.Add(Tokens.Function, "function".ToBinary().BinaryString);
@@ -98,7 +96,7 @@ namespace AlmostBinary_Compiler
             _tokens.Add(Tokens.Comma, ",".ToBinary().BinaryString);
             _tokens.Add(Tokens.Period, ".".ToBinary().BinaryString);
             _tokens.Add(Tokens.StringLiteral, $"{"\"".ToBinary().BinaryString}.*?{"\"".ToBinary().BinaryString}"); 
-            _tokens.Add(Tokens.IntLiteral, $"{"'".ToBinary().BinaryString}[0-1]*{"'".ToBinary().BinaryString}"); // TODO: remove quotes in runtime to allow calculating
+            _tokens.Add(Tokens.IntLiteral, $"{"~".ToBinary().BinaryString}[0-1]*{"~".ToBinary().BinaryString}"); 
             _tokens.Add(Tokens.Ident, "[0-1][0-1]*");
         }
         #endregion

@@ -13,6 +13,8 @@ namespace AlmostBinary_Binarify
         /// Using Binary as context as static classes cannot be used as type and extension method needs to be defined within a static class.
         /// </summary>
         private static ILogger Log => Serilog.Log.ForContext<Binary>();
+        private const string DOUBLE_QUOTES_BINARY = "00100010";
+        private const string ESCAPE_CHAR_DOUBLE_QUOTES = "0000000000000000";
         #endregion
 
         /// <summary>
@@ -28,9 +30,22 @@ namespace AlmostBinary_Binarify
                 sb.Append(Convert.ToString(c, 2).PadLeft(8, '0'));
             }
 
-            Binary b = new Binary(binaryString: sb.ToString());
+            Binary b = new Binary(binaryString: EscapeBinary(data, sb.ToString()));
             Log.Here().Information($"Converted string '{data}' to binary-string '{b.BinaryString}'");
             return b;
+        }
+
+        private static string EscapeBinary(string originalStr, string unEscapedBinaryStr)
+        {
+            string escapedBinary = unEscapedBinaryStr;
+
+            if (!originalStr.Contains("\""))
+            {
+                Log.Here().Verbose($"Escaping binary for '\"' -> {unEscapedBinaryStr}");
+                escapedBinary = unEscapedBinaryStr.Replace(DOUBLE_QUOTES_BINARY, ESCAPE_CHAR_DOUBLE_QUOTES);
+            }
+
+            return escapedBinary;
         }
 
         /// <summary>
@@ -71,23 +86,24 @@ namespace AlmostBinary_Binarify
             {
                 if (String.IsNullOrWhiteSpace(_originalString))
                 {
+                    string unEscapedBinary = _binaryString.Replace(ESCAPE_CHAR_DOUBLE_QUOTES, DOUBLE_QUOTES_BINARY);
                     try
                     {
-
                         List<Byte> byteList = new List<Byte>();
 
-                        for (int i = 0; i < _binaryString.Length; i += 8)
+                        for (int i = 0; i < unEscapedBinary.Length; i += 8)
                         {
-                            byteList.Add(Convert.ToByte(_binaryString.Substring(i, 8), 2));
+                            byteList.Add(Convert.ToByte(unEscapedBinary.Substring(i, 8), 2));
                         }
                         _originalString = Encoding.ASCII.GetString(byteList.ToArray());
 
-                    } catch(Exception ex)
+                    }
+                    catch (Exception ex)
                     {
-                        Log.Here().Error(ex, $"Provided binary doesn't seem to be valid -> '{_binaryString}'");
+                        Log.Here().Error(ex, $"Provided binary doesn't seem to be valid -> '{unEscapedBinary}'");
                         throw;
                     }
-                    Log.Here().Information($"Converted binary string back to original string: '{_binaryString}' -> '{_originalString}'");
+                    Log.Here().Information($"Converted binary string back to original string: '{unEscapedBinary}' -> '{_originalString}'");
                 }
 
                 return _originalString;

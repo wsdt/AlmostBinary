@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Binarify": {
       "commandName": "Project",
-      "commandLineArgs": "--to-binary str = \\\" \"Hello World\" PrintLine ( ) ReadLine"
+      "commandLineArgs": "--to-binary \"What's your name: \""
     }
   }
 }

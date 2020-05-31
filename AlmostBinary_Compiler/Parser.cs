@@ -136,6 +136,7 @@ namespace AlmostBinary_Compiler
             {
                 _tokens.Pos--;
                 Assign a = Assign.Parse(_tokens);
+                _tokens.Pos++;
                 _currentBlock.AddStmt(a);
             }
             else if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
