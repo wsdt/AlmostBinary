@@ -1,0 +1,162 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Logger\\AlmostBinary_Logger.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj",
+        "projectName": "AlmostBinary_GlobalConstants",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Logger\\AlmostBinary_Logger.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Logger\\AlmostBinary_Logger.csproj",
+        "projectName": "AlmostBinary_Logger",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Logger\\AlmostBinary_Logger.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Logger\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "Serilog.Sinks.Async": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
