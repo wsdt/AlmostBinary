@@ -1,10 +1,12 @@
 ﻿using AlmostBinary_Runtime.utils;
+using AlmostBinary_Runtime.Utils;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AlmostBinary_Runtime.Utils.BinaryConverter;
 
 namespace AlmostBinary_Runtime
 {
@@ -55,14 +57,21 @@ namespace AlmostBinary_Runtime
                 }
                 else if (a.StartsWith("pushInt "))
                 {
-                    int value = Convert.ToInt32(a.Substring(10));
+                    string singleQuoteStr = "'".ToBinary().BinaryString;
+                    string temp = a.Substring(10);
+                    temp = temp.Substring(
+                            temp.IndexOf(singleQuoteStr) + singleQuoteStr.Length, temp.LastIndexOf(singleQuoteStr) - singleQuoteStr.Length
+                        );
+                    int value = Convert.ToInt32(new Binary() { BinaryString = temp.Trim() }.ToString());
                     code.Write(Opcodes.pushInt);
                     code.Write(value);
                 }
                 else if (a.StartsWith("pushString "))
                 {
+                    string quoteStr = "\"".ToBinary().BinaryString;
                     string temp = a.Substring(11);
-                    string value = temp.Substring(temp.IndexOf("\"") + 1, temp.LastIndexOf("\"") - 1);
+                    string value = temp.Substring(temp.IndexOf(quoteStr) + quoteStr.Length, temp.LastIndexOf(quoteStr) - quoteStr.Length);
+                    value = new Binary() { BinaryString = value.Trim() }.ToString();
                     code.Write(Opcodes.pushString);
                     code.Write(value);
                 }

@@ -38,7 +38,7 @@ namespace AlmostBinary_Runtime
             };
             Log.Here().Verbose($"Lexer-Results: {JsonSerializer.Serialize(lexer)}");
 
-            Run(GetFunc("Main"));
+            Run(GetFunc("01001101011000010110100101101110"));
         }
         #endregion
 
@@ -356,6 +356,7 @@ namespace AlmostBinary_Runtime
                 if (f.name == name)
                 {
                     func = f;
+                    break;
                 }
             }
 

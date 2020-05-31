@@ -76,31 +76,31 @@ namespace AlmostBinary_Compiler
             _index = 0;
             _inputString = string.Empty;
 
-            _tokens.Add(Tokens.Import, "import"); //.ToBinary() something not working yet (take a look at IntLiteral)
-            _tokens.Add(Tokens.Function, "function");
-            _tokens.Add(Tokens.If, "if");
-            _tokens.Add(Tokens.ElseIf, "elseif");
-            _tokens.Add(Tokens.Else, "else");
-            _tokens.Add(Tokens.Repeat, "repeat");
-            _tokens.Add(Tokens.Return, "return");
-            _tokens.Add(Tokens.StringLiteral, "\".*?\"");
-            _tokens.Add(Tokens.IntLiteral, "[0-9][0-9]*"); // TODO: might be the problem that 01010101s not working properly as keywords.
-            _tokens.Add(Tokens.Ident, "[a-zA-Z_][a-zA-Z0-9_]*");
+            _tokens.Add(Tokens.Import, "import".ToBinary().BinaryString); 
+            _tokens.Add(Tokens.Function, "function".ToBinary().BinaryString);
+            _tokens.Add(Tokens.If, "if".ToBinary().BinaryString);
+            _tokens.Add(Tokens.ElseIf, "elseif".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Else, "else".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Repeat, "repeat".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Return, "return".ToBinary().BinaryString);
             _tokens.Add(Tokens.Whitespace, "[ \\t]+");
             _tokens.Add(Tokens.NewLine, "\\n");
-            _tokens.Add(Tokens.Add, "\\+");
-            _tokens.Add(Tokens.Sub, "\\-");
-            _tokens.Add(Tokens.Mul, "\\*");
-            _tokens.Add(Tokens.Div, "\\/");
-            _tokens.Add(Tokens.DoubleEqual, "\\==");
-            _tokens.Add(Tokens.NotEqual, "\\!=");
-            _tokens.Add(Tokens.Equal, "\\=");
-            _tokens.Add(Tokens.LeftParan, "\\(");
-            _tokens.Add(Tokens.RightParan, "\\)");
-            _tokens.Add(Tokens.LeftBrace, "\\{");
-            _tokens.Add(Tokens.RightBrace, "\\}");
-            _tokens.Add(Tokens.Comma, "\\,");
-            _tokens.Add(Tokens.Period, "\\.");
+            _tokens.Add(Tokens.Add, "+".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Sub, "-".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Mul, "*".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Div, "/".ToBinary().BinaryString);
+            _tokens.Add(Tokens.DoubleEqual, "==".ToBinary().BinaryString);
+            _tokens.Add(Tokens.NotEqual, "!=".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Equal, "=".ToBinary().BinaryString);
+            _tokens.Add(Tokens.LeftParan, "(".ToBinary().BinaryString);
+            _tokens.Add(Tokens.RightParan, ")".ToBinary().BinaryString);
+            _tokens.Add(Tokens.LeftBrace, "{".ToBinary().BinaryString);
+            _tokens.Add(Tokens.RightBrace, "}".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Comma, ",".ToBinary().BinaryString);
+            _tokens.Add(Tokens.Period, ".".ToBinary().BinaryString);
+            _tokens.Add(Tokens.StringLiteral, $"{"\"".ToBinary().BinaryString}.*?{"\"".ToBinary().BinaryString}"); 
+            _tokens.Add(Tokens.IntLiteral, $"{"'".ToBinary().BinaryString}[0-1]*{"'".ToBinary().BinaryString}"); // TODO: remove quotes in runtime to allow calculating
+            _tokens.Add(Tokens.Ident, "[0-1][0-1]*");
         }
         #endregion
 
@@ -145,6 +145,7 @@ namespace AlmostBinary_Compiler
                 }
             }
             _index++;
+            
             return new Token(Tokens.Undefined, string.Empty);
         }
 
