@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AlmostBinary_Binarify": {
+      "commandName": "Project",
+      "commandLineArgs": "--to-string \"0111011000110001\""
+    }
+  }
+}

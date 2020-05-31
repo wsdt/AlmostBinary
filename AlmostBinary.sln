@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmostBinary_Runtime", "Alm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmostBinary_Compiler.Tests", "AlmostBinary_Compiler.Tests\AlmostBinary_Compiler.Tests.csproj", "{48817AFE-17A3-4F85-8624-28195D2323CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmostBinary_Runtime.Tests", "AlmostBinary_Runtime.Tests\AlmostBinary_Runtime.Tests.csproj", "{2D23DDD8-DFBD-4E3A-9402-27FDC729A51E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmostBinary_Runtime.Tests", "AlmostBinary_Runtime.Tests\AlmostBinary_Runtime.Tests.csproj", "{2D23DDD8-DFBD-4E3A-9402-27FDC729A51E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmostBinary_Binarify", "AlmostBinary_Binarify\AlmostBinary_Binarify.csproj", "{95574EDD-ADE9-498C-B4FF-49BEC9599D01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2D23DDD8-DFBD-4E3A-9402-27FDC729A51E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D23DDD8-DFBD-4E3A-9402-27FDC729A51E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D23DDD8-DFBD-4E3A-9402-27FDC729A51E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95574EDD-ADE9-498C-B4FF-49BEC9599D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95574EDD-ADE9-498C-B4FF-49BEC9599D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95574EDD-ADE9-498C-B4FF-49BEC9599D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95574EDD-ADE9-498C-B4FF-49BEC9599D01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

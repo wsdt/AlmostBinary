@@ -111,3 +111,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\testhost.exe
