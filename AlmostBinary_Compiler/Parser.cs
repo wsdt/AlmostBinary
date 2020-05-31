@@ -130,6 +130,7 @@ namespace AlmostBinary_Compiler
             {
                 _blockstack.Push(_currentBlock);
                 _currentBlock = new RepeatBlock();
+                _tokens.Pos++;
             }
         }
 

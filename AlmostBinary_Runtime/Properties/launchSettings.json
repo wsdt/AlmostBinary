@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Runtime": {
       "commandName": "Project",
-      "commandLineArgs": "\"../../../../compiled/helloworld.wsdt\"",
+      "commandLineArgs": "\"../../../../compiled/repeat.wsdt\"",
       "nativeDebugging": false
     }
   }
