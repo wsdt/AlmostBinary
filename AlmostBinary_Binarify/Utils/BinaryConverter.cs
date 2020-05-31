@@ -1,4 +1,4 @@
-﻿using AlmostBinary_Binarify.Utils;
+﻿using AlmostBinary_Binarify.utils;
 using Serilog;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using AlmostBinary_Binarify.Global;
+﻿using AlmostBinary_GlobalConstants;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -6,11 +6,11 @@ using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.IO;
-using AlmostBinary_Binarify.Utils;
+using AlmostBinary_Binarify.utils;
 
 namespace AlmostBinary_Binarify
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Used to bring at least some context to the Program class, otherwise most context fields in outputTemplate would be empty.

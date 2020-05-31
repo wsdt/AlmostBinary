@@ -1,12 +1,9 @@
 ﻿using Serilog;
-using System;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace AlmostBinary_Binarify.Utils
+namespace AlmostBinary_Binarify.utils
 {
-    public static class LoggerExtensions
+    internal static class LoggerExtensions
     {
         public static ILogger Here(this ILogger logger,
             [CallerMemberName] string memberName = "",

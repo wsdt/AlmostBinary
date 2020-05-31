@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
-using AlmostBinary_Compiler.Global;
 using Serilog;
 using Microsoft.Extensions.Configuration;
 using AlmostBinary_Compiler.utils;
 using System.Security.Cryptography;
 using System.Text.Json;
+using AlmostBinary_GlobalConstants;
 
 namespace AlmostBinary_Compiler
 {

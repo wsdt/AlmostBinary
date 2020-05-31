@@ -1,5 +1,5 @@
-﻿using AlmostBinary_Runtime;
-using AlmostBinary_Runtime.Global;
+﻿using AlmostBinary_GlobalConstants;
+using AlmostBinary_Runtime;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;

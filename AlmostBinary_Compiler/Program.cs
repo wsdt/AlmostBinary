@@ -1,11 +1,10 @@
-﻿using AlmostBinary_Compiler.Global;
+﻿using AlmostBinary_GlobalConstants;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
-using System.Diagnostics.Tracing;
 using System.IO;
 
 namespace AlmostBinary_Compiler

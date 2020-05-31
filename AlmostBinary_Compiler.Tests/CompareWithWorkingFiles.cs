@@ -1,9 +1,7 @@
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
-using System.Reflection.Metadata;
-using AlmostBinary_Compiler.Tests;
 using AlmostBinary_Compiler.Tests.utils;
+using AlmostBinary_GlobalConstants.Test;
 
 namespace AlmostBinary_Compiler.Tests
 {
@@ -19,10 +17,10 @@ namespace AlmostBinary_Compiler.Tests
 
         private void Compare(string fileName)
         {
-            fileName += $".{IGlobalConstants.COMPILED_FILE_TYPE}";
+            fileName += $".{IGlobalTestConstants.COMPILED_FILE_TYPE}";
             Assert.AreEqual(
-                ReadFile(Path.Combine(IGlobalConstants.COMPILED_PATH, fileName)),
-                ReadFile(Path.Combine(IGlobalConstants.WORKING_PATH, fileName)));
+                ReadFile(Path.Combine(IGlobalTestConstants.COMPILED_PATH, fileName)),
+                ReadFile(Path.Combine(IGlobalTestConstants.WORKING_PATH, fileName)));
         }
 
 
@@ -34,21 +32,21 @@ namespace AlmostBinary_Compiler.Tests
         public static void CompileAllFiles(TestContext _) => HelperMethods.CompileAll();
 
         [TestMethod]
-        public void CompareRepeat() => Compare(IGlobalConstants.REPEAT);
+        public void CompareRepeat() => Compare(IGlobalTestConstants.REPEAT);
 
         [TestMethod]
-        public void CompareCall() => Compare(IGlobalConstants.CALL);
+        public void CompareCall() => Compare(IGlobalTestConstants.CALL);
 
         [TestMethod]
-        public void CompareHelloWorld() => Compare(IGlobalConstants.HELLO_WORLD);
+        public void CompareHelloWorld() => Compare(IGlobalTestConstants.HELLO_WORLD);
 
         [TestMethod]
-        public void CompareIf() => Compare(IGlobalConstants.IF);
+        public void CompareIf() => Compare(IGlobalTestConstants.IF);
 
         [TestMethod]
-        public void CompareInput() => Compare(IGlobalConstants.INPUT);
+        public void CompareInput() => Compare(IGlobalTestConstants.INPUT);
 
         [TestMethod]
-        public void CompareVariable() => Compare(IGlobalConstants.VARIABLE);
+        public void CompareVariable() => Compare(IGlobalTestConstants.VARIABLE);
     }
 }

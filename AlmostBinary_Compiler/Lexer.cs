@@ -1,13 +1,10 @@
 ﻿using AlmostBinary_Compiler.utils;
-using AlmostBinary_Compiler.Utils;
+using AlmostBinary_Binarify.utils;
 using Serilog;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using AlmostBinary_Binarify;
 
 namespace AlmostBinary_Compiler
 {
@@ -76,6 +73,8 @@ namespace AlmostBinary_Compiler
             _index = 0;
             _inputString = string.Empty;
 
+            
+            
             _tokens.Add(Tokens.Import, "import".ToBinary().BinaryString); 
             _tokens.Add(Tokens.Function, "function".ToBinary().BinaryString);
             _tokens.Add(Tokens.If, "if".ToBinary().BinaryString);

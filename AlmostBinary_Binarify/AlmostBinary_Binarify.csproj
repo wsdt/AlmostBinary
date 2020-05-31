@@ -16,4 +16,8 @@
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AlmostBinary_GlobalConstants\AlmostBinary_GlobalConstants.csproj" />
+  </ItemGroup>
+
 </Project>

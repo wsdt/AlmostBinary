@@ -35,3 +35,9 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\D
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\Serilog.Sinks.Async.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.csproj.CoreCompileInputs.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb

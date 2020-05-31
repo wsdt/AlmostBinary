@@ -444,6 +444,37 @@
         "compile": {
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
+      },
+      "AlmostBinary_Binarify/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AlmostBinary_GlobalConstants": "1.0.0",
+          "Microsoft.Extensions.Configuration": "3.1.4",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
+          "Microsoft.Extensions.Configuration.Json": "3.1.4",
+          "Microsoft.Extensions.DependencyInjection": "3.1.4",
+          "Serilog": "2.9.0",
+          "Serilog.Sinks.Async": "1.4.0",
+          "Serilog.Sinks.Console": "3.1.1",
+          "Serilog.Sinks.File": "4.1.0"
+        },
+        "compile": {
+          "bin/placeholder/AlmostBinary_Binarify.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AlmostBinary_Binarify.dll": {}
+        }
+      },
+      "AlmostBinary_GlobalConstants/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/AlmostBinary_GlobalConstants.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AlmostBinary_GlobalConstants.dll": {}
+        }
       }
     }
   },
@@ -1844,10 +1875,22 @@
         "system.threading.timer.4.0.1.nupkg.sha512",
         "system.threading.timer.nuspec"
       ]
+    },
+    "AlmostBinary_Binarify/1.0.0": {
+      "type": "project",
+      "path": "../AlmostBinary_Binarify/AlmostBinary_Binarify.csproj",
+      "msbuildProject": "../AlmostBinary_Binarify/AlmostBinary_Binarify.csproj"
+    },
+    "AlmostBinary_GlobalConstants/1.0.0": {
+      "type": "project",
+      "path": "../AlmostBinary_GlobalConstants/AlmostBinary_GlobalConstants.csproj",
+      "msbuildProject": "../AlmostBinary_GlobalConstants/AlmostBinary_GlobalConstants.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AlmostBinary_Binarify >= 1.0.0",
+      "AlmostBinary_GlobalConstants >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 3.1.4",
       "Microsoft.Extensions.Configuration.Binder >= 3.1.4",
       "Microsoft.Extensions.Configuration.Json >= 3.1.4",
@@ -1888,7 +1931,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj": {
+              "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj"
+            },
+            "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+              "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

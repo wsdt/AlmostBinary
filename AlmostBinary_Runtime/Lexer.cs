@@ -1,12 +1,13 @@
 ﻿using AlmostBinary_Runtime.utils;
-using AlmostBinary_Runtime.Utils;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static AlmostBinary_Runtime.Utils.BinaryConverter;
+using AlmostBinary_Binarify;
+using AlmostBinary_Binarify.utils;
+using static AlmostBinary_Binarify.BinaryConverter;
 
 namespace AlmostBinary_Runtime
 {

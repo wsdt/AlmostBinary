@@ -1,10 +1,7 @@
-﻿using Serilog.Events;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Text;
 
-namespace AlmostBinary_Runtime.Global
+namespace AlmostBinary_GlobalConstants
 {
     /// <summary>
     /// Global constants calculated at runtime. Prefer using appsettings.json
