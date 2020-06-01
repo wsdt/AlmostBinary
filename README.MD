@@ -37,6 +37,7 @@ Thus, some "binary" code written will be compiled to normal strings and other bi
 
 
 ## TO-DOs
+- Add Docker Support
 - Add blockchain library
 - Add quantum computing library
 - Improve performance of compiler & runtime
