@@ -31,7 +31,7 @@ namespace AlmostBinary_Binarify
             }
 
             Binary b = new Binary(binaryString: EscapeBinary(data, sb.ToString()));
-            Log.Here().Information($"Converted string '{data}' to binary-string '{b.BinaryString}'");
+            Log.Here().Debug($"Converted string '{data}' to binary-string '{b.BinaryString}'");
             return b;
         }
 
@@ -86,6 +86,7 @@ namespace AlmostBinary_Binarify
             {
                 if (String.IsNullOrWhiteSpace(_originalString))
                 {
+                    // Unescape previously removed characters/key-words (e.g. double quotes) which can occur as part of a string or similar.
                     string unEscapedBinary = _binaryString.Replace(ESCAPE_CHAR_DOUBLE_QUOTES, DOUBLE_QUOTES_BINARY);
                     try
                     {
@@ -103,7 +104,7 @@ namespace AlmostBinary_Binarify
                         Log.Here().Error(ex, $"Provided binary doesn't seem to be valid -> '{unEscapedBinary}'");
                         throw;
                     }
-                    Log.Here().Information($"Converted binary string back to original string: '{unEscapedBinary}' -> '{_originalString}'");
+                    Log.Here().Debug($"Converted binary string back to original string: '{unEscapedBinary}' -> '{_originalString}'");
                 }
 
                 return _originalString;
