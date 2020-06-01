@@ -1,5 +1,7 @@
-# Almost Binary [![HitCount](http://hits.dwyl.com/wsdt/AlmostBinary.svg)](http://hits.dwyl.com/wsdt/AlmostBinary) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/AlmostBinary.svg)](https://github.com/wsdt/AlmostBinary/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-CSharp-37f)](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
-This compiler & runtime will be improved continuously. Please be clement, as this is the first time implementing a compiler and runtime.
+# Almost Binary [![HitCount](http://hits.dwyl.com/wsdt/AlmostBinary.svg)](http://hits.dwyl.com/wsdt/AlmostBinary) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/AlmostBinary.svg)](https://github.com/wsdt/AlmostBinary/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-CSharp-37f)](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) [![Donate](https://img.shields.io/badge/Donate-Pay%20me%20a%20coffee-3cf)](https://github.com/wsdt/AlmostBinary/wiki/Donation)
+This compiler & runtime will be improved continuously. Please be clement, as this is my first time implementing a compiler and runtime.
+
+**Take a look at the documentation: [Almost Binary - Wiki](https://github.com/wsdt/AlmostBinary/wiki)**
 
 ## Code Once, Run Everywhere. 
 Code in platform-independent Binary. It was never so easy to proof that you are a real geek. 
@@ -8,6 +10,7 @@ This programming language is made for people, who..
 - ..always wanted to code in Binary.
 - ..love real challenges.
 - ..want to bring their programming skills to the next level.
+- ..want to run binary-programs on any machine.
 
 ## Example
 You will find some [example files here](https://github.com/wsdt/AlmostBinary/tree/master/examples).
@@ -37,8 +40,12 @@ Thus, some "binary" code written will be compiled to normal strings and other bi
 
 
 ## TO-DOs
+- Add more unit- and integration tests
+- Git-Action/Workflow for tests (not working yet)
+- Improve documentation (wiki) and add a CONTRIBUTION.md
+- Add Compiler and Runtime [installer (two separate)](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html)
 - Add Docker Support
-- Add blockchain library
+- Add [blockchain library](https://www.c-sharpcorner.com/article/blockchain-basics-building-a-blockchain-in-net-core/), maybe even [smart-contracts](https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/blockchain-programming-smart-contracts-in-csharp)
 - Add quantum computing library
 - Improve performance of compiler & runtime
 
@@ -52,6 +59,9 @@ This project is licensed under GNU V3, so contributions/pull-requests are welcom
 
 ### Additional notes
 Almost Binary is supposed to be an esoteric programming language and is surely not suitable for real-world programs.
+
+#### More resources
+- [Esolang-Wiki](https://esolangs.org/wiki/Almost_Binary)
 
 #### Template
 This project was inspried by **[Klip](https://github.com/TimeLoad00/Klip)**.
