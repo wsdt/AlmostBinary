@@ -1,5 +1,5 @@
 # Almost Binary [![HitCount](http://hits.dwyl.com/wsdt/AlmostBinary.svg)](http://hits.dwyl.com/wsdt/AlmostBinary) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/AlmostBinary.svg)](https://github.com/wsdt/AlmostBinary/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-CSharp-37f)](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
-This compiler & runtime will be improved continuously. Please be clement, as this is my first time implementing a compiler and runtime.
+This compiler & runtime will be improved continuously. Please be clement, as this is the first time implementing a compiler and runtime.
 
 ## Code Once, Run Everywhere. 
 Code in platform-independent Binary. It was never so easy to proof that you are a real geek. 
@@ -24,7 +24,7 @@ Simple hello-world program:
 00100010 00101001 0101001001100101011000010110010001001100011010010110111001100101 
 0010100000101001 01111101
 ```
-Of course you can remove all tabs and newlines. Removing spaces is only supported in some cases as I didn't want to improve too much delimiters (e.g. 8 zeros).
+Of course you can remove all tabs and newlines. Removing spaces is only supported in some cases as I didn't want to introduce too much delimiters (e.g. 8 zeros).
 
 ## Why I made this
 Esoteric languages like [WhiteSpace](https://esolangs.org/wiki/Whitespace), [Brainfuck](https://esolangs.org/wiki/Brainfuck) or [Arnold-C](https://esolangs.org/wiki/ArnoldC) have inspired me to write my own compiler & runtime. 
@@ -37,6 +37,7 @@ Thus, some "binary" code written will be compiled to normal strings and other bi
 
 
 ## TO-DOs
+- Add Docker Support
 - Add blockchain library
 - Add quantum computing library
 - Improve performance of compiler & runtime
