@@ -24,7 +24,7 @@ Simple hello-world program:
 00100010 00101001 0101001001100101011000010110010001001100011010010110111001100101 
 0010100000101001 01111101
 ```
-Of course you can remove all tabs and newlines. Removing spaces is only supported in some cases as I didn't want to improve too much delimiters (e.g. 8 zeros).
+Of course you can remove all tabs and newlines. Removing spaces is only supported in some cases as I didn't want to introduce too much delimiters (e.g. 8 zeros).
 
 ## Why I made this
 Esoteric languages like [WhiteSpace](https://esolangs.org/wiki/Whitespace), [Brainfuck](https://esolangs.org/wiki/Brainfuck) or [Arnold-C](https://esolangs.org/wiki/ArnoldC) have inspired me to write my own compiler & runtime. 
