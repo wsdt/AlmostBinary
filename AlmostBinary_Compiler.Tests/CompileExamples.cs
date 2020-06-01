@@ -1,4 +1,4 @@
-using AlmostBinary_Compiler.Tests.utils;
+using AlmostBinary_HelperMethods.Tests;
 using AlmostBinary_GlobalConstants.Test;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,21 +8,21 @@ namespace AlmostBinary_Compiler.Tests
     public class CompileExamples
     {
         [TestMethod]
-        public void CompileRepeat() => HelperMethods.Compile(IGlobalTestConstants.REPEAT);
+        public void CompileRepeat() => CompilerTestHelper.Compile(IGlobalTestConstants.REPEAT);
 
         [TestMethod]
-        public void CompileCall() => HelperMethods.Compile(IGlobalTestConstants.CALL);
+        public void CompileCall() => CompilerTestHelper.Compile(IGlobalTestConstants.CALL);
 
         [TestMethod]
-        public void CompileHelloWorld() => HelperMethods.Compile(IGlobalTestConstants.HELLO_WORLD);
+        public void CompileHelloWorld() => CompilerTestHelper.Compile(IGlobalTestConstants.HELLO_WORLD);
 
         [TestMethod]
-        public void CompileIf() => HelperMethods.Compile(IGlobalTestConstants.IF);
+        public void CompileIf() => CompilerTestHelper.Compile(IGlobalTestConstants.IF);
 
         [TestMethod]
-        public void CompileInput() => HelperMethods.Compile(IGlobalTestConstants.INPUT);
+        public void CompileInput() => CompilerTestHelper.Compile(IGlobalTestConstants.INPUT);
 
         [TestMethod]
-        public void CompileVariable() => HelperMethods.Compile(IGlobalTestConstants.VARIABLE);
+        public void CompileVariable() => CompilerTestHelper.Compile(IGlobalTestConstants.VARIABLE);
     }
 }

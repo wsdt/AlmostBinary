@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AlmostBinary_GlobalConstants\AlmostBinary_GlobalConstants.csproj" />
-    <ProjectReference Include="..\AlmostBinary_Runtime\AlmostBinary_Runtime.csproj" />
+    <ProjectReference Include="..\AlmostBinary_HelperMethods.Tests\AlmostBinary_HelperMethods.Tests.csproj" />
   </ItemGroup>
 
 </Project>

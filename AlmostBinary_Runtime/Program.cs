@@ -8,7 +8,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.IO;
 
-namespace AlmostBinary_Compiler
+namespace AlmostBinary_Runtime
 {
     public class Program
     {

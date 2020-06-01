@@ -1,4 +1,4 @@
-using AlmostBinary_Compiler.Tests.utils;
+using AlmostBinary_HelperMethods.Tests;
 using AlmostBinary_GlobalConstants.Test;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
@@ -29,7 +29,7 @@ namespace AlmostBinary_Compiler.Tests
         /// Possible alternative if performance is a concern: Add tests to playlist to ensure correct execution order.
         /// </summary>
         [ClassInitialize()]
-        public static void CompileAllFiles(TestContext _) => HelperMethods.CompileAll();
+        public static void CompileAllFiles(TestContext _) => CompilerTestHelper.CompileAll();
 
         [TestMethod]
         public void CompareRepeat() => Compare(IGlobalTestConstants.REPEAT);

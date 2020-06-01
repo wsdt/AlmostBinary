@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Compiler": {
       "commandName": "Project",
-      "commandLineArgs": "\"../../../../examples/helloworld.abin\"",
+      "commandLineArgs": "\"../../../../examples/variable.abin\"",
       "nativeDebugging": false
     }
   }

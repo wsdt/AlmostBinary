@@ -1833,6 +1833,28 @@
           "bin/placeholder/AlmostBinary_Binarify.dll": {}
         }
       },
+      "AlmostBinary_Compiler/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AlmostBinary_Binarify": "1.0.0",
+          "AlmostBinary_GlobalConstants": "1.0.0",
+          "Microsoft.Extensions.Configuration": "3.1.4",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
+          "Microsoft.Extensions.Configuration.Json": "3.1.4",
+          "Microsoft.Extensions.DependencyInjection": "3.1.4",
+          "Serilog": "2.9.0",
+          "Serilog.Sinks.Async": "1.4.0",
+          "Serilog.Sinks.Console": "3.1.1",
+          "Serilog.Sinks.File": "4.1.0"
+        },
+        "compile": {
+          "bin/placeholder/AlmostBinary_Compiler.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AlmostBinary_Compiler.dll": {}
+        }
+      },
       "AlmostBinary_GlobalConstants/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1841,6 +1863,22 @@
         },
         "runtime": {
           "bin/placeholder/AlmostBinary_GlobalConstants.dll": {}
+        }
+      },
+      "AlmostBinary_HelperMethods.Tests/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AlmostBinary_Compiler": "1.0.0",
+          "AlmostBinary_GlobalConstants": "1.0.0",
+          "AlmostBinary_Runtime": "1.0.0",
+          "MSTest.TestFramework": "2.1.1"
+        },
+        "compile": {
+          "bin/placeholder/AlmostBinary_HelperMethods.Tests.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AlmostBinary_HelperMethods.Tests.dll": {}
         }
       },
       "AlmostBinary_Runtime/1.0.0": {
@@ -6195,10 +6233,20 @@
       "path": "../AlmostBinary_Binarify/AlmostBinary_Binarify.csproj",
       "msbuildProject": "../AlmostBinary_Binarify/AlmostBinary_Binarify.csproj"
     },
+    "AlmostBinary_Compiler/1.0.0": {
+      "type": "project",
+      "path": "../AlmostBinary_Compiler/AlmostBinary_Compiler.csproj",
+      "msbuildProject": "../AlmostBinary_Compiler/AlmostBinary_Compiler.csproj"
+    },
     "AlmostBinary_GlobalConstants/1.0.0": {
       "type": "project",
       "path": "../AlmostBinary_GlobalConstants/AlmostBinary_GlobalConstants.csproj",
       "msbuildProject": "../AlmostBinary_GlobalConstants/AlmostBinary_GlobalConstants.csproj"
+    },
+    "AlmostBinary_HelperMethods.Tests/1.0.0": {
+      "type": "project",
+      "path": "../AlmostBinary_HelperMethods.Tests/AlmostBinary_HelperMethods.Tests.csproj",
+      "msbuildProject": "../AlmostBinary_HelperMethods.Tests/AlmostBinary_HelperMethods.Tests.csproj"
     },
     "AlmostBinary_Runtime/1.0.0": {
       "type": "project",
@@ -6209,7 +6257,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AlmostBinary_GlobalConstants >= 1.0.0",
-      "AlmostBinary_Runtime >= 1.0.0",
+      "AlmostBinary_HelperMethods.Tests >= 1.0.0",
       "MSTest.TestAdapter >= 2.1.1",
       "MSTest.TestFramework >= 2.1.1",
       "Microsoft.NET.Test.Sdk >= 16.6.1",
@@ -6250,8 +6298,8 @@
             "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
               "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
             },
-            "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj": {
-              "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj"
+            "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj": {
+              "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj"
             }
           }
         }
@@ -6294,12 +6342,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

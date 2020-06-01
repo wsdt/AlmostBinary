@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "AlmostBinary_Compiler": {
-      "commandName": "Project",
-      "commandLineArgs": "\"../../../../examples/call.abin\"",
-      "nativeDebugging": false
-    }
-  }
-}
