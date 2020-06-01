@@ -1,5 +1,5 @@
 # Almost Binary [![HitCount](http://hits.dwyl.com/wsdt/AlmostBinary.svg)](http://hits.dwyl.com/wsdt/AlmostBinary) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/AlmostBinary.svg)](https://github.com/wsdt/AlmostBinary/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-CSharp-37f)](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
-This compiler & runtime will be improved continuously. Please be clement, as this is my first time implementing a compiler and runtime.
+This compiler & runtime will be improved continuously. Please be clement, as this is the first time implementing a compiler and runtime.
 
 ## Code Once, Run Everywhere. 
 Code in platform-independent Binary. It was never so easy to proof that you are a real geek. 
