@@ -10,6 +10,7 @@ This programming language is made for people, who..
 - ..always wanted to code in Binary.
 - ..love real challenges.
 - ..want to bring their programming skills to the next level.
+- ..want to run binary-programs on any machine.
 
 ## Example
 You will find some [example files here](https://github.com/wsdt/AlmostBinary/tree/master/examples).
