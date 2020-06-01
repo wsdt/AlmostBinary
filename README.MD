@@ -60,5 +60,8 @@ This project is licensed under GNU V3, so contributions/pull-requests are welcom
 ### Additional notes
 Almost Binary is supposed to be an esoteric programming language and is surely not suitable for real-world programs.
 
+#### More resources
+- [Esolang-Wiki](https://esolangs.org/wiki/Almost_Binary)
+
 #### Template
 This project was inspried by **[Klip](https://github.com/TimeLoad00/Klip)**.
