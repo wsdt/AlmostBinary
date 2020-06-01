@@ -1,22 +1,56 @@
-**First orientation and draft by [Klip](https://github.com/TimeLoad00/Klip)**
+# Almost Binary [![HitCount](http://hits.dwyl.com/wsdt/AlmostBinary.svg)](http://hits.dwyl.com/wsdt/AlmostBinary) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/AlmostBinary.svg)](https://github.com/wsdt/AlmostBinary/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-CSharp-37f)](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
+This compiler & runtime will be improved continuously. Please be clement, as this is my first time implementing a compiler and runtime.
+
+## Code Once, Run Everywhere. 
+Code in platform-independent Binary. It was never so easy to proof that you are a real geek. 
+
+This programming language is made for people, who..
+- ..always wanted to code in Binary.
+- ..love real challenges.
+- ..want to bring their programming skills to the next level.
+
+## Example
+You will find some [example files here](https://github.com/wsdt/AlmostBinary/tree/master/examples).
+Simple hello-world program: 
+
+```
+011010010110110101110000011011110111001001110100 
+011100110111100101110011011101000110010101101101 
+0110011001110101011011100110001101110100011010010110111101101110 
+01001101011000010110100101101110 0010100000101001 01111011 
+010100000111001001101001011011100111010001001100011010010110111001100101 
+00101000 00100010 
+0100100001100101011011000110110001101111001000000101011101101111011100100110110001100100 
+00100010 00101001 0101001001100101011000010110010001001100011010010110111001100101 
+0010100000101001 01111101
+```
+Of course you can remove all tabs and newlines. Removing spaces is only supported in some cases as I didn't want to improve too much delimiters (e.g. 8 zeros).
+
+## Why I made this
+Esoteric languages like [WhiteSpace](https://esolangs.org/wiki/Whitespace), [Brainfuck](https://esolangs.org/wiki/Brainfuck) or [Arnold-C](https://esolangs.org/wiki/ArnoldC) have inspired me to write my own compiler & runtime. 
+In the very beginnings of my programming-journey, I thought that programmers and hackers code today's applications in Binary. As most, even non-tech people, know today, this is not the case.
+The closest you can get is actually coding [Assembly](https://en.wikipedia.org/wiki/Assembly_language) or if you know Assembly really well, even real machine code. Nevertheless, coding in real binary is incredible difficult
+and runs only on a set of processors. Thus, you will have to adapt your binary code to the target machine. 
+
+This project should make it possible to write **platform-independent binary**. Of course, you are not coding in real binary, like you would if you go the assembly way. 
+Thus, some "binary" code written will be compiled to normal strings and other binary-strings will be interpreted at runtime.
 
 
-Klip is a simple, compiled programming language that I wrote to help others understand how to write their own programming languages. I have been writing my own programming and scripting languages for a number of years and I realise that there's a lack of example code and tutorials on how to do so and thus I wrote the Klip language as a simple example on how one might start writing their own programming language.
+## TO-DOs
+- Add blockchain library
+- Add quantum computing library
+- Improve performance of compiler & runtime
 
-Due to the reason why I created this programming language it is not full-featured but it has enough features to be used as a base for anyone who is looking to create their own programming language. The features are:
-    - Functional language
-    - Function
-    - Variables
-    - Printing to the screen
-    - Input from the keyboard
-    - If, elseif and else statements
-    - Repeat loops
-While and for loops have not been included because I don't want to spoon-feed whoever is wanting to learn how to create their own programming language. If they want to add while and for loops then they'll have to figure it out for themselves (it really isn't that hard).
+## Contribution [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-Klip comes in two parts: Klip Runtime (KlipRT) and Klip Compiler. The KlipRT is a simple program that is able to run low-level code. I wouldn't go as far to say that it's a virtual machine, it doesn't work at a low level like virtual machines, it just execute the low-level code that is generated from the Klip Compiler.
+This project is licensed under GNU V3, so contributions/pull-requests are welcome. All contributors get listed here. 
 
-The Klip Compiler takes high-level code as its input and compiles it down to low-level code that the KlipRT can execute.
+**Contributors** [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
+- Kevin Riedl ([WSDT](https://github.com/wsdt))
 
-Even though I say this is a "simple programming language", if you do not already have an understanding of how programming languages work then this may still be confusing. In the future I plan to create a tutorial series that aims to teach people how to create their own programming language starting from the very basics and leading up to the level of Klip where people will hopefully have enough understanding to continue developing their own language.
 
-The KlipBundleC# is a zip file that you can download which contains all the source code, the compiled programs and example code for you to compile and execute yourself. There's also example code in the examples folder.
+### Additional notes
+Almost Binary is supposed to be an esoteric programming language and is surely not suitable for real-world programs.
+
+#### Template
+This project was inspried by **[Klip](https://github.com/TimeLoad00/Klip)**.
