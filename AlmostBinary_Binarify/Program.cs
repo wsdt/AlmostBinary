@@ -1,4 +1,5 @@
-﻿using AlmostBinary_GlobalConstants;
+﻿using AlmostBinary_Binarify.utils;
+using AlmostBinary_GlobalConstants;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -6,7 +7,6 @@ using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.IO;
-using AlmostBinary_Binarify.utils;
 
 namespace AlmostBinary_Binarify
 {
@@ -27,7 +27,8 @@ namespace AlmostBinary_Binarify
             try
             {
                 serviceProvider.GetService<Startup>().Run(args);
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 StartupLogger.Here().Fatal(ex, $"Ooops, something went wrong with Binarify.");
             }

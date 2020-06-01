@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "AlmostBinary_GlobalConstants/1.0.0": {
+        "runtime": {
+          "AlmostBinary_GlobalConstants.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AlmostBinary_GlobalConstants/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

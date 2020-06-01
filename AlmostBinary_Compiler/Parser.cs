@@ -41,9 +41,9 @@ namespace AlmostBinary_Compiler
                     break;
                 }
 
-                switch(tok.TokenName)
+                switch (tok.TokenName)
                 {
-                    case Lexer.Tokens.Import: Startup.Imports.Add(ParseImport());  break;
+                    case Lexer.Tokens.Import: Startup.Imports.Add(ParseImport()); break;
                     case Lexer.Tokens.Function: ParseFunction(); break;
                     case Lexer.Tokens.If: ParseIf(); break;
                     case Lexer.Tokens.ElseIf: ParseElseIf(); break;

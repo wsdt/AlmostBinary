@@ -1,9 +1,9 @@
-﻿using System;
+﻿using AlmostBinary_Runtime.utils;
+using Microsoft.Extensions.Configuration;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using Serilog;
-using Microsoft.Extensions.Configuration;
-using AlmostBinary_Runtime.utils;
 
 namespace AlmostBinary_Runtime
 {
@@ -37,7 +37,8 @@ namespace AlmostBinary_Runtime
                 Log.Here().Verbose($"Input-File: '{code}'");
                 Log.Here().Information("Starting Runtime.");
                 Runtime runtime = new Runtime(code);
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 // Top-level logging for uncaught/propagated exceptions
                 Log.Here().Fatal(ex, "Code Interpretation failed.");

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlmostBinary_Compiler
 {
- 
+
     class Stmt { }
 
-    class Expr {
+    class Expr
+    {
         #region methods
         public static Expr Parse(TokenList _tokens)
         {

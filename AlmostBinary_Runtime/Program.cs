@@ -6,7 +6,6 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
-using System.Diagnostics.Tracing;
 using System.IO;
 
 namespace AlmostBinary_Compiler
@@ -75,7 +74,7 @@ namespace AlmostBinary_Compiler
         {
             string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} - {SourceContext}:{MemberName}:{LineNumber}{NewLine}{Exception}";
             LogEventLevel logLevel = configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel");
-            
+
             return new LoggerConfiguration()
             .Enrich.FromLogContext()
             .MinimumLevel.Verbose()

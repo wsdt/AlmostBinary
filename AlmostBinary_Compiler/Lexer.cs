@@ -1,10 +1,10 @@
-﻿using AlmostBinary_Compiler.utils;
+﻿using AlmostBinary_Binarify;
 using AlmostBinary_Binarify.utils;
+using AlmostBinary_Compiler.utils;
 using Serilog;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using AlmostBinary_Binarify;
 
 namespace AlmostBinary_Compiler
 {
@@ -72,8 +72,8 @@ namespace AlmostBinary_Compiler
             _regExMatchCollection = new Dictionary<Tokens, MatchCollection>();
             _index = 0;
             _inputString = string.Empty;
-            
-            _tokens.Add(Tokens.Import, "import".ToBinary().BinaryString); 
+
+            _tokens.Add(Tokens.Import, "import".ToBinary().BinaryString);
             _tokens.Add(Tokens.Function, "function".ToBinary().BinaryString);
             _tokens.Add(Tokens.If, "if".ToBinary().BinaryString);
             _tokens.Add(Tokens.ElseIf, "elseif".ToBinary().BinaryString);
@@ -95,8 +95,8 @@ namespace AlmostBinary_Compiler
             _tokens.Add(Tokens.RightBrace, "}".ToBinary().BinaryString);
             _tokens.Add(Tokens.Comma, ",".ToBinary().BinaryString);
             _tokens.Add(Tokens.Period, ".".ToBinary().BinaryString);
-            _tokens.Add(Tokens.StringLiteral, $"{"\"".ToBinary().BinaryString}.*?{"\"".ToBinary().BinaryString}"); 
-            _tokens.Add(Tokens.IntLiteral, $"{"~".ToBinary().BinaryString}[0-1]*{"~".ToBinary().BinaryString}"); 
+            _tokens.Add(Tokens.StringLiteral, $"{"\"".ToBinary().BinaryString}.*?{"\"".ToBinary().BinaryString}");
+            _tokens.Add(Tokens.IntLiteral, $"{"~".ToBinary().BinaryString}[0-1]*{"~".ToBinary().BinaryString}");
             _tokens.Add(Tokens.Ident, "[0-1][0-1]*");
         }
         #endregion
@@ -142,7 +142,7 @@ namespace AlmostBinary_Compiler
                 }
             }
             _index++;
-            
+
             return new Token(Tokens.Undefined, string.Empty);
         }
 

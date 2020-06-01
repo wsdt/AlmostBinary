@@ -7,7 +7,7 @@ namespace AlmostBinary_GlobalConstants
         #region methods
         public static void Main(string[] args)
         {
-            Console.WriteLine("Don't start me. I'm just hanging around."); 
+            Console.WriteLine("Don't start me. I'm just hanging around.");
         }
         #endregion
     }

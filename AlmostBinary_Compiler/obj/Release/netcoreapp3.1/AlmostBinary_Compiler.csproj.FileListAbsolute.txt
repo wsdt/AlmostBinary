@@ -26,3 +26,9 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Release\netcoreapp3.1\AlmostBinary_Compiler.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Release\netcoreapp3.1\AlmostBinary_Compiler.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Release\netcoreapp3.1\AlmostBinary_Compiler.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb

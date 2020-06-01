@@ -1,6 +1,6 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AlmostBinary_Compiler.Tests.utils;
 using AlmostBinary_GlobalConstants.Test;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AlmostBinary_Compiler.Tests
 {

@@ -1,12 +1,8 @@
 ﻿using AlmostBinary_Runtime.utils;
-using Microsoft.Extensions.Configuration;
 using Serilog;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace AlmostBinary_Runtime
 {
@@ -33,7 +29,8 @@ namespace AlmostBinary_Runtime
             blocks = lexer.blocks;
             code = lexer.code;
             Log.Here().Information($"Lexer-Results: Funcs->{funcs.Count}, Blocks->{blocks.Count}, Code->{JsonSerializer.Serialize(code)}");
-            foreach (Func f in funcs) {
+            foreach (Func f in funcs)
+            {
                 Log.Here().Information($"Funcs: {f.name}");
             };
             Log.Here().Verbose($"Lexer-Results: {JsonSerializer.Serialize(lexer)}");

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-using Serilog;
-using Microsoft.Extensions.Configuration;
-using AlmostBinary_Compiler.utils;
-using System.Security.Cryptography;
-using System.Text.Json;
+﻿using AlmostBinary_Compiler.utils;
 using AlmostBinary_GlobalConstants;
+using Microsoft.Extensions.Configuration;
+using Serilog;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Text.Json;
 
 namespace AlmostBinary_Compiler
 {
@@ -59,7 +57,8 @@ namespace AlmostBinary_Compiler
                 {
                     parser = new Parser(tokens);
                     tree = parser.Tree;
-                } catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     throw new Exception($"Could not parse code -> Parser: {JsonSerializer.Serialize(tokens)}", ex);
                 }
@@ -72,7 +71,8 @@ namespace AlmostBinary_Compiler
                 WriteToFile(
                     compiledCode,
                     $"{Path.GetFileNameWithoutExtension(args[0])}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}");
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 // Top-level logging for fatal, non caught exceptions
                 Log.Here().Fatal(ex, "Compiler error.");
@@ -136,7 +136,8 @@ namespace AlmostBinary_Compiler
 
                 Log.Here().Information("Tokenized code.");
                 return new TokenList(tokens);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception($"Cannot tokenize code -> Lexer: {JsonSerializer.Serialize(lexer)}", ex);
             }
@@ -171,7 +172,8 @@ namespace AlmostBinary_Compiler
                 {
                     Directory.CreateDirectory(IGlobalConstants.OUTPUT_PATH);
                     Log.Here().Warning(ex1, $"Could not find Output-Directory: '{IGlobalConstants.OUTPUT_PATH}'. Created it automatically.");
-                } catch (Exception ex2)
+                }
+                catch (Exception ex2)
                 {
                     Log.Here().Error(ex2, $"Could neither find nor create Output-Directory: '{IGlobalConstants.OUTPUT_PATH}'");
                 }

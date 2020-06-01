@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using AlmostBinary_GlobalConstants.Test;
 using System.Diagnostics;
-using AlmostBinary_GlobalConstants.Test;
+using System.IO;
 
 namespace AlmostBinary_Compiler.Tests.utils
 {
