@@ -42,7 +42,6 @@ Thus, some "binary" code written will be compiled to normal strings and other bi
 ## TO-DOs
 - Add more unit- and integration tests
 - Git-Action/Workflow for tests (not working yet)
-- Add a CONTRIBUTION.md
 - Add Compiler and Runtime [installer (two separate)](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html)
 - Add Docker Support
 - Add [blockchain library](https://www.c-sharpcorner.com/article/blockchain-basics-building-a-blockchain-in-net-core/), maybe even [smart-contracts](https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/blockchain-programming-smart-contracts-in-csharp)
