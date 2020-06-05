@@ -8,18 +8,20 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+  runs-on: ${{ matrix.os }}
+      strategy:
+        matrix:
+          os: [macOS-latest, ubuntu-latest, windows-latest]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+     - name: Setup .NET Core if needed
+      uses: actions/setup-dotnet@v1.2.0
       with:
-        dotnet-version: 3.1.101
-    - name: Install dependencies
+        dotnet-version: 3.0.100
+      if: matrix.os == 'macOS-latest' || matrix.os == 'ubuntu-latest'
+    - uses: actions/checkout@v2
+    - name: Build with dotnet
+    - run: dotnet build ./AlmostBinary.sln --configuration Release
       run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test ./AlmostBinary.sln --configuration Release --verbosity normal
