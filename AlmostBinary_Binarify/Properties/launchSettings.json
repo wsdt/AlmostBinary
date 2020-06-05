@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Binarify": {
       "commandName": "Project",
-      "commandLineArgs": "--to-binary  \"your string\""
+      "commandLineArgs": "--to-string \"00100010\""
     }
   }
 }

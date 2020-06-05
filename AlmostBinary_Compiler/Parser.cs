@@ -53,6 +53,7 @@ namespace AlmostBinary_Compiler
                     case Lexer.Tokens.Return: ParseReturn(); break;
                     case Lexer.Tokens.RightBrace: ParseRightBrace(); break;
                     case Lexer.Tokens.EOF: ParseEOF(); break;
+                    case Lexer.Tokens.LeftParan: _tokens.Pos = _tokens.Pos-2; break;
                     case Lexer.Tokens.LeftBrace: break; // do not increment as GetToken() will use next one
                     default: throw new Exception($"Unexpected token: '{tok.TokenValue}' (Type: {tok.TokenName})");
                 }

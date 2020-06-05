@@ -9,7 +9,7 @@
       "AlmostBinary_Runtime.Tests/1.0.0": {
         "dependencies": {
           "AlmostBinary_GlobalConstants": "1.0.0",
-          "AlmostBinary_Runtime": "1.0.0",
+          "AlmostBinary_HelperMethods.Tests": "1.0.0",
           "MSTest.TestAdapter": "2.1.1",
           "MSTest.TestFramework": "2.1.1",
           "Microsoft.NET.Test.Sdk": "16.6.1",
@@ -1250,9 +1250,37 @@
           "AlmostBinary_Binarify.dll": {}
         }
       },
+      "AlmostBinary_Compiler/1.0.0": {
+        "dependencies": {
+          "AlmostBinary_Binarify": "1.0.0",
+          "AlmostBinary_GlobalConstants": "1.0.0",
+          "Microsoft.Extensions.Configuration": "3.1.4",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
+          "Microsoft.Extensions.Configuration.Json": "3.1.4",
+          "Microsoft.Extensions.DependencyInjection": "3.1.4",
+          "Serilog": "2.9.0",
+          "Serilog.Sinks.Async": "1.4.0",
+          "Serilog.Sinks.Console": "3.1.1",
+          "Serilog.Sinks.File": "4.1.0"
+        },
+        "runtime": {
+          "AlmostBinary_Compiler.dll": {}
+        }
+      },
       "AlmostBinary_GlobalConstants/1.0.0": {
         "runtime": {
           "AlmostBinary_GlobalConstants.dll": {}
+        }
+      },
+      "AlmostBinary_HelperMethods.Tests/1.0.0": {
+        "dependencies": {
+          "AlmostBinary_Compiler": "1.0.0",
+          "AlmostBinary_GlobalConstants": "1.0.0",
+          "AlmostBinary_Runtime": "1.0.0",
+          "MSTest.TestFramework": "2.1.1"
+        },
+        "runtime": {
+          "AlmostBinary_HelperMethods.Tests.dll": {}
         }
       },
       "AlmostBinary_Runtime/1.0.0": {
@@ -1999,7 +2027,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AlmostBinary_Compiler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "AlmostBinary_GlobalConstants/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AlmostBinary_HelperMethods.Tests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
