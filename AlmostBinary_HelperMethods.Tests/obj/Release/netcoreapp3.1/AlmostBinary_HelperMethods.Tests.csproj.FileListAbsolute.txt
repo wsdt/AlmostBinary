@@ -42,3 +42,5 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_HelperMethods
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_HelperMethods.Tests\obj\Release\netcoreapp3.1\AlmostBinary_HelperMethods.Tests.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_HelperMethods.Tests\obj\Release\netcoreapp3.1\AlmostBinary_HelperMethods.Tests.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_HelperMethods.Tests\obj\Release\netcoreapp3.1\AlmostBinary_HelperMethods.Tests.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_HelperMethods.Tests\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_HelperMethods.Tests\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json

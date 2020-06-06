@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AlmostBinary_HelperMethods.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

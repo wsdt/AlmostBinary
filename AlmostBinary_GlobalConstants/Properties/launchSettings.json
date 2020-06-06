@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AlmostBinary_GlobalConstants": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

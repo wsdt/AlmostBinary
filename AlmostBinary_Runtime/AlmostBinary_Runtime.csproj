@@ -27,4 +27,13 @@
     <ProjectReference Include="..\AlmostBinary_GlobalConstants\AlmostBinary_GlobalConstants.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Properties\appsettings_DEV.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\appsettings_MAIN.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

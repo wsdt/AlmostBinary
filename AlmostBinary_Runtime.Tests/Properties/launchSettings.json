@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AlmostBinary_Runtime.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

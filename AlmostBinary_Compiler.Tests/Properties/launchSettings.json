@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AlmostBinary_Compiler.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
