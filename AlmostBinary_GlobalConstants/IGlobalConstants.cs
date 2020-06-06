@@ -17,7 +17,7 @@ namespace AlmostBinary_GlobalConstants
         public static readonly string OUTPUT_PATH = Path.Combine(PROJECT_ROOT_PATH, "..", "compiled");
 #else
         public static readonly string APP_SETTINGS_FILE = "appsettings_MAIN.json";
-        public static readonly string OUTPUT_PATH = Directory.GetCurrentDirectory(); // output to current dir if release
+        public static readonly string OUTPUT_PATH = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); // output to desktop if release
 #endif
     }
 }
