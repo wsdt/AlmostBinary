@@ -3,7 +3,7 @@ This compiler & runtime will be improved continuously. Please be clement, as thi
 
 **Take a look at the documentation: [Almost Binary - Wiki](https://github.com/wsdt/AlmostBinary/wiki)**
 
-## Code Once, Run Everywhere. ![Tests](https://github.com/wsdt/AlmostBinary/workflows/Tests/badge.svg)
+## Code Once, Run Everywhere. 
 Code in platform-independent Binary. It was never so easy to proof that you are a real geek. 
 
 This programming language is made for people, who..
@@ -41,6 +41,7 @@ Thus, some "binary" code written will be compiled to normal strings and other bi
 
 ## TO-DOs
 - Add more unit- and integration tests
+- Run tests on Push
 - Add Compiler and Runtime [installer (two separate)](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html)
 - Add Docker Support
 - Add [blockchain library](https://www.c-sharpcorner.com/article/blockchain-basics-building-a-blockchain-in-net-core/), maybe even [smart-contracts](https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/blockchain-programming-smart-contracts-in-csharp)
