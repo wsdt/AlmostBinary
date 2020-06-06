@@ -61,7 +61,7 @@ namespace AlmostBinary_Runtime
         /// </summary>
         /// <returns>Global Configuration</returns>
         private static IConfiguration BuildConfiguration() => new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(IGlobalConstants.PROJECT_ROOT_PATH, "Properties"))
+                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "Properties"))
                 .AddJsonFile(IGlobalConstants.APP_SETTINGS_FILE, optional: false, reloadOnChange: true)
                 .Build();
 
