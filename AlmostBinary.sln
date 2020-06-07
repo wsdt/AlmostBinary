@@ -21,7 +21,12 @@ Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "AlmostBinary_Runtime.Instal
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "AlmostBinary_Compiler.Installer", "AlmostBinary_Compiler.Installer\AlmostBinary_Compiler.Installer.aiproj", "{2B36D835-0907-40B7-A730-804260012F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmostBinary_BlockhainLibrary", "AlmostBinary_BlockhainLibrary\AlmostBinary_BlockhainLibrary.csproj", "{B7686EA5-E684-4FBD-8241-A0609B7C0B14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmostBinary_BlockhainLibrary", "AlmostBinary_BlockhainLibrary\AlmostBinary_BlockhainLibrary.csproj", "{B7686EA5-E684-4FBD-8241-A0609B7C0B14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A664F159-2DA0-41A4-85F7-1FEA83DD29E9}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile.tests = Dockerfile.tests
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
