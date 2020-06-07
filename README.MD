@@ -3,7 +3,7 @@ This compiler & runtime will be improved continuously. Please be clement, as thi
 
 **Take a look at the documentation: [Almost Binary - Wiki](https://github.com/wsdt/AlmostBinary/wiki)**
 
-## Code Once, Run Everywhere. 
+## Code Once, Run Everywhere. ![Tests within Docker](https://github.com/wsdt/AlmostBinary/workflows/Tests%20within%20Docker/badge.svg)
 Code in platform-independent Binary. It was never so easy to proof that you are a real geek. 
 
 This programming language is made for people, who..
