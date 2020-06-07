@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 WORKDIR /app
 COPY . .
 
-RUN dotnet restore
+RUN dotnet restore && dotnet build
 
 # run tests on docker build
 RUN dotnet test
