@@ -66,7 +66,7 @@ namespace AlmostBinary_Compiler
 
                 Compiler compiler = new Compiler(tree);
                 string compiledCode = compiler.GetCode();
-                compiledCode += LoadImports(args[0]);
+                compiledCode += LoadImports();
 
                 WriteToFile(
                     compiledCode,
@@ -86,15 +86,15 @@ namespace AlmostBinary_Compiler
         /// <param name="inputFile">Uncompiled input file</param>
         /// <param name="code">Compiled code</param>
         /// <returns></returns>
-        private string LoadImports(string inputFile)
+        private string LoadImports()
         {
-            string imports = "";
-            string? path = Path.GetDirectoryName(inputFile);
-            if (path == null) throw new Exception($"LoadImports: Path of input file not available -> {inputFile}");
+            string imports = "\n";
+            string libraryPath = Path.Combine(Program.PROGRAM_ENTRY_PATH ?? throw new Exception("Couldn't load path of entry point. Libraries not found."), "Libraries");
+            string libraryFileExtension = _configuration.GetValue<string>("Runtime:FileExtensions:LibraryFileExtension");
 
             foreach (string library in _imports)
             {
-                StreamReader s = new StreamReader($"{path}\\{library}.{_configuration.GetValue<string>("Runtime:FileExtensions:LibraryFileExtension")}");
+                StreamReader s = new StreamReader(Path.Combine(libraryPath, $"{library}.{libraryFileExtension}"));
                 imports += "\n" + s.ReadToEnd();
             }
 

@@ -7,6 +7,7 @@ using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.IO;
+using System.Reflection;
 
 namespace AlmostBinary_Runtime
 {
@@ -17,6 +18,10 @@ namespace AlmostBinary_Runtime
         /// Line-No, method name .. still empty.
         /// </summary>
         private static ILogger StartupLogger => Serilog.Log.ForContext<Program>();
+        /// <summary>
+        /// Not outsourcable into GlobalConstants as Assembly etc. are not usable in that context.
+        /// </summary>
+        public static readonly string? PROGRAM_ENTRY_PATH = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location);
 
         #region methods
         public static void Main(string[] args)
@@ -61,7 +66,7 @@ namespace AlmostBinary_Runtime
         /// </summary>
         /// <returns>Global Configuration</returns>
         private static IConfiguration BuildConfiguration() => new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "Properties"))
+                .SetBasePath(Path.Combine(PROGRAM_ENTRY_PATH, "Properties"))
                 .AddJsonFile(IGlobalConstants.APP_SETTINGS_FILE, optional: false, reloadOnChange: true)
                 .Build();
 

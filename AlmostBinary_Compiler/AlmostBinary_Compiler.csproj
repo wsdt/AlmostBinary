@@ -19,6 +19,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Update="Libraries\011100110111100101110011011101000110010101101101.abinl">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Properties\appsettings_DEV.json">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -28,10 +31,6 @@
 		<None Update="Properties\launchSettings.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="logs\" />
 	</ItemGroup>
 
 	<ItemGroup>
