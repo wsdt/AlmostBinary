@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 WORKDIR /app
 COPY . .
 
-RUN dotnet restore && dotnet build
+RUN dotnet restore && dotnet build ./AlmostBinary_Compiler/AlmostBinary_Compiler.csproj && dotnet build ./AlmostBinary_Runtime/AlmostBinary_Runtime.csproj
 
 # run tests on docker build
 RUN dotnet test
