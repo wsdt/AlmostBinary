@@ -3,6 +3,9 @@
     "AlmostBinary_Binarify": {
       "commandName": "Project",
       "commandLineArgs": "--to-string \"00100010\""
+    },
+    "Docker": {
+      "commandName": "Docker"
     }
   }
 }

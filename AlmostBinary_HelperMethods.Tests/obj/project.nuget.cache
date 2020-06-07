@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FNwu6mNQ40rQcFUcK6wL52UiIr6G4h2m89exjVugkRjzy3kPCkjYfOi8pyhbUYBEYalaQw4FbiUzujPcdho0kg==",
+  "dgSpecHash": "T+dAexmerlayE2thOPF3zOtOdCSK9Dg3jG5PG16cnmCry/BUb8I+oCFNCanJIZ+Np6BrA63a5u9tWRF1ulF1rQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.4\\microsoft.extensions.primitives.3.1.4.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\mstest.testframework\\2.1.1\\mstest.testframework.2.1.1.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\serilog\\2.9.0\\serilog.2.9.0.nupkg.sha512",

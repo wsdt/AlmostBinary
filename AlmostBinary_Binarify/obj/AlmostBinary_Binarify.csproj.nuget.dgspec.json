@@ -62,6 +62,10 @@
               "target": "Package",
               "version": "[3.1.4, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.9, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[2.9.0, )"

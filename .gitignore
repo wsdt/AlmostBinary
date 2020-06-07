@@ -1,3 +1,6 @@
 ﻿logs/
 TestResults/
 .vs/
+AlmostBinary.Installer-cache/
+*.msi
+TestResults/
