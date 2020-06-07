@@ -35,5 +35,16 @@ namespace AlmostBinary_HelperMethods.Tests
                 Compile(fileName);
             }
         }
+
+        /// <summary>
+        /// Simple wrapper method for readability
+        /// </summary>
+        public static void createDirectoryIfNecessary(string path)
+        {
+            if (Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
     }
 }

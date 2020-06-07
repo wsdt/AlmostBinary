@@ -29,7 +29,10 @@ namespace AlmostBinary_Compiler.Tests
         /// Possible alternative if performance is a concern: Add tests to playlist to ensure correct execution order.
         /// </summary>
         [ClassInitialize()]
-        public static void CompileAllFiles(TestContext _) => CompilerTestHelper.CompileAll();
+        public static void CompileAllFiles(TestContext _) {
+            CompilerTestHelper.createDirectoryIfNecessary(IGlobalTestConstants.COMPILED_PATH);
+            CompilerTestHelper.CompileAll();
+        }
 
         [TestMethod]
         public void CompareRepeat() => Compare(IGlobalTestConstants.REPEAT);

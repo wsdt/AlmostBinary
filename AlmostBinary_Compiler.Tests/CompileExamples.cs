@@ -7,6 +7,9 @@ namespace AlmostBinary_Compiler.Tests
     [TestClass]
     public class CompileExamples
     {
+        [ClassInitialize()]
+        public static void CreateCompiledDirectory(TestContext _) => CompilerTestHelper.createDirectoryIfNecessary(IGlobalTestConstants.COMPILED_PATH);
+
         [TestMethod]
         public void CompileRepeat() => CompilerTestHelper.Compile(IGlobalTestConstants.REPEAT);
 
