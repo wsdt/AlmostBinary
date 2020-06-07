@@ -1,4 +1,4 @@
-FROM microsoft/dotnet
+FROM microsoft/dotnet:3.1
 
 WORKDIR /app
 COPY . .
