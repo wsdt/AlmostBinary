@@ -44,3 +44,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\Properties\appsettings_DEV.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\Properties\appsettings_MAIN.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\Libraries\011100110111100101110011011101000110010101101101.abinl

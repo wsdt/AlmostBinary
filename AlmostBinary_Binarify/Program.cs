@@ -23,7 +23,7 @@ namespace AlmostBinary_Binarify
         /// </summary>
         public static readonly string? PROGRAM_ENTRY_PATH = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location);
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine($"Starting Binarify. Received {args.Length} argument(s)."); // Logger not initialized yet
             IServiceCollection services = ConfigureServices();

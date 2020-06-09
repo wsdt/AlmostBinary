@@ -9,6 +9,7 @@ namespace AlmostBinary_Runtime
     class Runtime
     {
         #region fields
+        public const string MAIN_FUNC_IDENT = "01001101011000010110100101101110";
         private static ILogger Log => Serilog.Log.ForContext<Runtime>();
         static List<Func> funcs = new List<Func>();
         static List<Block> blocks = new List<Block>();
@@ -35,7 +36,7 @@ namespace AlmostBinary_Runtime
             };
             Log.Here().Verbose($"Lexer-Results: {JsonSerializer.Serialize(lexer)}");
 
-            Run(GetFunc("01001101011000010110100101101110"));
+            Run(GetFunc(MAIN_FUNC_IDENT));
         }
         #endregion
 

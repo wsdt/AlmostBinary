@@ -29,7 +29,7 @@ namespace AlmostBinary_Runtime
             int blockNumber = 0;
             Stack<Block> blockstack = new Stack<Block>();
 
-            foreach (string a in c.Split('\n'))
+            foreach (string a in c.Replace("\r\n", "\n").Split('\n').Select(b => b.Trim()))
             {
                 Log.Here().Verbose($"Current row: '{a}'");
 

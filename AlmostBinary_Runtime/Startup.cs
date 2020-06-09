@@ -11,22 +11,13 @@ namespace AlmostBinary_Runtime
     {
         #region fields
         private static ILogger Log => Serilog.Log.ForContext<Startup>();
-        private readonly IConfiguration _configuration;
-        private static List<string> _imports = new List<string>();
-        #endregion
-
-        #region properties
-        public static List<string> Imports { get => _imports; set => _imports = value; }
-        #endregion
-
-        #region ctor
-        public Startup(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
         #endregion
 
         #region methods
+        /// <summary>
+        /// Runs provided .wsdt-file.
+        /// </summary>
+        /// <param name="args"></param>
         public void Run(string[] args)
         {
             try
@@ -34,9 +25,7 @@ namespace AlmostBinary_Runtime
                 FileStream fs = new FileStream(args[0], FileMode.Open);
                 BinaryReader br = new BinaryReader(fs);
                 string code = br.ReadString();
-                Log.Here().Verbose($"Input-File: '{code}'");
-                Log.Here().Information("Starting Runtime.");
-                Runtime runtime = new Runtime(code);
+                RunInline(code);
             }
             catch (Exception ex)
             {
@@ -44,6 +33,17 @@ namespace AlmostBinary_Runtime
                 Log.Here().Fatal(ex, "Code Interpretation failed.");
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Provide .wsdt-code directly as parameter.
+        /// </summary>
+        /// <param name="code">Compiled .abin code</param>
+        public void RunInline(string code)
+        {
+            Log.Here().Verbose($"Input-File: '{code}'");
+            Log.Here().Information("Starting Runtime.");
+            new Runtime(code);
         }
         #endregion
     }

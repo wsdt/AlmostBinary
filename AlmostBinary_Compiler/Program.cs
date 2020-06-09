@@ -1,4 +1,5 @@
-﻿using AlmostBinary_GlobalConstants;
+﻿using AlmostBinary_Compiler.utils;
+using AlmostBinary_GlobalConstants;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -28,9 +29,26 @@ namespace AlmostBinary_Compiler
             Console.WriteLine($"Starting compiler. Received {args.Length} argument(s)."); // Logger not initialized yet
             IServiceCollection services = ConfigureServices();
             ServiceProvider serviceProvider = services.BuildServiceProvider();
-            serviceProvider.GetService<Startup>().Run(args);
 
-            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnShutdown!);
+            try
+            {
+                if (args.Length <= 0) throw new ArgumentException("You have to provide at least one argument.");
+                switch (args[0])
+                {
+                    case "--inline-code":
+                        if (args.Length <= 1) throw new ArgumentException("Parameter --inline-code expects 2 arguments.");
+                        serviceProvider.GetService<Startup>().CompileInline(args[1]); break;
+                    default: serviceProvider.GetService<Startup>().Run(args); break;
+                }
+            }
+            catch (Exception e)
+            {
+                StartupLogger.Fatal(e, $"Unexpected exception. Could not start application.");
+            }
+            finally
+            {
+                AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnShutdown!);
+            }
         }
 
         /// <summary>

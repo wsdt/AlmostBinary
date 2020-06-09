@@ -1,4 +1,4 @@
-﻿using AlmostBinary_GlobalConstants.Test;
+﻿using AlmostBinary_GlobalConstants.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;

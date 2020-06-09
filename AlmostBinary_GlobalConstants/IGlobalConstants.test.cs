@@ -1,7 +1,10 @@
 ﻿using System.IO;
 
-namespace AlmostBinary_GlobalConstants.Test
+namespace AlmostBinary_GlobalConstants.Tests
 {
+    // ALTHOUGH NOT NEEDED AT THE MOMENT, BUT KEEP FOR LATER INTEGRATION TESTS!
+
+
     /// <summary>
     /// Global test constants
     /// </summary>
