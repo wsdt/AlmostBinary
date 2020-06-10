@@ -27,19 +27,10 @@ namespace AlmostBinary_Compiler
         public static void Main(string[] args)
         {
             Console.WriteLine($"Starting compiler. Received {args.Length} argument(s)."); // Logger not initialized yet
-            IServiceCollection services = ConfigureServices();
-            ServiceProvider serviceProvider = services.BuildServiceProvider();
 
             try
             {
-                if (args.Length <= 0) throw new ArgumentException("You have to provide at least one argument.");
-                switch (args[0])
-                {
-                    case "--inline-code":
-                        if (args.Length <= 1) throw new ArgumentException("Parameter --inline-code expects 2 arguments.");
-                        serviceProvider.GetService<Startup>().CompileInline(args[1]); break;
-                    default: serviceProvider.GetService<Startup>().Run(args); break;
-                }
+                Compile(args);
             }
             catch (Exception e)
             {
@@ -49,6 +40,26 @@ namespace AlmostBinary_Compiler
             {
                 AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnShutdown!);
             }
+        }
+
+        public static string? Compile(string[] args)
+        {
+            IServiceCollection services = ConfigureServices();
+            ServiceProvider serviceProvider = services.BuildServiceProvider();
+
+            if (args.Length <= 0) throw new ArgumentException("You have to provide at least one argument.");
+            string? compiledCode = null;
+            switch (args[0])
+            {
+                case "--inline-code":
+                    if (args.Length <= 1) throw new ArgumentException("Parameter --inline-code expects 2 arguments.");
+                    compiledCode = serviceProvider.GetService<Startup>().CompileInline(args[1]); 
+                    break;
+                default: 
+                    serviceProvider.GetService<Startup>().Run(args); 
+                    break;
+            }
+            return compiledCode;
         }
 
         /// <summary>

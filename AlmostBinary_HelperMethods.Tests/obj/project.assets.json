@@ -2134,25 +2134,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WSDT\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\keri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
       "projectName": "AlmostBinary_HelperMethods.Tests",
-      "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
-      "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\obj\\",
+      "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
+      "packagesPath": "C:\\Users\\keri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\keri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -2164,14 +2159,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
-              "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj"
+            "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
+              "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj"
             },
-            "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
-              "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+            "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+              "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
             },
-            "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj": {
-              "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj"
+            "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj": {
+              "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj"
             }
           }
         }
@@ -2200,18 +2195,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

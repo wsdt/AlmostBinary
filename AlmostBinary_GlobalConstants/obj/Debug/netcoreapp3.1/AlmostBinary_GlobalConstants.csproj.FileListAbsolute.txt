@@ -11,3 +11,16 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_GlobalConstan
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.genruntimeconfig.cache
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.exe
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.deps.json
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.runtimeconfig.json
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.runtimeconfig.dev.json
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.dll
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\bin\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.csprojAssemblyReference.cache
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.csproj.CoreCompileInputs.cache
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.AssemblyInfoInputs.cache
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.AssemblyInfo.cs
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.dll
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb
+C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_GlobalConstants\obj\Debug\netcoreapp3.1\AlmostBinary_GlobalConstants.genruntimeconfig.cache

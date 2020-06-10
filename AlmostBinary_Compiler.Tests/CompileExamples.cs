@@ -1,36 +1,36 @@
 using AlmostBinary_HelperMethods.Tests;
 using AlmostBinary_GlobalConstants.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
+using AlmostBinary_Runtime.Tests;
 
 namespace AlmostBinary_Compiler.Tests
 {
     [TestClass]
     public class CompileExamples
     {
-        // TODO: ################################################################################
-        // CompileInline(), ... similar to Runtime callable via Runtime --inline-code argument. 
-        // ######################################################################################
+        /// <summary>
+        /// Bug #4, try to call directly for better testing experience (e.g. exceptions when file not found, etc.)
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void Compile(string uncompiledCode) => AlmostBinary_Compiler.Program.Main(new string[] { "--inline-code", uncompiledCode });
 
+        [TestMethod]
+        public void CompileRepeat() => Compile(IUncompiledFileConstants.REPEAT);
 
-        //[ClassInitialize()]
-        //public static void CreateCompiledDirectory(TestContext _) => CompilerTestHelper.createDirectoryIfNecessary(IGlobalTestConstants.COMPILED_PATH);
+        [TestMethod]
+        public void CompileCall() => Compile(IUncompiledFileConstants.CALL);
 
-        //[TestMethod]
-        //public void CompileRepeat() => CompilerTestHelper.Compile(IGlobalTestConstants.REPEAT);
+        [TestMethod]
+        public void CompileHelloWorld() => Compile(IUncompiledFileConstants.HELLO_WORLD);
 
-        //[TestMethod]
-        //public void CompileCall() => CompilerTestHelper.Compile(IGlobalTestConstants.CALL);
+        [TestMethod]
+        public void CompileIf() => Compile(IUncompiledFileConstants.IF);
 
-        //[TestMethod]
-        //public void CompileHelloWorld() => CompilerTestHelper.Compile(IGlobalTestConstants.HELLO_WORLD);
+        [TestMethod]
+        public void CompileInput() => Compile(IUncompiledFileConstants.INPUT);
 
-        //[TestMethod]
-        //public void CompileIf() => CompilerTestHelper.Compile(IGlobalTestConstants.IF);
-
-        //[TestMethod]
-        //public void CompileInput() => CompilerTestHelper.Compile(IGlobalTestConstants.INPUT);
-
-        //[TestMethod]
-        //public void CompileVariable() => CompilerTestHelper.Compile(IGlobalTestConstants.VARIABLE);
+        [TestMethod]
+        public void CompileVariable() => Compile(IUncompiledFileConstants.VARIABLE);
     }
 }
