@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B/VsfLnqxRdGA0BmrwL/kNP0ECVUGOX/J1Lo5/99kPgoP5nblDWRNy1R0VPJbBwmzHNfItJ/V99aomJ0X2NCNA==",
+  "dgSpecHash": "B1qkBhcGqbiT7Owi1A5TRs9Th8LLfy6sQt2BdAJcLfxwcP5BFCBNkwH4P8l5rNlz8f3BteHNWDk5em1ZC4CX5w==",
   "success": true,
   "projectFilePath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj",
   "expectedPackageFiles": [
@@ -25,8 +25,8 @@
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.testplatform.testhost\\16.6.1\\microsoft.testplatform.testhost.16.6.1.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\WSDT\\.nuget\\packages\\mstest.testadapter\\2.1.1\\mstest.testadapter.2.1.1.nupkg.sha512",
-    "C:\\Users\\WSDT\\.nuget\\packages\\mstest.testframework\\2.1.1\\mstest.testframework.2.1.1.nupkg.sha512",
+    "C:\\Users\\WSDT\\.nuget\\packages\\mstest.testadapter\\2.1.2\\mstest.testadapter.2.1.2.nupkg.sha512",
+    "C:\\Users\\WSDT\\.nuget\\packages\\mstest.testframework\\2.1.2\\mstest.testframework.2.1.2.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",

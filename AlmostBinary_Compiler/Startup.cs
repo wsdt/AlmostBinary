@@ -34,42 +34,8 @@ namespace AlmostBinary_Compiler
         {
             try
             {
-                StreamReader? sr;
-                try
-                {
-                    sr = new StreamReader(args[0]);
-                }
-                catch (Exception ex) when (
-                  ex is DirectoryNotFoundException
-                  || ex is FileNotFoundException
-              )
-                {
-                    throw new Exception($"Run: Could not find input file -> {args[0]}", ex);
-                }
-                string code = sr.ReadToEnd();
-                Log.Here().Verbose($"Uncompiled code -> \n{code}");
-
-                TokenList tokens = Tokenize(code);
-
-                Parser? parser = null;
-                List<Stmt>? tree;
-                try
-                {
-                    parser = new Parser(tokens);
-                    tree = parser.Tree;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Could not parse code -> Parser: {JsonSerializer.Serialize(tokens)}", ex);
-                }
-                Log.Here().Verbose($"Statement Tree -> {JsonSerializer.Serialize(tree)}");
-
-                Compiler compiler = new Compiler(tree);
-                string compiledCode = compiler.GetCode();
-                compiledCode += LoadImports();
-
                 WriteToFile(
-                    compiledCode,
+                    GenerateCode(args),
                     $"{Path.GetFileNameWithoutExtension(args[0])}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}");
             }
             catch (Exception ex)
@@ -78,6 +44,47 @@ namespace AlmostBinary_Compiler
                 Log.Here().Fatal(ex, "Compiler error.");
                 throw;
             }
+        }
+
+        private string GenerateCode(string[] args)
+        {
+            StreamReader? sr;
+            try
+            {
+                sr = new StreamReader(args[0]);
+            }
+            catch (Exception ex) when (
+              ex is DirectoryNotFoundException
+              || ex is FileNotFoundException)
+            {
+                throw new Exception($"Run: Could not find input file -> {args[0]}", ex);
+            }
+            string code = sr.ReadToEnd();
+            return CompileInline(code);
+        }
+
+        public string CompileInline(string uncompiledCode)
+        {
+            Log.Here().Verbose($"Uncompiled code -> \n{uncompiledCode}");
+
+            TokenList tokens = Tokenize(uncompiledCode);
+
+            List<Stmt>? tree;
+            try
+            {
+                Parser parser = new Parser(tokens);
+                tree = parser.Tree;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Could not parse code -> Parser: {JsonSerializer.Serialize(tokens)}", ex);
+            }
+            Log.Here().Verbose($"Statement Tree -> {JsonSerializer.Serialize(tree)}");
+
+            Compiler compiler = new Compiler(tree);
+            string compiledCode = compiler.GetCode();
+            compiledCode += LoadImports();
+            return compiledCode;
         }
 
         /// <summary>
