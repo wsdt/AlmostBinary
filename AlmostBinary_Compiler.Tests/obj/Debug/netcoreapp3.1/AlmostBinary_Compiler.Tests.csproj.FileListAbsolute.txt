@@ -255,3 +255,5 @@ C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcore
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.dll
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.pdb
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\Libraries\011100110111100101110011011101000110010101101101.abinl
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\xunit.runner.json

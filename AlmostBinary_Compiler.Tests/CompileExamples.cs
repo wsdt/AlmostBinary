@@ -3,6 +3,7 @@ using AlmostBinary_GlobalConstants.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using AlmostBinary_Runtime.Tests;
+using System.Threading.Tasks;
 
 namespace AlmostBinary_Compiler.Tests
 {
@@ -13,7 +14,13 @@ namespace AlmostBinary_Compiler.Tests
         /// Bug #4, try to call directly for better testing experience (e.g. exceptions when file not found, etc.)
         /// </summary>
         /// <param name="fileName"></param>
-        public static void Compile(string uncompiledCode) => AlmostBinary_Compiler.Program.Main(new string[] { "--inline-code", uncompiledCode });
+        public static void Compile(string uncompiledCode)
+        {
+            var task = Task.Run(() =>
+            {
+                AlmostBinary_Compiler.Program.Main(new string[] { "--inline-code", uncompiledCode });
+            });
+        }
 
         [TestMethod]
         public void CompileRepeat() => Compile(IUncompiledFileConstants.REPEAT);

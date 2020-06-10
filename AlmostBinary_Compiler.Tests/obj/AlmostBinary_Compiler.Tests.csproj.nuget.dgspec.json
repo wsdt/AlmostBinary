@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj": {}
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj",
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj",
         "projectName": "AlmostBinary_Binarify",
-        "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj",
-        "packagesPath": "C:\\Users\\keri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\obj\\",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\keri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -27,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
               }
             }
           }
@@ -89,27 +93,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj",
         "projectName": "AlmostBinary_Compiler.Tests",
-        "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj",
-        "packagesPath": "C:\\Users\\keri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler.Tests\\obj\\",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\keri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -121,11 +135,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
               },
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj"
               }
             }
           }
@@ -168,27 +182,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
         "projectName": "AlmostBinary_Compiler",
-        "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
-        "packagesPath": "C:\\Users\\keri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\obj\\",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\keri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -200,11 +224,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj"
               },
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
               }
             }
           }
@@ -261,27 +285,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj",
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj",
         "projectName": "AlmostBinary_GlobalConstants",
-        "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj",
-        "packagesPath": "C:\\Users\\keri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\obj\\",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\keri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -313,27 +347,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
         "projectName": "AlmostBinary_HelperMethods.Tests",
-        "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
-        "packagesPath": "C:\\Users\\keri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\obj\\",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\AlmostBinary_HelperMethods.Tests.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_HelperMethods.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\keri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -345,14 +389,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler\\AlmostBinary_Compiler.csproj"
               },
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
               },
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj"
               }
             }
           }
@@ -381,27 +425,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj": {
+    "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
+        "projectUniqueName": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
         "projectName": "AlmostBinary_Runtime",
-        "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
-        "packagesPath": "C:\\Users\\keri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Runtime\\obj\\",
+        "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
+        "packagesPath": "C:\\Users\\WSDT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\keri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\WSDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -413,11 +467,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj"
               },
-              "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
-                "projectPath": "C:\\Users\\keri\\Desktop\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
+              "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj": {
+                "projectPath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_GlobalConstants\\AlmostBinary_GlobalConstants.csproj"
               }
             }
           }
@@ -474,12 +528,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
