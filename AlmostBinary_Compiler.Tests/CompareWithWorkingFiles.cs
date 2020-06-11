@@ -7,8 +7,6 @@ using System.Text.RegularExpressions;
 
 namespace AlmostBinary_Compiler.Tests
 {
-    //WORKING LOCALLY, BUT CONVERT TO INTEGRATION TEST TO GET IT TO WORK IN AUTOMATED TESTS
-
     public class CompareWithWorkingFiles
     {
         private static RegexOptions regOptions = RegexOptions.None;

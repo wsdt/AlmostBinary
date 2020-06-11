@@ -81,11 +81,4 @@ C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.dll
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.pdb
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.genruntimeconfig.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\xunit.assert.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\xunit.core.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.csproj.CoreCompileInputs.cache
