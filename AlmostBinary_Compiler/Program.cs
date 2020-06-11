@@ -1,5 +1,6 @@
 ﻿using AlmostBinary_Compiler.utils;
 using AlmostBinary_GlobalConstants;
+using CommandLine;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -30,36 +31,24 @@ namespace AlmostBinary_Compiler
 
             try
             {
-                Compile(args);
+                // Parse command line args
+                CommandLine.Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed(o =>
+                {
+                    IServiceCollection services = ConfigureServices(o.Verbose);
+                    ServiceProvider serviceProvider = services.BuildServiceProvider();
+
+                    serviceProvider.GetService<Startup>().Run(o);
+                });
             }
             catch (Exception e)
             {
                 StartupLogger.Fatal(e, $"Unexpected exception. Could not start application.");
+                throw;
             }
             finally
             {
                 AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnShutdown!);
             }
-        }
-
-        public static string? Compile(string[] args)
-        {
-            IServiceCollection services = ConfigureServices();
-            ServiceProvider serviceProvider = services.BuildServiceProvider();
-
-            if (args.Length <= 0) throw new ArgumentException("You have to provide at least one argument.");
-            string? compiledCode = null;
-            switch (args[0])
-            {
-                case "--inline-code":
-                    if (args.Length <= 1) throw new ArgumentException("Parameter --inline-code expects 2 arguments.");
-                    compiledCode = serviceProvider.GetService<Startup>().CompileInline(args[1]); 
-                    break;
-                default: 
-                    serviceProvider.GetService<Startup>().Run(args); 
-                    break;
-            }
-            return compiledCode;
         }
 
         /// <summary>
@@ -74,16 +63,16 @@ namespace AlmostBinary_Compiler
         /// <summary>
         /// Configures global services.
         /// </summary>
-        private static IServiceCollection ConfigureServices()
+        private static IServiceCollection ConfigureServices(bool? setVerboseLogLevel)
         {
             IServiceCollection services = new ServiceCollection();
-            IConfiguration logConfiguration = BuildConfiguration();
-            services.AddSingleton(logConfiguration);
+            IConfiguration configuration = BuildConfiguration();
+            services.AddSingleton(configuration);
 
             // Required to run application
             services.AddTransient<Startup>();
 
-            Log.Logger = CraftLogger(logConfiguration);
+            Log.Logger = CraftLogger(configuration, setVerboseLogLevel == true ? LogEventLevel.Verbose : configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel"));
 
             StartupLogger.Information("Attached and configured services.");
             return services;
@@ -95,7 +84,7 @@ namespace AlmostBinary_Compiler
         /// <returns>Global Configuration</returns>
         private static IConfiguration BuildConfiguration() => new ConfigurationBuilder()
                 .SetBasePath(Path.Combine(
-                    Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), 
+                    Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
                     "Properties"))
                 .AddJsonFile(IGlobalConstants.APP_SETTINGS_FILE, optional: false, reloadOnChange: true)
                 .Build();
@@ -105,10 +94,9 @@ namespace AlmostBinary_Compiler
         /// </summary>
         /// <param name="configuration">Global configuration</param>
         /// <returns>Logger</returns>
-        private static ILogger CraftLogger(IConfiguration configuration)
+        private static ILogger CraftLogger(IConfiguration configuration, LogEventLevel logLevel)
         {
             string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} - {SourceContext}:{MemberName}:{LineNumber}{NewLine}{Exception}";
-            LogEventLevel logLevel = configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel");
 
             return new LoggerConfiguration()
             .Enrich.FromLogContext()

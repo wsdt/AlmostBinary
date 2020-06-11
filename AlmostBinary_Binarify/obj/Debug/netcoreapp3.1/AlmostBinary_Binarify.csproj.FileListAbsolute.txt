@@ -17,7 +17,6 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.csproj.CoreCompileInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.deps.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.dev.json
@@ -66,3 +65,5 @@ C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Binarify\obj\Debug\netcoreapp3.1
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Binarify\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.dll
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Binarify\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.pdb
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Binarify\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Debug\netcoreapp3.1\CommandLine.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.csproj.CoreCompileInputs.cache

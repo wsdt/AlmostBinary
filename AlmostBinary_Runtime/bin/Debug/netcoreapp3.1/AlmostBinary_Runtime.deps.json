@@ -10,6 +10,7 @@
         "dependencies": {
           "AlmostBinary_Binarify": "1.0.0",
           "AlmostBinary_GlobalConstants": "1.0.0",
+          "CommandLineParser": "2.8.0",
           "Microsoft.Extensions.Configuration": "3.1.4",
           "Microsoft.Extensions.Configuration.Binder": "3.1.4",
           "Microsoft.Extensions.Configuration.Json": "3.1.4",
@@ -21,6 +22,14 @@
         },
         "runtime": {
           "AlmostBinary_Runtime.dll": {}
+        }
+      },
+      "CommandLineParser/2.8.0": {
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.0.0"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/3.1.4": {
@@ -341,6 +350,7 @@
       "AlmostBinary_Binarify/1.0.0": {
         "dependencies": {
           "AlmostBinary_GlobalConstants": "1.0.0",
+          "CommandLineParser": "2.8.0",
           "Microsoft.Extensions.Configuration": "3.1.4",
           "Microsoft.Extensions.Configuration.Binder": "3.1.4",
           "Microsoft.Extensions.Configuration.Json": "3.1.4",
@@ -356,6 +366,9 @@
         }
       },
       "AlmostBinary_GlobalConstants/1.0.0": {
+        "dependencies": {
+          "CommandLineParser": "2.8.0"
+        },
         "runtime": {
           "AlmostBinary_GlobalConstants.dll": {}
         }
@@ -367,6 +380,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CommandLineParser/2.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eco2HlKQBY4Joz9odHigzGpVzv6pjsXnY5lziioMveQxr+i2Z7xYcIOMeZTgYiqnMtMAbXMXsVhrNfWO5vJS8Q==",
+      "path": "commandlineparser/2.8.0",
+      "hashPath": "commandlineparser.2.8.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/3.1.4": {
       "type": "package",

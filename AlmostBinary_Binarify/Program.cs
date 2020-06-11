@@ -1,5 +1,6 @@
 ﻿using AlmostBinary_Binarify.utils;
 using AlmostBinary_GlobalConstants;
+using CommandLine;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -26,12 +27,17 @@ namespace AlmostBinary_Binarify
         public static void Main(string[] args)
         {
             Console.WriteLine($"Starting Binarify. Received {args.Length} argument(s)."); // Logger not initialized yet
-            IServiceCollection services = ConfigureServices();
-            ServiceProvider serviceProvider = services.BuildServiceProvider();
 
             try
             {
-                serviceProvider.GetService<Startup>().Run(args);
+                // Parse command line args
+                CommandLine.Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed(o =>
+                {
+                    IServiceCollection services = ConfigureServices(o.Verbose);
+                    ServiceProvider serviceProvider = services.BuildServiceProvider();
+
+                    serviceProvider.GetService<Startup>().Run(o);
+                });
             }
             catch (Exception ex)
             {
@@ -54,16 +60,16 @@ namespace AlmostBinary_Binarify
         /// <summary>
         /// Configures global services.
         /// </summary>
-        private static IServiceCollection ConfigureServices()
+        private static IServiceCollection ConfigureServices(bool? setVerboseLogLevel)
         {
             IServiceCollection services = new ServiceCollection();
-            IConfiguration logConfiguration = BuildConfiguration();
-            services.AddSingleton(logConfiguration);
+            IConfiguration configuration = BuildConfiguration();
+            services.AddSingleton(configuration);
 
             // Required to run application
             services.AddTransient<Startup>();
 
-            Log.Logger = CraftLogger(logConfiguration);
+            Log.Logger = CraftLogger(configuration, setVerboseLogLevel == true ? LogEventLevel.Verbose : configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel"));
 
             StartupLogger.Information("Attached and configured services.");
             return services;
@@ -83,10 +89,9 @@ namespace AlmostBinary_Binarify
         /// </summary>
         /// <param name="configuration">Global configuration</param>
         /// <returns>Logger</returns>
-        private static ILogger CraftLogger(IConfiguration configuration)
+        private static ILogger CraftLogger(IConfiguration configuration, LogEventLevel logLevel)
         {
             string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} - {SourceContext}:{MemberName}:{LineNumber}{NewLine}{Exception}";
-            LogEventLevel logLevel = configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel");
 
             return new LoggerConfiguration()
             .Enrich.FromLogContext()

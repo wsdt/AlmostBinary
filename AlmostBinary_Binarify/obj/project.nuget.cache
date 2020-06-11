@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oKH5fAiKifYGf6HF5rVNaKdrhq6racR6gz/npqqYq1+nT/r2FuhdITQxXBqJSySWTYrM9VDkzTVj0oVpyvkjgg==",
+  "dgSpecHash": "+aoy85ZQ6696/OCX+4orcL9GKkhgzgFMs+uSOB7NaqjFAgXYlRK8N3c2885e+xaS8+tiDb5IrrRMqPWgYpjBlg==",
   "success": true,
   "projectFilePath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Binarify\\AlmostBinary_Binarify.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\WSDT\\.nuget\\packages\\commandlineparser\\2.8.0\\commandlineparser.2.8.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.4\\microsoft.extensions.configuration.3.1.4.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.4\\microsoft.extensions.configuration.abstractions.3.1.4.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.4\\microsoft.extensions.configuration.binder.3.1.4.nupkg.sha512",

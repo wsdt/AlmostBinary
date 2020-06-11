@@ -1,6 +1,7 @@
 ﻿using AlmostBinary_GlobalConstants;
 using AlmostBinary_Runtime;
 using AlmostBinary_Runtime.utils;
+using CommandLine;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -28,23 +29,22 @@ namespace AlmostBinary_Runtime
         public static void Main(string[] args)
         {
             Console.WriteLine($"Starting runtime. Received {args.Length} argument(s)."); // Logger not initialized yet
-            IServiceCollection services = ConfigureServices();
-            ServiceProvider serviceProvider = services.BuildServiceProvider();
 
             try
             {
-                if (args.Length <= 0) throw new ArgumentException("You have to provide at least one argument.");
-                switch (args[0])
+                // Parse command line args
+                CommandLine.Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed(o =>
                 {
-                    case "--inline-code":
-                        if (args.Length <= 1) throw new ArgumentException("Parameter --inline-code expects 2 arguments.");
-                        serviceProvider.GetService<Startup>().RunInline(args[1]); break;
-                    default: serviceProvider.GetService<Startup>().Run(args); break;
-                }
+                    IServiceCollection services = ConfigureServices(o.Verbose);
+                    ServiceProvider serviceProvider = services.BuildServiceProvider();
+
+                    serviceProvider.GetService<Startup>().Run(o);
+                });
             }
             catch(Exception e)
             {
                 StartupLogger.Fatal(e, $"Unexpected exception. Could not start application.");
+                throw;
             }
             finally
             {
@@ -64,16 +64,16 @@ namespace AlmostBinary_Runtime
         /// <summary>
         /// Configures global services.
         /// </summary>
-        private static IServiceCollection ConfigureServices()
+        private static IServiceCollection ConfigureServices(bool? setVerboseLogLevel)
         {
             IServiceCollection services = new ServiceCollection();
-            IConfiguration logConfiguration = BuildConfiguration();
-            services.AddSingleton(logConfiguration);
+            IConfiguration configuration = BuildConfiguration();
+            services.AddSingleton(configuration);
 
             // Required to run application
             services.AddTransient<Startup>();
 
-            Log.Logger = CraftLogger(logConfiguration);
+            Log.Logger = CraftLogger(configuration, setVerboseLogLevel == true ? LogEventLevel.Verbose : configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel"));
 
             StartupLogger.Information("Attached and configured services.");
             return services;
@@ -93,10 +93,9 @@ namespace AlmostBinary_Runtime
         /// </summary>
         /// <param name="configuration">Global configuration</param>
         /// <returns>Logger</returns>
-        private static ILogger CraftLogger(IConfiguration configuration)
+        private static ILogger CraftLogger(IConfiguration configuration, LogEventLevel logLevel)
         {
             string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} - {SourceContext}:{MemberName}:{LineNumber}{NewLine}{Exception}";
-            LogEventLevel logLevel = configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel");
 
             return new LoggerConfiguration()
             .Enrich.FromLogContext()

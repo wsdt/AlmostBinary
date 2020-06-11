@@ -30,13 +30,14 @@ namespace AlmostBinary_Compiler
         #endregion
 
         #region methods
-        public void Run(string[] args)
+        public void Run(CommandLineOptions args)
         {
             try
             {
                 WriteToFile(
-                    GenerateCode(args),
-                    $"{Path.GetFileNameWithoutExtension(args[0])}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}");
+                    GenerateCode(args.UnCompiledFile),
+                    $"{Path.GetFileNameWithoutExtension(args.UnCompiledFile)}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}",
+                    args.OutputPath);
             }
             catch (Exception ex)
             {
@@ -46,18 +47,18 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private string GenerateCode(string[] args)
+        private string GenerateCode(string file)
         {
             StreamReader? sr;
             try
             {
-                sr = new StreamReader(args[0]);
+                sr = new StreamReader(file);
             }
             catch (Exception ex) when (
               ex is DirectoryNotFoundException
               || ex is FileNotFoundException)
             {
-                throw new Exception($"Run: Could not find input file -> {args[0]}", ex);
+                throw new Exception($"Run: Could not find input file -> {file}", ex);
             }
             string code = sr.ReadToEnd();
             return CompileInline(code);
@@ -156,13 +157,13 @@ namespace AlmostBinary_Compiler
         /// <param name="compiledCode">Compiled code</param>
         /// <param name="fileName">Filename with extension</param>
         /// <returns>Task</returns>
-        private void WriteToFile(string compiledCode, string fileName)
+        private void WriteToFile(string compiledCode, string fileName, string? outputPath)
         {
             BinaryWriter? bw = null;
             try
             {
                 FileStream fs = new FileStream(
-                    Path.Combine(IGlobalConstants.OUTPUT_PATH, fileName),
+                    Path.Combine(outputPath ?? IGlobalConstants.OUTPUT_PATH, fileName),
                     FileMode.Create,
                     FileAccess.ReadWrite,
                     FileShare.ReadWrite,

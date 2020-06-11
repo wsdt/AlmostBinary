@@ -255,3 +255,11 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.csproj.CoreCompileInputs.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\Libraries\011100110111100101110011011101000110010101101101.abinl
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Compiler.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\CommandLine.dll

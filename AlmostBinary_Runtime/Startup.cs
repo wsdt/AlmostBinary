@@ -18,11 +18,11 @@ namespace AlmostBinary_Runtime
         /// Runs provided .wsdt-file.
         /// </summary>
         /// <param name="args"></param>
-        public void Run(string[] args)
+        public void Run(CommandLineOptions args)
         {
             try
             {
-                FileStream fs = new FileStream(args[0], FileMode.Open);
+                FileStream fs = new FileStream(args.CompiledFile, FileMode.Open);
                 BinaryReader br = new BinaryReader(fs);
                 string code = br.ReadString();
                 RunInline(code);

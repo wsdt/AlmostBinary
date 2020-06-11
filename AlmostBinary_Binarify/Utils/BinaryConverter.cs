@@ -79,7 +79,7 @@ namespace AlmostBinary_Binarify
         public static List<Binary> ConvertAllToBinary(string[] args)
         {
             List<Binary> binaries = new List<Binary>();
-            Log.Here().Verbose("Converting values to Binary.");
+            Log.Here().Verbose($"Converting {args.Length} values to Binary.");
 
             for (int i = 1; i < args.Length; i++)
             {
@@ -94,7 +94,7 @@ namespace AlmostBinary_Binarify
         public static List<Binary> ConvertAllToString(string[] args)
         {
             List<Binary> binaries = new List<Binary>();
-            Log.Here().Verbose("Converting values to Strings");
+            Log.Here().Verbose($"Converting {args.Length} values to Strings");
             for (int i = 1; i < args.Length; i++)
             {
                 Binary b = new Binary() { BinaryString = args[i] };

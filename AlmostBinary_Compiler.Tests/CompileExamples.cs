@@ -3,53 +3,28 @@ using System.IO;
 using AlmostBinary_Runtime.Tests;
 using System.Threading.Tasks;
 using Xunit;
+using AlmostBinary_Compiler.Tests.Utils;
 
 namespace AlmostBinary_Compiler.Tests
 {
     public class CompileExamples
     {
-        /// <summary>
-        /// Bug #4, try to call directly for better testing experience (e.g. exceptions when file not found, etc.)
-        /// </summary>
-        /// <param name="fileName"></param>
-        public static void Compile(string uncompiledFileName)
-        {
-            CreateCompiledDirectory();
-            var task = Task.Run(() =>
-            {
-                AlmostBinary_Compiler.Program.Main(new string[] { Path.Combine(IGlobalTestConstants.EXAMPLES_PATH, $"{uncompiledFileName}.{IGlobalTestConstants.UNCOMPILED_FILE_TYPE}") });
-            });
-        }
-
-        /// <summary>
-        /// Simple wrapper method for readability
-        /// </summary>
-        public static void createDirectoryIfNecessary(string path)
-        {
-            if (Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-        }
-
-        public static void CreateCompiledDirectory() => createDirectoryIfNecessary(IGlobalTestConstants.COMPILED_PATH);
+        [Fact]
+        public void CompileRepeat() => TestHelper.Compile(IGlobalTestConstants.REPEAT);
 
         [Fact]
-        public void CompileRepeat() => Compile(IGlobalTestConstants.REPEAT);
+        public void CompileCall() => TestHelper.Compile(IGlobalTestConstants.CALL);
 
         [Fact]
-        public void CompileCall() => Compile(IGlobalTestConstants.CALL);
+        public void CompileHelloWorld() => TestHelper.Compile(IGlobalTestConstants.HELLO_WORLD);
 
         [Fact]
-        public void CompileHelloWorld() => Compile(IGlobalTestConstants.HELLO_WORLD);
+        public void CompileIf() => TestHelper.Compile(IGlobalTestConstants.IF);
 
         [Fact]
-        public void CompileIf() => Compile(IGlobalTestConstants.IF);
+        public void CompileInput() => TestHelper.Compile(IGlobalTestConstants.INPUT);
 
         [Fact]
-        public void CompileInput() => Compile(IGlobalTestConstants.INPUT);
-
-        [Fact]
-        public void CompileVariable() => Compile(IGlobalTestConstants.VARIABLE);
+        public void CompileVariable() => TestHelper.Compile(IGlobalTestConstants.VARIABLE);
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8wS1Tm5V5VTUQKGzc3EWI9OhjOgaPot9yhDq589h2vXbOQzY29aOmDW8WUxrZbMH5k8lGqE6MIGUw5BhbAJcUQ==",
+  "dgSpecHash": "AqZ2E/F395EHuNcBYjEPhWCuCbYVSetUTSsDOrG6ng4nZ1ootQ/BPhNJ2J5RrKwO3/dDDMkVTF+OaPwiWqsfgA==",
   "success": true,
   "projectFilePath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Compiler.Tests\\AlmostBinary_Compiler.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\WSDT\\.nuget\\packages\\commandlineparser\\2.8.0\\commandlineparser.2.8.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.codecoverage\\16.6.1\\microsoft.codecoverage.16.6.1.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
