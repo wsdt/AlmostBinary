@@ -60,14 +60,9 @@ namespace AlmostBinary_Compiler
             {
                 throw new Exception($"Run: Could not find input file -> {file}", ex);
             }
-            string code = sr.ReadToEnd();
-            return CompileInline(code);
-        }
+            string uncompiledCode = sr.ReadToEnd();
 
-        public string CompileInline(string uncompiledCode)
-        {
             Log.Here().Verbose($"Uncompiled code -> \n{uncompiledCode}");
-
             TokenList tokens = Tokenize(uncompiledCode);
 
             List<Stmt>? tree;
