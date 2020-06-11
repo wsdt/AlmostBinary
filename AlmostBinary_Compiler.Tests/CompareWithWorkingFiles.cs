@@ -17,9 +17,9 @@ namespace AlmostBinary_Compiler.Tests
                 fileName += $".{IGlobalTestConstants.COMPILED_FILE_TYPE}";
                 Assert.Equal(
                     TestHelper.TrimReplaceAll(
-                        TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.COMPILED_PATH, fileName))),
+                        TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.COMPILED_PATH, fileName))).Replace(" ", ""),
                     TestHelper.TrimReplaceAll(
-                        TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.WORKING_PATH, fileName))));
+                        TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.WORKING_PATH, fileName))).Replace(" ", ""));
             });
 
             //TestHelper.Compile(fileName, () => {
