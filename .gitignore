@@ -4,3 +4,4 @@ TestResults/
 AlmostBinary.Installer-cache/
 *.msi
 TestResults/
+*.cache
