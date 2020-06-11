@@ -8,11 +8,12 @@ using AlmostBinary_Compiler.Tests.Utils;
 
 namespace AlmostBinary_Compiler.Tests
 {
-   public class CompareWithWorkingFiles
+    public class CompareWithWorkingFiles
     {
-        private void Compare(string fileName)
+        private async void Compare(string fileName)
         {
-            TestHelper.Compile(fileName, () => {
+            await AlmostBinary_Compiler.Tests.Utils.TestHelper.Compile(fileName).ContinueWith((_) =>
+            {
                 fileName += $".{IGlobalTestConstants.COMPILED_FILE_TYPE}";
                 Assert.Equal(
                     TestHelper.TrimReplaceAll(
@@ -20,6 +21,15 @@ namespace AlmostBinary_Compiler.Tests
                     TestHelper.TrimReplaceAll(
                         TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.WORKING_PATH, fileName))));
             });
+
+            //TestHelper.Compile(fileName, () => {
+            //    fileName += $".{IGlobalTestConstants.COMPILED_FILE_TYPE}";
+            //    Assert.Equal(
+            //        TestHelper.TrimReplaceAll(
+            //            TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.COMPILED_PATH, fileName))),
+            //        TestHelper.TrimReplaceAll(
+            //            TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.WORKING_PATH, fileName))));
+            //});
         }
 
         [Fact]

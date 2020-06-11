@@ -17,17 +17,19 @@ namespace AlmostBinary_Compiler.Tests.Utils
         /// <summary>
         /// Bug #4, try to call directly for better testing experience (e.g. exceptions when file not found, etc.)
         /// </summary>
-        /// <param name="fileName"></param>
-        public static Task Compile(string uncompiledFileName, Action onCompilationFinished = null)
+        public static Task Compile(string fileName)
         {
             CreateCompiledDirectory();
             Task compilationTask =  Task.Run(() =>
             {
-                AlmostBinary_Compiler.Program.Main(new string[] { 
+                // Only compile if file is older than one minute (to avoid race conditions, etc.)
+                if ((DateTime.Now - 
+                    File.GetCreationTime(Path.Combine(IGlobalTestConstants.COMPILED_PATH, $"{fileName}.{IGlobalTestConstants.COMPILED_FILE_TYPE}"))).TotalMinutes > 1) {
+                    AlmostBinary_Compiler.Program.Main(new string[] {
                     "-v",
-                    "-f", Path.Combine(IGlobalTestConstants.EXAMPLES_PATH, $"{uncompiledFileName}.{IGlobalTestConstants.UNCOMPILED_FILE_TYPE}"), 
+                    "-f", Path.Combine(IGlobalTestConstants.EXAMPLES_PATH, $"{fileName}.{IGlobalTestConstants.UNCOMPILED_FILE_TYPE}"),
                     "-o", IGlobalTestConstants.COMPILED_PATH });
-                onCompilationFinished?.Invoke();
+                }
             });
             compilationTask.ConfigureAwait(true);
             return compilationTask;

@@ -274,14 +274,13 @@ namespace AlmostBinary_Compiler
         {
             Log.Here().Debug($"Token: {Tokens[Pos].TokenValue}, {Pos}->{Pos + 1}, Next token (curr pos): {Tokens[Pos + 1].TokenValue}");
             Token t = Tokens[_pos++];
-            Log.Here().Verbose($"Getting token '{t.TokenName}:{t.TokenValue}' on position '{Pos}' from {JsonSerializer.Serialize(Tokens)}.");
             return t;
         }
 
         public Token PeekToken()
         {
             Token t = Tokens[Pos];
-            Log.Here().Verbose($"Peeking token '{t.TokenName}:{t.TokenValue}' on position '{Pos}' from {JsonSerializer.Serialize(Tokens)}.");
+            Log.Here().Verbose($"Peeking token '{t.TokenName}:{t.TokenValue}' on position '{Pos}'.");
             return t;
         }
         #endregion

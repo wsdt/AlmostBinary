@@ -159,9 +159,10 @@ namespace AlmostBinary_Compiler
         private void WriteToFile(string compiledCode, string fileName, string? outputPath)
         {
             BinaryWriter? bw = null;
+            FileStream? fs = null;
             try
             {
-                FileStream fs = new FileStream(
+                fs = new FileStream(
                     Path.Combine(outputPath ?? IGlobalConstants.OUTPUT_PATH, fileName),
                     FileMode.Create,
                     FileAccess.ReadWrite,
@@ -192,6 +193,7 @@ namespace AlmostBinary_Compiler
             finally
             {
                 if (bw != null) bw.Close();
+                if (fs != null) fs.Close();
             }
         }
         #endregion
