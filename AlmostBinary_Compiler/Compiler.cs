@@ -5,8 +5,8 @@ namespace AlmostBinary_Compiler
     internal sealed class Compiler
     {
         #region fields
-        static string code;
-        static int repeats = 0;
+        string code;
+        int repeats = 0;
         #endregion
 
         #region ctor
@@ -18,7 +18,7 @@ namespace AlmostBinary_Compiler
         #endregion
 
         #region methods
-        static void CompileStmtList(List<Stmt> statements)
+        private void CompileStmtList(List<Stmt> statements)
         {
             foreach (Stmt s in statements)
             {
@@ -69,7 +69,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void CompileFunc(Func data)
+        private void CompileFunc(Func data)
         {
             Write(":" + data.Ident);
 
@@ -81,7 +81,7 @@ namespace AlmostBinary_Compiler
             CompileStmtList(data.Statements);
         }
 
-        static void CompileIf(IfBlock data)
+        private void CompileIf(IfBlock data)
         {
             CompileExpr(data.LeftExpr);
             CompileExpr(data.RightExpr);
@@ -98,7 +98,7 @@ namespace AlmostBinary_Compiler
             CompileStmtList(data.Statements);
         }
 
-        static void CompileElseIf(ElseIfBlock data)
+        private void CompileElseIf(ElseIfBlock data)
         {
             CompileExpr(data.LeftExpr);
             CompileExpr(data.RightExpr);
@@ -115,13 +115,13 @@ namespace AlmostBinary_Compiler
             CompileStmtList(data.Statements);
         }
 
-        static void CompileElse(ElseBlock data)
+        private void CompileElse(ElseBlock data)
         {
             Write("else");
             CompileStmtList(data.Statements);
         }
 
-        static void CompileRepeat(RepeatBlock data)
+        private void CompileRepeat(RepeatBlock data)
         {
             string name = ".repeat" + repeats.ToString();
             repeats++;
@@ -130,13 +130,13 @@ namespace AlmostBinary_Compiler
             Write("goto " + name);
         }
 
-        static void CompileAssign(Assign data)
+        private void CompileAssign(Assign data)
         {
             CompileExpr(data.Value);
             Write("setVar " + data.Ident);
         }
 
-        static void CompileCall(Call data)
+        private void CompileCall(Call data)
         {
             data.Args.Reverse();
 
@@ -148,7 +148,7 @@ namespace AlmostBinary_Compiler
             Write("call " + data.Ident);
         }
 
-        static void CompileExpr(Expr data)
+        private void CompileExpr(Expr data)
         {
             if (data is IntLiteral)
             {
@@ -199,7 +199,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        static void Write(string data)
+        private void Write(string data)
         {
             if (code == "")
             {

@@ -10,13 +10,15 @@ namespace AlmostBinary_Compiler
     {
         #region fields
         private static ILogger Log => Serilog.Log.ForContext<Parser>();
-        static TokenList? _tokens;
-        static Block? _currentBlock = null;
-        static Stack<Block> _blockstack = new Stack<Block>();
-        static List<Stmt> _tree = new List<Stmt>();
+        private List<string> _imports = new List<string>();
+        TokenList? _tokens;
+        Block? _currentBlock = null;
+        Stack<Block> _blockstack = new Stack<Block>();
+        List<Stmt> _tree = new List<Stmt>();
         #endregion
 
         #region properties 
+        public List<string> Imports { get => _imports; set => _imports = value; }
         public List<Stmt> Tree { get => _tree; }
         #endregion
 
@@ -43,7 +45,7 @@ namespace AlmostBinary_Compiler
 
                 switch (tok.TokenName)
                 {
-                    case Lexer.Tokens.Import: Startup.Imports.Add(ParseImport()); break;
+                    case Lexer.Tokens.Import: Imports.Add(ParseImport()); break;
                     case Lexer.Tokens.Function: ParseFunction(); break;
                     case Lexer.Tokens.If: ParseIf(); break;
                     case Lexer.Tokens.ElseIf: ParseElseIf(); break;
@@ -62,7 +64,7 @@ namespace AlmostBinary_Compiler
         #endregion
 
         #region methods
-        private static string ParseImport()
+        private string ParseImport()
         {
             string ret;
             Token t = _tokens.GetToken();
@@ -78,7 +80,7 @@ namespace AlmostBinary_Compiler
             return ret;
         }
 
-        private static void ParseFunction()
+        private void ParseFunction()
         {
             Func func = Func.Parse(_tokens);
 
@@ -94,7 +96,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void ParseIf()
+        private void ParseIf()
         {
             IfBlock ifblock = IfBlock.Parse(_tokens);
 
@@ -105,7 +107,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void ParseElseIf()
+        private void ParseElseIf()
         {
             ElseIfBlock elseifblock = ElseIfBlock.Parse(_tokens);
 
@@ -116,7 +118,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void ParseElse()
+        private void ParseElse()
         {
             if (_currentBlock != null)
             {
@@ -125,7 +127,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void ParseRepeat()
+        private void ParseRepeat()
         {
             if (_currentBlock != null)
             {
@@ -134,7 +136,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void ParseIdent()
+        private void ParseIdent()
         {
             if (_tokens.PeekToken().TokenName == Lexer.Tokens.Equal)
             {
@@ -151,13 +153,13 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void ParseReturn()
+        private void ParseReturn()
         {
             Return r = Return.Parse(_tokens);
             _currentBlock.AddStmt(r);
         }
 
-        private static void ParseRightBrace()
+        private void ParseRightBrace()
         {
             if (_currentBlock is Func)
             {
@@ -188,7 +190,7 @@ namespace AlmostBinary_Compiler
             }
         }
 
-        private static void ParseEOF()
+        private void ParseEOF()
         {
             _tree.Add(_currentBlock);
         }

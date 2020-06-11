@@ -24,12 +24,22 @@ namespace AlmostBinary_Compiler.Tests.Utils
             Task compilationTask =  Task.Run(() =>
             {
                 AlmostBinary_Compiler.Program.Main(new string[] { 
+                    "-v",
                     "-f", Path.Combine(IGlobalTestConstants.EXAMPLES_PATH, $"{uncompiledFileName}.{IGlobalTestConstants.UNCOMPILED_FILE_TYPE}"), 
                     "-o", IGlobalTestConstants.COMPILED_PATH });
                 onCompilationFinished?.Invoke();
             });
             compilationTask.ConfigureAwait(true);
             return compilationTask;
+        }
+
+        public static void Compile_bak(string uncompiledFileName, Action onCompilationFinished = null)
+        {
+            Process compiler = Process.Start(IGlobalTestConstants.COMPILER_EXE_PATH,
+               Path.Combine(IGlobalTestConstants.EXAMPLES_PATH, $"{uncompiledFileName}.{IGlobalTestConstants.UNCOMPILED_FILE_TYPE}"));
+            compiler.CloseMainWindow();
+            compiler.Close();
+            onCompilationFinished();
         }
 
         /// <summary>

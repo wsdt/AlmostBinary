@@ -15,11 +15,6 @@ namespace AlmostBinary_Compiler
         #region fields
         private static ILogger Log => Serilog.Log.ForContext<Startup>();
         private readonly IConfiguration _configuration;
-        private static List<string> _imports = new List<string>();
-        #endregion
-
-        #region properties
-        public static List<string> Imports { get => _imports; set => _imports = value; }
         #endregion
 
         #region ctor
@@ -65,10 +60,11 @@ namespace AlmostBinary_Compiler
             Log.Here().Verbose($"Uncompiled code -> \n{uncompiledCode}");
             TokenList tokens = Tokenize(uncompiledCode);
 
+            Parser parser;
             List<Stmt>? tree;
             try
             {
-                Parser parser = new Parser(tokens);
+                parser = new Parser(tokens);
                 tree = parser.Tree;
             }
             catch (Exception ex)
@@ -79,7 +75,7 @@ namespace AlmostBinary_Compiler
 
             Compiler compiler = new Compiler(tree);
             string compiledCode = compiler.GetCode();
-            compiledCode += LoadImports();
+            compiledCode += LoadImports(parser.Imports);
             return compiledCode;
         }
 
@@ -89,18 +85,18 @@ namespace AlmostBinary_Compiler
         /// <param name="inputFile">Uncompiled input file</param>
         /// <param name="code">Compiled code</param>
         /// <returns></returns>
-        private string LoadImports()
+        private string LoadImports(List<string> importLst)
         {
-            string imports = "\n";
+            string importsStr = "\n";
             string libraryPath = Path.Combine(Program.PROGRAM_ENTRY_PATH ?? throw new Exception("Couldn't load path of entry point. Libraries not found."), "Libraries");
             string libraryFileExtension = _configuration.GetValue<string>("FileExtensions:LibraryFileExtension");
 
-            foreach (string library in _imports)
+            foreach (string library in importLst)
             {
                 try
                 {
                     StreamReader s = new StreamReader(Path.Combine(libraryPath, $"{library}.{libraryFileExtension}"));
-                    imports += "\n" + s.ReadToEnd();
+                    importsStr += "\n" + s.ReadToEnd();
                 }
                 catch
                 {
@@ -110,7 +106,7 @@ namespace AlmostBinary_Compiler
             }
 
             Log.Here().Information("Loaded imports.");
-            return imports;
+            return importsStr;
         }
 
 
