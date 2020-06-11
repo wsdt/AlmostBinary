@@ -1,10 +1,10 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.301-nanoserver-2004
 
 WORKDIR /app
 COPY . .
 
-RUN dotnet restore && dotnet build ./AlmostBinary_Compiler/AlmostBinary_Compiler.csproj && \
-  dotnet build ./AlmostBinary_Runtime/AlmostBinary_Runtime.csproj && dotnet test
+RUN dotnet restore && dotnet build ./AlmostBinary_Compiler.Tests/AlmostBinary_Compiler.Tests.csproj && \
+  dotnet build ./AlmostBinary_Runtime.Tests/AlmostBinary_Runtime.Tests.csproj 
 
 # run tests on docker run
 ENTRYPOINT ["dotnet", "test"]
