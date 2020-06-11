@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AlmostBinary_GlobalConstants\AlmostBinary_GlobalConstants.csproj" />
+    <ProjectReference Include="..\AlmostBinary_Runtime\AlmostBinary_Runtime.csproj" />
   </ItemGroup>
 
 </Project>

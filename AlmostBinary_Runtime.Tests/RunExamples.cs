@@ -1,4 +1,3 @@
-using AlmostBinary_HelperMethods.Tests;
 using AlmostBinary_GlobalConstants.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
