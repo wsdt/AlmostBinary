@@ -72,7 +72,7 @@ namespace AlmostBinary_Compiler
             // Required to run application
             services.AddTransient<Startup>();
 
-            Log.Logger = CraftLogger(configuration, setVerboseLogLevel == true ? LogEventLevel.Verbose : configuration.GetValue<LogEventLevel>("Runtime:Logging:LogLevel"));
+            Log.Logger = CraftLogger(configuration, setVerboseLogLevel == true ? LogEventLevel.Verbose : configuration.GetValue<LogEventLevel>("Logging:LogLevel"));
 
             StartupLogger.Information("Attached and configured services.");
             return services;
@@ -104,7 +104,7 @@ namespace AlmostBinary_Compiler
             .WriteTo.Async(f => f.File(
                 Path.Combine(
                     IGlobalConstants.PROJECT_ROOT_PATH,
-                    configuration.GetValue<string>("Runtime:Logging:LogOutputPath")
+                    configuration.GetValue<string>("Logging:LogOutputPath")
                 ),
                 rollingInterval: RollingInterval.Day,
                 buffered: true,

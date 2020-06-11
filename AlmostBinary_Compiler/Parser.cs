@@ -64,12 +64,15 @@ namespace AlmostBinary_Compiler
         #region methods
         private static string ParseImport()
         {
-            string ret = "";
+            string ret;
             Token t = _tokens.GetToken();
 
             if (t.TokenName == Lexer.Tokens.Ident)
             {
                 ret = t.TokenValue;
+            } else
+            {
+                throw new Exception($"Expected an identifier after an import statement: TokenName->'{t.TokenName}', TokenValue->'{t.TokenValue}'");
             }
 
             return ret;

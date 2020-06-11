@@ -36,7 +36,7 @@ namespace AlmostBinary_Compiler
             {
                 WriteToFile(
                     GenerateCode(args.UnCompiledFile),
-                    $"{Path.GetFileNameWithoutExtension(args.UnCompiledFile)}.{_configuration.GetValue<string>("Runtime:FileExtensions:OutputFileExtension")}",
+                    $"{Path.GetFileNameWithoutExtension(args.UnCompiledFile)}.{_configuration.GetValue<string>("FileExtensions:OutputFileExtension")}",
                     args.OutputPath);
             }
             catch (Exception ex)
@@ -93,12 +93,20 @@ namespace AlmostBinary_Compiler
         {
             string imports = "\n";
             string libraryPath = Path.Combine(Program.PROGRAM_ENTRY_PATH ?? throw new Exception("Couldn't load path of entry point. Libraries not found."), "Libraries");
-            string libraryFileExtension = _configuration.GetValue<string>("Runtime:FileExtensions:LibraryFileExtension");
+            string libraryFileExtension = _configuration.GetValue<string>("FileExtensions:LibraryFileExtension");
 
             foreach (string library in _imports)
             {
-                StreamReader s = new StreamReader(Path.Combine(libraryPath, $"{library}.{libraryFileExtension}"));
-                imports += "\n" + s.ReadToEnd();
+                try
+                {
+                    StreamReader s = new StreamReader(Path.Combine(libraryPath, $"{library}.{libraryFileExtension}"));
+                    imports += "\n" + s.ReadToEnd();
+                }
+                catch
+                {
+                    Log.Here().Error($"No library named '{library}' found.");
+                    throw;
+                }
             }
 
             Log.Here().Information("Loaded imports.");
