@@ -1,3 +1,4 @@
+
 # Contribution
 First of all, thank you for considering to contribute to Almost Binary! 
 Here are some basic guidelines to ensure that all pull-requests or issues can be merged/implemented.
