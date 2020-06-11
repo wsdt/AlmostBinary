@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1.301-nanoserver-1903
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.301-nanoserver-1809
 
 WORKDIR /app
 COPY . .
