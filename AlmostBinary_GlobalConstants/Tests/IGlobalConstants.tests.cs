@@ -13,7 +13,7 @@ namespace AlmostBinary_GlobalConstants.Tests
         public const int TIMEOUT_IN_MS = 3000;
 
         /* Paths */
-        public readonly static string ROOT_PATH = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..");
+        public readonly static string ROOT_PATH = Directory.GetCurrentDirectory();
         public readonly static string EXAMPLES_PATH = Path.Combine(ROOT_PATH, "examples");
         public readonly static string COMPILED_PATH = Path.Combine(ROOT_PATH, "compiled");
         public readonly static string WORKING_PATH = Path.Combine(COMPILED_PATH, "working");

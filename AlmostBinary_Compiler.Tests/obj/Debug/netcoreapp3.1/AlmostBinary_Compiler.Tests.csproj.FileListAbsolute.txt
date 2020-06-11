@@ -258,3 +258,15 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.Tests.csproj.CoreCompileInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\CommandLine.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\compiled\working\call.wsdt
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\compiled\working\helloworld.wsdt
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\compiled\working\if.wsdt
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\compiled\working\input.wsdt
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\compiled\working\repeat.wsdt
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\compiled\working\variable.wsdt
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\examples\call.abin
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\examples\helloworld.abin
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\examples\if.abin
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\examples\input.abin
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\examples\repeat.abin
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Debug\netcoreapp3.1\examples\variable.abin
