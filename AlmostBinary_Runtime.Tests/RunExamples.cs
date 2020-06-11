@@ -1,10 +1,9 @@
 using AlmostBinary_GlobalConstants.Tests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AlmostBinary_Runtime.Tests
 {
-    [TestClass]
     public class RunExamples
     {
         /// <summary>
@@ -18,25 +17,25 @@ namespace AlmostBinary_Runtime.Tests
             {
                 AlmostBinary_Runtime.Program.Main(new string[] { "--inline-code", compiledCode });
             });
-            Assert.IsFalse(task.Wait(IGlobalTestConstants.TIMEOUT));
+            Assert.False(task.Wait(IGlobalTestConstants.TIMEOUT));
         }
 
-        [TestMethod]
+        [Fact]
         public void RunRepeat() => Run(ICompiledFileConstants.REPEAT);
 
-        [TestMethod]
+        [Fact]
         public void RunCall() => Run(ICompiledFileConstants.CALL);
 
-        [TestMethod]
+        [Fact]
         public void RunHelloWorld() => Run(ICompiledFileConstants.HELLO_WORLD);
 
-        [TestMethod]
+        [Fact]
         public void RunIf() => Run(ICompiledFileConstants.IF);
 
-        [TestMethod]
+        [Fact]
         public void RunInput() => Run(ICompiledFileConstants.INPUT);
 
-        [TestMethod]
+        [Fact]
         public void RunVariable() => Run(ICompiledFileConstants.VARIABLE);
 
     }

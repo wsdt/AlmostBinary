@@ -103,7 +103,6 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Runtime.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.csprojAssemblyReference.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.csproj.CoreCompileInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.AssemblyInfoInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.AssemblyInfo.cs
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.csproj.CopyComplete
@@ -248,3 +247,7 @@ C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcorea
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.dll
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.pdb
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Runtime.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.Tests.genruntimeconfig.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\xunit.assert.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\xunit.core.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
