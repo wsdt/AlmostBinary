@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.tests --tag docker-tests:$(date) && docker run docker-tests:$(date)
+      run: docker build . --file Dockerfile.tests --tag docker-tests:github && docker run docker-tests:github
