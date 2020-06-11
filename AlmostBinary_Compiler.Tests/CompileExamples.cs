@@ -12,12 +12,12 @@ namespace AlmostBinary_Compiler.Tests
         /// Bug #4, try to call directly for better testing experience (e.g. exceptions when file not found, etc.)
         /// </summary>
         /// <param name="fileName"></param>
-        public static void Compile(string uncompiledFile)
+        public static void Compile(string uncompiledFileName)
         {
             CreateCompiledDirectory();
             var task = Task.Run(() =>
             {
-                AlmostBinary_Compiler.Program.Main(new string[] { uncompiledFile });
+                AlmostBinary_Compiler.Program.Main(new string[] { Path.Combine(IGlobalTestConstants.EXAMPLES_PATH, $"{uncompiledFileName}.{IGlobalTestConstants.UNCOMPILED_FILE_TYPE}") });
             });
         }
 

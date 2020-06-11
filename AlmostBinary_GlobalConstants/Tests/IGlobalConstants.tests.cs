@@ -10,7 +10,7 @@ namespace AlmostBinary_GlobalConstants.Tests
     /// </summary>
     public interface IGlobalTestConstants
     {
-        public const int TIMEOUT = 3000;
+        public const int TIMEOUT_IN_SECONDS = 3;
 
         /* Paths */
         public readonly static string ROOT_PATH = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..");

@@ -13,7 +13,9 @@
           "MSTest.TestAdapter": "2.1.2",
           "MSTest.TestFramework": "2.1.2",
           "Microsoft.NET.Test.Sdk": "16.6.1",
-          "coverlet.collector": "1.3.0"
+          "coverlet.collector": "1.3.0",
+          "xunit": "2.4.1",
+          "xunit.runner.visualstudio": "2.4.2"
         },
         "runtime": {
           "AlmostBinary_Compiler.Tests.dll": {}
@@ -1292,6 +1294,7 @@
           }
         }
       },
+      "xunit.runner.visualstudio/2.4.2": {},
       "AlmostBinary_Binarify/1.0.0": {
         "dependencies": {
           "AlmostBinary_GlobalConstants": "1.0.0",
@@ -2109,6 +2112,13 @@
       "sha512": "sha512-7e/1jqBpcb7frLkB6XDrHCGXAbKN4Rtdb88epYxCSRQuZDRW8UtTfdTEVpdTl8s4T56e07hOBVd4G0OdCxIY2A==",
       "path": "xunit.extensibility.execution/2.4.1",
       "hashPath": "xunit.extensibility.execution.2.4.1.nupkg.sha512"
+    },
+    "xunit.runner.visualstudio/2.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Trt9multph2KE3U0p9oBt0k4Fq6lUv4btUcONaQEeuFnMCak2k/b7PAArbLtMFW7HO1jxlBHUgIPKEqci3Y1dg==",
+      "path": "xunit.runner.visualstudio/2.4.2",
+      "hashPath": "xunit.runner.visualstudio.2.4.2.nupkg.sha512"
     },
     "AlmostBinary_Binarify/1.0.0": {
       "type": "project",
