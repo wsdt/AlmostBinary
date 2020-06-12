@@ -69,7 +69,7 @@ namespace AlmostBinary_Compiler.Tests.Utils
             compiler.CloseMainWindow();
             compiler.Close();
         }
-        public static string TrimReplaceAll(string code) => multipleSpacesRegex.Replace(code.Replace("\n", " ").Replace("\r", " "), " ");
+        public static string TrimReplaceAll(string code) => multipleSpacesRegex.Replace(code.Replace("\n", "").Replace("\r", ""), "");
 
         /// <summary>
         /// Compiles all example files
