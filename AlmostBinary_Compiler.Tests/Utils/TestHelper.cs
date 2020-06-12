@@ -22,12 +22,15 @@ namespace AlmostBinary_Compiler.Tests.Utils
             CreateCompiledDirectory();
             Task compilationTask = Task.Run(() =>
            {
-                //if ((DateTime.Now - 
-                //    File.GetCreationTime(Path.Combine(IGlobalTestConstants.COMPILED_PATH, $"{fileName}.{IGlobalTestConstants.COMPILED_FILE_TYPE}"))).TotalMinutes > 1) {
-                AlmostBinary_Compiler.Program.Main(new string[] {
+               // Only compile if file older than 1 minute (to avoid locked files, etc.)
+               if ((DateTime.Now -
+                   File.GetCreationTime(Path.Combine(IGlobalTestConstants.COMPILED_PATH, $"{fileName}.{IGlobalTestConstants.COMPILED_FILE_TYPE}"))).TotalMinutes > 1)
+               {
+                   AlmostBinary_Compiler.Program.Main(new string[] {
                     "-v",
                     "-f", Path.Combine(IGlobalTestConstants.EXAMPLES_PATH, $"{fileName}.{IGlobalTestConstants.UNCOMPILED_FILE_TYPE}"),
                     "-o", IGlobalTestConstants.COMPILED_PATH });
+               }
            });
             compilationTask.ConfigureAwait(true);
             return compilationTask;
