@@ -12,7 +12,7 @@ namespace AlmostBinary_Compiler.Tests.Utils
     public class TestHelper
     {
         private static readonly RegexOptions regOptions = RegexOptions.None;
-        private static readonly Regex multipleSpacesRegex = new Regex("[ ]{2,}", regOptions);
+        private static readonly Regex multipleSpacesRegex = new Regex("[ ]{1,}", regOptions);
 
         /// <summary>
         /// Bug #4, try to call directly for better testing experience (e.g. exceptions when file not found, etc.)
