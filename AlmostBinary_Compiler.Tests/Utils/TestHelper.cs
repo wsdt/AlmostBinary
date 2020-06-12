@@ -12,7 +12,7 @@ namespace AlmostBinary_Compiler.Tests.Utils
     public class TestHelper
     {
         private static readonly RegexOptions regOptions = RegexOptions.None;
-        private static readonly Regex multipleSpacesRegex = new Regex("[ ]{1,}", regOptions);
+        private static readonly Regex multipleSpacesRegex = new Regex("[ ]{2,}", regOptions);
 
         /// <summary>
         /// Bug #4, try to call directly for better testing experience (e.g. exceptions when file not found, etc.)
@@ -69,7 +69,7 @@ namespace AlmostBinary_Compiler.Tests.Utils
             compiler.CloseMainWindow();
             compiler.Close();
         }
-        public static string TrimReplaceAll(string code) => multipleSpacesRegex.Replace(code.Replace("\n", "").Replace("\r", ""), "");
+        public static string TrimReplaceAll(string code) => multipleSpacesRegex.Replace(code.Replace("\n", " ").Replace("\r", " "), " ");
 
         /// <summary>
         /// Compiles all example files
