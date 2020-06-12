@@ -42,6 +42,7 @@ namespace AlmostBinary_Binarify
             catch (Exception ex)
             {
                 StartupLogger.Here().Fatal(ex, $"Ooops, something went wrong with Binarify.");
+                throw;
             }
 
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnShutdown!);

@@ -81,7 +81,7 @@ namespace AlmostBinary_Binarify
             List<Binary> binaries = new List<Binary>();
             Log.Here().Verbose($"Converting {args.Length} values to Binary.");
 
-            for (int i = 1; i < args.Length; i++)
+            for (int i = 0; i < args.Length; i++)
             {
                 Binary b = args[i].ToBinary();
                 Log.Here().Information($"Argument {i}: '{args[i]}' -> '{b.BinaryString}'");
@@ -95,7 +95,7 @@ namespace AlmostBinary_Binarify
         {
             List<Binary> binaries = new List<Binary>();
             Log.Here().Verbose($"Converting {args.Length} values to Strings");
-            for (int i = 1; i < args.Length; i++)
+            for (int i = 0; i < args.Length; i++)
             {
                 Binary b = new Binary() { BinaryString = args[i] };
                 Log.Here().Information($"Argument {i}: '{args[i]}' -> {b}");

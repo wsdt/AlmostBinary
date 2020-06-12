@@ -20,6 +20,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Update="Libraries\01100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Libraries\011100110111100101110011011101000110010101101101.abinl">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>

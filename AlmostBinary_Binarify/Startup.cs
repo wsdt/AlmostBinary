@@ -1,6 +1,7 @@
 ﻿using AlmostBinary_Binarify.utils;
 using Serilog;
 using System;
+using System.Linq;
 using static AlmostBinary_Binarify.BinaryConverter;
 
 namespace AlmostBinary_Binarify
@@ -18,8 +19,8 @@ namespace AlmostBinary_Binarify
         /// <param name="args"></param>
         public void Run(CommandLineOptions args)
         {
-            if (args.ToBinary != null) ConvertAllToBinary(args.ToBinary);
-            if (args.ToString != null) ConvertAllToString(args.ToString);
+            if (args.ToBinary != null) ConvertAllToBinary(args.ToBinary.ToArray());
+            if (args.ToString != null) ConvertAllToString(args.ToString.ToArray());
         }
         #endregion
     }

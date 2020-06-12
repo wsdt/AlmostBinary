@@ -4,10 +4,14 @@ using System.Text;
 
 namespace AlmostBinary_BlockhainLibrary
 {
+    // TODO: Add p2p network -> https://www.c-sharpcorner.com/article/building-a-blockchain-in-net-core-p2p-network/
     public class Blockchain
     {
         #region properties
         public IList<Block> Chain { set; get; }
+        public int Reward = 1;
+        public int Difficulty { set; get; } = 2;
+        public IList<Transaction> PendingTransactions = new List<Transaction>();
         #endregion
 
         #region ctor
@@ -26,7 +30,8 @@ namespace AlmostBinary_BlockhainLibrary
 
         public Block CreateGenesisBlock()
         {
-            return new Block(DateTime.Now, null, "{}");
+            return new Block(DateTime.Now, null, 
+                new List<Transaction>() { new Transaction("0000000000000000", "0000000000000000", 0) });
         }
 
         public void AddGenesisBlock()
@@ -44,7 +49,7 @@ namespace AlmostBinary_BlockhainLibrary
             Block latestBlock = this.GetLatestBlock();
             block.Index = latestBlock.Index + 1;
             block.PreviousHash = latestBlock.Hash;
-            block.Hash = block.CalculateHash();
+            block.Mine(this.Difficulty);
             this.Chain.Add(block);
         }
 
@@ -62,6 +67,16 @@ namespace AlmostBinary_BlockhainLibrary
                 }
             }
             return true;
+        }
+
+        public void CreateTransaction(Transaction transaction) => PendingTransactions.Add(transaction);
+
+        public void ProcessPendingTransactions(string minerAddress)
+        {
+            Block block = new Block(DateTime.Now, GetLatestBlock().Hash, this.PendingTransactions);
+            AddBlock(block);
+            PendingTransactions = new List<Transaction>();
+            CreateTransaction(new Transaction(null, minerAddress, Reward));
         }
     }
     #endregion

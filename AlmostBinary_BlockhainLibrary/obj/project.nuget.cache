@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ckr5q3umxukkLzAlMWofF76hMx6KI3CMjn9Yf/3Bdy6ml7Yr/mkpYHcnUKXJxw0SzwXCzQ4rRyaAs1h1AO1foQ==",
+  "dgSpecHash": "UK59Hpk3xmv22s77QbbYyYoU03BGYGN56h2azUxNUtR7eruAPJ1dGO4SRNacG/g0Z+lIG1Da22e6/3jKSo8q6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_BlockhainLibrary\\AlmostBinary_BlockhainLibrary.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\WSDT\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
