@@ -14,7 +14,16 @@ namespace AlmostBinary_Compiler.Tests
         {
             await AlmostBinary_Compiler.Tests.Utils.TestHelper.Compile(fileName).ContinueWith((_) =>
             {
+                
                 fileName += $".{IGlobalTestConstants.COMPILED_FILE_TYPE}";
+
+
+                Console.WriteLine("COMPARING ############################\n");
+                Console.WriteLine(TestHelper.TrimReplaceAll(
+                        TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.COMPILED_PATH, fileName)))+ "\n"+
+                    TestHelper.TrimReplaceAll(
+                        TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.WORKING_PATH, fileName))));
+
                 Assert.Equal(
                     TestHelper.TrimReplaceAll(
                         TestHelper.ReadFile(Path.Combine(IGlobalTestConstants.COMPILED_PATH, fileName))),
