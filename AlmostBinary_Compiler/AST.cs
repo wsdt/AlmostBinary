@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AlmostBinary_Binarify;
+using System;
 using System.Collections.Generic;
+using static AlmostBinary_Binarify.BinaryConverter;
 
 namespace AlmostBinary_Compiler
 {
@@ -11,7 +13,7 @@ namespace AlmostBinary_Compiler
         #region methods
         public static Expr Parse(TokenList _tokens)
         {
-            Expr ret = null;
+            Expr? ret = null;
             Token t = _tokens.GetToken();
 
             if (_tokens.PeekToken().TokenName == Lexer.Tokens.LeftParan)
@@ -36,7 +38,12 @@ namespace AlmostBinary_Compiler
             }
             else if (t.TokenName == Lexer.Tokens.IntLiteral)
             {
-                IntLiteral i = new IntLiteral(Convert.ToInt32(t.TokenValue.ToString()));
+                string originalStr = Binary.BinaryToStr(t.TokenValue.ToString()).Replace(ITokens.IPartial.INT_LITERAL, ""); // remove int-literals to parse to number
+                IntLiteral i = new IntLiteral(
+                    Convert.ToInt32(
+                        originalStr
+                    )
+                );
                 ret = i;
             }
             else if (t.TokenName == Lexer.Tokens.StringLiteral)
@@ -97,7 +104,7 @@ namespace AlmostBinary_Compiler
                 || _tokens.PeekToken().TokenName == Lexer.Tokens.Mul
                 || _tokens.PeekToken().TokenName == Lexer.Tokens.Div)
             {
-                Expr lexpr = ret;
+                Expr? lexpr = ret;
                 Symbol op = 0;
 
                 if (_tokens.PeekToken().TokenName == Lexer.Tokens.Add)
@@ -121,9 +128,13 @@ namespace AlmostBinary_Compiler
 
                 Expr rexpr = Expr.Parse(_tokens);
 
-                ret = new MathExpr(lexpr, op, rexpr);
+                ret = new MathExpr(
+                    lexpr ?? throw new Exception($"Left expression of mathematical expression is missing: '{op}'->'{rexpr}'"), 
+                    op, 
+                    rexpr);
             }
 
+            if (ret == null) throw new Exception($"Caught unexpected expression -> '{t.TokenName}':'{t.TokenValue}'");
             return ret;
         }
         #endregion
@@ -169,7 +180,6 @@ namespace AlmostBinary_Compiler
         #region methods
         public static Assign Parse(TokenList _tokens)
         {
-            Assign ret = null;
             string ident = "";
 
             Token t = _tokens.GetToken();
@@ -179,7 +189,7 @@ namespace AlmostBinary_Compiler
 
             Expr value = Expr.Parse(_tokens);
 
-            ret = new Assign(ident, value);
+            Assign ret = new Assign(ident, value);
 
             return ret;
         }

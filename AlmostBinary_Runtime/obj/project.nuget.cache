@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zQ6CtCM1+I/TB7/38eyKcfD9f56AZQvmtN+mu9JomrNLzMfT2VQwH+7VcO0LOH2e1PPK93rxfgSJqsL7B2XwiQ==",
+  "dgSpecHash": "TZBWJ5jMey2ARauKr7CjlUc+j/cm+y6TWd+k0AFT5y2VuToTFCAZoCB92wdMMtxYysFl1bM9w9JMYhe3k8Y57A==",
   "success": true,
   "projectFilePath": "C:\\Users\\WSDT\\Desktop\\C#_.NET\\KevinRiedl\\AlmostBinary\\AlmostBinary_Runtime\\AlmostBinary_Runtime.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
+    "C:\\Users\\WSDT\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\serilog\\2.9.0\\serilog.2.9.0.nupkg.sha512",
     "C:\\Users\\WSDT\\.nuget\\packages\\serilog.sinks.async\\1.4.0\\serilog.sinks.async.1.4.0.nupkg.sha512",

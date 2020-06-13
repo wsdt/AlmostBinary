@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AlmostBinary_Binarify\AlmostBinary_Binarify.csproj" />
+    <ProjectReference Include="..\AlmostBinary_BlockhainLibrary\AlmostBinary_BlockhainLibrary.csproj" />
     <ProjectReference Include="..\AlmostBinary_GlobalConstants\AlmostBinary_GlobalConstants.csproj" />
   </ItemGroup>
 

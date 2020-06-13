@@ -79,3 +79,6 @@ C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.genruntimeconfig.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\CommandLine.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\obj\Debug\netcoreapp3.1\AlmostBinary_Runtime.csproj.CoreCompileInputs.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_BlockhainLibrary.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime\bin\Debug\netcoreapp3.1\AlmostBinary_BlockhainLibrary.pdb

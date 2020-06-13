@@ -20,7 +20,7 @@ namespace AlmostBinary_Binarify.Tests
         [TestMethod]
         public void ConvertStrArrToBinary_OriginalStrArr_BinaryStrArr()
         {
-            List<Binary> binaries = ConvertAllToBinary(new string[] { "--to-binary", "helloworld", "123", "צהü@^.,;'#´\"" });
+            List<Binary> binaries = ConvertAllToBinary(new string[] { "helloworld", "123", "צהü@^.,;'#´\"" });
             Assert.AreEqual(3, binaries.Count);
             Assert.AreEqual("01101000011001010110110001101100011011110111011101101111011100100110110001100100", binaries.ElementAt(0).BinaryString);
             Assert.AreEqual("001100010011001000110011", binaries.ElementAt(1).BinaryString);
@@ -37,7 +37,6 @@ namespace AlmostBinary_Binarify.Tests
         public void ConvertBinaryStrArrToStrArr_BinaryStrArr_OriginalStrArr()
         {
             List<Binary> binaries = ConvertAllToString(new string[] { 
-                "--to-string",
                 "01101000011001010110110001101100011011110111011101101111011100100110110001100100",
                 "001100010011001000110011",
                 "11000011101101101100001110100100110000111011110001000000010111100010111000101100001110110010011100100011110000101011010000100010"

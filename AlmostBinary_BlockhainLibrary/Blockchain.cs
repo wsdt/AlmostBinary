@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -78,6 +79,10 @@ namespace AlmostBinary_BlockhainLibrary
             PendingTransactions = new List<Transaction>();
             CreateTransaction(new Transaction(null, minerAddress, Reward));
         }
+
+        public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
+
+        public void Print() => Console.WriteLine(this);
     }
     #endregion
 }

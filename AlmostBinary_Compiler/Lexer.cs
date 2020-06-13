@@ -73,31 +73,31 @@ namespace AlmostBinary_Compiler
             _index = 0;
             _inputString = string.Empty;
 
-            _tokens.Add(Tokens.Import, "import".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Function, "function".ToBinary().BinaryString);
-            _tokens.Add(Tokens.If, "if".ToBinary().BinaryString);
-            _tokens.Add(Tokens.ElseIf, "elseif".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Else, "else".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Repeat, "repeat".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Return, "return".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Whitespace, "[ \\t]+");
-            _tokens.Add(Tokens.NewLine, "\\n");
-            _tokens.Add(Tokens.Add, "+".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Sub, "-".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Mul, "*".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Div, "/".ToBinary().BinaryString);
-            _tokens.Add(Tokens.DoubleEqual, "==".ToBinary().BinaryString);
-            _tokens.Add(Tokens.NotEqual, "!=".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Equal, "=".ToBinary().BinaryString);
-            _tokens.Add(Tokens.LeftParan, "(".ToBinary().BinaryString);
-            _tokens.Add(Tokens.RightParan, ")".ToBinary().BinaryString);
-            _tokens.Add(Tokens.LeftBrace, "{".ToBinary().BinaryString);
-            _tokens.Add(Tokens.RightBrace, "}".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Comma, ",".ToBinary().BinaryString);
-            _tokens.Add(Tokens.Period, ".".ToBinary().BinaryString);
-            _tokens.Add(Tokens.StringLiteral, $"{"\"".ToBinary().BinaryString}.*?{"\"".ToBinary().BinaryString}");
-            _tokens.Add(Tokens.IntLiteral, $"{"~".ToBinary().BinaryString}[0-1]*{"~".ToBinary().BinaryString}");
-            _tokens.Add(Tokens.Ident, "[0-1][0-1]*");
+            _tokens.Add(Tokens.Add, ITokens.OP_ADD.BinaryString);
+            _tokens.Add(Tokens.Sub, ITokens.OP_SUB.BinaryString);
+            _tokens.Add(Tokens.Mul, ITokens.OP_MUL.BinaryString);
+            _tokens.Add(Tokens.Div, ITokens.OP_DIV.BinaryString);
+            _tokens.Add(Tokens.DoubleEqual, ITokens.OP_DOUBLE_EQUAL.BinaryString);
+            _tokens.Add(Tokens.NotEqual, ITokens.OP_NOT_EQUAL.BinaryString);
+            _tokens.Add(Tokens.Equal, ITokens.OP_EQUAL.BinaryString);
+            _tokens.Add(Tokens.LeftParan, ITokens.LEFT_PARAN.BinaryString);
+            _tokens.Add(Tokens.RightParan, ITokens.RIGHT_PARAN.BinaryString);
+            _tokens.Add(Tokens.LeftBrace, ITokens.LEFT_BRACE.BinaryString);
+            _tokens.Add(Tokens.RightBrace, ITokens.RIGHT_BRACE.BinaryString);
+            _tokens.Add(Tokens.Comma, ITokens.COMMA.BinaryString);
+            _tokens.Add(Tokens.Period, ITokens.PERIOD.BinaryString);
+            _tokens.Add(Tokens.Import, ITokens.IMPORT.BinaryString);
+            _tokens.Add(Tokens.Function, ITokens.FUNCTION.BinaryString);
+            _tokens.Add(Tokens.If, ITokens.IF.BinaryString);
+            _tokens.Add(Tokens.ElseIf, ITokens.ELSEIF.BinaryString);
+            _tokens.Add(Tokens.Else, ITokens.ELSE.BinaryString);
+            _tokens.Add(Tokens.Repeat, ITokens.REPEAT.BinaryString);
+            _tokens.Add(Tokens.Return, ITokens.RETURN.BinaryString);
+            _tokens.Add(Tokens.Whitespace, ITokens.WHITESPACE_REGEX);
+            _tokens.Add(Tokens.NewLine, ITokens.NEWLINE_REGEX);
+            _tokens.Add(Tokens.StringLiteral, ITokens.STRING_LITERAL_REGEX);
+            _tokens.Add(Tokens.IntLiteral, ITokens.INT_LITERAL_REGEX);
+            _tokens.Add(Tokens.Ident, ITokens.IDENT_REGEX);
         }
         #endregion
 

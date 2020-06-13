@@ -56,10 +56,10 @@ namespace AlmostBinary_Runtime
                 }
                 else if (a.StartsWith("pushInt "))
                 {
-                    string singleQuoteStr = "'".ToBinary().BinaryString;
+                    string intLiteral = ITokens.IPartial.INT_LITERAL.BinaryString;
                     string temp = a.Substring(10);
                     temp = temp.Substring(
-                            temp.IndexOf(singleQuoteStr) + singleQuoteStr.Length, temp.LastIndexOf(singleQuoteStr) - singleQuoteStr.Length
+                            temp.IndexOf(intLiteral) + intLiteral.Length, temp.LastIndexOf(intLiteral) - intLiteral.Length
                         );
                     int value = Convert.ToInt32(new Binary() { BinaryString = temp.Trim() }.ToString());
                     code.Write(Opcodes.pushInt);
@@ -67,7 +67,7 @@ namespace AlmostBinary_Runtime
                 }
                 else if (a.StartsWith("pushString "))
                 {
-                    string quoteStr = "\"".ToBinary().BinaryString;
+                    string quoteStr = ITokens.IPartial.STRING_LITERAL.BinaryString;
                     string temp = a.Substring(11);
                     string value = temp.Substring(temp.IndexOf(quoteStr) + quoteStr.Length, temp.LastIndexOf(quoteStr) - quoteStr.Length);
                     value = new Binary() { BinaryString = value.Trim() }.ToString();
@@ -107,6 +107,18 @@ namespace AlmostBinary_Runtime
                 else if (a == "inputString")
                 {
                     code.Write(Opcodes.inputString);
+                }
+                else if (a == "mine")
+                {
+                    code.Write(Opcodes.bc_mine);
+                }
+                else if (a == "createBlockchain")
+                {
+                    code.Write(Opcodes.bc_createBlockchain);
+                }
+                else if (a == "createTransaction")
+                {
+                    code.Write(Opcodes.bc_createTransaction);
                 }
                 else if (a == "pop")
                 {

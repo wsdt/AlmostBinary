@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace AlmostBinary_Binarify
 {
@@ -17,6 +18,8 @@ namespace AlmostBinary_Binarify
         private static ILogger Log => Serilog.Log.ForContext<Binary>();
         private const string DOUBLE_QUOTES_BINARY = "00100010";
         private const string ESCAPE_CHAR_DOUBLE_QUOTES = "0000000000000000";
+        private const string PERIOD_BINARY = "00101110";
+        private const string ESCAPE_CHAR_PERIOD = "0000000000000001000000000000000";
         #endregion
 
         // TODO: To improve performance (seems to be the fastest way -> https://stackoverflow.com/questions/2036718/fastest-way-of-reading-and-writing-binary)
@@ -38,7 +41,7 @@ namespace AlmostBinary_Binarify
                 }
             }
 
-            return new Binary(binaryString: EscapeBinary(data, Encoding.UTF8.GetString(buffer)));
+            return new Binary(binaryString: Encoding.UTF8.GetString(buffer));
         }
 
         /// <summary>
@@ -46,7 +49,9 @@ namespace AlmostBinary_Binarify
         /// </summary>
         /// <param name="data">Non-binary string</param>
         /// <returns>Binary object containing a binary string</returns>
-        public static Binary ToBinary(this string data)
+        public static Binary ToBinary(this string data) => new Binary(binaryString: data.ToBinaryStr());
+
+        public static string ToBinaryStr(this string data)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -54,24 +59,10 @@ namespace AlmostBinary_Binarify
             {
                 sb.Append(Convert.ToString(x, 2).PadLeft(8, '0'));
             }
-
-
-            Binary b = new Binary(binaryString: EscapeBinary(data, sb.ToString()));
-            Log.Here().Debug($"Converted string '{data}' to binary-string '{b.BinaryString}'");
-            return b;
-        }
-
-        private static string EscapeBinary(string originalStr, string unEscapedBinaryStr)
-        {
-            string escapedBinary = unEscapedBinaryStr;
-
-            if (!originalStr.Contains("\""))
-            {
-                Log.Here().Verbose($"Escaping binary for '\"' -> {unEscapedBinaryStr}");
-                escapedBinary = unEscapedBinaryStr.Replace(DOUBLE_QUOTES_BINARY, ESCAPE_CHAR_DOUBLE_QUOTES);
-            }
-
-            return escapedBinary;
+            string binaryStr = sb.ToString();
+            
+            Log.Here().Debug($"Converted string '{data}' to binary-string '{binaryStr}'");
+            return binaryStr;
         }
 
 
@@ -126,8 +117,13 @@ namespace AlmostBinary_Binarify
             /// <param name="originalString">Non-binary string</param>
             public Binary(string binaryString = "", string originalString = "")
             {
-                this.BinaryString = binaryString;
-                this.OriginalString = originalString;
+                bool isBinaryStrEmpty = String.IsNullOrWhiteSpace(binaryString);
+                bool isOriginalStrEmpty = String.IsNullOrWhiteSpace(originalString);
+
+                // Is BinaryStr not provided but originalStr, then convert automatically, otherwise just empty str
+                this.BinaryString = isBinaryStrEmpty && !isOriginalStrEmpty ? originalString.ToBinaryStr() : binaryString;
+                // Is OriginalStr not provided but binaryStr, then convert automatically, otherwise just empty str
+                this.OriginalString = isOriginalStrEmpty && !isBinaryStrEmpty ? BinaryToStr(binaryString) : originalString;
             }
             #endregion
 
@@ -140,25 +136,23 @@ namespace AlmostBinary_Binarify
             public static string BinaryToStr(string binaryStr)
             {
                 string originalStr;
-                // Unescape previously removed characters/key-words (e.g. double quotes) which can occur as part of a string or similar.
-                string unEscapedBinary = binaryStr.Replace(ESCAPE_CHAR_DOUBLE_QUOTES, DOUBLE_QUOTES_BINARY);
                 try
                 {
                     List<Byte> byteList = new List<Byte>();
 
-                    for (int i = 0; i < unEscapedBinary.Length; i += 8)
+                    for (int i = 0; i < binaryStr.Length; i += 8)
                     {
-                        byteList.Add(Convert.ToByte(unEscapedBinary.Substring(i, 8), 2));
+                        byteList.Add(Convert.ToByte(binaryStr.Substring(i, 8), 2));
                     }
                     originalStr = Encoding.UTF8.GetString(byteList.ToArray());
 
                 }
                 catch (Exception ex)
                 {
-                    Log.Here().Error(ex, $"Provided binary doesn't seem to be valid -> '{unEscapedBinary}'");
+                    Log.Here().Error(ex, $"Provided binary doesn't seem to be valid -> '{binaryStr}'");
                     throw;
                 }
-                Log.Here().Debug($"Converted binary string back to original string: '{unEscapedBinary}' -> '{originalStr}'");
+                Log.Here().Debug($"Converted binary string back to original string: '{binaryStr}' -> '{originalStr}'");
 
                 return originalStr;
             }

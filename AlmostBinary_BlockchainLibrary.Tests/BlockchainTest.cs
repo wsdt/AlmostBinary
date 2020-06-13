@@ -19,6 +19,7 @@ namespace AlmostBinary_BlockchainLibrary.Tests
             Assert.AreEqual(1, abinCoin.PendingTransactions.Count);
             Assert.IsNotNull(abinCoin.GetLatestBlock().PreviousHash);
             Assert.AreEqual(1, abinCoin.GetLatestBlock().Index);
+            Assert.IsTrue(abinCoin.IsValid());
         }
     }
 }

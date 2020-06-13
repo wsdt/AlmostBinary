@@ -275,3 +275,6 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\examples\input.abin
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\examples\repeat.abin
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\examples\variable.abin
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\Libraries\01100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_BlockhainLibrary.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Runtime.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_BlockhainLibrary.pdb

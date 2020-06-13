@@ -30,5 +30,9 @@
         public static readonly int call = 25;
         public static readonly int got = 26;
         public static readonly int ret = 27;
+        public static readonly int bc_createBlockchain = 28;
+        public static readonly int bc_createTransaction = 29;
+        public static readonly int bc_mine = 30;
+        public static readonly int bc_isValid = 31;
     }
 }

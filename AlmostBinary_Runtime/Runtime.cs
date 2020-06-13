@@ -1,4 +1,6 @@
-﻿using AlmostBinary_Runtime.utils;
+﻿using AlmostBinary_BlockhainLibrary;
+using AlmostBinary_Runtime.utils;
+using Microsoft.VisualBasic.CompilerServices;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -84,6 +86,43 @@ namespace AlmostBinary_Runtime
                 else if (opcode == Opcodes.readLine)
                 {
                     Console.ReadLine();
+                }
+                else if (opcode == Opcodes.bc_createBlockchain)
+                {
+                    stack.Push(new Blockchain());
+                    Log.Here().Information("Initialized new blockchain.");
+                }
+                else if (opcode == Opcodes.bc_createTransaction)
+                {
+                    Blockchain blockchain = GetVarValue(code.ReadString()) as Blockchain 
+                           ?? throw new NullReferenceException("Create a blockchain before trying to create a transaction!");
+
+                    int amount = Int32.Parse(stack.Pop() as string ?? throw new NullReferenceException("How much coins do you want to transact?"));
+                    string toAddress = (stack.Pop() as string) ?? throw new NullReferenceException("Who is transacting abinCoins?");
+                    string fromAddress = stack.Pop() as string ?? throw new NullReferenceException("Who is receiving abinCoins?");
+                    blockchain.CreateTransaction(new Transaction(fromAddress, toAddress, amount));
+                    Log.Here().Information($"New transaction over '{amount}' abinCoins on Blockchain from '{fromAddress}' to '{toAddress}'.");
+                }
+                else if (opcode == Opcodes.bc_mine)
+                {
+                    Blockchain blockchain = GetVarValue(code.ReadString()) as Blockchain
+                           ?? throw new NullReferenceException("Create a blockchain before trying to mine abinCoins!");
+                    string miningAddress = stack.Pop() as string ?? throw new NullReferenceException("Who is mining abinCoins?");
+                    blockchain.ProcessPendingTransactions(miningAddress);
+                    Log.Here().Information($"'{miningAddress}' is mining abin coins.");
+                }
+                else if (opcode == Opcodes.bc_isValid)
+                {
+                    Blockchain blockchain = GetVarValue(code.ReadString()) as Blockchain
+                           ?? throw new NullReferenceException("Create a blockchain before trying to verify it's validation-state!");
+                    
+                    if (blockchain.IsValid())
+                    {
+                        Log.Here().Information("Blockchain is valid.");
+                    } else
+                    {
+                        Log.Here().Warning("Blockchain is NOT valid. Data corrupted.");
+                    }
                 }
                 else if (opcode == Opcodes.halt)
                 {
@@ -357,6 +396,7 @@ namespace AlmostBinary_Runtime
                     break;
                 }
             }
+            if (func == null) throw new Exception($"Function '{name}' does not exist.");
 
             return func;
         }
