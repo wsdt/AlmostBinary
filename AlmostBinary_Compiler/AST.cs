@@ -38,7 +38,8 @@ namespace AlmostBinary_Compiler
             }
             else if (t.TokenName == Lexer.Tokens.IntLiteral)
             {
-                string originalStr = Binary.BinaryToStr(t.TokenValue.ToString()).Replace(ITokens.IPartial.INT_LITERAL, ""); // remove int-literals to parse to number
+                string originalStr = t.TokenValue.ToString().BinaryStrToStr()
+                    .Replace(ITokens.IPartial.INT_LITERAL, ""); // remove int-literals to parse to number
                 IntLiteral i = new IntLiteral(
                     Convert.ToInt32(
                         originalStr
@@ -134,7 +135,7 @@ namespace AlmostBinary_Compiler
                     rexpr);
             }
 
-            if (ret == null) throw new Exception($"Caught unexpected expression -> '{t.TokenName}':'{t.TokenValue}'");
+            if (ret == null) throw new Exception($"Caught unexpected expression -> '{t.TokenName}':'{t.TokenValue}' at position '{_tokens.Pos}', total-length: '{_tokens.Tokens.Count}'");
             return ret;
         }
         #endregion

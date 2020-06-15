@@ -1,4 +1,5 @@
-﻿using AlmostBinary_BlockhainLibrary;
+﻿using AlmostBinary_Binarify;
+using AlmostBinary_BlockhainLibrary;
 using AlmostBinary_Runtime.utils;
 using Microsoft.VisualBasic.CompilerServices;
 using Serilog;
@@ -11,7 +12,7 @@ namespace AlmostBinary_Runtime
     class Runtime
     {
         #region fields
-        public const string MAIN_FUNC_IDENT = "01001101011000010110100101101110";
+        public static readonly string MAIN_FUNC_IDENT = "Main".StrToBinaryStr();
         private static ILogger Log => Serilog.Log.ForContext<Runtime>();
         static List<Func> funcs = new List<Func>();
         static List<Block> blocks = new List<Block>();

@@ -95,7 +95,8 @@ namespace AlmostBinary_Compiler
             {
                 try
                 {
-                    StreamReader s = new StreamReader(Path.Combine(libraryPath, $"{library}.{libraryFileExtension}"));
+                    string filePath = Path.Combine(libraryPath, $"{library}.{libraryFileExtension}");
+                    StreamReader s = new StreamReader(filePath);
                     importsStr += "\n" + s.ReadToEnd();
                 }
                 catch

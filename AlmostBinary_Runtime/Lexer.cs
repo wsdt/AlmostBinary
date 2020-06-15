@@ -61,7 +61,7 @@ namespace AlmostBinary_Runtime
                     temp = temp.Substring(
                             temp.IndexOf(intLiteral) + intLiteral.Length, temp.LastIndexOf(intLiteral) - intLiteral.Length
                         );
-                    int value = Convert.ToInt32(new Binary() { BinaryString = temp.Trim() }.ToString());
+                    int value = Convert.ToInt32(new Binary(binaryString: temp.Trim()).ToString());
                     code.Write(Opcodes.pushInt);
                     code.Write(value);
                 }
@@ -70,7 +70,7 @@ namespace AlmostBinary_Runtime
                     string quoteStr = ITokens.IPartial.STRING_LITERAL.BinaryString;
                     string temp = a.Substring(11);
                     string value = temp.Substring(temp.IndexOf(quoteStr) + quoteStr.Length, temp.LastIndexOf(quoteStr) - quoteStr.Length);
-                    value = new Binary() { BinaryString = value.Trim() }.ToString();
+                    value = new Binary(binaryString: value.Trim()).ToString();
                     code.Write(Opcodes.pushString);
                     code.Write(value);
                 }

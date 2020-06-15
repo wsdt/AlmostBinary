@@ -4,7 +4,7 @@ import blockchain
 function Main()
 {
     abinBlockchain = createBlockchain()
-    createTransaction(abinBlockchain, "WSDT", "FooBar", 10)
+    createTransaction(abinBlockchain, "WSDT", "FooBar", ~10~)
     mine(abinBlockchain, "MiningUser")
     isValid(abinBlockhain)
     PrintLine(abinBlockchain)

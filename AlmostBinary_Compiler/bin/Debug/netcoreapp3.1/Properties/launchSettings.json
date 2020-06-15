@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Compiler": {
       "commandName": "Project",
-      "commandLineArgs": "-f \"../../../../examples/blockchain.abin\"",
+      "commandLineArgs": "-f \"../../../../examples/call.abin\"",
       "nativeDebugging": false
     }
   }

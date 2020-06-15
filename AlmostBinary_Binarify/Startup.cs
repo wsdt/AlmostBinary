@@ -19,8 +19,8 @@ namespace AlmostBinary_Binarify
         /// <param name="args"></param>
         public void Run(CommandLineOptions args)
         {
-            if (args.ToBinary != null) ConvertAllToBinary(args.ToBinary.ToArray());
-            if (args.ToString != null) ConvertAllToString(args.ToString.ToArray());
+            if (args.ToBinary != null) ConvertAllToBinary(args.ToBinary.ToArray(), args.BitArchitecture);
+            if (args.ToString != null) ConvertAllToString(args.ToString.ToArray(), args.BitArchitecture);
         }
         #endregion
     }

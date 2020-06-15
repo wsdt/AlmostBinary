@@ -13,7 +13,7 @@ namespace AlmostBinary_Binarify.Tests
         [TestMethod]
         public void ConvertOneStrToBinary_OriginalStr_BinaryStr()
         {
-            Binary b = "helloworld".ToBinary();
+            Binary b = "helloworld".StrToBinary();
             Assert.AreEqual("01101000011001010110110001101100011011110111011101101111011100100110110001100100", b.BinaryString);
         }
 
@@ -30,7 +30,7 @@ namespace AlmostBinary_Binarify.Tests
         [TestMethod]
         public void ConvertOneBinaryStrToStr_BinaryStr_OriginalStr()
         {
-            Assert.AreEqual("helloworld", Binary.BinaryToStr("01101000011001010110110001101100011011110111011101101111011100100110110001100100"));
+            Assert.AreEqual("helloworld", "01101000011001010110110001101100011011110111011101101111011100100110110001100100".BinaryStrToStr());
         }
 
         [TestMethod]
