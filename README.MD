@@ -35,8 +35,12 @@ Of course you can remove all tabs and newlines. Removing spaces is only supporte
 
 ## Libraries
 This is an exhaustive list of all implemented AlmostBinary libraries: 
-- `system -> 0000000000000000011100110111100101110011011101000110010101101101`
-- `blockchain -> 00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110`
+- **system** 
+Identifier/Name (x64): `0000000000000000011100110111100101110011011101000110010101101101`
+Description: _Default functions, e.g. PrintLine, InputString, ..._
+- **blockchain**
+Identifier/Name (x64): `00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110`
+Description: _Create simple proof-of-work blockchains, create transactions, validate the blockchain and mine abin-Coins._
 
 ## Why I made this
 Esoteric languages like [WhiteSpace](https://esolangs.org/wiki/Whitespace), [Brainfuck](https://esolangs.org/wiki/Brainfuck) or [Arnold-C](https://esolangs.org/wiki/ArnoldC) have inspired me to write my own compiler & runtime. 
