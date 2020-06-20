@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Runtime": {
       "commandName": "Project",
-      "commandLineArgs": "-f \"../../../../compiled/helloworld.wsdt\"",
+      "commandLineArgs": "-f \"../../../../compiled/blockchain.wsdt\"",
       "nativeDebugging": false
     }
   }

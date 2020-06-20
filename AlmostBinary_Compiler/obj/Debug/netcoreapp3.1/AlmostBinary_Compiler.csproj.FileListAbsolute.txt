@@ -82,5 +82,5 @@ C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1
 C:\Users\keri\Desktop\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.genruntimeconfig.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\CommandLine.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\obj\Debug\netcoreapp3.1\AlmostBinary_Compiler.csproj.CoreCompileInputs.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\Libraries\00000000000000000000000000000000000000000000000000000000011100110000000000000000000000000000000000000000000000000000000001111001000000000000000000000000000.abinl
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\Libraries\00000000011000100000000001101100000000000110111100000000011000110000000001101011000000000110001100000000011010000000000001100001000000000110100100000000011.abinl
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\Libraries\0000000000000000011100110111100101110011011101000110010101101101.abinl
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Debug\netcoreapp3.1\Libraries\00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl

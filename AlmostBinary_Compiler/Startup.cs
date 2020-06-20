@@ -69,7 +69,7 @@ namespace AlmostBinary_Compiler
             }
             catch (Exception ex)
             {
-                throw new Exception($"Could not parse code -> Parser: {JsonSerializer.Serialize(tokens)}", ex);
+                throw new Exception($"Could not parse code -> Parser: {tokens}", ex);
             }
             Log.Here().Verbose($"Statement Tree -> {JsonSerializer.Serialize(tree)}");
 

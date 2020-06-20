@@ -9,16 +9,12 @@ namespace AlmostBinary_Runtime
 
         public int ReadInt()
         {
-            int ret = (int)buffer[pos];
-            pos++;
-            return ret;
+            return (int)buffer[pos++];
         }
 
         public string ReadString()
         {
-            string ret = (string)buffer[pos];
-            pos++;
-            return ret;
+            return (string)buffer[pos++];
         }
 
         public void Write(int data)

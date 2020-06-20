@@ -56,12 +56,14 @@ namespace AlmostBinary_Runtime
                 }
                 else if (a.StartsWith("pushInt "))
                 {
-                    string intLiteral = ITokens.IPartial.INT_LITERAL.BinaryString;
-                    string temp = a.Substring(10);
-                    temp = temp.Substring(
-                            temp.IndexOf(intLiteral) + intLiteral.Length, temp.LastIndexOf(intLiteral) - intLiteral.Length
-                        );
-                    int value = Convert.ToInt32(new Binary(binaryString: temp.Trim()).ToString());
+                    // Enable if runtime takes responsibility for converting int literals
+                    //string intLiteral = ITokens.IPartial.INT_LITERAL.BinaryString;
+                    //string temp = a.Substring(10);
+                    //temp = temp.Substring(
+                    //        temp.IndexOf(intLiteral) + intLiteral.Length, temp.LastIndexOf(intLiteral) - intLiteral.Length
+                    //    );
+                    //int value = Convert.ToInt32(new Binary(binaryString: temp.Trim()).ToString());
+                    int value = Convert.ToInt32(a.Substring(8));
                     code.Write(Opcodes.pushInt);
                     code.Write(value);
                 }

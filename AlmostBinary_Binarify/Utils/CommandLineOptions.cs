@@ -9,7 +9,7 @@ namespace AlmostBinary_Binarify
 {
     public class CommandLineOptions : CommandLineOptionsBase
     {
-        public const BitArch DEFAULT_BIT_ARCH = BitArch.x256;
+        public const BitArch DEFAULT_BIT_ARCH = BitArch.x64;
 
         /// <summary>
         /// Defines the word-length of each keyword, ...

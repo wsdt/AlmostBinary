@@ -3,6 +3,7 @@ using AlmostBinary_Binarify.utils;
 using AlmostBinary_Compiler.utils;
 using Serilog;
 using System.Collections.Generic;
+using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 
@@ -282,6 +283,21 @@ namespace AlmostBinary_Compiler
             Token t = Tokens[Pos];
             Log.Here().Verbose($"Peeking token '{t.TokenName}:{t.TokenValue}' on position '{Pos}'.");
             return t;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            StringBuilder sbCode = new StringBuilder();
+            sbCode.Append("\n");
+            foreach(Token t in this.Tokens) {
+                string originalStr = t.TokenValue.Equals("EOF") ? t.TokenValue : t.TokenValue.BinaryStrToStr().Replace(" ", "");
+                sb.Append($"[ TokenName: '{t.TokenName}', TokenValue: '{t.TokenValue}', OriginalTokenValue: '{originalStr}']");
+                sbCode.Append(originalStr);
+                sbCode.Append(" ");
+            }
+            sb.Append(sbCode.ToString());
+            return sb.ToString();
         }
         #endregion
     }

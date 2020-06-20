@@ -58,7 +58,10 @@ namespace AlmostBinary_Runtime
                 {
                     opcode = code.ReadInt();
                 }
-                catch { }
+                catch (Exception ex) {
+                    Log.Here().Warning(ex, "Insignificant exception during buffer-read.");
+                }
+                Log.Here().Debug($"Current opcode: {opcode}");
 
                 if (opcode == Opcodes.pushInt)
                 {
@@ -90,23 +93,26 @@ namespace AlmostBinary_Runtime
                 }
                 else if (opcode == Opcodes.bc_createBlockchain)
                 {
+                    Console.WriteLine(vars);
                     stack.Push(new Blockchain());
                     Log.Here().Information("Initialized new blockchain.");
                 }
                 else if (opcode == Opcodes.bc_createTransaction)
                 {
-                    Blockchain blockchain = GetVarValue(code.ReadString()) as Blockchain 
-                           ?? throw new NullReferenceException("Create a blockchain before trying to create a transaction!");
+                    Blockchain blockchain = stack.Pop() as Blockchain ?? throw new NullReferenceException("Create a blockchain before trying to create a transaction!");
+                    //Blockchain blockchain = GetVarValue(code.ReadString()) as Blockchain 
+                    //       ?? throw new NullReferenceException("Create a blockchain before trying to create a transaction!");
 
-                    int amount = Int32.Parse(stack.Pop() as string ?? throw new NullReferenceException("How much coins do you want to transact?"));
-                    string toAddress = (stack.Pop() as string) ?? throw new NullReferenceException("Who is transacting abinCoins?");
                     string fromAddress = stack.Pop() as string ?? throw new NullReferenceException("Who is receiving abinCoins?");
+                    string toAddress = (stack.Pop() as string) ?? throw new NullReferenceException("Who is transacting abinCoins?");
+                    int amount = (int) (stack.Pop() ?? throw new NullReferenceException("How much coins do you want to transact?"));
+                    
                     blockchain.CreateTransaction(new Transaction(fromAddress, toAddress, amount));
                     Log.Here().Information($"New transaction over '{amount}' abinCoins on Blockchain from '{fromAddress}' to '{toAddress}'.");
                 }
                 else if (opcode == Opcodes.bc_mine)
                 {
-                    Blockchain blockchain = GetVarValue(code.ReadString()) as Blockchain
+                    Blockchain blockchain = stack.Pop() as Blockchain
                            ?? throw new NullReferenceException("Create a blockchain before trying to mine abinCoins!");
                     string miningAddress = stack.Pop() as string ?? throw new NullReferenceException("Who is mining abinCoins?");
                     blockchain.ProcessPendingTransactions(miningAddress);
@@ -114,7 +120,7 @@ namespace AlmostBinary_Runtime
                 }
                 else if (opcode == Opcodes.bc_isValid)
                 {
-                    Blockchain blockchain = GetVarValue(code.ReadString()) as Blockchain
+                    Blockchain blockchain = stack.Pop() as Blockchain
                            ?? throw new NullReferenceException("Create a blockchain before trying to verify it's validation-state!");
                     
                     if (blockchain.IsValid())
