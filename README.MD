@@ -44,7 +44,7 @@ This is an exhaustive list of all implemented AlmostBinary libraries:
 **Description:** 
 _Default functions, e.g. PrintLine, InputString, ..._
 
-### blockchain
+### <a href="https://github.com/wsdt/AlmostBinary/blob/master/AlmostBinary_Compiler/Libraries/00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl">blockchain</a>
 **Identifier/Name (x64):**
 `00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110`
 
