@@ -33,6 +33,11 @@ Simple hello-world program:
 ```
 Of course you can remove all tabs and newlines. Removing spaces is only supported in some cases as I didn't want to introduce too much delimiters (e.g. 8 zeros).
 
+## Libraries
+This is an exhaustive list of all implemented AlmostBinary libraries: 
+- system -> 0000000000000000011100110111100101110011011101000110010101101101
+- blockchain -> 00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110
+
 ## Why I made this
 Esoteric languages like [WhiteSpace](https://esolangs.org/wiki/Whitespace), [Brainfuck](https://esolangs.org/wiki/Brainfuck) or [Arnold-C](https://esolangs.org/wiki/ArnoldC) have inspired me to write my own compiler & runtime. 
 In the very beginnings of my programming-journey, I thought that programmers and hackers code today's applications in Binary. As most, even non-tech people, know today, this is not the case.
