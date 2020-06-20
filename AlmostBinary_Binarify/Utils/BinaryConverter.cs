@@ -57,14 +57,16 @@ namespace AlmostBinary_Binarify
         {
             StringBuilder sb = new StringBuilder();
 
-            // TODO: use bitarch as word size
             foreach (byte x in Encoding.UTF8.GetBytes(data))
             {
                 sb.Append(Convert.ToString(x, 2).PadLeft(8, '0'));
             }
             string binaryStr = sb.ToString();
-            if (binaryStr.Length > (int)arch) throw new Exception($"Binary-string length exceeded word-size: '{binaryStr}' ({binaryStr.Length}), {arch}");
-            binaryStr = binaryStr.PadLeft((int)arch, '0');
+            if (binaryStr.Length > (int)arch)Log.Here().Information($"Binary-string length exceeded word-size: '{binaryStr}' ({binaryStr.Length}), {arch}");
+
+            // Ensure that every string (even those longer than current architecture, e.g. 80 bits > x64) is padded left to arch -> 80 bit -> 128 bits although x64 arch.
+            int countFragments = (binaryStr.Length / (int)arch); // needs to be an int
+            binaryStr = binaryStr.PadLeft((int)arch + (countFragments * (int)arch), '0');
 
             Log.Here().Debug($"Converted string '{data}' to binary-string '{binaryStr}'");
             return binaryStr;
@@ -82,13 +84,13 @@ namespace AlmostBinary_Binarify
             {
                 List<Byte> byteList = new List<Byte>();
 
-                for (int i = 0; i < binaryStr.Length; i += (int) arch)
+                for (int i = 0; i < binaryStr.Length; i += 8)
                 {
                     // TODO: adapt with arch
                     byteList.Add(Convert.ToByte(binaryStr.Substring(i, 8), 2));
                 }
-                originalStr = Encoding.UTF8.GetString(byteList.ToArray());
-
+                originalStr = Encoding.UTF8.GetString(byteList.ToArray())
+                    .Replace("\0", string.Empty); // remove null from string (caused by greater bit-Architectures (see commandLineArgs))
             }
             catch (Exception ex)
             {
@@ -96,7 +98,6 @@ namespace AlmostBinary_Binarify
                 throw;
             }
             Log.Here().Debug($"Converted binary string back to original string: '{binaryStr}' -> '{originalStr}'");
-
             return originalStr;
         }
 
