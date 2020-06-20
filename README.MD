@@ -1,4 +1,4 @@
-# Almost Binary [![HitCount](http://hits.dwyl.com/wsdt/AlmostBinary.svg)](http://hits.dwyl.com/wsdt/AlmostBinary) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/AlmostBinary.svg)](https://github.com/wsdt/AlmostBinary/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-CSharp-37f)](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) [![Donate](https://img.shields.io/badge/Donate-Pay%20me%20a%20coffee-3cf)](https://github.com/wsdt/AlmostBinary/wiki/Donation)
+# Almost Binary [![HitCount](http://hits.dwyl.com/wsdt/AlmostBinary.svg)](http://hits.dwyl.com/wsdt/AlmostBinary) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/AlmostBinary.svg)](https://github.com/wsdt/AlmostBinary/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-CSharp-37f)](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) [![Donate](https://img.shields.io/badge/Donate-Pay%20me%20a%20coffee-3cf)](https://github.com/wsdt/Global/wiki/Donation)
 This compiler & runtime will be improved continuously. Please be clement, as this is my first time implementing a compiler and runtime.
 
 **Take a look at the documentation: [Almost Binary - Wiki](https://github.com/wsdt/AlmostBinary/wiki)**
@@ -51,7 +51,7 @@ Thus, some "binary" code written will be compiled to normal strings and other bi
 
 This project is licensed under GNU V3, so contributions/pull-requests are welcome. All contributors get listed here. 
 
-**Contributors** [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
+**Contributors** [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kevin.riedl.privat%40gmail.com)
 - Kevin Riedl ([WSDT](https://github.com/wsdt))
 
 
