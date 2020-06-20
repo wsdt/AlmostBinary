@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.1.1" version="17.1.1" Modules="simple" RootPath="." Language="en" Id="{9BA05DA6-BF88-437B-A0DA-599358205B91}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.1.1" version="17.1.2" Modules="simple" RootPath="." Language="en" Id="{9BA05DA6-BF88-437B-A0DA-599358205B91}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
@@ -10,10 +10,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/wsdt/AlmostBinary/issues"/>
     <ROW Property="ARPURLUPDATEINFO" Value="https://github.com/wsdt/AlmostBinary/releases"/>
     <ROW Property="Manufacturer" Value="Wavect"/>
-    <ROW Property="ProductCode" Value="1033:{86018FCB-20DB-4519-89A2-0A062B7FAF7C} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{008C81AD-532A-4F6F-B0A5-BFD5A5696F5D} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="AlmostBinary"/>
-    <ROW Property="ProductVersion" Value="2.0.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="3.0.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{E9BC503A-CB49-4341-9AE5-1F230FA1B072}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -28,95 +28,104 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="Compiler_Dir" Directory_Parent="APPDIR" DefaultDir="Compiler"/>
-    <ROW Directory="Libraries_Dir" Directory_Parent="netcoreapp3.1_Dir" DefaultDir="LIBRAR~1|Libraries"/>
+    <ROW Directory="Libraries_Dir" Directory_Parent="bin_1_Dir" DefaultDir="LIBRAR~1|Libraries"/>
     <ROW Directory="NewFolder_Dir" Directory_Parent="APPDIR" DefaultDir="Binarify"/>
-    <ROW Directory="Properties_1_Dir" Directory_Parent="netcoreapp3.1_1_Dir" DefaultDir="PROPER~1|Properties"/>
-    <ROW Directory="Properties_2_Dir" Directory_Parent="netcoreapp3.1_2_Dir" DefaultDir="PROPER~1|Properties"/>
-    <ROW Directory="Properties_Dir" Directory_Parent="netcoreapp3.1_Dir" DefaultDir="PROPER~1|Properties"/>
+    <ROW Directory="Properties_3_Dir" Directory_Parent="bin_Dir" DefaultDir="PROPER~1|Properties"/>
+    <ROW Directory="Properties_4_Dir" Directory_Parent="bin_2_Dir" DefaultDir="PROPER~1|Properties"/>
+    <ROW Directory="Properties_Dir" Directory_Parent="bin_1_Dir" DefaultDir="PROPER~1|Properties"/>
     <ROW Directory="Runtime_Dir" Directory_Parent="APPDIR" DefaultDir="Runtime"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
-    <ROW Directory="netcoreapp3.1_1_Dir" Directory_Parent="NewFolder_Dir" DefaultDir="bin"/>
-    <ROW Directory="netcoreapp3.1_2_Dir" Directory_Parent="Runtime_Dir" DefaultDir="bin"/>
-    <ROW Directory="netcoreapp3.1_Dir" Directory_Parent="Compiler_Dir" DefaultDir="bin"/>
+    <ROW Directory="bin_1_Dir" Directory_Parent="Compiler_Dir" DefaultDir="bin"/>
+    <ROW Directory="bin_2_Dir" Directory_Parent="NewFolder_Dir" DefaultDir="bin"/>
+    <ROW Directory="bin_Dir" Directory_Parent="Runtime_Dir" DefaultDir="bin"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{7FF8A21D-76FA-4F2A-9B2B-CC236DAC0B16}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="AlmostBinary_Binarify.deps.json" ComponentId="{C1106959-3020-4C25-A665-338B85AEBD8D}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.deps.json" Type="0"/>
-    <ROW Component="AlmostBinary_Binarify.dll" ComponentId="{5D3A1EE3-F916-406F-AAB3-9EB5617BA91A}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.dll"/>
-    <ROW Component="AlmostBinary_Binarify.dll_1" ComponentId="{409D9EDF-A8AA-4E18-956D-8F12450E8255}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.dll_1"/>
-    <ROW Component="AlmostBinary_Binarify.dll_2" ComponentId="{971EE1CE-9B25-41C1-AED7-FE73F53421E3}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.dll_2"/>
-    <ROW Component="AlmostBinary_Binarify.exe" ComponentId="{781A26F1-6AF6-41E4-B3A9-771E755B9D5D}" Directory_="netcoreapp3.1_Dir" Attributes="256" KeyPath="AlmostBinary_Binarify.exe"/>
-    <ROW Component="AlmostBinary_Binarify.exe_1" ComponentId="{15D32E91-C982-4968-A5A5-D98DD97F256C}" Directory_="netcoreapp3.1_1_Dir" Attributes="256" KeyPath="AlmostBinary_Binarify.exe_1"/>
-    <ROW Component="AlmostBinary_Binarify.exe_2" ComponentId="{CCCD9EBF-9EE3-48D8-8BA1-8111D8F9B29C}" Directory_="netcoreapp3.1_2_Dir" Attributes="256" KeyPath="AlmostBinary_Binarify.exe_2"/>
-    <ROW Component="AlmostBinary_Compiler.deps.json" ComponentId="{68D90F1E-E95D-4EEF-8BAB-3AABD010CB20}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="AlmostBinary_Compiler.deps.json" Type="0"/>
-    <ROW Component="AlmostBinary_Compiler.dll" ComponentId="{4A9CB80A-9D71-4FED-8539-6E5A6B70604F}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="AlmostBinary_Compiler.dll"/>
-    <ROW Component="AlmostBinary_Compiler.exe" ComponentId="{5CE46C6B-B1CD-4C9A-A72E-7F6A5750DF77}" Directory_="netcoreapp3.1_Dir" Attributes="256" KeyPath="AlmostBinary_Compiler.exe"/>
-    <ROW Component="AlmostBinary_GlobalConstants.dll" ComponentId="{DE4F953D-52D0-4542-A89E-607D681A7552}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="AlmostBinary_GlobalConstants.dll"/>
-    <ROW Component="AlmostBinary_GlobalConstants.dll_1" ComponentId="{D6114127-2767-4443-BEA1-55C50D580162}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="AlmostBinary_GlobalConstants.dll_1"/>
-    <ROW Component="AlmostBinary_GlobalConstants.dll_2" ComponentId="{8823D731-65BE-45CC-8726-58E6C2F858C9}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="AlmostBinary_GlobalConstants.dll_2"/>
-    <ROW Component="AlmostBinary_GlobalConstants.exe" ComponentId="{75BD2DCD-8444-4B38-B97A-0A28C63F0AEB}" Directory_="netcoreapp3.1_Dir" Attributes="256" KeyPath="AlmostBinary_GlobalConstants.exe"/>
-    <ROW Component="AlmostBinary_GlobalConstants.exe_1" ComponentId="{D64E26E6-8457-4035-B13B-54068DDE0A88}" Directory_="netcoreapp3.1_1_Dir" Attributes="256" KeyPath="AlmostBinary_GlobalConstants.exe_1"/>
-    <ROW Component="AlmostBinary_GlobalConstants.exe_2" ComponentId="{9331AF5A-1796-4E45-98B5-0BA5BAC849E2}" Directory_="netcoreapp3.1_2_Dir" Attributes="256" KeyPath="AlmostBinary_GlobalConstants.exe_2"/>
-    <ROW Component="AlmostBinary_Runtime.deps.json" ComponentId="{080C9FB1-ED11-4D7A-8669-0586A8188250}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="AlmostBinary_Runtime.deps.json" Type="0"/>
-    <ROW Component="AlmostBinary_Runtime.dll" ComponentId="{FBB818D5-526C-43D2-8C37-872DCDCB993F}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="AlmostBinary_Runtime.dll"/>
-    <ROW Component="AlmostBinary_Runtime.exe" ComponentId="{5C9762DD-FF39-4321-853E-89967EA87961}" Directory_="netcoreapp3.1_2_Dir" Attributes="256" KeyPath="AlmostBinary_Runtime.exe"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll" ComponentId="{7412CF47-5DCA-4EA5-B89C-766983C391C2}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll_1" ComponentId="{BB692896-A34E-438C-B655-D82EB77D522A}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll_1"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll_2" ComponentId="{337AD10B-77EE-49CC-A365-5C1CBB94063C}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll_2"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll" ComponentId="{7DFA6DA0-5D0D-4DAE-8795-B690333789CC}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll_1" ComponentId="{2547C92D-44F1-41D0-9BE5-B90FE818652A}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll_1"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll_2" ComponentId="{848B47C5-9383-4881-83AF-81BF32FE37B3}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll_2"/>
-    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll" ComponentId="{3331E4C3-3E1A-46DD-A9DC-2B0E60B984D9}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll_1" ComponentId="{93C8EC87-50D3-48E9-97DC-F7A198949736}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll_1"/>
-    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll_2" ComponentId="{A41C0103-F038-46FC-9626-569B90E1D722}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll_2"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Json.dll" ComponentId="{E1FB06FA-B108-4A29-8753-F137DFAE5153}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Json.dll_1" ComponentId="{4ABB132A-67BB-4448-9960-1C3701716559}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll_1"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Json.dll_2" ComponentId="{9E285EAE-56D0-4890-9399-F754D24410D5}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll_2"/>
-    <ROW Component="Microsoft.Extensions.Configuration.dll" ComponentId="{2B043C0B-AF46-4F87-98E6-113537934385}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.dll_1" ComponentId="{CB0188E9-B5D7-4CC9-91A5-D3BC33043765}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll_1"/>
-    <ROW Component="Microsoft.Extensions.Configuration.dll_2" ComponentId="{5DD06E60-6041-4A40-B121-F411A55C6CD8}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll_2"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll" ComponentId="{4DFF78A8-85FB-4B5B-9FE8-0D116E1DFC1A}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll_1" ComponentId="{CEA4136B-6195-4B64-BC09-FC3F1902E6F4}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll_1"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll_2" ComponentId="{2CCA0082-D40B-49AE-AFAA-8AE2520716D6}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll_2"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.dll" ComponentId="{6E24429D-7413-45D4-B20C-25546C1508BC}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.dll_1" ComponentId="{85F82730-E088-4930-A203-8506CD62E051}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll_1"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.dll_2" ComponentId="{FF9966FC-82AE-455E-8CFA-6AA909EAB883}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll_2"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll" ComponentId="{68150735-C879-4543-865F-54FCF231E41D}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll_1" ComponentId="{8C970D11-4B1C-45FC-B100-03B3B1D93EF6}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll_1"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll_2" ComponentId="{68B0DD63-DD1D-4827-890E-537781042726}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll_2"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll" ComponentId="{F0B8575C-BDC0-4E99-B317-BC0FB7D3ED82}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll_1" ComponentId="{86366E8B-8EA7-4FD1-8812-5D4BA14A7CED}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll_1"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll_2" ComponentId="{7E5E4511-4779-493A-9266-735BF3C1E48B}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll_2"/>
-    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll" ComponentId="{24312633-95B1-48B2-96C2-A8519D115873}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll"/>
-    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll_1" ComponentId="{1BB203EF-56D0-4B67-B2D3-7F148318CCA1}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll_1"/>
-    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll_2" ComponentId="{B6E32CDF-D9AB-4EC2-A501-599183D9D659}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll_2"/>
-    <ROW Component="Microsoft.Extensions.Primitives.dll" ComponentId="{309D2960-12CF-4B13-ABFB-3B05C4F92BC7}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll"/>
-    <ROW Component="Microsoft.Extensions.Primitives.dll_1" ComponentId="{38359FD8-A716-411A-A6A2-DC765B3260A7}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll_1"/>
-    <ROW Component="Microsoft.Extensions.Primitives.dll_2" ComponentId="{5BB5BCCA-166B-4E1E-8720-1D704E1F2E45}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll_2"/>
+    <ROW Component="AlmostBinary_Binarify.deps.json" ComponentId="{6D4434F0-B1A4-45DE-A89E-194350FAFF1A}" Directory_="bin_2_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.deps.json" Type="0"/>
+    <ROW Component="AlmostBinary_Binarify.dll" ComponentId="{98D609D1-6488-4790-BC4B-0D617254DA86}" Directory_="bin_1_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.dll"/>
+    <ROW Component="AlmostBinary_Binarify.dll_3" ComponentId="{E6E941CD-B05C-4B18-82CA-677E42A5BDEF}" Directory_="bin_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.dll_3"/>
+    <ROW Component="AlmostBinary_Binarify.dll_4" ComponentId="{7DD3BDE1-7904-462A-8227-077DE9315B09}" Directory_="bin_2_Dir" Attributes="0" KeyPath="AlmostBinary_Binarify.dll_4"/>
+    <ROW Component="AlmostBinary_Binarify.exe" ComponentId="{F3F7770B-E0CE-41D7-BD67-52B67882FDE2}" Directory_="bin_1_Dir" Attributes="256" KeyPath="AlmostBinary_Binarify.exe"/>
+    <ROW Component="AlmostBinary_Binarify.exe_3" ComponentId="{715ECFB7-8459-49DD-989C-90BD0B8F5F45}" Directory_="bin_Dir" Attributes="256" KeyPath="AlmostBinary_Binarify.exe_3"/>
+    <ROW Component="AlmostBinary_Binarify.exe_4" ComponentId="{3818D99F-4D2D-4F92-8CF2-35B267BD7664}" Directory_="bin_2_Dir" Attributes="256" KeyPath="AlmostBinary_Binarify.exe_4"/>
+    <ROW Component="AlmostBinary_BlockhainLibrary.dll" ComponentId="{BB6A0CFA-40EF-4E63-ACD3-08FDBBD827DD}" Directory_="bin_Dir" Attributes="0" KeyPath="AlmostBinary_BlockhainLibrary.dll"/>
+    <ROW Component="AlmostBinary_Compiler.deps.json" ComponentId="{EA8F9A65-915E-4255-8010-33CE125235A0}" Directory_="bin_1_Dir" Attributes="0" KeyPath="AlmostBinary_Compiler.deps.json" Type="0"/>
+    <ROW Component="AlmostBinary_Compiler.dll" ComponentId="{52E5D6FA-B22C-4F7D-A720-9FE5556758B0}" Directory_="bin_1_Dir" Attributes="0" KeyPath="AlmostBinary_Compiler.dll"/>
+    <ROW Component="AlmostBinary_Compiler.exe" ComponentId="{E631C4A8-147B-4715-A2D9-54028BBD7390}" Directory_="bin_1_Dir" Attributes="256" KeyPath="AlmostBinary_Compiler.exe"/>
+    <ROW Component="AlmostBinary_GlobalConstants.dll" ComponentId="{5D2AF168-FF47-456C-A2F6-FD0C947FF277}" Directory_="bin_1_Dir" Attributes="0" KeyPath="AlmostBinary_GlobalConstants.dll"/>
+    <ROW Component="AlmostBinary_GlobalConstants.dll_3" ComponentId="{EBE79C81-9F27-4B03-B67B-E8A3ABDBC5D5}" Directory_="bin_Dir" Attributes="0" KeyPath="AlmostBinary_GlobalConstants.dll_3"/>
+    <ROW Component="AlmostBinary_GlobalConstants.dll_4" ComponentId="{472B9D1E-056A-48D0-A4B6-40AC9397EFD4}" Directory_="bin_2_Dir" Attributes="0" KeyPath="AlmostBinary_GlobalConstants.dll_4"/>
+    <ROW Component="AlmostBinary_GlobalConstants.exe" ComponentId="{C394A972-75B1-41B9-8D9F-0F6475C1669A}" Directory_="bin_1_Dir" Attributes="256" KeyPath="AlmostBinary_GlobalConstants.exe"/>
+    <ROW Component="AlmostBinary_GlobalConstants.exe_3" ComponentId="{296C7DDA-30FD-4188-B3CE-B530B02D89D1}" Directory_="bin_Dir" Attributes="256" KeyPath="AlmostBinary_GlobalConstants.exe_3"/>
+    <ROW Component="AlmostBinary_GlobalConstants.exe_4" ComponentId="{6E755957-3F65-45AA-A595-76CC29AF8C8E}" Directory_="bin_2_Dir" Attributes="256" KeyPath="AlmostBinary_GlobalConstants.exe_4"/>
+    <ROW Component="AlmostBinary_Runtime.deps.json" ComponentId="{5BB95B48-6EF6-4C83-B6F8-381AE8FFCD37}" Directory_="bin_Dir" Attributes="0" KeyPath="AlmostBinary_Runtime.deps.json" Type="0"/>
+    <ROW Component="AlmostBinary_Runtime.dll" ComponentId="{0339E47E-7C88-4DF6-876D-4C4C40E41648}" Directory_="bin_Dir" Attributes="0" KeyPath="AlmostBinary_Runtime.dll"/>
+    <ROW Component="AlmostBinary_Runtime.exe" ComponentId="{7A09A6A8-AA51-4F49-A62B-469CDE409D41}" Directory_="bin_Dir" Attributes="256" KeyPath="AlmostBinary_Runtime.exe"/>
+    <ROW Component="CommandLine.dll" ComponentId="{09EBDCF3-2601-4D5F-8554-B414F23CF448}" Directory_="bin_1_Dir" Attributes="0" KeyPath="CommandLine.dll"/>
+    <ROW Component="CommandLine.dll_1" ComponentId="{8B6468FE-BC99-4A0A-9090-4DDF773CA337}" Directory_="bin_Dir" Attributes="0" KeyPath="CommandLine.dll_1"/>
+    <ROW Component="CommandLine.dll_2" ComponentId="{9CAD4BCF-F1EF-4F94-BD6A-6A489FBD4C10}" Directory_="bin_2_Dir" Attributes="0" KeyPath="CommandLine.dll_2"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll" ComponentId="{F981EEF4-243D-4530-9956-4A75BACD128D}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll_3" ComponentId="{A4F4DC6E-952E-4B33-9A8B-29B3358451E9}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll_3"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll_4" ComponentId="{145EAC31-B36A-4784-AA7C-D67E778D2A0E}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll_4"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll" ComponentId="{C58FAD05-CC67-49F2-BDFE-3154E6F414B5}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll_3" ComponentId="{FF228EC2-DCAD-4545-B7BA-57C18769DB89}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll_3"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll_4" ComponentId="{CD09FC72-10D1-4BFB-91CC-501DD795ED9B}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll_4"/>
+    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll" ComponentId="{367E7F27-C2EC-423C-8366-148D6D986C69}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll_3" ComponentId="{0DA0F7DE-7383-403B-823B-FC9EAAA980B9}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll_3"/>
+    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll_4" ComponentId="{31049F78-89C2-481F-BD36-01C9D83BCDF6}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll_4"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Json.dll" ComponentId="{656C3A51-F6C1-45B0-A137-1CFB033F40C7}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Json.dll_3" ComponentId="{0A9D4C5B-C3DC-49D8-8714-B754112CE5BD}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll_3"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Json.dll_4" ComponentId="{6327BFBC-24C6-4A35-A543-0A62A7F35033}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll_4"/>
+    <ROW Component="Microsoft.Extensions.Configuration.dll" ComponentId="{B45B80FE-0DA1-4D0B-A367-8C61B93B0EDB}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.dll_3" ComponentId="{4D213C28-67EB-4E44-B62C-7A46DE5BA87F}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll_3"/>
+    <ROW Component="Microsoft.Extensions.Configuration.dll_4" ComponentId="{69790F92-7788-47C6-8561-ED845308DC16}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll_4"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll" ComponentId="{2AAFA902-80A5-402D-B139-428993505483}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll_3" ComponentId="{3F9185E8-2EA3-43C8-A88C-19B13F8B2937}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll_3"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll_4" ComponentId="{678D6D81-4492-427A-BF09-E87B2E2A5B9A}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll_4"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.dll" ComponentId="{7C7E3322-78C7-44B0-B2F0-765A97CB14E6}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.dll_3" ComponentId="{706E429B-E373-4FE0-8C39-0254371C6742}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll_3"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.dll_4" ComponentId="{1A288AEC-D778-4FB4-96AA-FCA915CE6B44}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll_4"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll" ComponentId="{FEA12876-95B2-47D6-965B-CE845DEE03D9}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll_3" ComponentId="{CEECBFF9-9E70-43F1-8F48-27C7DB0F714B}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll_3"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll_4" ComponentId="{E2DA0525-C1F4-476B-974C-B2CDE570C998}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll_4"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll" ComponentId="{657B5335-F3D7-4F0A-B931-D29987A87458}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll_3" ComponentId="{472E7BDB-650A-4EFE-96F4-FDA381C558C4}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll_3"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll_4" ComponentId="{F5419760-DFAD-4F77-9D12-0AC7D87EE390}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll_4"/>
+    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll" ComponentId="{F0654ECD-A400-4E96-B857-5A074A785152}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll"/>
+    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll_3" ComponentId="{9319E0B7-B0A2-42FF-8C13-B0929C556DA4}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll_3"/>
+    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll_4" ComponentId="{AD275D9D-BB64-48B7-BC4E-4498AE4542D8}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll_4"/>
+    <ROW Component="Microsoft.Extensions.Primitives.dll" ComponentId="{06E962B5-2E69-4061-BEBE-54798A69507D}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll"/>
+    <ROW Component="Microsoft.Extensions.Primitives.dll_3" ComponentId="{36742313-514E-4D39-AB3A-6B5E4AA47417}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll_3"/>
+    <ROW Component="Microsoft.Extensions.Primitives.dll_4" ComponentId="{E17A0FA9-AAF8-45DF-AF9A-C0AF5EE54E67}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll_4"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{644BF965-7E44-4B5E-B3BD-066D9026BBDE}" Directory_="bin_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
     <ROW Component="ProductInformation" ComponentId="{EABA5747-B205-45D8-BDD7-7687E4585865}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="Runtime" ComponentId="{D2264AFE-3234-45B6-B8F5-79912CDC8E3A}" Directory_="Runtime_Dir" Attributes="0"/>
-    <ROW Component="Serilog.Sinks.Async.dll" ComponentId="{6146A9A1-FEE6-4030-92AF-C82E04D02017}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Serilog.Sinks.Async.dll"/>
-    <ROW Component="Serilog.Sinks.Async.dll_1" ComponentId="{A96DC57E-0EBD-4CDE-AF4A-9E24C58E048C}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Serilog.Sinks.Async.dll_1"/>
-    <ROW Component="Serilog.Sinks.Async.dll_2" ComponentId="{4E22BB12-5B87-4903-8BE7-1AF1A69C4496}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Serilog.Sinks.Async.dll_2"/>
-    <ROW Component="Serilog.Sinks.Console.dll" ComponentId="{9A85AE08-A959-45D2-993B-ED8193FC7886}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Serilog.Sinks.Console.dll"/>
-    <ROW Component="Serilog.Sinks.Console.dll_1" ComponentId="{A6AF443C-30D5-4C86-923A-129D78340799}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Serilog.Sinks.Console.dll_1"/>
-    <ROW Component="Serilog.Sinks.Console.dll_2" ComponentId="{50C175A8-A44B-47B3-B3E2-3759F3876188}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Serilog.Sinks.Console.dll_2"/>
-    <ROW Component="Serilog.Sinks.File.dll" ComponentId="{50F260D3-FFA9-493B-91BC-7C8DDE4114AE}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Serilog.Sinks.File.dll"/>
-    <ROW Component="Serilog.Sinks.File.dll_1" ComponentId="{6FF9475F-A276-4576-A2B8-F7004728AD33}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Serilog.Sinks.File.dll_1"/>
-    <ROW Component="Serilog.Sinks.File.dll_2" ComponentId="{FE97121B-623E-4E32-983A-89508B76FAC9}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Serilog.Sinks.File.dll_2"/>
-    <ROW Component="Serilog.dll" ComponentId="{8BF419B6-69A5-4A5A-914B-01B8BC075720}" Directory_="netcoreapp3.1_Dir" Attributes="0" KeyPath="Serilog.dll"/>
-    <ROW Component="Serilog.dll_1" ComponentId="{A05DB7C8-B7B9-4A3E-A441-874069875A54}" Directory_="netcoreapp3.1_1_Dir" Attributes="0" KeyPath="Serilog.dll_1"/>
-    <ROW Component="Serilog.dll_2" ComponentId="{FD6B2504-B413-461C-9363-B94C01F82ACC}" Directory_="netcoreapp3.1_2_Dir" Attributes="0" KeyPath="Serilog.dll_2"/>
-    <ROW Component="abinl" ComponentId="{E39A9945-A223-4491-ADF5-12EE6DAF112B}" Directory_="Libraries_Dir" Attributes="0" KeyPath="abinl" Type="0"/>
-    <ROW Component="appsettings_DEV.json" ComponentId="{63390898-7475-4D29-A3CF-6DEE69FD4A90}" Directory_="Properties_Dir" Attributes="0" KeyPath="appsettings_DEV.json" Type="0"/>
-    <ROW Component="appsettings_DEV.json_1" ComponentId="{694784A4-EE03-40D6-8D4D-CF4C7B8308B4}" Directory_="Properties_1_Dir" Attributes="0" KeyPath="appsettings_DEV.json_1" Type="0"/>
-    <ROW Component="appsettings_DEV.json_2" ComponentId="{6C0F3C6D-57C0-4527-ADB2-7740A281836D}" Directory_="Properties_2_Dir" Attributes="0" KeyPath="appsettings_DEV.json_2" Type="0"/>
+    <ROW Component="Serilog.Sinks.Async.dll" ComponentId="{EBA1A3E0-22CF-47E9-A0DA-D5757E88294E}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Serilog.Sinks.Async.dll"/>
+    <ROW Component="Serilog.Sinks.Async.dll_3" ComponentId="{D2CFD2D0-82E5-423D-A3A3-F5473005ACC3}" Directory_="bin_Dir" Attributes="0" KeyPath="Serilog.Sinks.Async.dll_3"/>
+    <ROW Component="Serilog.Sinks.Async.dll_4" ComponentId="{5E7F8964-285D-4777-BAE2-6E91486BF3FC}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Serilog.Sinks.Async.dll_4"/>
+    <ROW Component="Serilog.Sinks.Console.dll" ComponentId="{4985FA9E-6496-453C-91DF-73CF62F3BFEF}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Serilog.Sinks.Console.dll"/>
+    <ROW Component="Serilog.Sinks.Console.dll_3" ComponentId="{3C6EF612-B7B1-4CC0-A73E-5F7DA30A46E8}" Directory_="bin_Dir" Attributes="0" KeyPath="Serilog.Sinks.Console.dll_3"/>
+    <ROW Component="Serilog.Sinks.Console.dll_4" ComponentId="{AF9FB6D7-C3A1-40C6-87E4-6AAF45CA076A}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Serilog.Sinks.Console.dll_4"/>
+    <ROW Component="Serilog.Sinks.File.dll" ComponentId="{D0167D07-B5E5-44C1-A12B-1896F669D4BF}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Serilog.Sinks.File.dll"/>
+    <ROW Component="Serilog.Sinks.File.dll_3" ComponentId="{23AB733E-3280-4071-92E1-7A7C987EA89A}" Directory_="bin_Dir" Attributes="0" KeyPath="Serilog.Sinks.File.dll_3"/>
+    <ROW Component="Serilog.Sinks.File.dll_4" ComponentId="{3AFF7DB7-9BAA-4F78-9A2B-4A85745E130B}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Serilog.Sinks.File.dll_4"/>
+    <ROW Component="Serilog.dll" ComponentId="{879CB2F6-DBF5-4E7A-85A1-DAC3E617FD9D}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Serilog.dll"/>
+    <ROW Component="Serilog.dll_3" ComponentId="{07931BA4-3102-4562-8C57-6F104E319DEA}" Directory_="bin_Dir" Attributes="0" KeyPath="Serilog.dll_3"/>
+    <ROW Component="Serilog.dll_4" ComponentId="{4FAB59AF-5A3C-4E66-B600-E03179FBB661}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Serilog.dll_4"/>
+    <ROW Component="abinl" ComponentId="{516C154B-0D95-441B-866D-25757E2808F2}" Directory_="Libraries_Dir" Attributes="0" KeyPath="abinl" Type="0"/>
+    <ROW Component="appsettings_DEV.json" ComponentId="{25E6F1B5-C4B8-4709-B9D0-F47ACCE1CE04}" Directory_="Properties_Dir" Attributes="0" KeyPath="appsettings_DEV.json" Type="0"/>
+    <ROW Component="appsettings_DEV.json_3" ComponentId="{C2BA0534-ECAA-4E16-87AB-66CA917C472A}" Directory_="Properties_3_Dir" Attributes="0" KeyPath="appsettings_DEV.json_3" Type="0"/>
+    <ROW Component="appsettings_DEV.json_4" ComponentId="{7ACCDE6F-0954-4D3D-9AD8-C986AB6D89C3}" Directory_="Properties_4_Dir" Attributes="0" KeyPath="appsettings_DEV.json_4" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="abinl" Component_="abinl" FileName="000000~1.ABI|00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Libraries\00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl" SelfReg="false"/>
+    <ROW File="abinl_1" Component_="abinl" FileName="000000~2.ABI|0000000000000000011100110111100101110011011101000110010101101101.abinl" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Libraries\0000000000000000011100110111100101110011011101000110010101101101.abinl" SelfReg="false"/>
+    <ROW File="appsettings_DEV.json" Component_="appsettings_DEV.json" FileName="APPSET~1.JSO|appsettings_DEV.json" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json" SelfReg="false"/>
+    <ROW File="appsettings_MAIN.json" Component_="appsettings_DEV.json" FileName="APPSET~2.JSO|appsettings_MAIN.json" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json" SelfReg="false"/>
+    <ROW File="launchSettings.json" Component_="appsettings_DEV.json" FileName="LAUNCH~1.JSO|launchSettings.json" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Properties\launchSettings.json" SelfReg="false"/>
     <ROW File="AlmostBinary_Binarify.dll" Component_="AlmostBinary_Binarify.dll" FileName="ALMOST~1.DLL|AlmostBinary_Binarify.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.dll" SelfReg="false"/>
     <ROW File="AlmostBinary_Binarify.exe" Component_="AlmostBinary_Binarify.exe" FileName="ALMOST~1.EXE|AlmostBinary_Binarify.exe" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe" SelfReg="false" DigSign="true"/>
     <ROW File="AlmostBinary_Binarify.pdb" Component_="AlmostBinary_Binarify.exe" FileName="ALMOST~1.PDB|AlmostBinary_Binarify.pdb" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb" SelfReg="false"/>
@@ -129,7 +138,7 @@
     <ROW File="AlmostBinary_GlobalConstants.dll" Component_="AlmostBinary_GlobalConstants.dll" FileName="ALMOST~3.DLL|AlmostBinary_GlobalConstants.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.dll" SelfReg="false"/>
     <ROW File="AlmostBinary_GlobalConstants.exe" Component_="AlmostBinary_GlobalConstants.exe" FileName="ALMOST~3.EXE|AlmostBinary_GlobalConstants.exe" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe" SelfReg="false" DigSign="true"/>
     <ROW File="AlmostBinary_GlobalConstants.pdb" Component_="AlmostBinary_GlobalConstants.exe" FileName="ALMOST~3.PDB|AlmostBinary_GlobalConstants.pdb" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb" SelfReg="false"/>
-    <ROW File="abinl" Component_="abinl" FileName="011100~1.ABI|011100110111100101110011011101000110010101101101.abinl" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Libraries\011100110111100101110011011101000110010101101101.abinl" SelfReg="false"/>
+    <ROW File="CommandLine.dll" Component_="CommandLine.dll" FileName="COMMAN~1.DLL|CommandLine.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\CommandLine.dll" SelfReg="false"/>
     <ROW File="Microsoft.Extensions.Configuration.Abstractions.dll" Component_="Microsoft.Extensions.Configuration.Abstractions.dll" FileName="MICROS~1.DLL|Microsoft.Extensions.Configuration.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll" SelfReg="false"/>
     <ROW File="Microsoft.Extensions.Configuration.Binder.dll" Component_="Microsoft.Extensions.Configuration.Binder.dll" FileName="MICROS~2.DLL|Microsoft.Extensions.Configuration.Binder.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll" SelfReg="false"/>
     <ROW File="Microsoft.Extensions.Configuration.dll" Component_="Microsoft.Extensions.Configuration.dll" FileName="MICROS~3.DLL|Microsoft.Extensions.Configuration.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll" SelfReg="false"/>
@@ -141,68 +150,70 @@
     <ROW File="Microsoft.Extensions.FileProviders.Physical.dll" Component_="Microsoft.Extensions.FileProviders.Physical.dll" FileName="MICROS~9.DLL|Microsoft.Extensions.FileProviders.Physical.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll" SelfReg="false"/>
     <ROW File="Microsoft.Extensions.FileSystemGlobbing.dll" Component_="Microsoft.Extensions.FileSystemGlobbing.dll" FileName="MICRO~10.DLL|Microsoft.Extensions.FileSystemGlobbing.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll" SelfReg="false"/>
     <ROW File="Microsoft.Extensions.Primitives.dll" Component_="Microsoft.Extensions.Primitives.dll" FileName="MICRO~11.DLL|Microsoft.Extensions.Primitives.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll" SelfReg="false"/>
-    <ROW File="appsettings_DEV.json" Component_="appsettings_DEV.json" FileName="APPSET~1.JSO|appsettings_DEV.json" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json" SelfReg="false"/>
-    <ROW File="appsettings_MAIN.json" Component_="appsettings_DEV.json" FileName="APPSET~2.JSO|appsettings_MAIN.json" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json" SelfReg="false"/>
-    <ROW File="launchSettings.json" Component_="appsettings_DEV.json" FileName="LAUNCH~1.JSO|launchSettings.json" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Properties\launchSettings.json" SelfReg="false"/>
     <ROW File="Serilog.dll" Component_="Serilog.dll" FileName="Serilog.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Serilog.dll" SelfReg="false"/>
     <ROW File="Serilog.Sinks.Async.dll" Component_="Serilog.Sinks.Async.dll" FileName="SERILO~1.DLL|Serilog.Sinks.Async.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Serilog.Sinks.Async.dll" SelfReg="false"/>
     <ROW File="Serilog.Sinks.Console.dll" Component_="Serilog.Sinks.Console.dll" FileName="SERILO~2.DLL|Serilog.Sinks.Console.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll" SelfReg="false"/>
     <ROW File="Serilog.Sinks.File.dll" Component_="Serilog.Sinks.File.dll" FileName="SERILO~3.DLL|Serilog.Sinks.File.dll" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll" SelfReg="false"/>
-    <ROW File="AlmostBinary_Binarify.deps.json" Component_="AlmostBinary_Binarify.deps.json" FileName="ALMOST~1.JSO|AlmostBinary_Binarify.deps.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.deps.json" SelfReg="false"/>
-    <ROW File="AlmostBinary_Binarify.dll_1" Component_="AlmostBinary_Binarify.dll_1" FileName="ALMOST~1.DLL|AlmostBinary_Binarify.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.dll" SelfReg="false"/>
-    <ROW File="AlmostBinary_Binarify.exe_1" Component_="AlmostBinary_Binarify.exe_1" FileName="ALMOST~1.EXE|AlmostBinary_Binarify.exe" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="AlmostBinary_Binarify.pdb_1" Component_="AlmostBinary_Binarify.exe_1" FileName="ALMOST~1.PDB|AlmostBinary_Binarify.pdb" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb" SelfReg="false"/>
-    <ROW File="AlmostBinary_Binarify.runtimeconfig.dev.json" Component_="AlmostBinary_Binarify.deps.json" FileName="ALMOST~2.JSO|AlmostBinary_Binarify.runtimeconfig.dev.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.dev.json" SelfReg="false"/>
-    <ROW File="AlmostBinary_Binarify.runtimeconfig.json" Component_="AlmostBinary_Binarify.deps.json" FileName="ALMOST~3.JSO|AlmostBinary_Binarify.runtimeconfig.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.json" SelfReg="false"/>
-    <ROW File="AlmostBinary_GlobalConstants.dll_1" Component_="AlmostBinary_GlobalConstants.dll_1" FileName="ALMOST~2.DLL|AlmostBinary_GlobalConstants.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.dll" SelfReg="false"/>
-    <ROW File="AlmostBinary_GlobalConstants.exe_1" Component_="AlmostBinary_GlobalConstants.exe_1" FileName="ALMOST~2.EXE|AlmostBinary_GlobalConstants.exe" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="AlmostBinary_GlobalConstants.pdb_1" Component_="AlmostBinary_GlobalConstants.exe_1" FileName="ALMOST~2.PDB|AlmostBinary_GlobalConstants.pdb" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.Abstractions.dll_1" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_1" FileName="MICROS~1.DLL|Microsoft.Extensions.Configuration.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.Binder.dll_1" Component_="Microsoft.Extensions.Configuration.Binder.dll_1" FileName="MICROS~2.DLL|Microsoft.Extensions.Configuration.Binder.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.dll_1" Component_="Microsoft.Extensions.Configuration.dll_1" FileName="MICROS~3.DLL|Microsoft.Extensions.Configuration.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.FileExtensions.dll_1" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_1" FileName="MICROS~4.DLL|Microsoft.Extensions.Configuration.FileExtensions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.Json.dll_1" Component_="Microsoft.Extensions.Configuration.Json.dll_1" FileName="MICROS~5.DLL|Microsoft.Extensions.Configuration.Json.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.dll_1" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_1" FileName="MICROS~6.DLL|Microsoft.Extensions.DependencyInjection.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.DependencyInjection.dll_1" Component_="Microsoft.Extensions.DependencyInjection.dll_1" FileName="MICROS~7.DLL|Microsoft.Extensions.DependencyInjection.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.FileProviders.Abstractions.dll_1" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_1" FileName="MICROS~8.DLL|Microsoft.Extensions.FileProviders.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.FileProviders.Physical.dll_1" Component_="Microsoft.Extensions.FileProviders.Physical.dll_1" FileName="MICROS~9.DLL|Microsoft.Extensions.FileProviders.Physical.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.FileSystemGlobbing.dll_1" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_1" FileName="MICRO~10.DLL|Microsoft.Extensions.FileSystemGlobbing.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Primitives.dll_1" Component_="Microsoft.Extensions.Primitives.dll_1" FileName="MICRO~11.DLL|Microsoft.Extensions.Primitives.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll" SelfReg="false"/>
-    <ROW File="appsettings_DEV.json_1" Component_="appsettings_DEV.json_1" FileName="APPSET~1.JSO|appsettings_DEV.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json" SelfReg="false"/>
-    <ROW File="appsettings_MAIN.json_1" Component_="appsettings_DEV.json_1" FileName="APPSET~2.JSO|appsettings_MAIN.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json" SelfReg="false"/>
-    <ROW File="Serilog.dll_1" Component_="Serilog.dll_1" FileName="Serilog.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.dll" SelfReg="false"/>
-    <ROW File="Serilog.Sinks.Async.dll_1" Component_="Serilog.Sinks.Async.dll_1" FileName="SERILO~1.DLL|Serilog.Sinks.Async.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.Async.dll" SelfReg="false"/>
-    <ROW File="Serilog.Sinks.Console.dll_1" Component_="Serilog.Sinks.Console.dll_1" FileName="SERILO~2.DLL|Serilog.Sinks.Console.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll" SelfReg="false"/>
-    <ROW File="Serilog.Sinks.File.dll_1" Component_="Serilog.Sinks.File.dll_1" FileName="SERILO~3.DLL|Serilog.Sinks.File.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll" SelfReg="false"/>
-    <ROW File="AlmostBinary_Binarify.dll_2" Component_="AlmostBinary_Binarify.dll_2" FileName="ALMOST~1.DLL|AlmostBinary_Binarify.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.dll" SelfReg="false"/>
-    <ROW File="AlmostBinary_Binarify.exe_2" Component_="AlmostBinary_Binarify.exe_2" FileName="ALMOST~1.EXE|AlmostBinary_Binarify.exe" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="AlmostBinary_Binarify.pdb_2" Component_="AlmostBinary_Binarify.exe_2" FileName="ALMOST~1.PDB|AlmostBinary_Binarify.pdb" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb" SelfReg="false"/>
-    <ROW File="AlmostBinary_GlobalConstants.dll_2" Component_="AlmostBinary_GlobalConstants.dll_2" FileName="ALMOST~2.DLL|AlmostBinary_GlobalConstants.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.dll" SelfReg="false"/>
-    <ROW File="AlmostBinary_GlobalConstants.exe_2" Component_="AlmostBinary_GlobalConstants.exe_2" FileName="ALMOST~2.EXE|AlmostBinary_GlobalConstants.exe" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="AlmostBinary_GlobalConstants.pdb_2" Component_="AlmostBinary_GlobalConstants.exe_2" FileName="ALMOST~2.PDB|AlmostBinary_GlobalConstants.pdb" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb" SelfReg="false"/>
+    <ROW File="appsettings_DEV.json_3" Component_="appsettings_DEV.json_3" FileName="APPSET~1.JSO|appsettings_DEV.json" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json" SelfReg="false"/>
+    <ROW File="appsettings_MAIN.json_3" Component_="appsettings_DEV.json_3" FileName="APPSET~2.JSO|appsettings_MAIN.json" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json" SelfReg="false"/>
+    <ROW File="AlmostBinary_Binarify.dll_3" Component_="AlmostBinary_Binarify.dll_3" FileName="ALMOST~1.DLL|AlmostBinary_Binarify.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.dll" SelfReg="false"/>
+    <ROW File="AlmostBinary_Binarify.exe_3" Component_="AlmostBinary_Binarify.exe_3" FileName="ALMOST~1.EXE|AlmostBinary_Binarify.exe" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="AlmostBinary_Binarify.pdb_3" Component_="AlmostBinary_Binarify.exe_3" FileName="ALMOST~1.PDB|AlmostBinary_Binarify.pdb" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb" SelfReg="false"/>
+    <ROW File="AlmostBinary_BlockhainLibrary.dll" Component_="AlmostBinary_BlockhainLibrary.dll" FileName="ALMOST~2.DLL|AlmostBinary_BlockhainLibrary.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_BlockhainLibrary.dll" SelfReg="false"/>
+    <ROW File="AlmostBinary_BlockhainLibrary.pdb" Component_="AlmostBinary_BlockhainLibrary.dll" FileName="ALMOST~2.PDB|AlmostBinary_BlockhainLibrary.pdb" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_BlockhainLibrary.pdb" SelfReg="false"/>
+    <ROW File="AlmostBinary_GlobalConstants.dll_3" Component_="AlmostBinary_GlobalConstants.dll_3" FileName="ALMOST~3.DLL|AlmostBinary_GlobalConstants.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.dll" SelfReg="false"/>
+    <ROW File="AlmostBinary_GlobalConstants.exe_3" Component_="AlmostBinary_GlobalConstants.exe_3" FileName="ALMOST~2.EXE|AlmostBinary_GlobalConstants.exe" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="AlmostBinary_GlobalConstants.pdb_3" Component_="AlmostBinary_GlobalConstants.exe_3" FileName="ALMOST~3.PDB|AlmostBinary_GlobalConstants.pdb" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb" SelfReg="false"/>
     <ROW File="AlmostBinary_Runtime.deps.json" Component_="AlmostBinary_Runtime.deps.json" FileName="ALMOST~1.JSO|AlmostBinary_Runtime.deps.json" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.deps.json" SelfReg="false"/>
-    <ROW File="AlmostBinary_Runtime.dll" Component_="AlmostBinary_Runtime.dll" FileName="ALMOST~3.DLL|AlmostBinary_Runtime.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.dll" SelfReg="false"/>
+    <ROW File="AlmostBinary_Runtime.dll" Component_="AlmostBinary_Runtime.dll" FileName="ALMOST~4.DLL|AlmostBinary_Runtime.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.dll" SelfReg="false"/>
     <ROW File="AlmostBinary_Runtime.exe" Component_="AlmostBinary_Runtime.exe" FileName="ALMOST~3.EXE|AlmostBinary_Runtime.exe" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="AlmostBinary_Runtime.pdb" Component_="AlmostBinary_Runtime.exe" FileName="ALMOST~3.PDB|AlmostBinary_Runtime.pdb" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.pdb" SelfReg="false"/>
+    <ROW File="AlmostBinary_Runtime.pdb" Component_="AlmostBinary_Runtime.exe" FileName="ALMOST~4.PDB|AlmostBinary_Runtime.pdb" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.pdb" SelfReg="false"/>
     <ROW File="AlmostBinary_Runtime.runtimeconfig.dev.json" Component_="AlmostBinary_Runtime.deps.json" FileName="ALMOST~2.JSO|AlmostBinary_Runtime.runtimeconfig.dev.json" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.runtimeconfig.dev.json" SelfReg="false"/>
     <ROW File="AlmostBinary_Runtime.runtimeconfig.json" Component_="AlmostBinary_Runtime.deps.json" FileName="ALMOST~3.JSO|AlmostBinary_Runtime.runtimeconfig.json" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\AlmostBinary_Runtime.runtimeconfig.json" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.Abstractions.dll_2" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_2" FileName="MICROS~1.DLL|Microsoft.Extensions.Configuration.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.Binder.dll_2" Component_="Microsoft.Extensions.Configuration.Binder.dll_2" FileName="MICROS~2.DLL|Microsoft.Extensions.Configuration.Binder.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.dll_2" Component_="Microsoft.Extensions.Configuration.dll_2" FileName="MICROS~3.DLL|Microsoft.Extensions.Configuration.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.FileExtensions.dll_2" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_2" FileName="MICROS~4.DLL|Microsoft.Extensions.Configuration.FileExtensions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Configuration.Json.dll_2" Component_="Microsoft.Extensions.Configuration.Json.dll_2" FileName="MICROS~5.DLL|Microsoft.Extensions.Configuration.Json.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.dll_2" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_2" FileName="MICROS~6.DLL|Microsoft.Extensions.DependencyInjection.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.DependencyInjection.dll_2" Component_="Microsoft.Extensions.DependencyInjection.dll_2" FileName="MICROS~7.DLL|Microsoft.Extensions.DependencyInjection.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.FileProviders.Abstractions.dll_2" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_2" FileName="MICROS~8.DLL|Microsoft.Extensions.FileProviders.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.FileProviders.Physical.dll_2" Component_="Microsoft.Extensions.FileProviders.Physical.dll_2" FileName="MICROS~9.DLL|Microsoft.Extensions.FileProviders.Physical.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.FileSystemGlobbing.dll_2" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_2" FileName="MICRO~10.DLL|Microsoft.Extensions.FileSystemGlobbing.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Extensions.Primitives.dll_2" Component_="Microsoft.Extensions.Primitives.dll_2" FileName="MICRO~11.DLL|Microsoft.Extensions.Primitives.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll" SelfReg="false"/>
-    <ROW File="appsettings_DEV.json_2" Component_="appsettings_DEV.json_2" FileName="APPSET~1.JSO|appsettings_DEV.json" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json" SelfReg="false"/>
-    <ROW File="appsettings_MAIN.json_2" Component_="appsettings_DEV.json_2" FileName="APPSET~2.JSO|appsettings_MAIN.json" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json" SelfReg="false"/>
-    <ROW File="Serilog.dll_2" Component_="Serilog.dll_2" FileName="Serilog.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.dll" SelfReg="false"/>
-    <ROW File="Serilog.Sinks.Async.dll_2" Component_="Serilog.Sinks.Async.dll_2" FileName="SERILO~1.DLL|Serilog.Sinks.Async.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.Sinks.Async.dll" SelfReg="false"/>
-    <ROW File="Serilog.Sinks.Console.dll_2" Component_="Serilog.Sinks.Console.dll_2" FileName="SERILO~2.DLL|Serilog.Sinks.Console.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll" SelfReg="false"/>
-    <ROW File="Serilog.Sinks.File.dll_2" Component_="Serilog.Sinks.File.dll_2" FileName="SERILO~3.DLL|Serilog.Sinks.File.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll" SelfReg="false"/>
+    <ROW File="CommandLine.dll_1" Component_="CommandLine.dll_1" FileName="COMMAN~1.DLL|CommandLine.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\CommandLine.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.Abstractions.dll_3" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_3" FileName="MICROS~1.DLL|Microsoft.Extensions.Configuration.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.Binder.dll_3" Component_="Microsoft.Extensions.Configuration.Binder.dll_3" FileName="MICROS~2.DLL|Microsoft.Extensions.Configuration.Binder.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.dll_3" Component_="Microsoft.Extensions.Configuration.dll_3" FileName="MICROS~3.DLL|Microsoft.Extensions.Configuration.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.FileExtensions.dll_3" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_3" FileName="MICROS~4.DLL|Microsoft.Extensions.Configuration.FileExtensions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.Json.dll_3" Component_="Microsoft.Extensions.Configuration.Json.dll_3" FileName="MICROS~5.DLL|Microsoft.Extensions.Configuration.Json.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.dll_3" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_3" FileName="MICROS~6.DLL|Microsoft.Extensions.DependencyInjection.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.dll_3" Component_="Microsoft.Extensions.DependencyInjection.dll_3" FileName="MICROS~7.DLL|Microsoft.Extensions.DependencyInjection.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.FileProviders.Abstractions.dll_3" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_3" FileName="MICROS~8.DLL|Microsoft.Extensions.FileProviders.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.FileProviders.Physical.dll_3" Component_="Microsoft.Extensions.FileProviders.Physical.dll_3" FileName="MICROS~9.DLL|Microsoft.Extensions.FileProviders.Physical.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.FileSystemGlobbing.dll_3" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_3" FileName="MICRO~10.DLL|Microsoft.Extensions.FileSystemGlobbing.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Primitives.dll_3" Component_="Microsoft.Extensions.Primitives.dll_3" FileName="MICRO~11.DLL|Microsoft.Extensions.Primitives.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Serilog.dll_3" Component_="Serilog.dll_3" FileName="Serilog.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.dll" SelfReg="false"/>
+    <ROW File="Serilog.Sinks.Async.dll_3" Component_="Serilog.Sinks.Async.dll_3" FileName="SERILO~1.DLL|Serilog.Sinks.Async.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.Sinks.Async.dll" SelfReg="false"/>
+    <ROW File="Serilog.Sinks.Console.dll_3" Component_="Serilog.Sinks.Console.dll_3" FileName="SERILO~2.DLL|Serilog.Sinks.Console.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll" SelfReg="false"/>
+    <ROW File="Serilog.Sinks.File.dll_3" Component_="Serilog.Sinks.File.dll_3" FileName="SERILO~3.DLL|Serilog.Sinks.File.dll" Attributes="0" SourcePath="..\AlmostBinary_Runtime\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll" SelfReg="false"/>
+    <ROW File="appsettings_DEV.json_4" Component_="appsettings_DEV.json_4" FileName="APPSET~1.JSO|appsettings_DEV.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json" SelfReg="false"/>
+    <ROW File="appsettings_MAIN.json_4" Component_="appsettings_DEV.json_4" FileName="APPSET~2.JSO|appsettings_MAIN.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json" SelfReg="false"/>
+    <ROW File="AlmostBinary_Binarify.deps.json" Component_="AlmostBinary_Binarify.deps.json" FileName="ALMOST~1.JSO|AlmostBinary_Binarify.deps.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.deps.json" SelfReg="false"/>
+    <ROW File="AlmostBinary_Binarify.dll_4" Component_="AlmostBinary_Binarify.dll_4" FileName="ALMOST~1.DLL|AlmostBinary_Binarify.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.dll" SelfReg="false"/>
+    <ROW File="AlmostBinary_Binarify.exe_4" Component_="AlmostBinary_Binarify.exe_4" FileName="ALMOST~1.EXE|AlmostBinary_Binarify.exe" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="AlmostBinary_Binarify.pdb_4" Component_="AlmostBinary_Binarify.exe_4" FileName="ALMOST~1.PDB|AlmostBinary_Binarify.pdb" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb" SelfReg="false"/>
+    <ROW File="AlmostBinary_Binarify.runtimeconfig.dev.json" Component_="AlmostBinary_Binarify.deps.json" FileName="ALMOST~2.JSO|AlmostBinary_Binarify.runtimeconfig.dev.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.dev.json" SelfReg="false"/>
+    <ROW File="AlmostBinary_Binarify.runtimeconfig.json" Component_="AlmostBinary_Binarify.deps.json" FileName="ALMOST~3.JSO|AlmostBinary_Binarify.runtimeconfig.json" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.json" SelfReg="false"/>
+    <ROW File="AlmostBinary_GlobalConstants.dll_4" Component_="AlmostBinary_GlobalConstants.dll_4" FileName="ALMOST~2.DLL|AlmostBinary_GlobalConstants.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.dll" SelfReg="false"/>
+    <ROW File="AlmostBinary_GlobalConstants.exe_4" Component_="AlmostBinary_GlobalConstants.exe_4" FileName="ALMOST~2.EXE|AlmostBinary_GlobalConstants.exe" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="AlmostBinary_GlobalConstants.pdb_4" Component_="AlmostBinary_GlobalConstants.exe_4" FileName="ALMOST~2.PDB|AlmostBinary_GlobalConstants.pdb" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.pdb" SelfReg="false"/>
+    <ROW File="CommandLine.dll_2" Component_="CommandLine.dll_2" FileName="COMMAN~1.DLL|CommandLine.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\CommandLine.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.Abstractions.dll_4" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_4" FileName="MICROS~1.DLL|Microsoft.Extensions.Configuration.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.Binder.dll_4" Component_="Microsoft.Extensions.Configuration.Binder.dll_4" FileName="MICROS~2.DLL|Microsoft.Extensions.Configuration.Binder.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.dll_4" Component_="Microsoft.Extensions.Configuration.dll_4" FileName="MICROS~3.DLL|Microsoft.Extensions.Configuration.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.FileExtensions.dll_4" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_4" FileName="MICROS~4.DLL|Microsoft.Extensions.Configuration.FileExtensions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Configuration.Json.dll_4" Component_="Microsoft.Extensions.Configuration.Json.dll_4" FileName="MICROS~5.DLL|Microsoft.Extensions.Configuration.Json.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.dll_4" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_4" FileName="MICROS~6.DLL|Microsoft.Extensions.DependencyInjection.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.dll_4" Component_="Microsoft.Extensions.DependencyInjection.dll_4" FileName="MICROS~7.DLL|Microsoft.Extensions.DependencyInjection.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.FileProviders.Abstractions.dll_4" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_4" FileName="MICROS~8.DLL|Microsoft.Extensions.FileProviders.Abstractions.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.FileProviders.Physical.dll_4" Component_="Microsoft.Extensions.FileProviders.Physical.dll_4" FileName="MICROS~9.DLL|Microsoft.Extensions.FileProviders.Physical.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.FileSystemGlobbing.dll_4" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_4" FileName="MICRO~10.DLL|Microsoft.Extensions.FileSystemGlobbing.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Primitives.dll_4" Component_="Microsoft.Extensions.Primitives.dll_4" FileName="MICRO~11.DLL|Microsoft.Extensions.Primitives.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll" SelfReg="false"/>
+    <ROW File="Serilog.dll_4" Component_="Serilog.dll_4" FileName="Serilog.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.dll" SelfReg="false"/>
+    <ROW File="Serilog.Sinks.Async.dll_4" Component_="Serilog.Sinks.Async.dll_4" FileName="SERILO~1.DLL|Serilog.Sinks.Async.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.Async.dll" SelfReg="false"/>
+    <ROW File="Serilog.Sinks.Console.dll_4" Component_="Serilog.Sinks.Console.dll_4" FileName="SERILO~2.DLL|Serilog.Sinks.Console.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll" SelfReg="false"/>
+    <ROW File="Serilog.Sinks.File.dll_4" Component_="Serilog.Sinks.File.dll_4" FileName="SERILO~3.DLL|Serilog.Sinks.File.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -263,7 +274,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
-    <ROW Directory_="Runtime_Dir" Component_="Runtime" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
@@ -287,6 +297,30 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="appsettings_DEV.json_3"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.exe_3"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_BlockhainLibrary.dll"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.exe_3"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_Runtime.deps.json"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_Runtime.dll"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_Runtime.exe"/>
+    <ROW Feature_="MainFeature" Component_="CommandLine.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Binder.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Json.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Physical.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Primitives.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="abinl"/>
+    <ROW Feature_="MainFeature" Component_="appsettings_DEV.json"/>
     <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.dll"/>
     <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.exe"/>
     <ROW Feature_="MainFeature" Component_="AlmostBinary_Compiler.deps.json"/>
@@ -294,7 +328,7 @@
     <ROW Feature_="MainFeature" Component_="AlmostBinary_Compiler.exe"/>
     <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.dll"/>
     <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.exe"/>
-    <ROW Feature_="MainFeature" Component_="abinl"/>
+    <ROW Feature_="MainFeature" Component_="CommandLine.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Abstractions.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Binder.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.dll"/>
@@ -306,56 +340,36 @@
     <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Physical.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileSystemGlobbing.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Primitives.dll"/>
-    <ROW Feature_="MainFeature" Component_="appsettings_DEV.json"/>
     <ROW Feature_="MainFeature" Component_="Serilog.dll"/>
     <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Async.dll"/>
     <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Console.dll"/>
     <ROW Feature_="MainFeature" Component_="Serilog.Sinks.File.dll"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Async.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Console.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.File.dll_3"/>
     <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.deps.json"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.exe_1"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.exe_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Binder.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Json.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Physical.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Primitives.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="appsettings_DEV.json_1"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Async.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Console.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.File.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Runtime"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.exe_2"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.exe_2"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_Runtime.deps.json"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_Runtime.dll"/>
-    <ROW Feature_="MainFeature" Component_="AlmostBinary_Runtime.exe"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Binder.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Json.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Physical.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Primitives.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="appsettings_DEV.json_2"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Async.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Console.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.File.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="appsettings_DEV.json_4"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_Binarify.exe_4"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="AlmostBinary_GlobalConstants.exe_4"/>
+    <ROW Feature_="MainFeature" Component_="CommandLine.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Abstractions.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Binder.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.FileExtensions.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Configuration.Json.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Abstractions.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileProviders.Physical.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.FileSystemGlobbing.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Primitives.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Async.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.Console.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.File.dll_4"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Logo_WAVECT_color_sym_1000.exe" SourcePath="..\..\..\..\NotOnDropbox\Wavect_Dropbox\Execution\ProjectManagement\Marketing\Corporate-Identity\01_Logo\color\symbol\Logo_WAVECT_color_sym_1000.ico" Index="0"/>

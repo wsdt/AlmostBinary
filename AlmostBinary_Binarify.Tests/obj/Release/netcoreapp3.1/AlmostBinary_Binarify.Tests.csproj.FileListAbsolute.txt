@@ -116,3 +116,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.genruntimeconfig.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\testhost.exe
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.csproj.CoreCompileInputs.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\CommandLine.dll

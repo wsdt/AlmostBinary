@@ -32,3 +32,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.csproj.CoreCompileInputs.cache
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\CommandLine.dll

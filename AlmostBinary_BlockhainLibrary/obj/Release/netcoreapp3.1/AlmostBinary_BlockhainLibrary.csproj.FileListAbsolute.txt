@@ -6,3 +6,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockhainLibr
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockhainLibrary\obj\Release\netcoreapp3.1\AlmostBinary_BlockhainLibrary.csproj.CoreCompileInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockhainLibrary\obj\Release\netcoreapp3.1\AlmostBinary_BlockhainLibrary.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockhainLibrary\obj\Release\netcoreapp3.1\AlmostBinary_BlockhainLibrary.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockhainLibrary\obj\Release\netcoreapp3.1\AlmostBinary_BlockhainLibrary.csprojAssemblyReference.cache
