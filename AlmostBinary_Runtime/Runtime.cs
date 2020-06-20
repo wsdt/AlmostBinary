@@ -61,7 +61,7 @@ namespace AlmostBinary_Runtime
                 catch (Exception ex) {
                     Log.Here().Warning(ex, "Insignificant exception during buffer-read.");
                 }
-                Log.Here().Debug($"Current opcode: {opcode}");
+                Log.Here().Verbose($"Current opcode: {opcode}");
 
                 if (opcode == Opcodes.pushInt)
                 {

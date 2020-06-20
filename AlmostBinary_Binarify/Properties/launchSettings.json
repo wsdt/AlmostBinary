@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Binarify": {
       "commandName": "Project",
-      "commandLineArgs": "--to-string \"0000000000000000000000000000000000000000000000000000000001111110\" \"0000000000000000000000000000000000000000000000000011000100110000\""
+      "commandLineArgs": "--to-binary Print ( \\\" \"input: \" \\\" ) str = InputString ( ) if ( str == \\\" \"hello\" \\\" ) { PrintLine ( \\\" \"if statement\" \\\" ) } elseif ( str == \\\" \"world\" \\\" ) { PrintLine ( \\\" \"elseif statement\" \\\" ) } else { PrintLine ( \\\" \"else statement\" \\\" ) } ReadLine ( ) }"
     },
     "Docker": {
       "commandName": "Docker"
