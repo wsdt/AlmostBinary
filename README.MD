@@ -32,6 +32,25 @@ Simple hello-world program:
 0000000000000000000000000000000000000000000000000000000001111101
 ```
 Of course you can remove all tabs and newlines. Removing spaces is only supported in some cases as I didn't want to introduce too much delimiters (e.g. 8 zeros).
+***
+
+## Libraries
+This is an exhaustive list of all implemented AlmostBinary libraries: 
+
+### <a href="https://github.com/wsdt/AlmostBinary/blob/master/AlmostBinary_Compiler/Libraries/0000000000000000011100110111100101110011011101000110010101101101.abinl">system</a>
+**Identifier/Name (x64):** 
+`0000000000000000011100110111100101110011011101000110010101101101`
+
+**Description:** 
+_Default functions, e.g. PrintLine, InputString, ..._
+
+### <a href="https://github.com/wsdt/AlmostBinary/blob/master/AlmostBinary_Compiler/Libraries/00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl">blockchain</a>
+**Identifier/Name (x64):**
+`00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110`
+
+**Description:** 
+_Create simple proof-of-work blockchains, create transactions, validate the blockchain and mine abin-Coins._
+***
 
 ## Why I made this
 Esoteric languages like [WhiteSpace](https://esolangs.org/wiki/Whitespace), [Brainfuck](https://esolangs.org/wiki/Brainfuck) or [Arnold-C](https://esolangs.org/wiki/ArnoldC) have inspired me to write my own compiler & runtime. 
