@@ -30,10 +30,10 @@
           "build/netstandard1.0/Microsoft.CodeCoverage.targets": {}
         }
       },
-      "Microsoft.Extensions.Configuration/3.1.4": {
+      "Microsoft.Extensions.Configuration/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.4"
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.dll": {}
@@ -42,10 +42,10 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.dll": {}
         }
       },
-      "Microsoft.Extensions.Configuration.Abstractions/3.1.4": {
+      "Microsoft.Extensions.Configuration.Abstractions/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "3.1.4"
+          "Microsoft.Extensions.Primitives": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {}
@@ -54,10 +54,10 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Configuration.Binder/3.1.4": {
+      "Microsoft.Extensions.Configuration.Binder/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.4"
+          "Microsoft.Extensions.Configuration": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll": {}
@@ -66,11 +66,11 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
-      "Microsoft.Extensions.Configuration.FileExtensions/3.1.4": {
+      "Microsoft.Extensions.Configuration.FileExtensions/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.4",
-          "Microsoft.Extensions.FileProviders.Physical": "3.1.4"
+          "Microsoft.Extensions.Configuration": "3.1.5",
+          "Microsoft.Extensions.FileProviders.Physical": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
@@ -79,11 +79,11 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
         }
       },
-      "Microsoft.Extensions.Configuration.Json/3.1.4": {
+      "Microsoft.Extensions.Configuration.Json/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.4",
-          "Microsoft.Extensions.Configuration.FileExtensions": "3.1.4"
+          "Microsoft.Extensions.Configuration": "3.1.5",
+          "Microsoft.Extensions.Configuration.FileExtensions": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Json.dll": {}
@@ -92,10 +92,10 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Json.dll": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection/3.1.4": {
+      "Microsoft.Extensions.DependencyInjection/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.4"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {}
@@ -104,7 +104,7 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.4": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.5": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
@@ -113,10 +113,10 @@
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/3.1.4": {
+      "Microsoft.Extensions.FileProviders.Abstractions/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "3.1.4"
+          "Microsoft.Extensions.Primitives": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
@@ -125,11 +125,11 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Physical/3.1.4": {
+      "Microsoft.Extensions.FileProviders.Physical/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.4",
-          "Microsoft.Extensions.FileSystemGlobbing": "3.1.4"
+          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.5",
+          "Microsoft.Extensions.FileSystemGlobbing": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Physical.dll": {}
@@ -138,7 +138,7 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Physical.dll": {}
         }
       },
-      "Microsoft.Extensions.FileSystemGlobbing/3.1.4": {
+      "Microsoft.Extensions.FileSystemGlobbing/3.1.5": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
@@ -147,7 +147,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
         }
       },
-      "Microsoft.Extensions.Primitives/3.1.4": {
+      "Microsoft.Extensions.Primitives/3.1.5": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
@@ -186,6 +186,79 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.Quantum.QSharp.Core/0.11.2006.403": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Quantum.Runtime.Core": "0.11.2006.403"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Quantum.QSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Quantum.QSharp.Core.dll": {}
+        }
+      },
+      "Microsoft.Quantum.Runtime.Core/0.11.2006.403": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Quantum.Runtime.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Quantum.Runtime.Core.dll": {}
+        }
+      },
+      "Microsoft.Quantum.Simulators/0.11.2006.403": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Quantum.QSharp.Core": "0.11.2006.403",
+          "Microsoft.Quantum.Runtime.Core": "0.11.2006.403",
+          "System.Reflection.Metadata": "1.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Quantum.Simulation.Common.dll": {},
+          "lib/netstandard2.1/Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.dll": {},
+          "lib/netstandard2.1/Microsoft.Quantum.Simulation.Simulators.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Quantum.Simulation.Common.dll": {},
+          "lib/netstandard2.1/Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.dll": {},
+          "lib/netstandard2.1/Microsoft.Quantum.Simulation.Simulators.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/Microsoft.Quantum.Simulator.Runtime.dll": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/Microsoft.Quantum.Simulator.Runtime.dll": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/Microsoft.Quantum.Simulator.Runtime.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vcomp140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Microsoft.Quantum.Standard/0.11.2006.403": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Quantum.Runtime.Core": "0.11.2006.403",
+          "Microsoft.Quantum.Simulators": "0.11.2006.403"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Quantum.Standard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Quantum.Standard.dll": {}
         }
       },
       "Microsoft.TestPlatform.ObjectModel/16.6.1": {
@@ -1261,6 +1334,15 @@
           "ref/netstandard1.0/System.Reflection.Extensions.dll": {}
         }
       },
+      "System.Reflection.Metadata/1.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
+        }
+      },
       "System.Reflection.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1822,10 +1904,10 @@
         "dependencies": {
           "AlmostBinary_GlobalConstants": "1.0.0",
           "CommandLineParser": "2.8.0",
-          "Microsoft.Extensions.Configuration": "3.1.4",
-          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
-          "Microsoft.Extensions.Configuration.Json": "3.1.4",
-          "Microsoft.Extensions.DependencyInjection": "3.1.4",
+          "Microsoft.Extensions.Configuration": "3.1.5",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.5",
+          "Microsoft.Extensions.Configuration.Json": "3.1.5",
+          "Microsoft.Extensions.DependencyInjection": "3.1.5",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.9",
           "Serilog": "2.9.0",
           "Serilog.Sinks.Async": "1.4.0",
@@ -1859,10 +1941,10 @@
           "AlmostBinary_Binarify": "1.0.0",
           "AlmostBinary_GlobalConstants": "1.0.0",
           "CommandLineParser": "2.8.0",
-          "Microsoft.Extensions.Configuration": "3.1.4",
-          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
-          "Microsoft.Extensions.Configuration.Json": "3.1.4",
-          "Microsoft.Extensions.DependencyInjection": "3.1.4",
+          "Microsoft.Extensions.Configuration": "3.1.5",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.5",
+          "Microsoft.Extensions.Configuration.Json": "3.1.5",
+          "Microsoft.Extensions.DependencyInjection": "3.1.5",
           "Serilog": "2.9.0",
           "Serilog.Sinks.Async": "1.4.0",
           "Serilog.Sinks.Console": "3.1.1",
@@ -1906,6 +1988,21 @@
           "bin/placeholder/AlmostBinary_GlobalConstants.dll": {}
         }
       },
+      "AlmostBinary_QuantumComputingLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Microsoft.Quantum.QSharp.Core": "0.11.2006.403",
+          "Microsoft.Quantum.Runtime.Core": "0.11.2006.403",
+          "Microsoft.Quantum.Standard": "0.11.2006.403"
+        },
+        "compile": {
+          "bin/placeholder/AlmostBinary_QuantumComputingLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AlmostBinary_QuantumComputingLibrary.dll": {}
+        }
+      },
       "AlmostBinary_Runtime/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1913,11 +2010,12 @@
           "AlmostBinary_Binarify": "1.0.0",
           "AlmostBinary_BlockhainLibrary": "1.0.0",
           "AlmostBinary_GlobalConstants": "1.0.0",
+          "AlmostBinary_QuantumComputingLibrary": "1.0.0",
           "CommandLineParser": "2.8.0",
-          "Microsoft.Extensions.Configuration": "3.1.4",
-          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
-          "Microsoft.Extensions.Configuration.Json": "3.1.4",
-          "Microsoft.Extensions.DependencyInjection": "3.1.4",
+          "Microsoft.Extensions.Configuration": "3.1.5",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.5",
+          "Microsoft.Extensions.Configuration.Json": "3.1.5",
+          "Microsoft.Extensions.DependencyInjection": "3.1.5",
           "Serilog": "2.9.0",
           "Serilog.Sinks.Async": "1.4.0",
           "Serilog.Sinks.Console": "3.1.1",
@@ -2023,10 +2121,10 @@
         "microsoft.codecoverage.nuspec"
       ]
     },
-    "Microsoft.Extensions.Configuration/3.1.4": {
-      "sha512": "+NsYvQ00h+9kSp4/60iCAhPUp9S6joS2rsEmfCVrUmVATCveTewcHdrMB+9pJDYkWzCEqPQoJuMfsxe/299Z0w==",
+    "Microsoft.Extensions.Configuration/3.1.5": {
+      "sha512": "LZfdAP8flK4hkaniUv6TlstDX9FXLmJMX1A4mpLghAsZxTaJIgf+nzBNiPRdy/B5Vrs74gRONX3JrIUJQrebmA==",
       "type": "package",
-      "path": "microsoft.extensions.configuration/3.1.4",
+      "path": "microsoft.extensions.configuration/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2035,14 +2133,14 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.xml",
-        "microsoft.extensions.configuration.3.1.4.nupkg.sha512",
+        "microsoft.extensions.configuration.3.1.5.nupkg.sha512",
         "microsoft.extensions.configuration.nuspec"
       ]
     },
-    "Microsoft.Extensions.Configuration.Abstractions/3.1.4": {
-      "sha512": "k7IJME4US5S5JFOGYaei5TLwutp8IqUvcBWtliKXETGn/JScmCgfej21xq5+ttxi0qZhiyJY06y9dw+cLh3kiQ==",
+    "Microsoft.Extensions.Configuration.Abstractions/3.1.5": {
+      "sha512": "VBcAk6s9izZr04WCzNqOh1Sxz2RbVSh0G79MfpHSDv16cUJtSEYEHody9ZnF71LBEktzdu6cvDFBOFMh43q0iA==",
       "type": "package",
-      "path": "microsoft.extensions.configuration.abstractions/3.1.4",
+      "path": "microsoft.extensions.configuration.abstractions/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2051,14 +2149,14 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
-        "microsoft.extensions.configuration.abstractions.3.1.4.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.3.1.5.nupkg.sha512",
         "microsoft.extensions.configuration.abstractions.nuspec"
       ]
     },
-    "Microsoft.Extensions.Configuration.Binder/3.1.4": {
-      "sha512": "rN0FlUcOmHpGX1BFGZbtTgsXWwHO9pRTocynckXpqCvcMzqehS36aN+lfIlG3PriFulHF2kzwNVfhBakc072iw==",
+    "Microsoft.Extensions.Configuration.Binder/3.1.5": {
+      "sha512": "ZR/zjBxkvdnnWhRoBHDT95uz1ZgJFhv1QazmKCIcDqy/RXqi+6dJ/PfxDhEnzPvk9HbkcGfFsPEu1vSIyxDqBQ==",
       "type": "package",
-      "path": "microsoft.extensions.configuration.binder/3.1.4",
+      "path": "microsoft.extensions.configuration.binder/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2067,14 +2165,14 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
-        "microsoft.extensions.configuration.binder.3.1.4.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.3.1.5.nupkg.sha512",
         "microsoft.extensions.configuration.binder.nuspec"
       ]
     },
-    "Microsoft.Extensions.Configuration.FileExtensions/3.1.4": {
-      "sha512": "wgYJ6AxEuk7HkhUaiDwzX9LLVaeum5p8BS94xtMqgiCJ9Fxncy6z+jVHrkih+Ww6gBGbuPn5buu56MPWYlwBdg==",
+    "Microsoft.Extensions.Configuration.FileExtensions/3.1.5": {
+      "sha512": "zDXWDDaHMKX2ArwhrPprKgZfpCDuaqrcaGX5IG9EybQ6IGYZ7aMJftLan/bfxteI5bnga912y5nIYrTuXaxpug==",
       "type": "package",
-      "path": "microsoft.extensions.configuration.fileextensions/3.1.4",
+      "path": "microsoft.extensions.configuration.fileextensions/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2083,14 +2181,14 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.FileExtensions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.xml",
-        "microsoft.extensions.configuration.fileextensions.3.1.4.nupkg.sha512",
+        "microsoft.extensions.configuration.fileextensions.3.1.5.nupkg.sha512",
         "microsoft.extensions.configuration.fileextensions.nuspec"
       ]
     },
-    "Microsoft.Extensions.Configuration.Json/3.1.4": {
-      "sha512": "PYSg1spPvu5V+qk3gpLdIKa0VHURlIAv1uInxkmIXUYbb3AlBk6wywlbFFUWf+CRWA62eD/LJnfpePODlbQ5CA==",
+    "Microsoft.Extensions.Configuration.Json/3.1.5": {
+      "sha512": "Yk7+e+13JKN9rvoUrWCil3Jdbrbx5owGhl5z2u5kgpEIuAn+eqWq624/wvou0/zzPxC8QyID/cSi1oLf9ngNhQ==",
       "type": "package",
-      "path": "microsoft.extensions.configuration.json/3.1.4",
+      "path": "microsoft.extensions.configuration.json/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2099,14 +2197,14 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Json.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.xml",
-        "microsoft.extensions.configuration.json.3.1.4.nupkg.sha512",
+        "microsoft.extensions.configuration.json.3.1.5.nupkg.sha512",
         "microsoft.extensions.configuration.json.nuspec"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection/3.1.4": {
-      "sha512": "dAWhz6BEjUFIVLUPbT1s1sUrPTwbUWdw2iBRRe3ej3xXcKS+oo64dKrIWFxRjYP6TWyESpGFNY5NGeA5FcHVlg==",
+    "Microsoft.Extensions.DependencyInjection/3.1.5": {
+      "sha512": "I+RTJQi7TtenIHZqL2zr6523PYXfL88Ruu4UIVmspIxdw14GHd8zZ+2dGLSdwX7fn41Hth4d42S1e1iHWVOJyQ==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/3.1.4",
+      "path": "microsoft.extensions.dependencyinjection/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2119,28 +2217,28 @@
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.3.1.4.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.3.1.5.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.nuspec"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.4": {
-      "sha512": "AceHamXNKDMDwIoZqEoApLp8s3935wSC3VXrPaRWa0wWOaEcYdDlo1nWQ1zLiezoDmpJzV7FqDm53E0Ty/hEMg==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.5": {
+      "sha512": "2VSCj2TZPMdeEi279Lawi6qJQu4+sEWizSOYrhY6hapyS1jxn1jVUZT1Ugv68bya+x8+3lD4+RqhUZql9PhISQ==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.4",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.3.1.4.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.3.1.5.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec"
       ]
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/3.1.4": {
-      "sha512": "NNJA8JAoIaxlnb/bdQ8N0kA4T9ZaBAaUFM79pnT7j/x61Wne6K4lznU9u+NDgSAB3wrSx94mz169jNtle7KrSA==",
+    "Microsoft.Extensions.FileProviders.Abstractions/3.1.5": {
+      "sha512": "LrEQ97jhSWw84Y1m+CJfvh9qTUUswt27au54QYn2x5PCMPPgR+yAv/4VTJKMGSSI9T4scSLBXZ/fVhT4fPTCtA==",
       "type": "package",
-      "path": "microsoft.extensions.fileproviders.abstractions/3.1.4",
+      "path": "microsoft.extensions.fileproviders.abstractions/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2149,14 +2247,14 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
-        "microsoft.extensions.fileproviders.abstractions.3.1.4.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.3.1.5.nupkg.sha512",
         "microsoft.extensions.fileproviders.abstractions.nuspec"
       ]
     },
-    "Microsoft.Extensions.FileProviders.Physical/3.1.4": {
-      "sha512": "vxBVwWxczp+5dnZ6FoulhxCLYzRjp5tu64iAlGMJtN0w7XLBZoY+6FvAnCRZDdwCbhVbz5VUPsbYVlL+l3sDxQ==",
+    "Microsoft.Extensions.FileProviders.Physical/3.1.5": {
+      "sha512": "JemaaSSQosZ59flEfNzqvQRHDt1u4aEwV/pR4eFQEXpaX7lHI13gSbQbQ7TMGDdmY9F2t2+6RPp44Mmf9O1DsQ==",
       "type": "package",
-      "path": "microsoft.extensions.fileproviders.physical/3.1.4",
+      "path": "microsoft.extensions.fileproviders.physical/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2165,28 +2263,28 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Physical.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.xml",
-        "microsoft.extensions.fileproviders.physical.3.1.4.nupkg.sha512",
+        "microsoft.extensions.fileproviders.physical.3.1.5.nupkg.sha512",
         "microsoft.extensions.fileproviders.physical.nuspec"
       ]
     },
-    "Microsoft.Extensions.FileSystemGlobbing/3.1.4": {
-      "sha512": "PGbPg8h8cUYXEovoeNvpHgdFhKnx/539E14zF1vxFz2V6cc1QmQGONbfVHEJcjbuyGyyiNyqgpPInymsVup7ow==",
+    "Microsoft.Extensions.FileSystemGlobbing/3.1.5": {
+      "sha512": "ObdbZ/L3X89KOHI0K/zlwufnlHESYSp2L/Z1XgYp3Odekmzevl06iffrtIBP9Qgw2RxBVAyTEVNrIouCuik6yg==",
       "type": "package",
-      "path": "microsoft.extensions.filesystemglobbing/3.1.4",
+      "path": "microsoft.extensions.filesystemglobbing/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.xml",
-        "microsoft.extensions.filesystemglobbing.3.1.4.nupkg.sha512",
+        "microsoft.extensions.filesystemglobbing.3.1.5.nupkg.sha512",
         "microsoft.extensions.filesystemglobbing.nuspec"
       ]
     },
-    "Microsoft.Extensions.Primitives/3.1.4": {
-      "sha512": "tLR9n5ltwA56nr1t5M6q5IBfGLXtMS+XgumtqVENmtPQOWUD+m0Kgo1U6GWr06Y875WUN3sOGnmqkvW4an7fYA==",
+    "Microsoft.Extensions.Primitives/3.1.5": {
+      "sha512": "6bLdjSAQix82oP2tsuX9MM2yjgUFFOkSZYyRSKoUULilw2cg0Y0H+dnugwYlfj8Jd7yjd/+QSdNBqEyYhTYv0w==",
       "type": "package",
-      "path": "microsoft.extensions.primitives/3.1.4",
+      "path": "microsoft.extensions.primitives/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2195,7 +2293,7 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.3.1.4.nupkg.sha512",
+        "microsoft.extensions.primitives.3.1.5.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec"
       ]
     },
@@ -2247,6 +2345,68 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Quantum.QSharp.Core/0.11.2006.403": {
+      "sha512": "hef0vCO+YtbnTNmwlXh91RNwq1oT67NX10Z0BKt3KPU8agIcASTY9A0yv1qDGfbv/sFahoqHfdnM0CGBHDDFuQ==",
+      "type": "package",
+      "path": "microsoft.quantum.qsharp.core/0.11.2006.403",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/Microsoft.Quantum.QSharp.Core.dll",
+        "lib/netstandard2.1/Microsoft.Quantum.QSharp.Core.pdb",
+        "lib/netstandard2.1/Microsoft.Quantum.QSharp.Core.xml",
+        "microsoft.quantum.qsharp.core.0.11.2006.403.nupkg.sha512",
+        "microsoft.quantum.qsharp.core.nuspec"
+      ]
+    },
+    "Microsoft.Quantum.Runtime.Core/0.11.2006.403": {
+      "sha512": "IN2wnjPW+b7Xxr0cmCdVDtBkP/1lNYhr0s8Y31U2Q0lm9roYgD+unP3e8uOPp/7DOVCiDwHztRNgEaQjwmiKQA==",
+      "type": "package",
+      "path": "microsoft.quantum.runtime.core/0.11.2006.403",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/Microsoft.Quantum.Runtime.Core.dll",
+        "lib/netstandard2.1/Microsoft.Quantum.Runtime.Core.pdb",
+        "lib/netstandard2.1/Microsoft.Quantum.Runtime.Core.xml",
+        "microsoft.quantum.runtime.core.0.11.2006.403.nupkg.sha512",
+        "microsoft.quantum.runtime.core.nuspec"
+      ]
+    },
+    "Microsoft.Quantum.Simulators/0.11.2006.403": {
+      "sha512": "ZAKbvqerqiwBAW/9cUPn4nb+/aY23+RH3T3plawqjpn9wtlH0nHV3uz55nAvEX9S9a9kLJjZ4JK6QU+d1I54Kg==",
+      "type": "package",
+      "path": "microsoft.quantum.simulators/0.11.2006.403",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/Microsoft.Quantum.Simulation.Common.dll",
+        "lib/netstandard2.1/Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.dll",
+        "lib/netstandard2.1/Microsoft.Quantum.Simulation.Simulators.dll",
+        "lib/netstandard2.1/Microsoft.Quantum.Simulation.Simulators.pdb",
+        "lib/netstandard2.1/Microsoft.Quantum.Simulation.Simulators.xml",
+        "microsoft.quantum.simulators.0.11.2006.403.nupkg.sha512",
+        "microsoft.quantum.simulators.nuspec",
+        "runtimes/linux-x64/native/Microsoft.Quantum.Simulator.Runtime.dll",
+        "runtimes/osx-x64/native/Microsoft.Quantum.Simulator.Runtime.dll",
+        "runtimes/win-x64/native/Microsoft.Quantum.Simulator.Runtime.dll",
+        "runtimes/win-x64/native/vcomp140.dll"
+      ]
+    },
+    "Microsoft.Quantum.Standard/0.11.2006.403": {
+      "sha512": "dUvLHjZXehG8rS5N4ESFfAVnXGvLmDcnvXug8w3ZEL75lW5tlxRCpExcP74rzSLqlMtbpZBbuhf63zkPD9dcow==",
+      "type": "package",
+      "path": "microsoft.quantum.standard/0.11.2006.403",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/Microsoft.Quantum.Standard.dll",
+        "lib/netstandard2.1/Microsoft.Quantum.Standard.pdb",
+        "lib/netstandard2.1/Microsoft.Quantum.Standard.xml",
+        "microsoft.quantum.standard.0.11.2006.403.nupkg.sha512",
+        "microsoft.quantum.standard.nuspec"
       ]
     },
     "Microsoft.TestPlatform.ObjectModel/16.6.1": {
@@ -4762,6 +4922,27 @@
         "system.reflection.extensions.nuspec"
       ]
     },
+    "System.Reflection.Metadata/1.7.0": {
+      "sha512": "PodRDaRRNI3BcF3zuEsrzn1jm/zws5UevTzIv5FqcOwWB3VPaU4jS6vt0tSxu+i38Wtn9vXFNgDHw09nDv8y5Q==",
+      "type": "package",
+      "path": "system.reflection.metadata/1.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.1/System.Reflection.Metadata.dll",
+        "lib/netstandard1.1/System.Reflection.Metadata.xml",
+        "lib/netstandard2.0/System.Reflection.Metadata.dll",
+        "lib/netstandard2.0/System.Reflection.Metadata.xml",
+        "lib/portable-net45+win8/System.Reflection.Metadata.dll",
+        "lib/portable-net45+win8/System.Reflection.Metadata.xml",
+        "system.reflection.metadata.1.7.0.nupkg.sha512",
+        "system.reflection.metadata.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Reflection.Primitives/4.3.0": {
       "sha512": "5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
       "type": "package",
@@ -6301,6 +6482,11 @@
       "type": "project",
       "path": "../AlmostBinary_GlobalConstants/AlmostBinary_GlobalConstants.csproj",
       "msbuildProject": "../AlmostBinary_GlobalConstants/AlmostBinary_GlobalConstants.csproj"
+    },
+    "AlmostBinary_QuantumComputingLibrary/1.0.0": {
+      "type": "project",
+      "path": "../AlmostBinary_QuantumComputingLibrary/AlmostBinary_QuantumComputingLibrary.csproj",
+      "msbuildProject": "../AlmostBinary_QuantumComputingLibrary/AlmostBinary_QuantumComputingLibrary.csproj"
     },
     "AlmostBinary_Runtime/1.0.0": {
       "type": "project",

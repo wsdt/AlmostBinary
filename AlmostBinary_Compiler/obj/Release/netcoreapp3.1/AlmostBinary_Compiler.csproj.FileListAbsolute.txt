@@ -37,3 +37,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Libraries\00000000000000000000000000000000000000000000000001100010011011000110111101100011011010110110001101101000011000010110100101101110.abinl
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Libraries\0000000000000000011100110111100101110011011101000110010101101101.abinl
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\CommandLine.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Libraries\0000000001110001011101010110000101101110011101000111010101101101.abinl

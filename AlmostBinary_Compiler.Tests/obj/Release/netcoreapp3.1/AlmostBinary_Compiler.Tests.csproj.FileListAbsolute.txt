@@ -142,3 +142,4 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Release\netcoreapp3.1\xunit.assert.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Release\netcoreapp3.1\xunit.core.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Release\netcoreapp3.1\xunit.execution.dotnet.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Compiler.Tests\bin\Release\netcoreapp3.1\Libraries\0000000001110001011101010110000101101110011101000111010101101101.abinl

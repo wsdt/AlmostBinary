@@ -10,10 +10,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/wsdt/AlmostBinary/issues"/>
     <ROW Property="ARPURLUPDATEINFO" Value="https://github.com/wsdt/AlmostBinary/releases"/>
     <ROW Property="Manufacturer" Value="Wavect"/>
-    <ROW Property="ProductCode" Value="1033:{008C81AD-532A-4F6F-B0A5-BFD5A5696F5D} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{E8D08D30-C6A6-428C-919F-0E72EA22C6D6} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="AlmostBinary"/>
-    <ROW Property="ProductVersion" Value="3.0.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="3.1.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{E9BC503A-CB49-4341-9AE5-1F230FA1B072}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -214,6 +214,7 @@
     <ROW File="Serilog.Sinks.Async.dll_4" Component_="Serilog.Sinks.Async.dll_4" FileName="SERILO~1.DLL|Serilog.Sinks.Async.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.Async.dll" SelfReg="false"/>
     <ROW File="Serilog.Sinks.Console.dll_4" Component_="Serilog.Sinks.Console.dll_4" FileName="SERILO~2.DLL|Serilog.Sinks.Console.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll" SelfReg="false"/>
     <ROW File="Serilog.Sinks.File.dll_4" Component_="Serilog.Sinks.File.dll_4" FileName="SERILO~3.DLL|Serilog.Sinks.File.dll" Attributes="0" SourcePath="..\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll" SelfReg="false"/>
+    <ROW File="abinl_2" Component_="abinl" FileName="000000~3.ABI|0000000001110001011101010110000101101110011101000111010101101101.abinl" Attributes="0" SourcePath="..\AlmostBinary_Compiler\bin\Release\netcoreapp3.1\Libraries\0000000001110001011101010110000101101110011101000111010101101101.abinl" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>

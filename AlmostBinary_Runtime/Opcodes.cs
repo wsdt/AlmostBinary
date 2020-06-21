@@ -34,5 +34,8 @@
         public static readonly int bc_createTransaction = 29;
         public static readonly int bc_mine = 30;
         public static readonly int bc_isValid = 31;
+        public static readonly int qc_randomNumberGenerator = 32;
+        public static readonly int qc_entanglement = 33;
+        public static readonly int qc_randomBitGenerator = 34;
     }
 }

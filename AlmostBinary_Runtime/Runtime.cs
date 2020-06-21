@@ -1,11 +1,15 @@
 ﻿using AlmostBinary_Binarify;
 using AlmostBinary_BlockhainLibrary;
+using AlmostBinary_QuantumComputingLibrary;
 using AlmostBinary_Runtime.utils;
-using Microsoft.VisualBasic.CompilerServices;
+using Microsoft.Quantum.Simulation.Core;
+using Microsoft.Quantum.Simulation.Simulators;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
+
 
 namespace AlmostBinary_Runtime
 {
@@ -58,7 +62,8 @@ namespace AlmostBinary_Runtime
                 {
                     opcode = code.ReadInt();
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     Log.Here().Warning(ex, "Insignificant exception during buffer-read.");
                 }
                 Log.Here().Verbose($"Current opcode: {opcode}");
@@ -91,6 +96,45 @@ namespace AlmostBinary_Runtime
                 {
                     Console.ReadLine();
                 }
+                else if (opcode == Opcodes.qc_randomBitGenerator)
+                {
+                    using var qsim = new QuantumSimulator();
+                    Console.WriteLine($"Random bit: {RandomBitGenerator.Run(qsim).Result}");
+                }
+                else if (opcode == Opcodes.qc_randomNumberGenerator)
+                {
+                    using var sim = new QuantumSimulator();
+                    // First we initialize all the variables:
+                    var bitString = "0"; // To save the bit string
+                    int max = 50; // The maximum of the range
+                    int size = Convert.ToInt32(Math.Floor(Math.Log(max, 2.0) + 1));
+                    // To calculate the amount of needed bits
+                    int output = max + 1; // Int to store the output
+                    while (output > max)  // Loop to generate the number
+                    {
+                        bitString = "0"; // Restart the bit string if fails
+                        bitString = String.Join("", Enumerable.Range(0, size).Select(idx =>
+                                                RandomBitGenerator.Run(sim).Result == Result.One ? "1" : "0"
+                                                                                    )
+                                               );
+                        // Generate and concatenate the bits using using the Q# operation
+                        output = Convert.ToInt32(bitString, 2);
+                        // Convert the bit string to an integer
+                    }
+                    // Print the result
+                    Console.WriteLine($"Random number: {output}");
+                }
+                else if (opcode == Opcodes.qc_entanglement)
+                {
+                    using var qsim = new QuantumSimulator();
+                    Result[] initials = new Result[] { Result.Zero, Result.One };
+                    foreach (Result initial in initials)
+                    {
+                        (long, long, long) res = Entanglement.Run(qsim, 1000, initial).Result;
+                        (long numZeros, long numOnes, long agree) = res;
+                        Console.WriteLine($"Init:{initial,-4} 0s={numZeros,-4} 1s={numOnes,-4} agree={agree,-4}");
+                    }
+                }
                 else if (opcode == Opcodes.bc_createBlockchain)
                 {
                     Console.WriteLine(vars);
@@ -105,8 +149,8 @@ namespace AlmostBinary_Runtime
 
                     string fromAddress = stack.Pop() as string ?? throw new NullReferenceException("Who is receiving abinCoins?");
                     string toAddress = (stack.Pop() as string) ?? throw new NullReferenceException("Who is transacting abinCoins?");
-                    int amount = (int) (stack.Pop() ?? throw new NullReferenceException("How much coins do you want to transact?"));
-                    
+                    int amount = (int)(stack.Pop() ?? throw new NullReferenceException("How much coins do you want to transact?"));
+
                     blockchain.CreateTransaction(new Transaction(fromAddress, toAddress, amount));
                     Log.Here().Information($"New transaction over '{amount}' abinCoins on Blockchain from '{fromAddress}' to '{toAddress}'.");
                 }
@@ -122,11 +166,12 @@ namespace AlmostBinary_Runtime
                 {
                     Blockchain blockchain = stack.Pop() as Blockchain
                            ?? throw new NullReferenceException("Create a blockchain before trying to verify it's validation-state!");
-                    
+
                     if (blockchain.IsValid())
                     {
                         Log.Here().Information("Blockchain is valid.");
-                    } else
+                    }
+                    else
                     {
                         Log.Here().Warning("Blockchain is NOT valid. Data corrupted.");
                     }

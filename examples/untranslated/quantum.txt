@@ -1,0 +1,10 @@
+import system
+import quantum
+
+function Main()
+{
+	RandomBitGenerator()
+    RandomNumberGenerator(999)
+	Entanglement(99, 1)
+    ReadLine()
+}

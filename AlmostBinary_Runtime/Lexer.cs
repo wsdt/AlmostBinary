@@ -122,6 +122,18 @@ namespace AlmostBinary_Runtime
                 {
                     code.Write(Opcodes.bc_createTransaction);
                 }
+                else if (a == "randomNumberGenerator")
+                {
+                    code.Write(Opcodes.qc_randomNumberGenerator);
+                }
+                else if (a == "entanglement")
+                {
+                    code.Write(Opcodes.qc_entanglement);
+                }
+                else if (a == "randomBitGenerator")
+                {
+                    code.Write(Opcodes.qc_randomBitGenerator);
+                }
                 else if (a == "pop")
                 {
                     code.Write(Opcodes.pop);

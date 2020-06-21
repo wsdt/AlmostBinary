@@ -12,6 +12,7 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.Tests.runtimeconfig.dev.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.Tests.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\AlmostBinary_Binarify.Tests.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\CommandLine.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -116,4 +117,3 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.Tests.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.Tests.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Debug\netcoreapp3.1\AlmostBinary_Binarify.Tests.genruntimeconfig.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Debug\netcoreapp3.1\CommandLine.dll
