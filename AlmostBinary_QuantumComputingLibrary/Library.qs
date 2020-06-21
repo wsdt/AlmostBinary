@@ -1,4 +1,5 @@
-﻿namespace AlmostBinary_QuantumComputingLibrary {
+﻿// Namespace needs to be the same as the runtime namespace (needed by the quantum-simulator)
+namespace AlmostBinary_Runtime {
 
     open Microsoft.Quantum.Convert;
     open Microsoft.Quantum.Math;

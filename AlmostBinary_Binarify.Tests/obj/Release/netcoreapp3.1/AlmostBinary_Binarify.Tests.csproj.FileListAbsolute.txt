@@ -1,7 +1,9 @@
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\testhost.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\testhost.exe
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -10,6 +12,7 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.runtimeconfig.dev.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\CommandLine.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -29,7 +32,6 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.TestPlatform.Utilities.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\testhost.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
@@ -110,10 +112,8 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Test
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.csprojAssemblyReference.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.AssemblyInfoInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.AssemblyInfo.cs
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.csproj.CoreCompileInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.csproj.CopyComplete
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.genruntimeconfig.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\testhost.exe
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.Tests.csproj.CoreCompileInputs.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify.Tests\bin\Release\netcoreapp3.1\CommandLine.dll

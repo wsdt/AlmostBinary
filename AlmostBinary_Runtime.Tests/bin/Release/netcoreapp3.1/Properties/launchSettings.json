@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "AlmostBinary_Compiler": {
-      "commandName": "Project",
-      "commandLineArgs": "-f \"../../../../examples/quantum.abin\"",
-      "nativeDebugging": false
-    }
-  }
-}

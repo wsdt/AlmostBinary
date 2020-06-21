@@ -1,3 +1,5 @@
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\testhost.dll
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\testhost.exe
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -14,7 +16,6 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLib
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.TestPlatform.Utilities.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\testhost.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
@@ -94,4 +95,3 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLib
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\obj\Release\netcoreapp3.1\AlmostBinary_BlockchainLibrary.Tests.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\obj\Release\netcoreapp3.1\AlmostBinary_BlockchainLibrary.Tests.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\obj\Release\netcoreapp3.1\AlmostBinary_BlockchainLibrary.Tests.genruntimeconfig.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_BlockchainLibrary.Tests\bin\Release\netcoreapp3.1\testhost.exe

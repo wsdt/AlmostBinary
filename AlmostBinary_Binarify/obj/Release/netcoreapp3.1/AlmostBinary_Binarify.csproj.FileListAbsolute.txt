@@ -1,10 +1,13 @@
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_GlobalConstants.exe
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.exe
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.deps.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.runtimeconfig.dev.json
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\CommandLine.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
@@ -25,11 +28,8 @@ C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.csprojAssemblyReference.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.AssemblyInfoInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.AssemblyInfo.cs
+C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.csproj.CoreCompileInputs.cache
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.csproj.CopyComplete
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.dll
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.pdb
 C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.genruntimeconfig.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_DEV.json
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\Properties\appsettings_MAIN.json
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\obj\Release\netcoreapp3.1\AlmostBinary_Binarify.csproj.CoreCompileInputs.cache
-C:\Users\WSDT\Desktop\C#_.NET\KevinRiedl\AlmostBinary\AlmostBinary_Binarify\bin\Release\netcoreapp3.1\CommandLine.dll

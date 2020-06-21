@@ -13,16 +13,16 @@ using Microsoft.Quantum.Core;
 using Microsoft.Quantum.Intrinsic;
 using Microsoft.Quantum.Simulation.Core;
 
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"AlmostBinary_QuantumComputingLibrary\",\"Name\":\"Set\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":9,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":14}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"desired\"]},\"Type\":{\"Case\":\"Result\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":15},\"Item2\":{\"Line\":1,\"Column\":22}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"q1\"]},\"Type\":{\"Case\":\"Qubit\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":33},\"Item2\":{\"Line\":1,\"Column\":35}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Result\"},{\"Case\":\"Qubit\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"AlmostBinary_QuantumComputingLibrary\",\"Name\":\"Set\"},\"Attributes\":[],\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":9,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":14}},\"Documentation\":[]}")]
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"AlmostBinary_QuantumComputingLibrary\",\"Name\":\"RandomBitGenerator\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":15,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":29}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"UnitType\"},\"ReturnType\":{\"Case\":\"Result\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"AlmostBinary_QuantumComputingLibrary\",\"Name\":\"RandomBitGenerator\"},\"Attributes\":[],\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":15,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":29}},\"Documentation\":[]}")]
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"AlmostBinary_QuantumComputingLibrary\",\"Name\":\"Entanglement\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":22,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":23}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"count\"]},\"Type\":{\"Case\":\"Int\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":24},\"Item2\":{\"Line\":1,\"Column\":29}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"initial\"]},\"Type\":{\"Case\":\"Result\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":36},\"Item2\":{\"Line\":1,\"Column\":43}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Result\"}]]},\"ReturnType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Int\"},{\"Case\":\"Int\"}]]},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"AlmostBinary_QuantumComputingLibrary\",\"Name\":\"Entanglement\"},\"Attributes\":[],\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":22,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":23}},\"Documentation\":[]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"AlmostBinary_Runtime\",\"Name\":\"Set\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":10,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":14}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"desired\"]},\"Type\":{\"Case\":\"Result\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":15},\"Item2\":{\"Line\":1,\"Column\":22}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"q1\"]},\"Type\":{\"Case\":\"Qubit\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":33},\"Item2\":{\"Line\":1,\"Column\":35}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Result\"},{\"Case\":\"Qubit\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"AlmostBinary_Runtime\",\"Name\":\"Set\"},\"Attributes\":[],\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":10,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":14}},\"Documentation\":[]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"AlmostBinary_Runtime\",\"Name\":\"RandomBitGenerator\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":16,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":29}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"UnitType\"},\"ReturnType\":{\"Case\":\"Result\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"AlmostBinary_Runtime\",\"Name\":\"RandomBitGenerator\"},\"Attributes\":[],\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":16,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":29}},\"Documentation\":[]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"AlmostBinary_Runtime\",\"Name\":\"Entanglement\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":23,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":23}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"count\"]},\"Type\":{\"Case\":\"Int\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":24},\"Item2\":{\"Line\":1,\"Column\":29}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"initial\"]},\"Type\":{\"Case\":\"Result\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":36},\"Item2\":{\"Line\":1,\"Column\":43}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Result\"}]]},\"ReturnType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Int\"},{\"Case\":\"Int\"}]]},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"AlmostBinary_Runtime\",\"Name\":\"Entanglement\"},\"Attributes\":[],\"SourceFile\":\"C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs\",\"Position\":{\"Item1\":23,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":23}},\"Documentation\":[]}")]
 #line hidden
-namespace AlmostBinary_QuantumComputingLibrary
+namespace AlmostBinary_Runtime
 {
-    [SourceLocation("C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs", OperationFunctor.Body, 10, 16)]
+    [SourceLocation("C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs", OperationFunctor.Body, 11, 17)]
     public partial class Set : Operation<(Result,Qubit), QVoid>, ICallable
     {
         public Set(IOperationFactory m) : base(m)
@@ -45,7 +45,7 @@ namespace AlmostBinary_QuantumComputingLibrary
         }
 
         String ICallable.Name => "Set";
-        String ICallable.FullName => "AlmostBinary_QuantumComputingLibrary.Set";
+        String ICallable.FullName => "AlmostBinary_Runtime.Set";
         protected ICallable<Qubit, Result> MicrosoftQuantumIntrinsicM
         {
             get;
@@ -61,10 +61,10 @@ namespace AlmostBinary_QuantumComputingLibrary
         public override Func<(Result,Qubit), QVoid> Body => (__in__) =>
         {
             var (desired,q1) = __in__;
-#line 11 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 12 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
             if ((desired != MicrosoftQuantumIntrinsicM.Apply(q1)))
             {
-#line 12 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 13 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                 MicrosoftQuantumIntrinsicX.Apply(q1);
             }
 
@@ -87,7 +87,7 @@ namespace AlmostBinary_QuantumComputingLibrary
         }
     }
 
-    [SourceLocation("C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs", OperationFunctor.Body, 16, 23)]
+    [SourceLocation("C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs", OperationFunctor.Body, 17, 24)]
     public partial class RandomBitGenerator : Operation<QVoid, Result>, ICallable
     {
         public RandomBitGenerator(IOperationFactory m) : base(m)
@@ -95,7 +95,7 @@ namespace AlmostBinary_QuantumComputingLibrary
         }
 
         String ICallable.Name => "RandomBitGenerator";
-        String ICallable.FullName => "AlmostBinary_QuantumComputingLibrary.RandomBitGenerator";
+        String ICallable.FullName => "AlmostBinary_Runtime.RandomBitGenerator";
         protected Allocate Allocate
         {
             get;
@@ -124,15 +124,15 @@ namespace AlmostBinary_QuantumComputingLibrary
         {
 #line hidden
             {
-#line 17 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 18 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                 var q = Allocate.Apply();
 #line hidden
                 bool __arg1__ = true;
                 try
                 {
-#line 18 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
-                    MicrosoftQuantumIntrinsicH.Apply(q);
 #line 19 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+                    MicrosoftQuantumIntrinsicH.Apply(q);
+#line 20 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                     return MicrosoftQuantumMeasurementMResetZ.Apply(q);
                 }
 #line hidden
@@ -170,7 +170,7 @@ namespace AlmostBinary_QuantumComputingLibrary
         }
     }
 
-    [SourceLocation("C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs", OperationFunctor.Body, 23, -1)]
+    [SourceLocation("C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs", OperationFunctor.Body, 24, -1)]
     public partial class Entanglement : Operation<(Int64,Result), (Int64,Int64,Int64)>, ICallable
     {
         public Entanglement(IOperationFactory m) : base(m)
@@ -196,7 +196,7 @@ namespace AlmostBinary_QuantumComputingLibrary
         }
 
         String ICallable.Name => "Entanglement";
-        String ICallable.FullName => "AlmostBinary_QuantumComputingLibrary.Entanglement";
+        String ICallable.FullName => "AlmostBinary_Runtime.Entanglement";
         protected Allocate Allocate
         {
             get;
@@ -236,50 +236,50 @@ namespace AlmostBinary_QuantumComputingLibrary
         public override Func<(Int64,Result), (Int64,Int64,Int64)> Body => (__in__) =>
         {
             var (count,initial) = __in__;
-#line 24 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
-            var numOnes = 0L;
 #line 25 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+            var numOnes = 0L;
+#line 26 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
             var agree = 0L;
 #line hidden
             {
-#line 26 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 27 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                 var (q0,q1) = (Allocate.Apply(), Allocate.Apply());
 #line hidden
                 bool __arg1__ = true;
                 try
                 {
-#line 27 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 28 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                     foreach (var test in new QRange(1L, count))
 #line hidden
                     {
-#line 28 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
-                        Set.Apply((initial, q0));
 #line 29 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+                        Set.Apply((initial, q0));
+#line 30 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                         Set.Apply((Result.Zero, q1));
-#line 31 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
-                        MicrosoftQuantumIntrinsicH.Apply(q0);
 #line 32 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
-                        MicrosoftQuantumIntrinsicCNOT.Apply((q0, q1));
+                        MicrosoftQuantumIntrinsicH.Apply(q0);
 #line 33 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+                        MicrosoftQuantumIntrinsicCNOT.Apply((q0, q1));
+#line 34 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                         var res = MicrosoftQuantumIntrinsicM.Apply(q0);
-#line 35 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 36 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                         if ((MicrosoftQuantumIntrinsicM.Apply(q1) == res))
                         {
-#line 36 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 37 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                             agree = (agree + 1L);
                         }
 
-#line 40 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 41 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                         if ((res == Result.One))
                         {
-#line 41 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 42 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                             numOnes = (numOnes + 1L);
                         }
                     }
 
-#line 45 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
-                    Set.Apply((Result.Zero, q0));
 #line 46 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+                    Set.Apply((Result.Zero, q0));
+#line 47 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
                     Set.Apply((Result.Zero, q1));
                 }
 #line hidden
@@ -301,7 +301,7 @@ namespace AlmostBinary_QuantumComputingLibrary
                 }
             }
 
-#line 50 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
+#line 51 "C:/Users/WSDT/Desktop/C%23_.NET/KevinRiedl/AlmostBinary/AlmostBinary_QuantumComputingLibrary/Library.qs"
             return ((count - numOnes), numOnes, agree);
         }
 

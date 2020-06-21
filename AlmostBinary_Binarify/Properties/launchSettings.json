@@ -2,7 +2,7 @@
   "profiles": {
     "AlmostBinary_Binarify": {
       "commandName": "Project",
-      "commandLineArgs": "--to-binary ,"
+      "commandLineArgs": "--to-binary ~"
     },
     "Docker": {
       "commandName": "Docker"

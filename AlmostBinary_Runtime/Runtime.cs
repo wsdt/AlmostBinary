@@ -1,6 +1,5 @@
 ﻿using AlmostBinary_Binarify;
 using AlmostBinary_BlockhainLibrary;
-using AlmostBinary_QuantumComputingLibrary;
 using AlmostBinary_Runtime.utils;
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
@@ -106,7 +105,7 @@ namespace AlmostBinary_Runtime
                     using var sim = new QuantumSimulator();
                     // First we initialize all the variables:
                     var bitString = "0"; // To save the bit string
-                    int max = 50; // The maximum of the range
+                    int max = (int)(stack.Pop() ?? throw new NullReferenceException("What's the maximum of the random number you want to generate?")); // The maximum of the range
                     int size = Convert.ToInt32(Math.Floor(Math.Log(max, 2.0) + 1));
                     // To calculate the amount of needed bits
                     int output = max + 1; // Int to store the output
