@@ -50,6 +50,13 @@ _Default functions, e.g. PrintLine, InputString, ..._
 
 **Description:** 
 _Create simple proof-of-work blockchains, create transactions, validate the blockchain and mine abin-Coins._
+
+### <a href="https://github.com/wsdt/AlmostBinary/blob/master/AlmostBinary_Compiler/Libraries/0000000001110001011101010110000101101110011101000111010101101101.abinl">quantum</a>
+**Identifier/Name (x64):**
+`0000000001110001011101010110000101101110011101000111010101101101`
+
+**Description:** 
+_Utilize a small part of the Q# simulator api. E.g. create true random _
 ***
 
 ## Why I made this
