@@ -71,7 +71,6 @@ Thus, some "binary" code written will be compiled to normal strings and other bi
 
 ## TO-DOs
 - Add node support for [blockchain library](https://www.c-sharpcorner.com/article/blockchain-basics-building-a-blockchain-in-net-core/), maybe even [smart-contracts](https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/blockchain-programming-smart-contracts-in-csharp)
-- Add quantum computing library
 - Improve performance of compiler & runtime
 
 ## Contribution [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
